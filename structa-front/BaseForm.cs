@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace structa_front
 {
-    public class BaseForm : Form
+    public class BaseForm : System.Windows.Forms.Form
     {
         public BaseForm()
         {

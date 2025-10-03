@@ -59,10 +59,10 @@
             this.roundedPanel.Controls.Add(this.lblForgotPassword);
             this.roundedPanel.Controls.Add(this.btnLogin);
             this.roundedPanel.Controls.Add(this.lblRegister);
-            this.roundedPanel.CornerRadius = 20;
+            this.roundedPanel.CornerRadius = 10;
             this.roundedPanel.Location = new System.Drawing.Point(459, 80);
             this.roundedPanel.Name = "roundedPanel";
-            this.roundedPanel.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.roundedPanel.ShadowColor = System.Drawing.Color.White;
             this.roundedPanel.ShadowOffset = 16;
             this.roundedPanel.Size = new System.Drawing.Size(505, 701);
             this.roundedPanel.TabIndex = 0;
@@ -98,6 +98,7 @@
             this.lblLoginDesc.Size = new System.Drawing.Size(400, 30);
             this.lblLoginDesc.TabIndex = 2;
             this.lblLoginDesc.Text = "Digite os dados para realizar o login";
+            this.lblLoginDesc.Click += new System.EventHandler(this.lblLoginDesc_Click);
             // 
             // lblUser
             // 
@@ -108,6 +109,7 @@
             this.lblUser.Size = new System.Drawing.Size(400, 25);
             this.lblUser.TabIndex = 3;
             this.lblUser.Text = "Usuario/E-mail";
+            this.lblUser.Click += new System.EventHandler(this.lblUser_Click);
             // 
             // txtUser
             // 
@@ -118,6 +120,7 @@
             this.txtUser.Size = new System.Drawing.Size(400, 27);
             this.txtUser.TabIndex = 4;
             this.txtUser.Text = "Digite seu nome ou e-mail";
+            this.txtUser.TextChanged += new System.EventHandler(this.txtUser_TextChanged);
             // 
             // lblPassword
             // 
@@ -146,11 +149,12 @@
             this.btnTogglePassword.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.btnTogglePassword.Location = new System.Drawing.Point(400, 290);
             this.btnTogglePassword.Name = "btnTogglePassword";
-            this.btnTogglePassword.Size = new System.Drawing.Size(40, 30);
+            this.btnTogglePassword.Size = new System.Drawing.Size(40, 27);
             this.btnTogglePassword.TabIndex = 7;
             this.btnTogglePassword.TabStop = false;
             this.btnTogglePassword.Text = "👁";
             this.btnTogglePassword.UseVisualStyleBackColor = false;
+            this.btnTogglePassword.Click += new System.EventHandler(this.btnTogglePassword_Click);
             // 
             // chkRemember
             // 
@@ -194,14 +198,14 @@
             this.lblRegister.Name = "lblRegister";
             this.lblRegister.Size = new System.Drawing.Size(400, 30);
             this.lblRegister.TabIndex = 11;
-            this.lblRegister.Text = "Não possui uma conta ainda ? Registre-se";
+            this.lblRegister.Text = "Não possui uma conta ainda? Registre-se";
             this.lblRegister.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(12)))), ((int)(((byte)(40)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1424, 861);
             this.Controls.Add(this.roundedPanel);
             this.Name = "Login";

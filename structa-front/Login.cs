@@ -71,5 +71,25 @@ namespace structa_front
         {
 
         }
+
+        private void btnTogglePassword_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblLoginDesc_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtUser_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblUser_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
