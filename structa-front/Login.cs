@@ -91,5 +91,20 @@ namespace structa_front
         {
 
         }
+
+        private void lblLoginTitle_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblRegister_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
