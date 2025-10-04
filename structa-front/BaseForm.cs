@@ -12,5 +12,17 @@ namespace structa_front
             this.Size = new Size(1440, 900);
             this.MinimumSize = new Size(1440, 900);
         }
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // BaseForm
+            // 
+            this.ClientSize = new System.Drawing.Size(1422, 853);
+            this.Name = "BaseForm";
+            this.ResumeLayout(false);
+
+        }
     }
 }
