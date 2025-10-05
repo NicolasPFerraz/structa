@@ -97,19 +97,33 @@ namespace structa_front
 
         }
 
-        private void lblRegister_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void lblRegistreSe_Click(object sender, EventArgs e)
         {
+            CriarConta criarConta = new CriarConta();
+            criarConta.Show();
+            this.Hide();
+        }
 
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            FormPrincipal formPrincipal = new FormPrincipal();
+            formPrincipal.Show();
+            this.Hide();
+        }
+
+        private void lblRegistreSe_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Hand;
+        }
+
+        private void lblRegistreSe_MouseLeave(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Default;
         }
     }
 }
