@@ -16,7 +16,7 @@ namespace structa_front
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
+            Application.Run(new FormPrincipal());
         }
     }
 }
