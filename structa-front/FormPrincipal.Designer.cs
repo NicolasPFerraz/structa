@@ -97,7 +97,6 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(247, 861);
             this.panelMenu.TabIndex = 0;
-            this.panelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMenu_Paint);
             // 
             // menuItems
             // 
@@ -117,7 +116,6 @@
             this.menuItems.Name = "menuItems";
             this.menuItems.Size = new System.Drawing.Size(239, 451);
             this.menuItems.TabIndex = 5;
-            this.menuItems.Paint += new System.Windows.Forms.PaintEventHandler(this.menuItems_Paint);
             // 
             // panel6
             // 
@@ -140,7 +138,6 @@
             this.label6.TabIndex = 4;
             this.label6.Text = "Plano de gestão";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // pictureBox16
             // 
@@ -174,7 +171,6 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(189, 35);
             this.panel5.TabIndex = 9;
-            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
             // pictureBox11
             // 
@@ -211,7 +207,6 @@
             this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox13.TabIndex = 3;
             this.pictureBox13.TabStop = false;
-            this.pictureBox13.Click += new System.EventHandler(this.pictureBox13_Click);
             // 
             // panelAreasDeTrabalho
             // 
@@ -258,7 +253,6 @@
             this.label4.TabIndex = 4;
             this.label4.Text = "Áreas de trabalho";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // pictureBox7
             // 
@@ -290,7 +284,6 @@
             this.panelMais.Name = "panelMais";
             this.panelMais.Size = new System.Drawing.Size(239, 47);
             this.panelMais.TabIndex = 7;
-            this.panelMais.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // pictureBox10
             // 
@@ -316,7 +309,6 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Mais";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // pictureBox5
             // 
@@ -338,8 +330,6 @@
             this.panelMeuTrabalho.Name = "panelMeuTrabalho";
             this.panelMeuTrabalho.Size = new System.Drawing.Size(239, 47);
             this.panelMeuTrabalho.TabIndex = 6;
-            this.panelMeuTrabalho.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMeuTrabalho_Paint);
-            this.panelMeuTrabalho.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panelMeuTrabalho_MouseClick);
             // 
             // label2
             // 
@@ -409,7 +399,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // panelPerfil
             // 
@@ -447,7 +436,6 @@
             this.picPerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.picPerfil.TabIndex = 3;
             this.picPerfil.TabStop = false;
-            this.picPerfil.Click += new System.EventHandler(this.picPerfil_Click);
             // 
             // pictureBox2
             // 
@@ -476,7 +464,6 @@
             this.Controls.Add(this.panelMenu);
             this.Name = "FormPrincipal";
             this.Text = "FormPrincipal";
-            this.Load += new System.EventHandler(this.FormPrincipal_Load);
             this.panelMenu.ResumeLayout(false);
             this.menuItems.ResumeLayout(false);
             this.panel6.ResumeLayout(false);

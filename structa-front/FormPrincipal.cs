@@ -17,7 +17,11 @@ namespace structa_front
             InitializeComponent();
         }
 
-        private void panelMeuTrabalho_MouseClick(object sender, MouseEventArgs e)
+        private void panelPerfil_Paint(object sender, PaintEventArgs e)
+        {
+        }
+
+        private void lblPerfil_Click(object sender, EventArgs e)
         {
             AbrirPagina(new UcPerfil());
         }
@@ -31,5 +35,6 @@ namespace structa_front
             // Adiciona a página ao painel de conte��do
             panelConteudo.Controls.Add(pagina);
         }
+
     }
 }
