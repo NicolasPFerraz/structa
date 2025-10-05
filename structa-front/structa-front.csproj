@@ -49,8 +49,6 @@
     <Compile Include="BaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
-<<<<<<< HEAD
-=======
     <Compile Include="CriarConta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,7 +61,6 @@
     <Compile Include="FormPrincipal.Designer.cs">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
     </Compile>
->>>>>>> 0088955 (Adiciona FormPrincipal, que inclui o menu lateral)
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,15 +72,18 @@
     <Compile Include="RoundedPanel.cs">
       <SubType>Component</SubType>
     </Compile>
-<<<<<<< HEAD
-=======
+    <Compile Include="UcPerfil.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcPerfil.Designer.cs">
+      <DependentUpon>UcPerfil.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CriarConta.resx">
       <DependentUpon>CriarConta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
     </EmbeddedResource>
->>>>>>> 0088955 (Adiciona FormPrincipal, que inclui o menu lateral)
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -97,6 +97,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UcPerfil.resx">
+      <DependentUpon>UcPerfil.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

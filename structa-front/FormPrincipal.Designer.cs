@@ -30,57 +30,58 @@
         {
             this.panelMenu = new System.Windows.Forms.Panel();
             this.menuItems = new System.Windows.Forms.Panel();
-            this.panelMais = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.panelMeuTrabalho = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panelPgInicial = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panelPerfil = new System.Windows.Forms.Panel();
-            this.lblPerfil = new System.Windows.Forms.Label();
-            this.panelAreasDeTrabalho = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox16 = new System.Windows.Forms.PictureBox();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
+            this.panelAreasDeTrabalho = new System.Windows.Forms.Panel();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.panelMais = new System.Windows.Forms.Panel();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.panelMeuTrabalho = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.panelPgInicial = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panelPerfil = new System.Windows.Forms.Panel();
+            this.lblPerfil = new System.Windows.Forms.Label();
             this.picPerfil = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.panelConteudo = new System.Windows.Forms.Panel();
             this.panelMenu.SuspendLayout();
             this.menuItems.SuspendLayout();
-            this.panelMais.SuspendLayout();
-            this.panelMeuTrabalho.SuspendLayout();
-            this.panelPgInicial.SuspendLayout();
-            this.panelPerfil.SuspendLayout();
-            this.panelAreasDeTrabalho.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
+            this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
+            this.panelAreasDeTrabalho.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            this.panelMais.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            this.panelMeuTrabalho.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.panelPgInicial.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panelPerfil.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPerfil)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -90,10 +91,11 @@
             this.panelMenu.AutoSize = true;
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(16)))), ((int)(((byte)(40)))));
             this.panelMenu.Controls.Add(this.menuItems);
+            this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Margin = new System.Windows.Forms.Padding(0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(258, 900);
+            this.panelMenu.Size = new System.Drawing.Size(247, 861);
             this.panelMenu.TabIndex = 0;
             this.panelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMenu_Paint);
             // 
@@ -116,154 +118,6 @@
             this.menuItems.Size = new System.Drawing.Size(239, 451);
             this.menuItems.TabIndex = 5;
             this.menuItems.Paint += new System.Windows.Forms.PaintEventHandler(this.menuItems_Paint);
-            // 
-            // panelMais
-            // 
-            this.panelMais.Controls.Add(this.pictureBox10);
-            this.panelMais.Controls.Add(this.label3);
-            this.panelMais.Controls.Add(this.pictureBox5);
-            this.panelMais.Location = new System.Drawing.Point(0, 231);
-            this.panelMais.Name = "panelMais";
-            this.panelMais.Size = new System.Drawing.Size(239, 47);
-            this.panelMais.TabIndex = 7;
-            this.panelMais.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(29, 11);
-            this.label3.Margin = new System.Windows.Forms.Padding(0);
-            this.label3.Name = "label3";
-            this.label3.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            this.label3.Size = new System.Drawing.Size(65, 25);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Mais";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // panelMeuTrabalho
-            // 
-            this.panelMeuTrabalho.Controls.Add(this.label2);
-            this.panelMeuTrabalho.Controls.Add(this.pictureBox4);
-            this.panelMeuTrabalho.Location = new System.Drawing.Point(0, 179);
-            this.panelMeuTrabalho.Margin = new System.Windows.Forms.Padding(0);
-            this.panelMeuTrabalho.Name = "panelMeuTrabalho";
-            this.panelMeuTrabalho.Size = new System.Drawing.Size(239, 47);
-            this.panelMeuTrabalho.TabIndex = 6;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(29, 11);
-            this.label2.Margin = new System.Windows.Forms.Padding(0);
-            this.label2.Name = "label2";
-            this.label2.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            this.label2.Size = new System.Drawing.Size(137, 25);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Meu trabalho";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panelPgInicial
-            // 
-            this.panelPgInicial.Controls.Add(this.label1);
-            this.panelPgInicial.Controls.Add(this.pictureBox3);
-            this.panelPgInicial.Location = new System.Drawing.Point(0, 127);
-            this.panelPgInicial.Name = "panelPgInicial";
-            this.panelPgInicial.Size = new System.Drawing.Size(239, 47);
-            this.panelPgInicial.TabIndex = 5;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(29, 11);
-            this.label1.Margin = new System.Windows.Forms.Padding(0);
-            this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            this.label1.Size = new System.Drawing.Size(137, 25);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Página inicial";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panelPerfil
-            // 
-            this.panelPerfil.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelPerfil.Controls.Add(this.lblPerfil);
-            this.panelPerfil.Controls.Add(this.picPerfil);
-            this.panelPerfil.Location = new System.Drawing.Point(0, 75);
-            this.panelPerfil.Name = "panelPerfil";
-            this.panelPerfil.Size = new System.Drawing.Size(239, 47);
-            this.panelPerfil.TabIndex = 4;
-            // 
-            // lblPerfil
-            // 
-            this.lblPerfil.AutoSize = true;
-            this.lblPerfil.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.lblPerfil.ForeColor = System.Drawing.Color.White;
-            this.lblPerfil.Location = new System.Drawing.Point(29, 11);
-            this.lblPerfil.Margin = new System.Windows.Forms.Padding(0);
-            this.lblPerfil.Name = "lblPerfil";
-            this.lblPerfil.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            this.lblPerfil.Size = new System.Drawing.Size(66, 25);
-            this.lblPerfil.TabIndex = 4;
-            this.lblPerfil.Text = "Perfil";
-            this.lblPerfil.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblPerfil.Click += new System.EventHandler(this.lblPerfil_Click);
-            // 
-            // panelAreasDeTrabalho
-            // 
-            this.panelAreasDeTrabalho.Controls.Add(this.pictureBox9);
-            this.panelAreasDeTrabalho.Controls.Add(this.pictureBox8);
-            this.panelAreasDeTrabalho.Controls.Add(this.label4);
-            this.panelAreasDeTrabalho.Controls.Add(this.pictureBox7);
-            this.panelAreasDeTrabalho.Location = new System.Drawing.Point(0, 308);
-            this.panelAreasDeTrabalho.Name = "panelAreasDeTrabalho";
-            this.panelAreasDeTrabalho.Size = new System.Drawing.Size(239, 47);
-            this.panelAreasDeTrabalho.TabIndex = 8;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(30, 15);
-            this.label4.Margin = new System.Windows.Forms.Padding(0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(152, 22);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Áreas de trabalho";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label4.Click += new System.EventHandler(this.label4_Click);
-            // 
-            // panel5
-            // 
-            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel5.Controls.Add(this.pictureBox11);
-            this.panel5.Controls.Add(this.label5);
-            this.panel5.Controls.Add(this.pictureBox13);
-            this.panel5.Location = new System.Drawing.Point(1, 365);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(189, 35);
-            this.panel5.TabIndex = 9;
-            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(28, 6);
-            this.label5.Margin = new System.Windows.Forms.Padding(0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(127, 20);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Área de trabalho";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel6
             // 
@@ -310,6 +164,18 @@
             this.pictureBox12.TabIndex = 6;
             this.pictureBox12.TabStop = false;
             // 
+            // panel5
+            // 
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.pictureBox11);
+            this.panel5.Controls.Add(this.label5);
+            this.panel5.Controls.Add(this.pictureBox13);
+            this.panel5.Location = new System.Drawing.Point(1, 365);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(189, 35);
+            this.panel5.TabIndex = 9;
+            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
+            // 
             // pictureBox11
             // 
             this.pictureBox11.Image = global::structa_front.Properties.Resources.IconeSetaPraBaixo__2_;
@@ -320,6 +186,19 @@
             this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox11.TabIndex = 5;
             this.pictureBox11.TabStop = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(28, 6);
+            this.label5.Margin = new System.Windows.Forms.Padding(0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(127, 20);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Área de trabalho";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pictureBox13
             // 
@@ -333,6 +212,17 @@
             this.pictureBox13.TabIndex = 3;
             this.pictureBox13.TabStop = false;
             this.pictureBox13.Click += new System.EventHandler(this.pictureBox13_Click);
+            // 
+            // panelAreasDeTrabalho
+            // 
+            this.panelAreasDeTrabalho.Controls.Add(this.pictureBox9);
+            this.panelAreasDeTrabalho.Controls.Add(this.pictureBox8);
+            this.panelAreasDeTrabalho.Controls.Add(this.label4);
+            this.panelAreasDeTrabalho.Controls.Add(this.pictureBox7);
+            this.panelAreasDeTrabalho.Location = new System.Drawing.Point(0, 308);
+            this.panelAreasDeTrabalho.Name = "panelAreasDeTrabalho";
+            this.panelAreasDeTrabalho.Size = new System.Drawing.Size(239, 47);
+            this.panelAreasDeTrabalho.TabIndex = 8;
             // 
             // pictureBox9
             // 
@@ -356,6 +246,20 @@
             this.pictureBox8.TabIndex = 5;
             this.pictureBox8.TabStop = false;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(30, 15);
+            this.label4.Margin = new System.Windows.Forms.Padding(0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(152, 22);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Áreas de trabalho";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
             // pictureBox7
             // 
             this.pictureBox7.Image = global::structa_front.Properties.Resources.IconeAreaDeTrabalho__2_;
@@ -377,6 +281,17 @@
             this.pictureBox6.TabIndex = 8;
             this.pictureBox6.TabStop = false;
             // 
+            // panelMais
+            // 
+            this.panelMais.Controls.Add(this.pictureBox10);
+            this.panelMais.Controls.Add(this.label3);
+            this.panelMais.Controls.Add(this.pictureBox5);
+            this.panelMais.Location = new System.Drawing.Point(0, 231);
+            this.panelMais.Name = "panelMais";
+            this.panelMais.Size = new System.Drawing.Size(239, 47);
+            this.panelMais.TabIndex = 7;
+            this.panelMais.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
+            // 
             // pictureBox10
             // 
             this.pictureBox10.Image = global::structa_front.Properties.Resources.IconeSetaPraBaixo;
@@ -387,6 +302,21 @@
             this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox10.TabIndex = 5;
             this.pictureBox10.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(29, 11);
+            this.label3.Margin = new System.Windows.Forms.Padding(0);
+            this.label3.Name = "label3";
+            this.label3.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            this.label3.Size = new System.Drawing.Size(65, 25);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Mais";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // pictureBox5
             // 
@@ -399,6 +329,32 @@
             this.pictureBox5.TabIndex = 3;
             this.pictureBox5.TabStop = false;
             // 
+            // panelMeuTrabalho
+            // 
+            this.panelMeuTrabalho.Controls.Add(this.label2);
+            this.panelMeuTrabalho.Controls.Add(this.pictureBox4);
+            this.panelMeuTrabalho.Location = new System.Drawing.Point(0, 179);
+            this.panelMeuTrabalho.Margin = new System.Windows.Forms.Padding(0);
+            this.panelMeuTrabalho.Name = "panelMeuTrabalho";
+            this.panelMeuTrabalho.Size = new System.Drawing.Size(239, 47);
+            this.panelMeuTrabalho.TabIndex = 6;
+            this.panelMeuTrabalho.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMeuTrabalho_Paint);
+            this.panelMeuTrabalho.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panelMeuTrabalho_MouseClick);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(29, 11);
+            this.label2.Margin = new System.Windows.Forms.Padding(0);
+            this.label2.Name = "label2";
+            this.label2.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            this.label2.Size = new System.Drawing.Size(137, 25);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Meu trabalho";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // pictureBox4
             // 
             this.pictureBox4.Image = global::structa_front.Properties.Resources.IconeMeuTrabalho;
@@ -409,6 +365,29 @@
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox4.TabIndex = 3;
             this.pictureBox4.TabStop = false;
+            // 
+            // panelPgInicial
+            // 
+            this.panelPgInicial.Controls.Add(this.label1);
+            this.panelPgInicial.Controls.Add(this.pictureBox3);
+            this.panelPgInicial.Location = new System.Drawing.Point(0, 127);
+            this.panelPgInicial.Name = "panelPgInicial";
+            this.panelPgInicial.Size = new System.Drawing.Size(239, 47);
+            this.panelPgInicial.TabIndex = 5;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(29, 11);
+            this.label1.Margin = new System.Windows.Forms.Padding(0);
+            this.label1.Name = "label1";
+            this.label1.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            this.label1.Size = new System.Drawing.Size(137, 25);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Página inicial";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox3
             // 
@@ -432,6 +411,32 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // panelPerfil
+            // 
+            this.panelPerfil.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelPerfil.Controls.Add(this.lblPerfil);
+            this.panelPerfil.Controls.Add(this.picPerfil);
+            this.panelPerfil.Location = new System.Drawing.Point(0, 75);
+            this.panelPerfil.Name = "panelPerfil";
+            this.panelPerfil.Size = new System.Drawing.Size(239, 47);
+            this.panelPerfil.TabIndex = 4;
+            this.panelPerfil.Paint += new System.Windows.Forms.PaintEventHandler(this.panelPerfil_Paint);
+            // 
+            // lblPerfil
+            // 
+            this.lblPerfil.AutoSize = true;
+            this.lblPerfil.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.lblPerfil.ForeColor = System.Drawing.Color.White;
+            this.lblPerfil.Location = new System.Drawing.Point(29, 11);
+            this.lblPerfil.Margin = new System.Windows.Forms.Padding(0);
+            this.lblPerfil.Name = "lblPerfil";
+            this.lblPerfil.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            this.lblPerfil.Size = new System.Drawing.Size(66, 25);
+            this.lblPerfil.TabIndex = 4;
+            this.lblPerfil.Text = "Perfil";
+            this.lblPerfil.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblPerfil.Click += new System.EventHandler(this.lblPerfil_Click);
+            // 
             // picPerfil
             // 
             this.picPerfil.Image = global::structa_front.Properties.Resources.IconePerfil;
@@ -454,44 +459,53 @@
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
             // 
+            // panelConteudo
+            // 
+            this.panelConteudo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelConteudo.Location = new System.Drawing.Point(247, 0);
+            this.panelConteudo.Name = "panelConteudo";
+            this.panelConteudo.Size = new System.Drawing.Size(1177, 861);
+            this.panelConteudo.TabIndex = 1;
+            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1424, 861);
+            this.Controls.Add(this.panelConteudo);
             this.Controls.Add(this.panelMenu);
             this.Name = "FormPrincipal";
             this.Text = "FormPrincipal";
             this.Load += new System.EventHandler(this.FormPrincipal_Load);
             this.panelMenu.ResumeLayout(false);
             this.menuItems.ResumeLayout(false);
-            this.panelMais.ResumeLayout(false);
-            this.panelMais.PerformLayout();
-            this.panelMeuTrabalho.ResumeLayout(false);
-            this.panelMeuTrabalho.PerformLayout();
-            this.panelPgInicial.ResumeLayout(false);
-            this.panelPgInicial.PerformLayout();
-            this.panelPerfil.ResumeLayout(false);
-            this.panelPerfil.PerformLayout();
-            this.panelAreasDeTrabalho.ResumeLayout(false);
-            this.panelAreasDeTrabalho.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
+            this.panelAreasDeTrabalho.ResumeLayout(false);
+            this.panelAreasDeTrabalho.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            this.panelMais.ResumeLayout(false);
+            this.panelMais.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            this.panelMeuTrabalho.ResumeLayout(false);
+            this.panelMeuTrabalho.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.panelPgInicial.ResumeLayout(false);
+            this.panelPgInicial.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panelPerfil.ResumeLayout(false);
+            this.panelPerfil.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPerfil)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
@@ -532,5 +546,6 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox16;
+        private System.Windows.Forms.Panel panelConteudo;
     }
 }
