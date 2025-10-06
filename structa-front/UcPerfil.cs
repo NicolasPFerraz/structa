@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace structa_front
 {
-    public partial class Form1 : Form
+    public partial class UcPerfil : UserControl
     {
-        public Form1()
+        public UcPerfil()
         {
             InitializeComponent();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
