@@ -59,5 +59,10 @@ namespace structa_front
         {
             this.Cursor = Cursors.Default;
         }
+
+        private void roundedPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

@@ -76,6 +76,7 @@
             this.roundedPanel.ShadowOffset = 16;
             this.roundedPanel.Size = new System.Drawing.Size(505, 697);
             this.roundedPanel.TabIndex = 1;
+            this.roundedPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.roundedPanel_Paint);
             // 
             // pictureBox2
             // 

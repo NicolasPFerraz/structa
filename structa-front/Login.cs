@@ -16,38 +16,11 @@ namespace structa_front
         {
             InitializeComponent();
             // Centraliza o painel customizado
-            roundedPanel.Left = (this.ClientSize.Width - roundedPanel.Width) / 2;
-            roundedPanel.Top = (this.ClientSize.Height - roundedPanel.Height) / 2;
+            roundedPanel1.Left = (this.ClientSize.Width - roundedPanel1.Width) / 2;
+            roundedPanel1.Top = (this.ClientSize.Height - roundedPanel1.Height) / 2;
 
             // Placeholder para txtUser
-            txtUser.Enter += (s, e) => {
-                if (txtUser.Text == "Digite seu nome ou e-mail") {
-                    txtUser.Text = "";
-                    txtUser.ForeColor = System.Drawing.Color.Black;
-                }
-            };
-            txtUser.Leave += (s, e) => {
-                if (string.IsNullOrWhiteSpace(txtUser.Text)) {
-                    txtUser.Text = "Digite seu nome ou e-mail";
-                    txtUser.ForeColor = System.Drawing.Color.Gray;
-                }
-            };
-
-            // Placeholder para txtPassword
-            txtPassword.Enter += (s, e) => {
-                if (txtPassword.Text == "Digite sua senha") {
-                    txtPassword.Text = "";
-                    txtPassword.ForeColor = System.Drawing.Color.Black;
-                    txtPassword.UseSystemPasswordChar = true;
-                }
-            };
-            txtPassword.Leave += (s, e) => {
-                if (string.IsNullOrWhiteSpace(txtPassword.Text)) {
-                    txtPassword.Text = "Digite sua senha";
-                    txtPassword.ForeColor = System.Drawing.Color.Gray;
-                    txtPassword.UseSystemPasswordChar = false;
-                }
-            };
+          
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -58,11 +31,6 @@ namespace structa_front
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblWelcome_Click(object sender, EventArgs e)
         {
 
         }
@@ -82,19 +50,31 @@ namespace structa_front
 
         }
 
-        private void txtUser_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblUser_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Login_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtSenhaConfirmada_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblRegistrar_Click(object sender, EventArgs e)
+        {
+            CriarConta criarConta = new CriarConta();
+            criarConta.Show();
+            this.Hide();
+        }
+
+        private void lblRegistrar_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Hand;
+        }
+
+        private void lblRegistrar_MouseLeave(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Default;
         }
     }
 }
