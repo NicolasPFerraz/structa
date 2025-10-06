@@ -91,5 +91,10 @@ namespace structa_front
         {
 
         }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

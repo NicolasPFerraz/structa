@@ -43,7 +43,7 @@
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.lblSenhaConfirmar = new System.Windows.Forms.Label();
             this.txtSenhaConfirmada = new System.Windows.Forms.TextBox();
-            this.btnLogin = new System.Windows.Forms.Button();
+            this.btnRegistrar = new System.Windows.Forms.Button();
             this.lblRegister = new System.Windows.Forms.Label();
             this.roundedPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -67,7 +67,7 @@
             this.roundedPanel.Controls.Add(this.txtEmail);
             this.roundedPanel.Controls.Add(this.lblSenhaConfirmar);
             this.roundedPanel.Controls.Add(this.txtSenhaConfirmada);
-            this.roundedPanel.Controls.Add(this.btnLogin);
+            this.roundedPanel.Controls.Add(this.btnRegistrar);
             this.roundedPanel.Controls.Add(this.lblRegister);
             this.roundedPanel.CornerRadius = 10;
             this.roundedPanel.Location = new System.Drawing.Point(461, 85);
@@ -227,19 +227,19 @@
             this.txtSenhaConfirmada.Size = new System.Drawing.Size(371, 27);
             this.txtSenhaConfirmada.TabIndex = 6;
             // 
-            // btnLogin
+            // btnRegistrar
             // 
-            this.btnLogin.BackColor = System.Drawing.Color.Black;
-            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(43, 557);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(423, 45);
-            this.btnLogin.TabIndex = 10;
-            this.btnLogin.Text = "Registrar";
-            this.btnLogin.UseVisualStyleBackColor = false;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            this.btnRegistrar.BackColor = System.Drawing.Color.Black;
+            this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistrar.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.btnRegistrar.ForeColor = System.Drawing.Color.White;
+            this.btnRegistrar.Location = new System.Drawing.Point(43, 557);
+            this.btnRegistrar.Name = "btnRegistrar";
+            this.btnRegistrar.Size = new System.Drawing.Size(423, 45);
+            this.btnRegistrar.TabIndex = 10;
+            this.btnRegistrar.Text = "Registrar";
+            this.btnRegistrar.UseVisualStyleBackColor = false;
+            this.btnRegistrar.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // lblRegister
             // 
@@ -282,7 +282,7 @@
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label lblSenhaConfirmar;
         private System.Windows.Forms.TextBox txtSenhaConfirmada;
-        private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.Button btnRegistrar;
         private System.Windows.Forms.Label lblRegister;
         private System.Windows.Forms.Label lblSenha;
         private System.Windows.Forms.TextBox txtSenha;
