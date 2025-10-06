@@ -44,10 +44,10 @@ namespace structa_front
             this.Hide();
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            FormPrincipal formPrincipal = new FormPrincipal(); 
-            formPrincipal.Show();
+            CriarConta2 criarConta2 = new CriarConta2(); 
+            criarConta2.Show();
             this.Hide();
         }
 

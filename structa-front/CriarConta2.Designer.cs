@@ -1,6 +1,6 @@
 ﻿namespace structa_front
 {
-    partial class Person2
+    partial class CriarConta2
     {
         /// <summary>
         /// Required designer variable.

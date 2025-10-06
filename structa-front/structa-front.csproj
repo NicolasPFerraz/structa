@@ -50,12 +50,6 @@
       <SubType>Form</SubType>
     </Compile>
     <!-- Person form files (preserved) -->
-    <Compile Include="Person.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Person.Designer.cs">
-      <DependentUpon>Person.cs</DependentUpon>
-    </Compile>
     <!-- CriarConta / FormPrincipal / UcPerfil (preservados da outra branch) -->
     <Compile Include="CriarConta.cs">
       <SubType>Form</SubType>
@@ -81,11 +75,11 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Person2.cs">
+    <Compile Include="CriarConta2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Person2.Designer.cs">
-      <DependentUpon>Person2.cs</DependentUpon>
+    <Compile Include="CriarConta2.Designer.cs">
+      <DependentUpon>CriarConta2.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -112,11 +106,8 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Person.resx">
-      <DependentUpon>Person.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Person2.resx">
-      <DependentUpon>Person2.cs</DependentUpon>
+    <EmbeddedResource Include="CriarConta2.resx">
+      <DependentUpon>CriarConta2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UcPerfil.resx">
       <DependentUpon>UcPerfil.cs</DependentUpon>

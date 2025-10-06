@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace structa_front
 {
-    public partial class Person2 : BaseForm
+    public partial class CriarConta2 : BaseForm
     {
-        public Person2()
+        public CriarConta2()
         {
             InitializeComponent();
         }
