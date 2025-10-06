@@ -49,11 +49,25 @@
     <Compile Include="BaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="Person.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Person.Designer.cs">
       <DependentUpon>Person.cs</DependentUpon>
+=======
+    <Compile Include="CriarConta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CriarConta.Designer.cs">
+      <DependentUpon>CriarConta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPrincipal.Designer.cs">
+      <DependentUpon>FormPrincipal.cs</DependentUpon>
+>>>>>>> ef30f0662b72cf8e65e7c1ee32939db39d128a7a
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -72,8 +86,22 @@
     <Compile Include="RoundedPanel.cs">
       <SubType>Component</SubType>
     </Compile>
+<<<<<<< HEAD
     <EmbeddedResource Include="BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>
+=======
+    <Compile Include="UcPerfil.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcPerfil.Designer.cs">
+      <DependentUpon>UcPerfil.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CriarConta.resx">
+      <DependentUpon>CriarConta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPrincipal.resx">
+      <DependentUpon>FormPrincipal.cs</DependentUpon>
+>>>>>>> ef30f0662b72cf8e65e7c1ee32939db39d128a7a
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -92,7 +120,11 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UcPerfil.resx">
+      <DependentUpon>UcPerfil.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -105,6 +137,54 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eye.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Structa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LineSeparator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconePerfil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconePgInicial.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconeMeuTrabalho.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconeMais.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconeAreaDeTrabalho.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconeAreaDeTrabalho %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconeTresPontos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconePesquisar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconeSetaPraBaixo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconeAreaDeTrabalho %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconeSetaPraBaixo %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconeMais %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconePlanoDeGestao.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

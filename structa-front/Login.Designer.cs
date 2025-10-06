@@ -1,6 +1,6 @@
 ﻿namespace structa_front
 {
-    partial class Login
+    partial class Login : BaseForm
     {
         /// <summary>
         /// Variável de designer necessária.
@@ -11,14 +11,6 @@
         /// Limpar os recursos que estão sendo usados.
         /// </summary>
         /// <param name="disposing">true se for necessário descartar os recursos gerenciados; caso contrário, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
 
         #region Código gerado pelo Windows Form Designer
 
@@ -29,6 +21,8 @@
         private void InitializeComponent()
         {
             this.roundedPanel = new structa_front.RoundedPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblRegistreSe = new System.Windows.Forms.Label();
             this.lblWelcome = new System.Windows.Forms.Label();
             this.lblLoginTitle = new System.Windows.Forms.Label();
             this.lblLoginDesc = new System.Windows.Forms.Label();
@@ -36,17 +30,19 @@
             this.txtUser = new System.Windows.Forms.TextBox();
             this.lblPassword = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
-            this.btnTogglePassword = new System.Windows.Forms.Button();
             this.chkRemember = new System.Windows.Forms.CheckBox();
             this.lblForgotPassword = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
             this.lblRegister = new System.Windows.Forms.Label();
             this.roundedPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // roundedPanel
             // 
             this.roundedPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
+            this.roundedPanel.Controls.Add(this.pictureBox1);
+            this.roundedPanel.Controls.Add(this.lblRegistreSe);
             this.roundedPanel.Controls.Add(this.lblWelcome);
             this.roundedPanel.Controls.Add(this.lblLoginTitle);
             this.roundedPanel.Controls.Add(this.lblLoginDesc);
@@ -54,27 +50,64 @@
             this.roundedPanel.Controls.Add(this.txtUser);
             this.roundedPanel.Controls.Add(this.lblPassword);
             this.roundedPanel.Controls.Add(this.txtPassword);
-            this.roundedPanel.Controls.Add(this.btnTogglePassword);
             this.roundedPanel.Controls.Add(this.chkRemember);
             this.roundedPanel.Controls.Add(this.lblForgotPassword);
             this.roundedPanel.Controls.Add(this.btnLogin);
             this.roundedPanel.Controls.Add(this.lblRegister);
             this.roundedPanel.CornerRadius = 10;
+<<<<<<< HEAD
             this.roundedPanel.Location = new System.Drawing.Point(612, 98);
             this.roundedPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.roundedPanel.Name = "roundedPanel";
             this.roundedPanel.ShadowColor = System.Drawing.Color.White;
             this.roundedPanel.ShadowOffset = 16;
             this.roundedPanel.Size = new System.Drawing.Size(673, 863);
+=======
+            this.roundedPanel.Location = new System.Drawing.Point(459, 53);
+            this.roundedPanel.Name = "roundedPanel";
+            this.roundedPanel.ShadowColor = System.Drawing.Color.White;
+            this.roundedPanel.ShadowOffset = 16;
+            this.roundedPanel.Size = new System.Drawing.Size(505, 639);
+>>>>>>> ef30f0662b72cf8e65e7c1ee32939db39d128a7a
             this.roundedPanel.TabIndex = 0;
             this.roundedPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.roundedPanel_Paint);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
+            this.pictureBox1.Image = global::structa_front.Properties.Resources.eye;
+            this.pictureBox1.Location = new System.Drawing.Point(423, 320);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(47, 27);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // lblRegistreSe
+            // 
+            this.lblRegistreSe.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRegistreSe.ForeColor = System.Drawing.Color.Black;
+            this.lblRegistreSe.Location = new System.Drawing.Point(317, 528);
+            this.lblRegistreSe.Name = "lblRegistreSe";
+            this.lblRegistreSe.Size = new System.Drawing.Size(101, 30);
+            this.lblRegistreSe.TabIndex = 12;
+            this.lblRegistreSe.Text = "Registre-se";
+            this.lblRegistreSe.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblRegistreSe.Click += new System.EventHandler(this.lblRegistreSe_Click);
+            this.lblRegistreSe.MouseEnter += new System.EventHandler(this.lblRegistreSe_MouseEnter);
+            this.lblRegistreSe.MouseLeave += new System.EventHandler(this.lblRegistreSe_MouseLeave);
             // 
             // lblWelcome
             // 
             this.lblWelcome.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWelcome.ForeColor = System.Drawing.Color.Black;
+<<<<<<< HEAD
             this.lblWelcome.Location = new System.Drawing.Point(53, 37);
             this.lblWelcome.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+=======
+            this.lblWelcome.Location = new System.Drawing.Point(40, 41);
+>>>>>>> ef30f0662b72cf8e65e7c1ee32939db39d128a7a
             this.lblWelcome.Name = "lblWelcome";
             this.lblWelcome.Size = new System.Drawing.Size(533, 49);
             this.lblWelcome.TabIndex = 0;
@@ -85,19 +118,28 @@
             // 
             this.lblLoginTitle.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLoginTitle.ForeColor = System.Drawing.Color.Black;
+<<<<<<< HEAD
             this.lblLoginTitle.Location = new System.Drawing.Point(53, 98);
             this.lblLoginTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+=======
+            this.lblLoginTitle.Location = new System.Drawing.Point(47, 110);
+>>>>>>> ef30f0662b72cf8e65e7c1ee32939db39d128a7a
             this.lblLoginTitle.Name = "lblLoginTitle";
             this.lblLoginTitle.Size = new System.Drawing.Size(533, 55);
             this.lblLoginTitle.TabIndex = 1;
             this.lblLoginTitle.Text = "Login";
+            this.lblLoginTitle.Click += new System.EventHandler(this.lblLoginTitle_Click);
             // 
             // lblLoginDesc
             // 
             this.lblLoginDesc.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.lblLoginDesc.ForeColor = System.Drawing.Color.Black;
+<<<<<<< HEAD
             this.lblLoginDesc.Location = new System.Drawing.Point(53, 160);
             this.lblLoginDesc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+=======
+            this.lblLoginDesc.Location = new System.Drawing.Point(47, 160);
+>>>>>>> ef30f0662b72cf8e65e7c1ee32939db39d128a7a
             this.lblLoginDesc.Name = "lblLoginDesc";
             this.lblLoginDesc.Size = new System.Drawing.Size(533, 37);
             this.lblLoginDesc.TabIndex = 2;
@@ -106,10 +148,14 @@
             // 
             // lblUser
             // 
-            this.lblUser.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.lblUser.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.lblUser.ForeColor = System.Drawing.Color.Black;
+<<<<<<< HEAD
             this.lblUser.Location = new System.Drawing.Point(53, 222);
             this.lblUser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+=======
+            this.lblUser.Location = new System.Drawing.Point(47, 210);
+>>>>>>> ef30f0662b72cf8e65e7c1ee32939db39d128a7a
             this.lblUser.Name = "lblUser";
             this.lblUser.Size = new System.Drawing.Size(533, 31);
             this.lblUser.TabIndex = 3;
@@ -120,20 +166,30 @@
             // 
             this.txtUser.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.txtUser.ForeColor = System.Drawing.Color.Gray;
+<<<<<<< HEAD
             this.txtUser.Location = new System.Drawing.Point(53, 258);
             this.txtUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(532, 32);
+=======
+            this.txtUser.Location = new System.Drawing.Point(47, 240);
+            this.txtUser.Name = "txtUser";
+            this.txtUser.Size = new System.Drawing.Size(423, 27);
+>>>>>>> ef30f0662b72cf8e65e7c1ee32939db39d128a7a
             this.txtUser.TabIndex = 4;
             this.txtUser.Text = "Digite seu nome ou e-mail";
             this.txtUser.TextChanged += new System.EventHandler(this.txtUser_TextChanged);
             // 
             // lblPassword
             // 
-            this.lblPassword.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.lblPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.lblPassword.ForeColor = System.Drawing.Color.Black;
+<<<<<<< HEAD
             this.lblPassword.Location = new System.Drawing.Point(53, 320);
             this.lblPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+=======
+            this.lblPassword.Location = new System.Drawing.Point(47, 290);
+>>>>>>> ef30f0662b72cf8e65e7c1ee32939db39d128a7a
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(533, 31);
             this.lblPassword.TabIndex = 5;
@@ -143,6 +199,7 @@
             // 
             this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.txtPassword.ForeColor = System.Drawing.Color.Gray;
+<<<<<<< HEAD
             this.txtPassword.Location = new System.Drawing.Point(53, 357);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPassword.Name = "txtPassword";
@@ -165,12 +222,26 @@
             this.btnTogglePassword.UseVisualStyleBackColor = false;
             this.btnTogglePassword.Click += new System.EventHandler(this.btnTogglePassword_Click);
             // 
+=======
+            this.txtPassword.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.txtPassword.Location = new System.Drawing.Point(47, 320);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.Size = new System.Drawing.Size(371, 27);
+            this.txtPassword.TabIndex = 6;
+            this.txtPassword.Text = "Digite sua senha";
+            // 
+>>>>>>> ef30f0662b72cf8e65e7c1ee32939db39d128a7a
             // chkRemember
             // 
             this.chkRemember.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.chkRemember.ForeColor = System.Drawing.Color.Black;
+<<<<<<< HEAD
             this.chkRemember.Location = new System.Drawing.Point(53, 418);
             this.chkRemember.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+=======
+            this.chkRemember.Location = new System.Drawing.Point(47, 370);
+>>>>>>> ef30f0662b72cf8e65e7c1ee32939db39d128a7a
             this.chkRemember.Name = "chkRemember";
             this.chkRemember.Size = new System.Drawing.Size(160, 31);
             this.chkRemember.TabIndex = 8;
@@ -180,8 +251,12 @@
             // 
             this.lblForgotPassword.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.lblForgotPassword.ForeColor = System.Drawing.Color.Gray;
+<<<<<<< HEAD
             this.lblForgotPassword.Location = new System.Drawing.Point(360, 418);
             this.lblForgotPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+=======
+            this.lblForgotPassword.Location = new System.Drawing.Point(277, 370);
+>>>>>>> ef30f0662b72cf8e65e7c1ee32939db39d128a7a
             this.lblForgotPassword.Name = "lblForgotPassword";
             this.lblForgotPassword.Size = new System.Drawing.Size(227, 31);
             this.lblForgotPassword.TabIndex = 9;
@@ -194,10 +269,16 @@
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
             this.btnLogin.ForeColor = System.Drawing.Color.White;
+<<<<<<< HEAD
             this.btnLogin.Location = new System.Drawing.Point(53, 480);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(533, 55);
+=======
+            this.btnLogin.Location = new System.Drawing.Point(47, 420);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(423, 45);
+>>>>>>> ef30f0662b72cf8e65e7c1ee32939db39d128a7a
             this.btnLogin.TabIndex = 10;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = false;
@@ -205,22 +286,33 @@
             // 
             // lblRegister
             // 
-            this.lblRegister.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.lblRegister.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.lblRegister.ForeColor = System.Drawing.Color.Gray;
+<<<<<<< HEAD
             this.lblRegister.Location = new System.Drawing.Point(53, 566);
             this.lblRegister.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRegister.Name = "lblRegister";
             this.lblRegister.Size = new System.Drawing.Size(533, 37);
+=======
+            this.lblRegister.Location = new System.Drawing.Point(50, 528);
+            this.lblRegister.Name = "lblRegister";
+            this.lblRegister.Size = new System.Drawing.Size(327, 30);
+>>>>>>> ef30f0662b72cf8e65e7c1ee32939db39d128a7a
             this.lblRegister.TabIndex = 11;
-            this.lblRegister.Text = "Não possui uma conta ainda? Registre-se";
+            this.lblRegister.Text = "Não possui uma conta ainda?";
             this.lblRegister.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+<<<<<<< HEAD
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1899, 1055);
+=======
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(12)))), ((int)(((byte)(40)))));
+            this.ClientSize = new System.Drawing.Size(1424, 861);
+>>>>>>> ef30f0662b72cf8e65e7c1ee32939db39d128a7a
             this.Controls.Add(this.roundedPanel);
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MinimumSize = new System.Drawing.Size(1914, 1018);
@@ -229,6 +321,7 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.roundedPanel.ResumeLayout(false);
             this.roundedPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -243,11 +336,12 @@
         private System.Windows.Forms.TextBox txtUser;
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.Button btnTogglePassword;
         private System.Windows.Forms.CheckBox chkRemember;
         private System.Windows.Forms.Label lblForgotPassword;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Label lblRegister;
+        private System.Windows.Forms.Label lblRegistreSe;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
