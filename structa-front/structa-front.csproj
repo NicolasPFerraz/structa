@@ -46,14 +46,72 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="BaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <!-- Person form files (preserved) -->
+    <!-- CriarConta / FormPrincipal / UcPerfil (preservados da outra branch) -->
+    <Compile Include="CriarConta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CriarConta.Designer.cs">
+      <DependentUpon>CriarConta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPrincipal.Designer.cs">
+      <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UcPerfil.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcPerfil.Designer.cs">
+      <DependentUpon>UcPerfil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CriarConta2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CriarConta2.Designer.cs">
+      <DependentUpon>CriarConta2.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RoundedPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UcQtdPessoas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcQtdPessoas.Designer.cs">
+      <DependentUpon>UcQtdPessoas.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="BaseForm.resx">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CriarConta.resx">
+      <DependentUpon>CriarConta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPrincipal.resx">
+      <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CriarConta2.resx">
+      <DependentUpon>CriarConta2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcPerfil.resx">
+      <DependentUpon>UcPerfil.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -62,7 +120,11 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UcQtdPessoas.resx">
+      <DependentUpon>UcQtdPessoas.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -75,6 +137,25 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <!-- Resources -->
+  <ItemGroup>
+    <None Include="Resources\eye.png" />
+    <None Include="Resources\Structa.png" />
+    <None Include="Resources\LineSeparator.png" />
+    <None Include="Resources\IconePerfil.png" />
+    <None Include="Resources\IconePgInicial.png" />
+    <None Include="Resources\IconeMeuTrabalho.png" />
+    <None Include="Resources\IconeMais.png" />
+    <None Include="Resources\IconeAreaDeTrabalho.png" />
+    <None Include="Resources\IconeAreaDeTrabalho %282%29.png" />
+    <None Include="Resources\IconeTresPontos.png" />
+    <None Include="Resources\IconePesquisar.png" />
+    <None Include="Resources\IconeSetaPraBaixo.png" />
+    <None Include="Resources\IconeAreaDeTrabalho %283%29.png" />
+    <None Include="Resources\IconeSetaPraBaixo %282%29.png" />
+    <None Include="Resources\IconeMais %282%29.png" />
+    <None Include="Resources\IconePlanoDeGestao.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

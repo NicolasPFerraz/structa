@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace structa_front
 {
-    public partial class Form1 : Form
+    public partial class Nomear_QD : Form
     {
-        public Form1()
+        public Nomear_QD()
         {
             InitializeComponent();
         }
