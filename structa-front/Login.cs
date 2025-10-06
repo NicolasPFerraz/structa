@@ -76,5 +76,17 @@ namespace structa_front
         {
             this.Cursor = Cursors.Default;
         }
+
+        private void lblLoginTitulo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            FormPrincipal formPrincipal = new FormPrincipal();
+            formPrincipal.Show();
+            this.Hide();
+        }
     }
 }
