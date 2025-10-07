@@ -1,4 +1,4 @@
-﻿namespace structa_front
+namespace structa_front
 {
     partial class FormPrincipal
     {
@@ -60,14 +60,7 @@
             this.picPerfil = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelConteudo = new System.Windows.Forms.Panel();
-            this.panelTop = new System.Windows.Forms.Panel();
-            this.roundedPanel1 = new structa_front.RoundedPanel();
-            this.btnAdicionarMembros = new System.Windows.Forms.PictureBox();
-            this.btnAreaDeTrabalho = new System.Windows.Forms.PictureBox();
-            this.btnNotificacoes = new System.Windows.Forms.PictureBox();
-            this.lblPagina = new System.Windows.Forms.Label();
-            this.lblPaginaMin = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panelMenu.SuspendLayout();
             this.menuItems.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -92,11 +85,7 @@
             this.panelPerfil.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPerfil)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panelTop.SuspendLayout();
-            this.roundedPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAdicionarMembros)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAreaDeTrabalho)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnNotificacoes)).BeginInit();
+            this.panelConteudo.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -427,7 +416,6 @@
             // lblPerfil
             // 
             this.lblPerfil.AutoSize = true;
-            this.lblPerfil.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblPerfil.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.lblPerfil.ForeColor = System.Drawing.Color.White;
             this.lblPerfil.Location = new System.Drawing.Point(29, 11);
@@ -442,7 +430,6 @@
             // 
             // picPerfil
             // 
-            this.picPerfil.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picPerfil.Image = global::structa_front.Properties.Resources.IconePerfil;
             this.picPerfil.Location = new System.Drawing.Point(3, 9);
             this.picPerfil.Margin = new System.Windows.Forms.Padding(0);
@@ -451,7 +438,6 @@
             this.picPerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.picPerfil.TabIndex = 3;
             this.picPerfil.TabStop = false;
-            this.picPerfil.Click += new System.EventHandler(this.lblPerfil_Click);
             // 
             // pictureBox2
             // 
@@ -465,116 +451,25 @@
             // 
             // panelConteudo
             // 
-            this.panelConteudo.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelConteudo.Location = new System.Drawing.Point(247, 75);
+            this.panelConteudo.Controls.Add(this.textBox1);
+            this.panelConteudo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelConteudo.Location = new System.Drawing.Point(247, 0);
             this.panelConteudo.Name = "panelConteudo";
-            this.panelConteudo.Size = new System.Drawing.Size(1177, 786);
+            this.panelConteudo.Size = new System.Drawing.Size(1177, 861);
             this.panelConteudo.TabIndex = 1;
-            this.panelConteudo.Paint += new System.Windows.Forms.PaintEventHandler(this.panelConteudo_Paint);
             // 
-            // panelTop
+            // textBox1
             // 
-            this.panelTop.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.panelTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(30)))), ((int)(((byte)(76)))));
-            this.panelTop.Controls.Add(this.roundedPanel1);
-            this.panelTop.Controls.Add(this.lblPagina);
-            this.panelTop.Controls.Add(this.lblPaginaMin);
-            this.panelTop.Controls.Add(this.label7);
-            this.panelTop.Location = new System.Drawing.Point(247, 0);
-            this.panelTop.Name = "panelTop";
-            this.panelTop.Size = new System.Drawing.Size(1177, 76);
-            this.panelTop.TabIndex = 0;
-            // 
-            // roundedPanel1
-            // 
-            this.roundedPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.roundedPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(19)))), ((int)(((byte)(45)))));
-            this.roundedPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.roundedPanel1.Controls.Add(this.btnAdicionarMembros);
-            this.roundedPanel1.Controls.Add(this.btnAreaDeTrabalho);
-            this.roundedPanel1.Controls.Add(this.btnNotificacoes);
-            this.roundedPanel1.CornerRadius = 4;
-            this.roundedPanel1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.roundedPanel1.Location = new System.Drawing.Point(975, 0);
-            this.roundedPanel1.Name = "roundedPanel1";
-            this.roundedPanel1.ShadowColor = System.Drawing.Color.White;
-            this.roundedPanel1.ShadowOffset = 16;
-            this.roundedPanel1.Size = new System.Drawing.Size(190, 63);
-            this.roundedPanel1.TabIndex = 1;
-            // 
-            // btnAdicionarMembros
-            // 
-            this.btnAdicionarMembros.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdicionarMembros.Image = global::structa_front.Properties.Resources.IconeAdicionarMembros;
-            this.btnAdicionarMembros.Location = new System.Drawing.Point(143, 19);
-            this.btnAdicionarMembros.Name = "btnAdicionarMembros";
-            this.btnAdicionarMembros.Size = new System.Drawing.Size(24, 23);
-            this.btnAdicionarMembros.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.btnAdicionarMembros.TabIndex = 3;
-            this.btnAdicionarMembros.TabStop = false;
-            this.btnAdicionarMembros.Click += new System.EventHandler(this.btnAdicionarMembros_Click);
-            // 
-            // btnAreaDeTrabalho
-            // 
-            this.btnAreaDeTrabalho.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAreaDeTrabalho.Image = global::structa_front.Properties.Resources.IconeAreasDeTrabalho;
-            this.btnAreaDeTrabalho.Location = new System.Drawing.Point(82, 19);
-            this.btnAreaDeTrabalho.Name = "btnAreaDeTrabalho";
-            this.btnAreaDeTrabalho.Size = new System.Drawing.Size(24, 23);
-            this.btnAreaDeTrabalho.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.btnAreaDeTrabalho.TabIndex = 2;
-            this.btnAreaDeTrabalho.TabStop = false;
-            this.btnAreaDeTrabalho.Click += new System.EventHandler(this.btnAreaDeTrabalho_Click);
-            // 
-            // btnNotificacoes
-            // 
-            this.btnNotificacoes.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNotificacoes.Image = global::structa_front.Properties.Resources.IconeNotificacoes;
-            this.btnNotificacoes.Location = new System.Drawing.Point(22, 19);
-            this.btnNotificacoes.Name = "btnNotificacoes";
-            this.btnNotificacoes.Size = new System.Drawing.Size(24, 23);
-            this.btnNotificacoes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.btnNotificacoes.TabIndex = 1;
-            this.btnNotificacoes.TabStop = false;
-            this.btnNotificacoes.Click += new System.EventHandler(this.btnNotificacoes_Click);
-            // 
-            // lblPagina
-            // 
-            this.lblPagina.AutoSize = true;
-            this.lblPagina.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPagina.ForeColor = System.Drawing.Color.White;
-            this.lblPagina.Location = new System.Drawing.Point(32, 44);
-            this.lblPagina.Name = "lblPagina";
-            this.lblPagina.Size = new System.Drawing.Size(87, 16);
-            this.lblPagina.TabIndex = 3;
-            this.lblPagina.Text = "Página inicial";
-            // 
-            // lblPaginaMin
-            // 
-            this.lblPaginaMin.AutoSize = true;
-            this.lblPaginaMin.ForeColor = System.Drawing.Color.White;
-            this.lblPaginaMin.Location = new System.Drawing.Point(91, 20);
-            this.lblPaginaMin.Name = "lblPaginaMin";
-            this.lblPaginaMin.Size = new System.Drawing.Size(69, 13);
-            this.lblPaginaMin.TabIndex = 1;
-            this.lblPaginaMin.Text = "Página inicial";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(174)))), ((int)(((byte)(192)))));
-            this.label7.Location = new System.Drawing.Point(32, 20);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(56, 13);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Páginas  /";
+            this.textBox1.Location = new System.Drawing.Point(390, 162);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 0;
             // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1424, 861);
-            this.Controls.Add(this.panelTop);
             this.Controls.Add(this.panelConteudo);
             this.Controls.Add(this.panelMenu);
             this.Name = "FormPrincipal";
@@ -610,12 +505,8 @@
             this.panelPerfil.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPerfil)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.panelTop.ResumeLayout(false);
-            this.panelTop.PerformLayout();
-            this.roundedPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnAdicionarMembros)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAreaDeTrabalho)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnNotificacoes)).EndInit();
+            this.panelConteudo.ResumeLayout(false);
+            this.panelConteudo.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -655,13 +546,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox16;
         private System.Windows.Forms.Panel panelConteudo;
-        private System.Windows.Forms.Panel panelTop;
-        private System.Windows.Forms.Label lblPaginaMin;
-        private System.Windows.Forms.Label label7;
-        private RoundedPanel roundedPanel1;
-        private System.Windows.Forms.Label lblPagina;
-        private System.Windows.Forms.PictureBox btnNotificacoes;
-        private System.Windows.Forms.PictureBox btnAreaDeTrabalho;
-        private System.Windows.Forms.PictureBox btnAdicionarMembros;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
