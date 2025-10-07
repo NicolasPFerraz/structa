@@ -23,6 +23,16 @@ namespace structa_front
             lblPaginaMin.Text = textoPagina; // Exibe no label
         }
 
+        public void AbrirPagina(UserControl pagina)
+        {
+            // Limpa o painel de conteúdo
+            panelConteudo.Controls.Clear();
+            // Configura a página para preencher o painel
+            pagina.Dock = DockStyle.Bottom;
+            // Adiciona a página ao painel de conteúdo
+            panelConteudo.Controls.Add(pagina);
+        }
+
         private void panelPerfil_Paint(object sender, PaintEventArgs e)
         {
         }
@@ -30,16 +40,6 @@ namespace structa_front
         private void lblPerfil_Click(object sender, EventArgs e)
         {
             AbrirPagina(new UcPerfil());
-        }
-
-        public void AbrirPagina(UserControl pagina)
-        {
-            // Limpa o painel de conteúdo
-            panelConteudo.Controls.Clear();
-            // Configura a página para preencher o painel
-            pagina.Dock = DockStyle.Fill;
-            // Adiciona a página ao painel de conteúdo
-            panelConteudo.Controls.Add(pagina);
         }
 
         private void panelConteudo_Paint(object sender, PaintEventArgs e)
@@ -51,6 +51,17 @@ namespace structa_front
         {
             Notificacoes notificacoes = new Notificacoes();
             notificacoes.Show();
+        }
+
+        private void btnAreaDeTrabalho_Click(object sender, EventArgs e)
+        {
+            AbrirPagina(new UcPaginaInicial());
+        }
+
+        private void btnAdicionarMembros_Click(object sender, EventArgs e)
+        {
+            AdicionarMembros convidarMembros = new AdicionarMembros();
+            convidarMembros.Show();
         }
     }
 }

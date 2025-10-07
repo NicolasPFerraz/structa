@@ -1,6 +1,6 @@
 ﻿namespace structa_front
 {
-    partial class UcPerfil
+    partial class UcPaginaInicial
     {
         /// <summary> 
         /// Variável de designer necessária.
@@ -28,26 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblNotificacoesComMencao = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // label1
+            // lblNotificacoesComMencao
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(466, 309);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "User Control - Perfil";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.lblNotificacoesComMencao.AutoSize = true;
+            this.lblNotificacoesComMencao.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblNotificacoesComMencao.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.lblNotificacoesComMencao.Location = new System.Drawing.Point(553, 420);
+            this.lblNotificacoesComMencao.Name = "lblNotificacoesComMencao";
+            this.lblNotificacoesComMencao.Size = new System.Drawing.Size(69, 13);
+            this.lblNotificacoesComMencao.TabIndex = 36;
+            this.lblNotificacoesComMencao.Text = "Página inicial";
             // 
-            // UcPerfil
+            // UcPaginaInicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.label1);
-            this.Name = "UcPerfil";
-            this.Size = new System.Drawing.Size(1024, 630);
+            this.Controls.Add(this.lblNotificacoesComMencao);
+            this.Name = "UcPaginaInicial";
+            this.Size = new System.Drawing.Size(1177, 861);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -55,6 +56,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblNotificacoesComMencao;
     }
 }
