@@ -63,6 +63,12 @@
     <Compile Include="FormPrincipal.Designer.cs">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Notificacoes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Notificacoes.Designer.cs">
+      <DependentUpon>Notificacoes.cs</DependentUpon>
+    </Compile>
     <Compile Include="UcPerfil.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -108,6 +114,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CriarConta2.resx">
       <DependentUpon>CriarConta2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Notificacoes.resx">
+      <DependentUpon>Notificacoes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UcPerfil.resx">
       <DependentUpon>UcPerfil.cs</DependentUpon>
@@ -168,6 +177,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\IconeAdicionarMembros.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconePesquisar1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconePesquisar %282%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

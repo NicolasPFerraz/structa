@@ -17,10 +17,7 @@ namespace structa_front
             InitializeComponent();
             // Centraliza o painel customizado
             roundedPanel1.Left = (this.ClientSize.Width - roundedPanel1.Width) / 2;
-            roundedPanel1.Top = (this.ClientSize.Height - roundedPanel1.Height) / 2;
-
-            // Placeholder para txtUser
-          
+            roundedPanel1.Top = (this.ClientSize.Height - roundedPanel1.Height) / 2;          
         }
 
         private void Form1_Load(object sender, EventArgs e)

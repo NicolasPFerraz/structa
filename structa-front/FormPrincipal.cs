@@ -46,5 +46,11 @@ namespace structa_front
         {
 
         }
+
+        private void btnNotificacoes_Click(object sender, EventArgs e)
+        {
+            Notificacoes notificacoes = new Notificacoes();
+            notificacoes.Show();
+        }
     }
 }
