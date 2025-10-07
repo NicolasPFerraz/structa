@@ -157,5 +157,8 @@
     <None Include="Resources\IconeMais %282%29.png" />
     <None Include="Resources\IconePlanoDeGestao.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Image viewer-rafiki %281%29 1 %282%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

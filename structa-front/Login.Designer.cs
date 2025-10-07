@@ -77,7 +77,7 @@
             this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.checkBox1.Location = new System.Drawing.Point(46, 383);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(104, 21);
+            this.checkBox1.Size = new System.Drawing.Size(123, 24);
             this.checkBox1.TabIndex = 33;
             this.checkBox1.Text = "Lembrar-me";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -86,9 +86,9 @@
             // 
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(81, 516);
+            this.label1.Location = new System.Drawing.Point(43, 516);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(218, 30);
+            this.label1.Size = new System.Drawing.Size(298, 30);
             this.label1.TabIndex = 32;
             this.label1.Text = "Ainda não possui uma conta?";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -121,16 +121,16 @@
             this.txtSenha.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.txtSenha.Location = new System.Drawing.Point(42, 324);
             this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Size = new System.Drawing.Size(371, 27);
+            this.txtSenha.Size = new System.Drawing.Size(371, 32);
             this.txtSenha.TabIndex = 30;
             // 
             // lblRegistrar
             // 
             this.lblRegistrar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRegistrar.ForeColor = System.Drawing.Color.Black;
-            this.lblRegistrar.Location = new System.Drawing.Point(292, 516);
+            this.lblRegistrar.Location = new System.Drawing.Point(335, 516);
             this.lblRegistrar.Name = "lblRegistrar";
-            this.lblRegistrar.Size = new System.Drawing.Size(104, 30);
+            this.lblRegistrar.Size = new System.Drawing.Size(127, 30);
             this.lblRegistrar.TabIndex = 26;
             this.lblRegistrar.Text = "Registre-se";
             this.lblRegistrar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -154,7 +154,7 @@
             this.lblLoginTitulo.ForeColor = System.Drawing.Color.Black;
             this.lblLoginTitulo.Location = new System.Drawing.Point(39, 99);
             this.lblLoginTitulo.Name = "lblLoginTitulo";
-            this.lblLoginTitulo.Size = new System.Drawing.Size(400, 45);
+            this.lblLoginTitulo.Size = new System.Drawing.Size(400, 59);
             this.lblLoginTitulo.TabIndex = 20;
             this.lblLoginTitulo.Text = "Login";
             this.lblLoginTitulo.Click += new System.EventHandler(this.lblLoginTitulo_Click);
@@ -175,7 +175,7 @@
             this.txtEmail.ForeColor = System.Drawing.Color.Gray;
             this.txtEmail.Location = new System.Drawing.Point(39, 229);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(423, 27);
+            this.txtEmail.Size = new System.Drawing.Size(423, 32);
             this.txtEmail.TabIndex = 22;
             this.txtEmail.Text = "Digite seu nome ou e-mail";
             // 

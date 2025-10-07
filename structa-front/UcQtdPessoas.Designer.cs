@@ -46,17 +46,19 @@
             this.panelQtdPessoas.Controls.Add(this.label1);
             this.panelQtdPessoas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelQtdPessoas.Location = new System.Drawing.Point(0, 0);
+            this.panelQtdPessoas.Margin = new System.Windows.Forms.Padding(4);
             this.panelQtdPessoas.Name = "panelQtdPessoas";
-            this.panelQtdPessoas.Size = new System.Drawing.Size(1440, 528);
+            this.panelQtdPessoas.Size = new System.Drawing.Size(1920, 650);
             this.panelQtdPessoas.TabIndex = 17;
             this.panelQtdPessoas.Paint += new System.Windows.Forms.PaintEventHandler(this.panelQtdPessoas_Paint);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(458, 213);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(614, 203);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 28);
+            this.button1.Size = new System.Drawing.Size(133, 34);
             this.button1.TabIndex = 19;
             this.button1.Text = "Avançar";
             this.button1.UseVisualStyleBackColor = true;
@@ -64,30 +66,30 @@
             // 
             // BTN_Equipe_G
             // 
-            this.BTN_Equipe_G.Location = new System.Drawing.Point(434, 150);
-            this.BTN_Equipe_G.Margin = new System.Windows.Forms.Padding(2);
+            this.BTN_Equipe_G.Location = new System.Drawing.Point(578, 98);
+            this.BTN_Equipe_G.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BTN_Equipe_G.Name = "BTN_Equipe_G";
-            this.BTN_Equipe_G.Size = new System.Drawing.Size(100, 28);
+            this.BTN_Equipe_G.Size = new System.Drawing.Size(133, 34);
             this.BTN_Equipe_G.TabIndex = 18;
             this.BTN_Equipe_G.Text = "15-500";
             this.BTN_Equipe_G.UseVisualStyleBackColor = true;
             // 
             // BTN_Equipe_P
             // 
-            this.BTN_Equipe_P.Location = new System.Drawing.Point(276, 150);
-            this.BTN_Equipe_P.Margin = new System.Windows.Forms.Padding(2);
+            this.BTN_Equipe_P.Location = new System.Drawing.Point(367, 98);
+            this.BTN_Equipe_P.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BTN_Equipe_P.Name = "BTN_Equipe_P";
-            this.BTN_Equipe_P.Size = new System.Drawing.Size(100, 28);
+            this.BTN_Equipe_P.Size = new System.Drawing.Size(133, 34);
             this.BTN_Equipe_P.TabIndex = 17;
             this.BTN_Equipe_P.Text = "1-15";
             this.BTN_Equipe_P.UseVisualStyleBackColor = true;
             // 
             // BTN_Solo
             // 
-            this.BTN_Solo.Location = new System.Drawing.Point(108, 150);
-            this.BTN_Solo.Margin = new System.Windows.Forms.Padding(2);
+            this.BTN_Solo.Location = new System.Drawing.Point(143, 98);
+            this.BTN_Solo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BTN_Solo.Name = "BTN_Solo";
-            this.BTN_Solo.Size = new System.Drawing.Size(100, 28);
+            this.BTN_Solo.Size = new System.Drawing.Size(133, 34);
             this.BTN_Solo.TabIndex = 16;
             this.BTN_Solo.Text = "Apenas eu";
             this.BTN_Solo.UseVisualStyleBackColor = true;
@@ -95,22 +97,22 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 34.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 22F);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(97, 74);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(132, 32);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(783, 54);
+            this.label1.Size = new System.Drawing.Size(604, 50);
             this.label1.TabIndex = 15;
             this.label1.Text = "Quantas pessoas há na sua equipe?";
             // 
             // UcQtdPessoas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panelQtdPessoas);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UcQtdPessoas";
-            this.Size = new System.Drawing.Size(1440, 528);
+            this.Size = new System.Drawing.Size(1920, 650);
             this.panelQtdPessoas.ResumeLayout(false);
             this.panelQtdPessoas.PerformLayout();
             this.ResumeLayout(false);
