@@ -86,9 +86,9 @@
             // 
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(81, 516);
+            this.label1.Location = new System.Drawing.Point(43, 516);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(218, 30);
+            this.label1.Size = new System.Drawing.Size(298, 30);
             this.label1.TabIndex = 32;
             this.label1.Text = "Ainda não possui uma conta?";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -128,9 +128,9 @@
             // 
             this.lblRegistrar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRegistrar.ForeColor = System.Drawing.Color.Black;
-            this.lblRegistrar.Location = new System.Drawing.Point(292, 516);
+            this.lblRegistrar.Location = new System.Drawing.Point(335, 516);
             this.lblRegistrar.Name = "lblRegistrar";
-            this.lblRegistrar.Size = new System.Drawing.Size(104, 30);
+            this.lblRegistrar.Size = new System.Drawing.Size(127, 30);
             this.lblRegistrar.TabIndex = 26;
             this.lblRegistrar.Text = "Registre-se";
             this.lblRegistrar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
