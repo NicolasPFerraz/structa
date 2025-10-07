@@ -60,6 +60,7 @@
             this.picPerfil = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelConteudo = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panelMenu.SuspendLayout();
             this.menuItems.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -84,6 +85,7 @@
             this.panelPerfil.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPerfil)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panelConteudo.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -449,11 +451,19 @@
             // 
             // panelConteudo
             // 
+            this.panelConteudo.Controls.Add(this.textBox1);
             this.panelConteudo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelConteudo.Location = new System.Drawing.Point(247, 0);
             this.panelConteudo.Name = "panelConteudo";
             this.panelConteudo.Size = new System.Drawing.Size(1177, 861);
             this.panelConteudo.TabIndex = 1;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(390, 162);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 0;
             // 
             // FormPrincipal
             // 
@@ -495,6 +505,8 @@
             this.panelPerfil.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPerfil)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panelConteudo.ResumeLayout(false);
+            this.panelConteudo.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -534,5 +546,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox16;
         private System.Windows.Forms.Panel panelConteudo;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
