@@ -1,0 +1,35 @@
+[33mcommit 9fa7f6ce0adc61fe904ace3605de96a9b8821bad[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mdudu[m[33m)[m
+Author: Henri-Dud3 <Dudishenri16@gmail.com>
+Date:   Sat Oct 4 17:27:33 2025 -0300
+
+    Adicionando Arquivos de personalização
+
+[33mcommit 2c07f2a6919253fa0120b2e4833843af58313b65[m
+Author: NicolasPFerraz <nicolaspaduaferraz54321@gmail.com>
+Date:   Fri Oct 3 09:39:46 2025 -0300
+
+    Base inicial
+
+[33mcommit e92f9410221d9f31075939187ccc5e42fff22c43[m
+Author: Henri-Dud3 <Dudishenri16@gmail.com>
+Date:   Fri Oct 3 08:48:50 2025 -0300
+
+    Responsividade com IA
+
+[33mcommit e991e93122294f7cc54663258fa2e93cb3fc9e5f[m
+Author: NicolasPFerraz <nicolaspaduaferraz54321@gmail.com>
+Date:   Wed Oct 1 21:02:58 2025 -0300
+
+    style: cria a base da tela de login
+
+[33mcommit 54e9312729916ce20fdb111ece351ddaa3772b44[m[33m ([m[1;31morigin/lauany[m[33m, [m[1;31morigin/caio[m[33m, [m[1;32mmain[m[33m)[m
+Author: NicolasPFerraz <nicolaspaduaferraz54321@gmail.com>
+Date:   Wed Oct 1 20:16:46 2025 -0300
+
+    Adicionar arquivos de projeto.
+
+[33mcommit 89163c2f8b38387ceb4d02756d63499a13777a0d[m
+Author: NicolasPFerraz <nicolaspaduaferraz54321@gmail.com>
+Date:   Wed Oct 1 20:16:43 2025 -0300
+
+    Adicione .gitattributes e .gitignore.

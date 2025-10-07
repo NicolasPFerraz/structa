@@ -77,7 +77,7 @@
             this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.checkBox1.Location = new System.Drawing.Point(46, 383);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(104, 21);
+            this.checkBox1.Size = new System.Drawing.Size(123, 24);
             this.checkBox1.TabIndex = 33;
             this.checkBox1.Text = "Lembrar-me";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -121,7 +121,7 @@
             this.txtSenha.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.txtSenha.Location = new System.Drawing.Point(42, 324);
             this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Size = new System.Drawing.Size(371, 27);
+            this.txtSenha.Size = new System.Drawing.Size(371, 32);
             this.txtSenha.TabIndex = 30;
             // 
             // lblRegistrar
@@ -154,7 +154,7 @@
             this.lblLoginTitulo.ForeColor = System.Drawing.Color.Black;
             this.lblLoginTitulo.Location = new System.Drawing.Point(39, 99);
             this.lblLoginTitulo.Name = "lblLoginTitulo";
-            this.lblLoginTitulo.Size = new System.Drawing.Size(400, 45);
+            this.lblLoginTitulo.Size = new System.Drawing.Size(400, 59);
             this.lblLoginTitulo.TabIndex = 20;
             this.lblLoginTitulo.Text = "Login";
             this.lblLoginTitulo.Click += new System.EventHandler(this.lblLoginTitulo_Click);
@@ -175,7 +175,7 @@
             this.txtEmail.ForeColor = System.Drawing.Color.Gray;
             this.txtEmail.Location = new System.Drawing.Point(39, 229);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(423, 27);
+            this.txtEmail.Size = new System.Drawing.Size(423, 32);
             this.txtEmail.TabIndex = 22;
             this.txtEmail.Text = "Digite seu nome ou e-mail";
             // 

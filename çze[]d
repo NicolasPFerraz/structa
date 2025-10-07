@@ -1,0 +1,100 @@
+[33mcommit 0c9c5dc07e110643f9d6a0ea4e52f22c3f8ee8a7[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mdudu[m[33m, [m[1;31morigin/dudu[m[33m)[m
+Author: NicolasPFerraz <nicolaspaduaferraz54321@gmail.com>
+Date:   Mon Oct 6 17:58:10 2025 -0300
+
+    Adiciona navegação entre formulários
+
+[33mcommit b5d35849e93ff9a477580dc92a6e39904426dd26[m
+Author: NicolasPFerraz <nicolaspaduaferraz54321@gmail.com>
+Date:   Mon Oct 6 17:55:25 2025 -0300
+
+    Adiciona formulário de CriarConta2
+
+[33mcommit 23e52e37b5c281570beb2d850da5aaafe59a2252[m
+Merge: 7b98486 6c69913
+Author: NicolasPFerraz <nicolaspaduaferraz54321@gmail.com>
+Date:   Mon Oct 6 17:16:36 2025 -0300
+
+    Merge branch 'main' of https://github.com/NicolasPFerraz/structa into dudu
+
+[33mcommit 6c69913f4a05612bec285648b431dd6db8496835[m
+Merge: 54e9312 ef30f06
+Author: Nicolas Padua <120571274+NicolasPFerraz@users.noreply.github.com>
+Date:   Mon Oct 6 17:13:14 2025 -0300
+
+    Merge pull request #1 from NicolasPFerraz/nicolas
+    
+    Nicolas
+
+[33mcommit 7b98486675bf8ee37ec0d2c36a27690e4534e031[m
+Merge: 9fa7f6c ef30f06
+Author: NicolasPFerraz <nicolaspaduaferraz54321@gmail.com>
+Date:   Mon Oct 6 17:11:13 2025 -0300
+
+    Resolve conflitos
+
+[33mcommit ef30f0662b72cf8e65e7c1ee32939db39d128a7a[m
+Author: NicolasPFerraz <nicolaspaduaferraz54321@gmail.com>
+Date:   Sun Oct 5 14:32:32 2025 -0300
+
+    Adiciona formulário de criar conta e cria navegação entre os formulários
+
+[33mcommit 43c6a578bc0d42f23d2a3f119aeedaa646ef0203[m
+Author: NicolasPFerraz <nicolaspaduaferraz54321@gmail.com>
+Date:   Sun Oct 5 14:05:11 2025 -0300
+
+    Adiciona base para abrir um User Control (navegação entre páginas)
+
+[33mcommit 47d6a2a99a99806fe6007bf135e61695c06b6f6a[m
+Author: NicolasPFerraz <nicolaspaduaferraz54321@gmail.com>
+Date:   Sun Oct 5 13:55:42 2025 -0300
+
+    Adiciona UcPerfil
+
+[33mcommit 302c9dcb81d9ff658255c92d88f74b7a555239fa[m
+Author: NicolasPFerraz <nicolaspaduaferraz54321@gmail.com>
+Date:   Sun Oct 5 13:05:13 2025 -0300
+
+    Adiciona FormPrincipal, que inclui o menu lateral
+
+[33mcommit 3f772d64f051bf9a0bd3990f8a74957f57f5fa24[m
+Author: NicolasPFerraz <nicolaspaduaferraz54321@gmail.com>
+Date:   Sat Oct 4 18:38:47 2025 -0300
+
+    Melhora a estilização do formulário de Login
+
+[33mcommit 9fa7f6ce0adc61fe904ace3605de96a9b8821bad[m
+Author: Henri-Dud3 <Dudishenri16@gmail.com>
+Date:   Sat Oct 4 17:27:33 2025 -0300
+
+    Adicionando Arquivos de personalização
+
+[33mcommit 2c07f2a6919253fa0120b2e4833843af58313b65[m
+Author: NicolasPFerraz <nicolaspaduaferraz54321@gmail.com>
+Date:   Fri Oct 3 09:39:46 2025 -0300
+
+    Base inicial
+
+[33mcommit e92f9410221d9f31075939187ccc5e42fff22c43[m
+Author: Henri-Dud3 <Dudishenri16@gmail.com>
+Date:   Fri Oct 3 08:48:50 2025 -0300
+
+    Responsividade com IA
+
+[33mcommit e991e93122294f7cc54663258fa2e93cb3fc9e5f[m
+Author: NicolasPFerraz <nicolaspaduaferraz54321@gmail.com>
+Date:   Wed Oct 1 21:02:58 2025 -0300
+
+    style: cria a base da tela de login
+
+[33mcommit 54e9312729916ce20fdb111ece351ddaa3772b44[m[33m ([m[1;31morigin/lauany[m[33m, [m[1;31morigin/caio[m[33m, [m[1;32mmain[m[33m)[m
+Author: NicolasPFerraz <nicolaspaduaferraz54321@gmail.com>
+Date:   Wed Oct 1 20:16:46 2025 -0300
+
+    Adicionar arquivos de projeto.
+
+[33mcommit 89163c2f8b38387ceb4d02756d63499a13777a0d[m
+Author: NicolasPFerraz <nicolaspaduaferraz54321@gmail.com>
+Date:   Wed Oct 1 20:16:43 2025 -0300
+
+    Adicione .gitattributes e .gitignore.
