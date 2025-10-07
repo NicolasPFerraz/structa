@@ -160,5 +160,14 @@
   <ItemGroup>
     <None Include="Resources\Image viewer-rafiki %281%29 1 %282%29.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconeNotificacoes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconeAreasDeTrabalho.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconeAdicionarMembros.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

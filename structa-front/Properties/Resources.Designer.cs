@@ -73,6 +73,16 @@ namespace structa_front.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap IconeAdicionarMembros {
+            get {
+                object obj = ResourceManager.GetObject("IconeAdicionarMembros", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap IconeAreaDeTrabalho {
             get {
                 object obj = ResourceManager.GetObject("IconeAreaDeTrabalho", resourceCulture);
@@ -103,6 +113,16 @@ namespace structa_front.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap IconeAreasDeTrabalho {
+            get {
+                object obj = ResourceManager.GetObject("IconeAreasDeTrabalho", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap IconeMais {
             get {
                 object obj = ResourceManager.GetObject("IconeMais", resourceCulture);
@@ -126,6 +146,16 @@ namespace structa_front.Properties {
         internal static System.Drawing.Bitmap IconeMeuTrabalho {
             get {
                 object obj = ResourceManager.GetObject("IconeMeuTrabalho", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap IconeNotificacoes {
+            get {
+                object obj = ResourceManager.GetObject("IconeNotificacoes", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

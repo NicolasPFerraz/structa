@@ -84,7 +84,7 @@ namespace structa_front
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            FormPrincipal formPrincipal = new FormPrincipal();
+            FormPrincipal formPrincipal = new FormPrincipal("Página");
             formPrincipal.Show();
             this.Hide();
         }
