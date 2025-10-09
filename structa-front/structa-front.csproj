@@ -55,6 +55,12 @@
     <Compile Include="AdicionarMembros.Designer.cs">
       <DependentUpon>AdicionarMembros.cs</DependentUpon>
     </Compile>
+    <Compile Include="Convite_Amigos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Convite_Amigos.Designer.cs">
+      <DependentUpon>Convite_Amigos.cs</DependentUpon>
+    </Compile>
     <!-- Person form files (preserved) -->
     <!-- CriarConta / FormPrincipal / UcPerfil (preservados da outra branch) -->
     <Compile Include="CriarConta.cs">
@@ -63,17 +69,47 @@
     <Compile Include="CriarConta.Designer.cs">
       <DependentUpon>CriarConta.cs</DependentUpon>
     </Compile>
+    <Compile Include="EsqueciASenha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EsqueciASenha.Designer.cs">
+      <DependentUpon>EsqueciASenha.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormPrincipal.Designer.cs">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Nomear_QD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nomear_QD.Designer.cs">
+      <DependentUpon>Nomear_QD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NomeProjeto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NomeProjeto.Designer.cs">
+      <DependentUpon>NomeProjeto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Notificacoes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Notificacoes.Designer.cs">
       <DependentUpon>Notificacoes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NovaAreaDeTrabalho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NovaAreaDeTrabalho.Designer.cs">
+      <DependentUpon>NovaAreaDeTrabalho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Perfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Perfil.Designer.cs">
+      <DependentUpon>Perfil.cs</DependentUpon>
     </Compile>
     <Compile Include="UcAreaDeTrabalho.cs">
       <SubType>UserControl</SubType>
@@ -142,8 +178,14 @@
     <EmbeddedResource Include="AdicionarMembros.resx">
       <DependentUpon>AdicionarMembros.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Convite_Amigos.resx">
+      <DependentUpon>Convite_Amigos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CriarConta.resx">
       <DependentUpon>CriarConta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EsqueciASenha.resx">
+      <DependentUpon>EsqueciASenha.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
@@ -154,8 +196,20 @@
     <EmbeddedResource Include="CriarConta2.resx">
       <DependentUpon>CriarConta2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Nomear_QD.resx">
+      <DependentUpon>Nomear_QD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NomeProjeto.resx">
+      <DependentUpon>NomeProjeto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Notificacoes.resx">
       <DependentUpon>Notificacoes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NovaAreaDeTrabalho.resx">
+      <DependentUpon>NovaAreaDeTrabalho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Perfil.resx">
+      <DependentUpon>Perfil.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UcAreaDeTrabalho.resx">
       <DependentUpon>UcAreaDeTrabalho.cs</DependentUpon>

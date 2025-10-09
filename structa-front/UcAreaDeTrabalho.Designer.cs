@@ -125,6 +125,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Gray;
             this.label1.Location = new System.Drawing.Point(159, 412);
@@ -136,10 +137,11 @@
             // 
             // pictureBox6
             // 
+            this.pictureBox6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox6.Image = global::structa_front.Properties.Resources.IconePlanoDeGestao;
-            this.pictureBox6.Location = new System.Drawing.Point(129, 402);
+            this.pictureBox6.Location = new System.Drawing.Point(129, 412);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(30, 39);
+            this.pictureBox6.Size = new System.Drawing.Size(24, 29);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox6.TabIndex = 29;
             this.pictureBox6.TabStop = false;

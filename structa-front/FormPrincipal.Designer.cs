@@ -43,11 +43,8 @@
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.panelMais = new System.Windows.Forms.Panel();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.panelMeuTrabalho = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -80,10 +77,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.panelMais.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.panelMeuTrabalho.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panelPgInicial.SuspendLayout();
@@ -117,7 +112,6 @@
             this.menuItems.Controls.Add(this.pictureBox12);
             this.menuItems.Controls.Add(this.panel5);
             this.menuItems.Controls.Add(this.panelAreasDeTrabalho);
-            this.menuItems.Controls.Add(this.pictureBox6);
             this.menuItems.Controls.Add(this.panelMais);
             this.menuItems.Controls.Add(this.panelMeuTrabalho);
             this.menuItems.Controls.Add(this.panelPgInicial);
@@ -142,6 +136,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(29, 9);
@@ -151,9 +146,11 @@
             this.label6.TabIndex = 4;
             this.label6.Text = "Plano de gestão";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // pictureBox16
             // 
+            this.pictureBox16.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox16.Image = global::structa_front.Properties.Resources.IconePlanoDeGestao;
             this.pictureBox16.Location = new System.Drawing.Point(6, 10);
             this.pictureBox16.Margin = new System.Windows.Forms.Padding(0);
@@ -165,6 +162,7 @@
             // 
             // pictureBox12
             // 
+            this.pictureBox12.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox12.Image = global::structa_front.Properties.Resources.IconeMais__2_;
             this.pictureBox12.Location = new System.Drawing.Point(193, 365);
             this.pictureBox12.Margin = new System.Windows.Forms.Padding(0);
@@ -173,6 +171,7 @@
             this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox12.TabIndex = 6;
             this.pictureBox12.TabStop = false;
+            this.pictureBox12.Click += new System.EventHandler(this.pictureBox12_Click);
             // 
             // panel5
             // 
@@ -199,6 +198,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(28, 6);
@@ -208,9 +208,11 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "Área de trabalho";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // pictureBox13
             // 
+            this.pictureBox13.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox13.Image = global::structa_front.Properties.Resources.IconeAreaDeTrabalho__3_;
             this.pictureBox13.Location = new System.Drawing.Point(0, 5);
             this.pictureBox13.Margin = new System.Windows.Forms.Padding(0);
@@ -220,6 +222,7 @@
             this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox13.TabIndex = 3;
             this.pictureBox13.TabStop = false;
+            this.pictureBox13.Click += new System.EventHandler(this.pictureBox13_Click);
             // 
             // panelAreasDeTrabalho
             // 
@@ -278,61 +281,23 @@
             this.pictureBox7.TabIndex = 3;
             this.pictureBox7.TabStop = false;
             // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = global::structa_front.Properties.Resources.LineSeparator;
-            this.pictureBox6.Location = new System.Drawing.Point(0, 293);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(239, 1);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox6.TabIndex = 8;
-            this.pictureBox6.TabStop = false;
-            // 
             // panelMais
             // 
-            this.panelMais.Controls.Add(this.pictureBox10);
-            this.panelMais.Controls.Add(this.label3);
-            this.panelMais.Controls.Add(this.pictureBox5);
+            this.panelMais.Controls.Add(this.pictureBox6);
             this.panelMais.Location = new System.Drawing.Point(0, 231);
             this.panelMais.Name = "panelMais";
             this.panelMais.Size = new System.Drawing.Size(239, 47);
             this.panelMais.TabIndex = 7;
             // 
-            // pictureBox10
+            // pictureBox6
             // 
-            this.pictureBox10.Image = global::structa_front.Properties.Resources.IconeSetaPraBaixo;
-            this.pictureBox10.Location = new System.Drawing.Point(178, 19);
-            this.pictureBox10.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(31, 13);
-            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox10.TabIndex = 5;
-            this.pictureBox10.TabStop = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(29, 11);
-            this.label3.Margin = new System.Windows.Forms.Padding(0);
-            this.label3.Name = "label3";
-            this.label3.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            this.label3.Size = new System.Drawing.Size(65, 25);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Mais";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = global::structa_front.Properties.Resources.IconePerfil;
-            this.pictureBox5.Location = new System.Drawing.Point(3, 9);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(26, 27);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox5.TabIndex = 3;
-            this.pictureBox5.TabStop = false;
+            this.pictureBox6.Image = global::structa_front.Properties.Resources.LineSeparator;
+            this.pictureBox6.Location = new System.Drawing.Point(0, 46);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(239, 1);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox6.TabIndex = 8;
+            this.pictureBox6.TabStop = false;
             // 
             // panelMeuTrabalho
             // 
@@ -347,6 +312,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(29, 11);
@@ -360,6 +326,7 @@
             // 
             // pictureBox4
             // 
+            this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox4.Image = global::structa_front.Properties.Resources.IconeMeuTrabalho;
             this.pictureBox4.Location = new System.Drawing.Point(3, 9);
             this.pictureBox4.Margin = new System.Windows.Forms.Padding(0);
@@ -381,6 +348,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(29, 11);
@@ -395,6 +363,7 @@
             // 
             // pictureBox3
             // 
+            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox3.Image = global::structa_front.Properties.Resources.IconePgInicial;
             this.pictureBox3.Location = new System.Drawing.Point(3, 9);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(0);
@@ -466,21 +435,20 @@
             // 
             // panelConteudo
             // 
-            this.panelConteudo.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelConteudo.Location = new System.Drawing.Point(247, -70);
+            this.panelConteudo.Location = new System.Drawing.Point(247, 75);
             this.panelConteudo.Name = "panelConteudo";
-            this.panelConteudo.Size = new System.Drawing.Size(1177, 786);
+            this.panelConteudo.Size = new System.Drawing.Size(1177, 641);
             this.panelConteudo.TabIndex = 1;
             this.panelConteudo.Paint += new System.Windows.Forms.PaintEventHandler(this.panelConteudo_Paint);
             // 
             // panelTop
             // 
-            this.panelTop.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panelTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(30)))), ((int)(((byte)(76)))));
             this.panelTop.Controls.Add(this.roundedPanel1);
             this.panelTop.Controls.Add(this.lblPagina);
             this.panelTop.Controls.Add(this.lblPaginaMin);
             this.panelTop.Controls.Add(this.label7);
+            this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTop.Location = new System.Drawing.Point(247, 0);
             this.panelTop.Name = "panelTop";
             this.panelTop.Size = new System.Drawing.Size(1177, 76);
@@ -596,11 +564,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.panelMais.ResumeLayout(false);
-            this.panelMais.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.panelMeuTrabalho.ResumeLayout(false);
             this.panelMeuTrabalho.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -632,9 +597,6 @@
         private System.Windows.Forms.Panel panelPerfil;
         private System.Windows.Forms.Label lblPerfil;
         private System.Windows.Forms.Panel menuItems;
-        private System.Windows.Forms.Panel panelMais;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Panel panelMeuTrabalho;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox4;
@@ -647,7 +609,6 @@
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox9;
-        private System.Windows.Forms.PictureBox pictureBox10;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox pictureBox13;
@@ -665,5 +626,6 @@
         private System.Windows.Forms.PictureBox btnNotificacoes;
         private System.Windows.Forms.PictureBox btnAreaDeTrabalho;
         private System.Windows.Forms.PictureBox btnAdicionarMembros;
+        private System.Windows.Forms.Panel panelMais;
     }
 }
