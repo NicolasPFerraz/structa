@@ -13,6 +13,8 @@ namespace structa_front
     public partial class FormPrincipal : BaseForm
     {
         private string textoPagina; // <-- campo para armazenar o valor recebido
+        private int originalPanelTopHeight;
+        private Painel_Perfil painelPerfilControl;
 
         // Construtor que recebe o valor
         public FormPrincipal(string pagina)
@@ -21,6 +23,9 @@ namespace structa_front
             textoPagina = pagina;
             lblPagina.Text = textoPagina; // Exibe no label
             lblPaginaMin.Text = textoPagina; // Exibe no label
+
+            // guarda altura original do panelTop para restaurar depois
+            originalPanelTopHeight = panelTop.Height;
         }
 
         public void AbrirPagina(UserControl pagina)
@@ -39,11 +44,13 @@ namespace structa_front
 
         private void lblPerfil_Click(object sender, EventArgs e)
         {
-            panelTop.Visible = false;
-            AbrirPagina(new UcPerfil());
+            // Abre UcPerfil dentro do panelConteudo
+            panelConteudo.Controls.Clear();
+            var ucPerfil = new UcPerfil();
+            ucPerfil.Dock = DockStyle.Fill;
+            panelConteudo.Controls.Add(ucPerfil);
         }
    
-
         private void panelConteudo_Paint(object sender, PaintEventArgs e)
         {
 
@@ -68,7 +75,6 @@ namespace structa_front
 
         private void panelTop_Paint(object sender, PaintEventArgs e)
         {
-
         }
     }
 }

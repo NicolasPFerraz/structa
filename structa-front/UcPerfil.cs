@@ -71,5 +71,10 @@ namespace structa_front
         {
 
         }
+
+        private void panelIdioma_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

@@ -51,7 +51,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(114, 110);
+            this.label2.Location = new System.Drawing.Point(138, 110);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(142, 16);
             this.label2.TabIndex = 33;
@@ -62,7 +62,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(110, 72);
+            this.label1.Location = new System.Drawing.Point(134, 72);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(149, 25);
             this.label1.TabIndex = 32;
@@ -94,7 +94,7 @@
             // pictureBox15
             // 
             this.pictureBox15.Image = global::structa_front.Properties.Resources.Icon;
-            this.pictureBox15.Location = new System.Drawing.Point(88, 121);
+            this.pictureBox15.Location = new System.Drawing.Point(112, 121);
             this.pictureBox15.Name = "pictureBox15";
             this.pictureBox15.Size = new System.Drawing.Size(20, 21);
             this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -104,7 +104,7 @@
             // pictureBox14
             // 
             this.pictureBox14.Image = global::structa_front.Properties.Resources.Image;
-            this.pictureBox14.Location = new System.Drawing.Point(46, 72);
+            this.pictureBox14.Location = new System.Drawing.Point(46, 71);
             this.pictureBox14.Name = "pictureBox14";
             this.pictureBox14.Size = new System.Drawing.Size(58, 63);
             this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -114,7 +114,7 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = global::structa_front.Properties.Resources.Projects;
-            this.pictureBox4.Location = new System.Drawing.Point(1047, 91);
+            this.pictureBox4.Location = new System.Drawing.Point(1318, 84);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(98, 28);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -124,7 +124,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::structa_front.Properties.Resources.Teams;
-            this.pictureBox3.Location = new System.Drawing.Point(927, 91);
+            this.pictureBox3.Location = new System.Drawing.Point(1198, 84);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(97, 28);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -134,7 +134,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::structa_front.Properties.Resources.Overview;
-            this.pictureBox2.Location = new System.Drawing.Point(808, 91);
+            this.pictureBox2.Location = new System.Drawing.Point(1079, 84);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(98, 28);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -144,7 +144,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::structa_front.Properties.Resources.Background__1_;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 42);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 41);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(1147, 100);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -167,7 +167,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.LBL_nav);
             this.Name = "Painel_Perfil";
-            this.Size = new System.Drawing.Size(1200, 150);
+            this.Size = new System.Drawing.Size(1286, 177);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
