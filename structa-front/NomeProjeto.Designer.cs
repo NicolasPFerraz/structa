@@ -81,7 +81,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::structa_front.Properties.Resources._2;
+            this.pictureBox1.Image = global::structa_front.Properties.Resources.Background__2_;
             this.pictureBox1.Location = new System.Drawing.Point(872, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(591, 750);

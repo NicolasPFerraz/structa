@@ -18,6 +18,7 @@ namespace structa_front
         public FormPrincipal(string pagina)
         {
             InitializeComponent();
+            AbrirPagina(new UcPaginaInicial());
             textoPagina = pagina;
             lblPagina.Text = textoPagina; // Exibe no label
             lblPaginaMin.Text = textoPagina; // Exibe no label
@@ -28,7 +29,7 @@ namespace structa_front
             // Limpa o painel de conteúdo
             panelConteudo.Controls.Clear();
             // Configura a página para preencher o painel
-            pagina.Dock = DockStyle.Bottom;
+            pagina.Dock = DockStyle.Fill;
             // Adiciona a página ao painel de conteúdo
             panelConteudo.Controls.Add(pagina);
         }
@@ -40,6 +41,8 @@ namespace structa_front
         private void lblPerfil_Click(object sender, EventArgs e)
         {
             AbrirPagina(new UcPerfil());
+            lblPagina.Text = "Perfil"; // Exibe no label
+            lblPaginaMin.Text = "Perfil"; // Exibe no label
         }
 
         private void panelConteudo_Paint(object sender, PaintEventArgs e)
@@ -56,12 +59,50 @@ namespace structa_front
         private void btnAreaDeTrabalho_Click(object sender, EventArgs e)
         {
             AbrirPagina(new UcPaginaInicial());
+            lblPagina.Text = "Áreas de trabalho"; // Exibe no label
+            lblPaginaMin.Text = "Áreas de trabalho"; // Exibe no label
         }
 
         private void btnAdicionarMembros_Click(object sender, EventArgs e)
         {
             AdicionarMembros convidarMembros = new AdicionarMembros();
             convidarMembros.Show();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            AbrirPagina(new UcPaginaInicial());
+            lblPagina.Text = "Página Inicial"; // Exibe no label
+            lblPaginaMin.Text = "Página Inicial"; // Exibe no label
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+            AbrirPagina(new UcPlanoDeGestao());
+            lblPagina.Text = "Plano de gestão"; // Exibe no label
+            lblPaginaMin.Text = "Plano de gestão"; // Exibe no label
+        }
+
+        private void pictureBox12_Click(object sender, EventArgs e)
+        {
+            NovaAreaDeTrabalho novaArea = new NovaAreaDeTrabalho();
+            novaArea.Show();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            AbrirPagina(new UcAreaDeTrabalho());
+            lblPagina.Text = "Área de trabalho"; // Exibe no label
+            lblPaginaMin.Text = "Área de trabalho"; // Exibe no label
+        }
+
+        private void pictureBox13_Click(object sender, EventArgs e)
+        {
+            AbrirPagina(new UcAreaDeTrabalho());
+            AbrirPagina(new UcPaginaInicial());
+            lblPagina.Text = "Área de trabalho"; // Exibe no label
+            lblPaginaMin.Text = "Área de trabalho"; // Exibe no label
         }
     }
 }
