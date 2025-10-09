@@ -1,4 +1,4 @@
-﻿namespace structa_front
+namespace structa_front
 {
     partial class FormPrincipal
     {
@@ -57,14 +57,7 @@
             this.picPerfil = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelConteudo = new System.Windows.Forms.Panel();
-            this.panelTop = new System.Windows.Forms.Panel();
-            this.roundedPanel1 = new structa_front.RoundedPanel();
-            this.btnAdicionarMembros = new System.Windows.Forms.PictureBox();
-            this.btnAreaDeTrabalho = new System.Windows.Forms.PictureBox();
-            this.btnNotificacoes = new System.Windows.Forms.PictureBox();
-            this.lblPagina = new System.Windows.Forms.Label();
-            this.lblPaginaMin = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panelMenu.SuspendLayout();
             this.menuItems.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -87,11 +80,7 @@
             this.panelPerfil.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPerfil)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panelTop.SuspendLayout();
-            this.roundedPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAdicionarMembros)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAreaDeTrabalho)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnNotificacoes)).BeginInit();
+            this.panelConteudo.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -397,7 +386,6 @@
             // lblPerfil
             // 
             this.lblPerfil.AutoSize = true;
-            this.lblPerfil.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblPerfil.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.lblPerfil.ForeColor = System.Drawing.Color.White;
             this.lblPerfil.Location = new System.Drawing.Point(29, 11);
@@ -412,7 +400,6 @@
             // 
             // picPerfil
             // 
-            this.picPerfil.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picPerfil.Image = global::structa_front.Properties.Resources.IconePerfil;
             this.picPerfil.Location = new System.Drawing.Point(3, 9);
             this.picPerfil.Margin = new System.Windows.Forms.Padding(0);
@@ -421,7 +408,6 @@
             this.picPerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.picPerfil.TabIndex = 3;
             this.picPerfil.TabStop = false;
-            this.picPerfil.Click += new System.EventHandler(this.lblPerfil_Click);
             // 
             // pictureBox2
             // 
@@ -435,13 +421,14 @@
             // 
             // panelConteudo
             // 
-            this.panelConteudo.Location = new System.Drawing.Point(247, 75);
+            this.panelConteudo.Controls.Add(this.textBox1);
+            this.panelConteudo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelConteudo.Location = new System.Drawing.Point(247, 0);
             this.panelConteudo.Name = "panelConteudo";
-            this.panelConteudo.Size = new System.Drawing.Size(1177, 641);
+            this.panelConteudo.Size = new System.Drawing.Size(1177, 861);
             this.panelConteudo.TabIndex = 1;
-            this.panelConteudo.Paint += new System.Windows.Forms.PaintEventHandler(this.panelConteudo_Paint);
             // 
-            // panelTop
+            // textBox1
             // 
             this.panelTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(30)))), ((int)(((byte)(76)))));
             this.panelTop.Controls.Add(this.roundedPanel1);
@@ -453,6 +440,7 @@
             this.panelTop.Name = "panelTop";
             this.panelTop.Size = new System.Drawing.Size(1177, 76);
             this.panelTop.TabIndex = 0;
+            this.panelTop.Paint += new System.Windows.Forms.PaintEventHandler(this.panelTop_Paint);
             // 
             // roundedPanel1
             // 
@@ -537,6 +525,10 @@
             this.label7.Size = new System.Drawing.Size(56, 13);
             this.label7.TabIndex = 0;
             this.label7.Text = "Páginas  /";
+            this.textBox1.Location = new System.Drawing.Point(390, 162);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 0;
             // 
             // FormPrincipal
             // 
@@ -544,9 +536,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1424, 716);
             this.Controls.Add(this.panelTop);
-            this.Controls.Add(this.panelConteudo);
-            this.Controls.Add(this.panelMenu);
-            this.MinimumSize = new System.Drawing.Size(1027, 591);
             this.Name = "FormPrincipal";
             this.Text = "FormPrincipal";
             this.panelMenu.ResumeLayout(false);
@@ -577,12 +566,8 @@
             this.panelPerfil.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPerfil)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.panelTop.ResumeLayout(false);
-            this.panelTop.PerformLayout();
-            this.roundedPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnAdicionarMembros)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAreaDeTrabalho)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnNotificacoes)).EndInit();
+            this.panelConteudo.ResumeLayout(false);
+            this.panelConteudo.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
