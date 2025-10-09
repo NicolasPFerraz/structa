@@ -135,7 +135,7 @@
             this.panel6.Controls.Add(this.label6);
             this.panel6.Controls.Add(this.pictureBox16);
             this.panel6.Location = new System.Drawing.Point(1, 502);
-            this.panel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel6.Margin = new System.Windows.Forms.Padding(4);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(319, 58);
             this.panel6.TabIndex = 9;
@@ -182,7 +182,7 @@
             this.panel5.Controls.Add(this.label5);
             this.panel5.Controls.Add(this.pictureBox13);
             this.panel5.Location = new System.Drawing.Point(1, 449);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(251, 43);
             this.panel5.TabIndex = 9;
@@ -230,7 +230,7 @@
             this.panelAreasDeTrabalho.Controls.Add(this.label4);
             this.panelAreasDeTrabalho.Controls.Add(this.pictureBox7);
             this.panelAreasDeTrabalho.Location = new System.Drawing.Point(0, 379);
-            this.panelAreasDeTrabalho.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelAreasDeTrabalho.Margin = new System.Windows.Forms.Padding(4);
             this.panelAreasDeTrabalho.Name = "panelAreasDeTrabalho";
             this.panelAreasDeTrabalho.Size = new System.Drawing.Size(319, 58);
             this.panelAreasDeTrabalho.TabIndex = 8;
@@ -285,7 +285,7 @@
             // 
             this.pictureBox6.Image = global::structa_front.Properties.Resources.LineSeparator;
             this.pictureBox6.Location = new System.Drawing.Point(0, 361);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(319, 1);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -298,7 +298,7 @@
             this.panelMais.Controls.Add(this.label3);
             this.panelMais.Controls.Add(this.pictureBox5);
             this.panelMais.Location = new System.Drawing.Point(0, 284);
-            this.panelMais.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelMais.Margin = new System.Windows.Forms.Padding(4);
             this.panelMais.Name = "panelMais";
             this.panelMais.Size = new System.Drawing.Size(319, 58);
             this.panelMais.TabIndex = 7;
@@ -379,7 +379,7 @@
             this.panelPgInicial.Controls.Add(this.label1);
             this.panelPgInicial.Controls.Add(this.pictureBox3);
             this.panelPgInicial.Location = new System.Drawing.Point(0, 156);
-            this.panelPgInicial.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelPgInicial.Margin = new System.Windows.Forms.Padding(4);
             this.panelPgInicial.Name = "panelPgInicial";
             this.panelPgInicial.Size = new System.Drawing.Size(319, 58);
             this.panelPgInicial.TabIndex = 5;
@@ -413,7 +413,7 @@
             // 
             this.pictureBox1.Image = global::structa_front.Properties.Resources.Structa;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(289, 49);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -426,7 +426,7 @@
             this.panelPerfil.Controls.Add(this.lblPerfil);
             this.panelPerfil.Controls.Add(this.picPerfil);
             this.panelPerfil.Location = new System.Drawing.Point(0, 92);
-            this.panelPerfil.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelPerfil.Margin = new System.Windows.Forms.Padding(4);
             this.panelPerfil.Name = "panelPerfil";
             this.panelPerfil.Size = new System.Drawing.Size(319, 58);
             this.panelPerfil.TabIndex = 4;
@@ -465,7 +465,7 @@
             // 
             this.pictureBox2.Image = global::structa_front.Properties.Resources.LineSeparator;
             this.pictureBox2.Location = new System.Drawing.Point(0, 68);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(319, 1);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -476,7 +476,7 @@
             // 
             this.panelConteudo.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelConteudo.Location = new System.Drawing.Point(330, 93);
-            this.panelConteudo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelConteudo.Margin = new System.Windows.Forms.Padding(4);
             this.panelConteudo.Name = "panelConteudo";
             this.panelConteudo.Size = new System.Drawing.Size(1569, 967);
             this.panelConteudo.TabIndex = 1;
@@ -491,10 +491,11 @@
             this.panelTop.Controls.Add(this.lblPaginaMin);
             this.panelTop.Controls.Add(this.label7);
             this.panelTop.Location = new System.Drawing.Point(329, 0);
-            this.panelTop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelTop.Margin = new System.Windows.Forms.Padding(4);
             this.panelTop.Name = "panelTop";
             this.panelTop.Size = new System.Drawing.Size(1569, 94);
             this.panelTop.TabIndex = 0;
+            this.panelTop.Paint += new System.Windows.Forms.PaintEventHandler(this.panelTop_Paint);
             // 
             // roundedPanel1
             // 
@@ -507,7 +508,7 @@
             this.roundedPanel1.CornerRadius = 4;
             this.roundedPanel1.Cursor = System.Windows.Forms.Cursors.Default;
             this.roundedPanel1.Location = new System.Drawing.Point(1300, 0);
-            this.roundedPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.roundedPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.roundedPanel1.Name = "roundedPanel1";
             this.roundedPanel1.ShadowColor = System.Drawing.Color.White;
             this.roundedPanel1.ShadowOffset = 16;
@@ -519,7 +520,7 @@
             this.btnAdicionarMembros.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdicionarMembros.Image = global::structa_front.Properties.Resources.IconeAdicionarMembros;
             this.btnAdicionarMembros.Location = new System.Drawing.Point(191, 23);
-            this.btnAdicionarMembros.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAdicionarMembros.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdicionarMembros.Name = "btnAdicionarMembros";
             this.btnAdicionarMembros.Size = new System.Drawing.Size(32, 28);
             this.btnAdicionarMembros.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -532,7 +533,7 @@
             this.btnAreaDeTrabalho.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAreaDeTrabalho.Image = global::structa_front.Properties.Resources.IconeAreasDeTrabalho;
             this.btnAreaDeTrabalho.Location = new System.Drawing.Point(109, 23);
-            this.btnAreaDeTrabalho.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAreaDeTrabalho.Margin = new System.Windows.Forms.Padding(4);
             this.btnAreaDeTrabalho.Name = "btnAreaDeTrabalho";
             this.btnAreaDeTrabalho.Size = new System.Drawing.Size(32, 28);
             this.btnAreaDeTrabalho.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -545,7 +546,7 @@
             this.btnNotificacoes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNotificacoes.Image = global::structa_front.Properties.Resources.IconeNotificacoes;
             this.btnNotificacoes.Location = new System.Drawing.Point(29, 23);
-            this.btnNotificacoes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnNotificacoes.Margin = new System.Windows.Forms.Padding(4);
             this.btnNotificacoes.Name = "btnNotificacoes";
             this.btnNotificacoes.Size = new System.Drawing.Size(32, 28);
             this.btnNotificacoes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -595,7 +596,7 @@
             this.Controls.Add(this.panelTop);
             this.Controls.Add(this.panelConteudo);
             this.Controls.Add(this.panelMenu);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(1914, 1018);
             this.Name = "FormPrincipal";
             this.Text = "FormPrincipal";

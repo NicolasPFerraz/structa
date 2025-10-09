@@ -39,8 +39,10 @@ namespace structa_front
 
         private void lblPerfil_Click(object sender, EventArgs e)
         {
+            panelTop.Visible = false;
             AbrirPagina(new UcPerfil());
         }
+   
 
         private void panelConteudo_Paint(object sender, PaintEventArgs e)
         {
@@ -62,6 +64,11 @@ namespace structa_front
         {
             AdicionarMembros convidarMembros = new AdicionarMembros();
             convidarMembros.Show();
+        }
+
+        private void panelTop_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

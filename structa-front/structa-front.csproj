@@ -75,6 +75,12 @@
     <Compile Include="Notificacoes.Designer.cs">
       <DependentUpon>Notificacoes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Painel_Perfil.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Painel_Perfil.Designer.cs">
+      <DependentUpon>Painel_Perfil.cs</DependentUpon>
+    </Compile>
     <Compile Include="UcPaginaInicial.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -132,6 +138,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Notificacoes.resx">
       <DependentUpon>Notificacoes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Painel_Perfil.resx">
+      <DependentUpon>Painel_Perfil.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UcPaginaInicial.resx">
       <DependentUpon>UcPaginaInicial.cs</DependentUpon>
@@ -216,6 +225,72 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\InformaçõesPessoais_Content.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Card.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Background %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Informações do Perfil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vector 6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Details.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Frame 176.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\present.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Profile Information.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Frame 233.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Frame 234.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Background %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Frame 186.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vector.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Frame 185.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Frame 177 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Frame 178.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Frame 179.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Frame 180.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
