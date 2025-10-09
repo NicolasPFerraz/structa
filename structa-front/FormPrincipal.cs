@@ -63,5 +63,10 @@ namespace structa_front
             AdicionarMembros convidarMembros = new AdicionarMembros();
             convidarMembros.Show();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            AbrirPagina(new UcPaginaInicial());
+        }
     }
 }

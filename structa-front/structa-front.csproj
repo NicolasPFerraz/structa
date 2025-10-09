@@ -75,6 +75,12 @@
     <Compile Include="Notificacoes.Designer.cs">
       <DependentUpon>Notificacoes.cs</DependentUpon>
     </Compile>
+    <Compile Include="UcAreaDeTrabalho.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcAreaDeTrabalho.Designer.cs">
+      <DependentUpon>UcAreaDeTrabalho.cs</DependentUpon>
+    </Compile>
     <Compile Include="UcPaginaInicial.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -110,6 +116,12 @@
     <Compile Include="UcQtdPessoas.Designer.cs">
       <DependentUpon>UcQtdPessoas.cs</DependentUpon>
     </Compile>
+    <Compile Include="UsFeed.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UsFeed.Designer.cs">
+      <DependentUpon>UsFeed.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="BaseForm.resx">
@@ -133,6 +145,9 @@
     <EmbeddedResource Include="Notificacoes.resx">
       <DependentUpon>Notificacoes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UcAreaDeTrabalho.resx">
+      <DependentUpon>UcAreaDeTrabalho.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UcPaginaInicial.resx">
       <DependentUpon>UcPaginaInicial.cs</DependentUpon>
     </EmbeddedResource>
@@ -151,6 +166,9 @@
     </Compile>
     <EmbeddedResource Include="UcQtdPessoas.resx">
       <DependentUpon>UcQtdPessoas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UsFeed.resx">
+      <DependentUpon>UsFeed.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -216,6 +234,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\InformaçõesPessoais_Content.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ImagemTelaInicial2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MembrosTelaInicial.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ImgAreadeTabalhoIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ImgMaoFeed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ImagemAreadeTrabalho.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RecentesAreadeTrabalho.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

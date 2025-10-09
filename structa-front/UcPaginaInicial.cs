@@ -16,5 +16,24 @@ namespace structa_front
         {
             InitializeComponent();
         }
+        public void AbrirPagina(UserControl pagina)
+        {
+            // Limpa o painel de conteúdo
+            PainelConteudo.Controls.Clear();
+            // Configura a página para preencher o painel
+            pagina.Dock = DockStyle.Bottom;
+            // Adiciona a página ao painel de conteúdo
+            PainelConteudo.Controls.Add(pagina);
+        }
+
+        private void label17_Click(object sender, EventArgs e)
+        {
+            AbrirPagina(new UcFeed());
+        }
+
+        private void label19_Click(object sender, EventArgs e)
+        {
+            AbrirPagina(new UcAreaDeTrabalho());
+        }
     }
 }

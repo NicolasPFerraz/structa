@@ -443,6 +443,46 @@ namespace structa_front.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ImagemAreadeTrabalho {
+            get {
+                object obj = ResourceManager.GetObject("ImagemAreadeTrabalho", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ImagemTelaInicial2 {
+            get {
+                object obj = ResourceManager.GetObject("ImagemTelaInicial2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ImgAreadeTabalhoIcon {
+            get {
+                object obj = ResourceManager.GetObject("ImgAreadeTabalhoIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ImgMaoFeed {
+            get {
+                object obj = ResourceManager.GetObject("ImgMaoFeed", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Informações_do_Perfil {
             get {
                 object obj = ResourceManager.GetObject("Informações do Perfil", resourceCulture);
@@ -466,6 +506,16 @@ namespace structa_front.Properties {
         internal static System.Drawing.Bitmap LineSeparator {
             get {
                 object obj = ResourceManager.GetObject("LineSeparator", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MembrosTelaInicial {
+            get {
+                object obj = ResourceManager.GetObject("MembrosTelaInicial", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -506,6 +556,16 @@ namespace structa_front.Properties {
         internal static System.Drawing.Bitmap Projects {
             get {
                 object obj = ResourceManager.GetObject("Projects", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap RecentesAreadeTrabalho {
+            get {
+                object obj = ResourceManager.GetObject("RecentesAreadeTrabalho", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
