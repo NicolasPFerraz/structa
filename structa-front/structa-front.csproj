@@ -202,5 +202,20 @@
   <ItemGroup>
     <None Include="Resources\IconePesquisar %282%29.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Background %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Overview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Teams.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Projects.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\InformaçõesPessoais_Content.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
