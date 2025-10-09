@@ -213,6 +213,16 @@ namespace structa_front.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Frame_232 {
+            get {
+                object obj = ResourceManager.GetObject("Frame 232", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Frame_233 {
             get {
                 object obj = ResourceManager.GetObject("Frame 233", resourceCulture);
@@ -476,6 +486,16 @@ namespace structa_front.Properties {
         internal static System.Drawing.Bitmap Overview {
             get {
                 object obj = ResourceManager.GetObject("Overview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Platform_Settings {
+            get {
+                object obj = ResourceManager.GetObject("Platform Settings", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

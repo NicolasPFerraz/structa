@@ -49,6 +49,10 @@ namespace structa_front
             var ucPerfil = new UcPerfil();
             ucPerfil.Dock = DockStyle.Fill;
             panelConteudo.Controls.Add(ucPerfil);
+
+
+
+
         }
    
         private void panelConteudo_Paint(object sender, PaintEventArgs e)
@@ -58,8 +62,7 @@ namespace structa_front
 
         private void btnNotificacoes_Click(object sender, EventArgs e)
         {
-            Notificacoes notificacoes = new Notificacoes();
-            notificacoes.Show();
+            
         }
 
         private void btnAreaDeTrabalho_Click(object sender, EventArgs e)

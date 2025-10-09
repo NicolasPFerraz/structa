@@ -38,12 +38,20 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.PG_StatusTrabalho = new System.Windows.Forms.PictureBox();
+            this.PG_Notificacao = new System.Windows.Forms.PictureBox();
+            this.PG_Senha = new System.Windows.Forms.PictureBox();
+            this.PG_Pessoal = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PG_StatusTrabalho)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PG_Notificacao)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PG_Senha)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PG_Pessoal)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -151,11 +159,55 @@
             this.pictureBox1.TabIndex = 25;
             this.pictureBox1.TabStop = false;
             // 
+            // PG_StatusTrabalho
+            // 
+            this.PG_StatusTrabalho.Image = global::structa_front.Properties.Resources.Frame_178;
+            this.PG_StatusTrabalho.Location = new System.Drawing.Point(193, 161);
+            this.PG_StatusTrabalho.Name = "PG_StatusTrabalho";
+            this.PG_StatusTrabalho.Size = new System.Drawing.Size(135, 34);
+            this.PG_StatusTrabalho.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.PG_StatusTrabalho.TabIndex = 64;
+            this.PG_StatusTrabalho.TabStop = false;
+            // 
+            // PG_Notificacao
+            // 
+            this.PG_Notificacao.Image = global::structa_front.Properties.Resources.Frame_179;
+            this.PG_Notificacao.Location = new System.Drawing.Point(365, 161);
+            this.PG_Notificacao.Name = "PG_Notificacao";
+            this.PG_Notificacao.Size = new System.Drawing.Size(135, 34);
+            this.PG_Notificacao.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.PG_Notificacao.TabIndex = 63;
+            this.PG_Notificacao.TabStop = false;
+            // 
+            // PG_Senha
+            // 
+            this.PG_Senha.Image = global::structa_front.Properties.Resources.Frame_180;
+            this.PG_Senha.Location = new System.Drawing.Point(529, 161);
+            this.PG_Senha.Name = "PG_Senha";
+            this.PG_Senha.Size = new System.Drawing.Size(135, 34);
+            this.PG_Senha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.PG_Senha.TabIndex = 62;
+            this.PG_Senha.TabStop = false;
+            // 
+            // PG_Pessoal
+            // 
+            this.PG_Pessoal.Image = global::structa_front.Properties.Resources.Frame_177__1_;
+            this.PG_Pessoal.Location = new System.Drawing.Point(17, 161);
+            this.PG_Pessoal.Name = "PG_Pessoal";
+            this.PG_Pessoal.Size = new System.Drawing.Size(135, 34);
+            this.PG_Pessoal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.PG_Pessoal.TabIndex = 61;
+            this.PG_Pessoal.TabStop = false;
+            // 
             // Painel_Perfil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(30)))), ((int)(((byte)(76)))));
+            this.Controls.Add(this.PG_StatusTrabalho);
+            this.Controls.Add(this.PG_Notificacao);
+            this.Controls.Add(this.PG_Senha);
+            this.Controls.Add(this.PG_Pessoal);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox15);
@@ -167,13 +219,17 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.LBL_nav);
             this.Name = "Painel_Perfil";
-            this.Size = new System.Drawing.Size(1286, 177);
+            this.Size = new System.Drawing.Size(1286, 212);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PG_StatusTrabalho)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PG_Notificacao)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PG_Senha)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PG_Pessoal)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -191,5 +247,9 @@
         private System.Windows.Forms.Label LBL_Perfil;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label LBL_nav;
+        private System.Windows.Forms.PictureBox PG_StatusTrabalho;
+        private System.Windows.Forms.PictureBox PG_Notificacao;
+        private System.Windows.Forms.PictureBox PG_Senha;
+        private System.Windows.Forms.PictureBox PG_Pessoal;
     }
 }

@@ -76,5 +76,32 @@ namespace structa_front
         {
 
         }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            StatusTrabalho statusTrabalho = new StatusTrabalho();   
+            statusTrabalho.Show();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox23_Click(object sender, EventArgs e)
+        {
+            Cronograma cronograma = new Cronograma();  
+            cronograma.Show();
+        }
     }
 }

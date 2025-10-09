@@ -133,6 +133,9 @@
   <data name="InformaçõesPessoais_Content" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\InformaçõesPessoais_Content.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Frame 232" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Frame 232.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Profile Information" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Profile Information.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -174,6 +177,9 @@
   </data>
   <data name="Structa" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Structa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Frame 180" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Frame 180.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Card" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Card.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -262,7 +268,7 @@
   <data name="present" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\present.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Frame 180" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Frame 180.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Platform Settings" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Platform Settings.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
