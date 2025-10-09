@@ -110,11 +110,23 @@
     <Compile Include="RoundedPanel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="UcPlanoDeGestao.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcPlanoDeGestao.Designer.cs">
+      <DependentUpon>UcPlanoDeGestao.cs</DependentUpon>
+    </Compile>
     <Compile Include="UcQtdPessoas.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UcQtdPessoas.Designer.cs">
       <DependentUpon>UcQtdPessoas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UcTarefasPlanoDeGestao.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcTarefasPlanoDeGestao.Designer.cs">
+      <DependentUpon>UcTarefasPlanoDeGestao.cs</DependentUpon>
     </Compile>
     <Compile Include="UsFeed.cs">
       <SubType>UserControl</SubType>
@@ -164,8 +176,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UcPlanoDeGestao.resx">
+      <DependentUpon>UcPlanoDeGestao.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UcQtdPessoas.resx">
       <DependentUpon>UcQtdPessoas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcTarefasPlanoDeGestao.resx">
+      <DependentUpon>UcTarefasPlanoDeGestao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UsFeed.resx">
       <DependentUpon>UsFeed.cs</DependentUpon>
@@ -252,6 +270,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\RecentesAreadeTrabalho.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SetaParaBaixoAzul.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OptionsPlanoDeGestao.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PadraoPlanoDeGestao.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AdicionarNovoGrupo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TarefasPlanoDeGestao.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
