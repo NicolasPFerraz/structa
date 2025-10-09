@@ -55,6 +55,12 @@
     <Compile Include="AdicionarMembros.Designer.cs">
       <DependentUpon>AdicionarMembros.cs</DependentUpon>
     </Compile>
+    <Compile Include="Convite_Amigos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Convite_Amigos.Designer.cs">
+      <DependentUpon>Convite_Amigos.cs</DependentUpon>
+    </Compile>
     <!-- Person form files (preserved) -->
     <!-- CriarConta / FormPrincipal / UcPerfil (preservados da outra branch) -->
     <Compile Include="CriarConta.cs">
@@ -62,6 +68,12 @@
     </Compile>
     <Compile Include="CriarConta.Designer.cs">
       <DependentUpon>CriarConta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EsqueciASenha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EsqueciASenha.Designer.cs">
+      <DependentUpon>EsqueciASenha.cs</DependentUpon>
     </Compile>
     <Compile Include="FormPrincipal.cs">
       <SubType>Form</SubType>
@@ -74,6 +86,17 @@
     </Compile>
     <Compile Include="Notificacao.Designer.cs">
       <DependentUpon>Notificacao.cs</DependentUpon>
+    <Compile Include="Nomear_QD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nomear_QD.Designer.cs">
+      <DependentUpon>Nomear_QD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NomeProjeto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NomeProjeto.Designer.cs">
+      <DependentUpon>NomeProjeto.cs</DependentUpon>
     </Compile>
     <Compile Include="Notificacoes.cs">
       <SubType>Form</SubType>
@@ -98,6 +121,23 @@
     </Compile>
     <Compile Include="StatusTrabalho.Designer.cs">
       <DependentUpon>StatusTrabalho.cs</DependentUpon>
+    <Compile Include="NovaAreaDeTrabalho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NovaAreaDeTrabalho.Designer.cs">
+      <DependentUpon>NovaAreaDeTrabalho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Perfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Perfil.Designer.cs">
+      <DependentUpon>Perfil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UcAreaDeTrabalho.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcAreaDeTrabalho.Designer.cs">
+      <DependentUpon>UcAreaDeTrabalho.cs</DependentUpon>
     </Compile>
     <Compile Include="UcPaginaInicial.cs">
       <SubType>UserControl</SubType>
@@ -128,11 +168,29 @@
     <Compile Include="RoundedPanel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="UcPlanoDeGestao.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcPlanoDeGestao.Designer.cs">
+      <DependentUpon>UcPlanoDeGestao.cs</DependentUpon>
+    </Compile>
     <Compile Include="UcQtdPessoas.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UcQtdPessoas.Designer.cs">
       <DependentUpon>UcQtdPessoas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UcTarefasPlanoDeGestao.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcTarefasPlanoDeGestao.Designer.cs">
+      <DependentUpon>UcTarefasPlanoDeGestao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UsFeed.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UsFeed.Designer.cs">
+      <DependentUpon>UsFeed.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -142,8 +200,14 @@
     <EmbeddedResource Include="AdicionarMembros.resx">
       <DependentUpon>AdicionarMembros.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Convite_Amigos.resx">
+      <DependentUpon>Convite_Amigos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CriarConta.resx">
       <DependentUpon>CriarConta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EsqueciASenha.resx">
+      <DependentUpon>EsqueciASenha.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
@@ -156,6 +220,11 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Notificacao.resx">
       <DependentUpon>Notificacao.cs</DependentUpon>
+    <EmbeddedResource Include="Nomear_QD.resx">
+      <DependentUpon>Nomear_QD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NomeProjeto.resx">
+      <DependentUpon>NomeProjeto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Notificacoes.resx">
       <DependentUpon>Notificacoes.cs</DependentUpon>
@@ -168,6 +237,14 @@
     </EmbeddedResource>
     <EmbeddedResource Include="StatusTrabalho.resx">
       <DependentUpon>StatusTrabalho.cs</DependentUpon>
+    <EmbeddedResource Include="NovaAreaDeTrabalho.resx">
+      <DependentUpon>NovaAreaDeTrabalho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Perfil.resx">
+      <DependentUpon>Perfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcAreaDeTrabalho.resx">
+      <DependentUpon>UcAreaDeTrabalho.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UcPaginaInicial.resx">
       <DependentUpon>UcPaginaInicial.cs</DependentUpon>
@@ -185,8 +262,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UcPlanoDeGestao.resx">
+      <DependentUpon>UcPlanoDeGestao.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UcQtdPessoas.resx">
       <DependentUpon>UcQtdPessoas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcTarefasPlanoDeGestao.resx">
+      <DependentUpon>UcTarefasPlanoDeGestao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UsFeed.resx">
+      <DependentUpon>UsFeed.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -324,6 +410,37 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Platform Settings.png" />
+    <None Include="Resources\ImagemTelaInicial2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MembrosTelaInicial.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ImgAreadeTabalhoIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ImgMaoFeed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ImagemAreadeTrabalho.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RecentesAreadeTrabalho.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SetaParaBaixoAzul.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OptionsPlanoDeGestao.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PadraoPlanoDeGestao.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AdicionarNovoGrupo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TarefasPlanoDeGestao.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
