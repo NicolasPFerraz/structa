@@ -70,12 +70,19 @@
       <DependentUpon>CriarConta.cs</DependentUpon>
     </Compile>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> estavel_muito_estavel
     <Compile Include="Cronograma.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Cronograma.Designer.cs">
       <DependentUpon>Cronograma.cs</DependentUpon>
+<<<<<<< HEAD
 =======
+=======
+    </Compile>
+>>>>>>> estavel_muito_estavel
     <Compile Include="EsqueciASenha.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +112,12 @@
     </Compile>
     <Compile Include="NomeProjeto.Designer.cs">
       <DependentUpon>NomeProjeto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Notificacao.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Notificacao.Designer.cs">
+      <DependentUpon>Notificacao.cs</DependentUpon>
     </Compile>
     <Compile Include="Notificacoes.cs">
       <SubType>Form</SubType>
@@ -153,6 +166,12 @@
     <Compile Include="UcPaginaInicial.Designer.cs">
       <DependentUpon>UcPaginaInicial.cs</DependentUpon>
     </Compile>
+    <Compile Include="UcPainelPerfil.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcPainelPerfil.Designer.cs">
+      <DependentUpon>UcPainelPerfil.cs</DependentUpon>
+    </Compile>
     <Compile Include="UcPerfil.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -188,6 +207,18 @@
     <Compile Include="UcQtdPessoas.Designer.cs">
       <DependentUpon>UcQtdPessoas.cs</DependentUpon>
     </Compile>
+    <Compile Include="UcSenha.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcSenha.Designer.cs">
+      <DependentUpon>UcSenha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UcStatusTrabalho.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcStatusTrabalho.Designer.cs">
+      <DependentUpon>UcStatusTrabalho.cs</DependentUpon>
+    </Compile>
     <Compile Include="UcTarefasPlanoDeGestao.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -215,9 +246,15 @@
       <DependentUpon>CriarConta.cs</DependentUpon>
     </EmbeddedResource>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <EmbeddedResource Include="Cronograma.resx">
       <DependentUpon>Cronograma.cs</DependentUpon>
 =======
+=======
+    <EmbeddedResource Include="Cronograma.resx">
+      <DependentUpon>Cronograma.cs</DependentUpon>
+    </EmbeddedResource>
+>>>>>>> estavel_muito_estavel
     <EmbeddedResource Include="EsqueciASenha.resx">
       <DependentUpon>EsqueciASenha.cs</DependentUpon>
 >>>>>>> 81720303bb0b50a184bcfe886e16a83e1824d28f
@@ -238,6 +275,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NomeProjeto.resx">
       <DependentUpon>NomeProjeto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Notificacao.resx">
+      <DependentUpon>Notificacao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Notificacoes.resx">
       <DependentUpon>Notificacoes.cs</DependentUpon>
@@ -262,6 +302,12 @@
     <EmbeddedResource Include="UcPaginaInicial.resx">
       <DependentUpon>UcPaginaInicial.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UcPainelPerfil.resx">
+      <DependentUpon>UcPainelPerfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcPerfil.aa.resx">
+      <DependentUpon>UcPerfil.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UcPerfil.resx">
       <DependentUpon>UcPerfil.cs</DependentUpon>
     </EmbeddedResource>
@@ -280,6 +326,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UcQtdPessoas.resx">
       <DependentUpon>UcQtdPessoas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcSenha.resx">
+      <DependentUpon>UcSenha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcStatusTrabalho.resx">
+      <DependentUpon>UcStatusTrabalho.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UcTarefasPlanoDeGestao.resx">
       <DependentUpon>UcTarefasPlanoDeGestao.cs</DependentUpon>

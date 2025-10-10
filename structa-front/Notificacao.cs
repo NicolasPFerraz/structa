@@ -16,5 +16,15 @@ namespace structa_front
         {
             InitializeComponent();
         }
+<<<<<<< HEAD
     }
 }
+=======
+
+        private void Notificacao_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
+}
+>>>>>>> estavel_muito_estavel

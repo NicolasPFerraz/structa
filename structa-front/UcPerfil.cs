@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace structa_front
 {
-    public partial class UcPerfil : UserControl
+    public partial class panel : UserControl
     {
-        public UcPerfil()
+        public panel()
         {
             InitializeComponent();
         }
@@ -79,7 +79,11 @@ namespace structa_front
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             StatusTrabalho statusTrabalho = new StatusTrabalho();   
+=======
+            StatusTrabalho statusTrabalho = new StatusTrabalho();
+>>>>>>> estavel_muito_estavel
             statusTrabalho.Show();
         }
 
@@ -100,7 +104,11 @@ namespace structa_front
 
         private void pictureBox23_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             Cronograma cronograma = new Cronograma();  
+=======
+            Cronograma cronograma = new Cronograma();
+>>>>>>> estavel_muito_estavel
             cronograma.Show();
         }
     }

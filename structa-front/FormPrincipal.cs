@@ -33,10 +33,16 @@ namespace structa_front
         {
             // Limpa o painel de conteúdo
             panelConteudo.Controls.Clear();
-            // Configura a página para preencher o painel
-            pagina.Dock = DockStyle.Fill;
-            // Adiciona a página ao painel de conteúdo
+
+            // Configura o tamanho do UserControl (maior que o panelConteudo para rolar)
+            pagina.Size = new Size(panelConteudo.Width, 800); // ou a altura que precisar
+            pagina.Location = new Point(0, 0);
+
+            // Adiciona ao panel
             panelConteudo.Controls.Add(pagina);
+
+            // Ativa rolagem
+            panelConteudo.AutoScroll = true;
         }
 
         private void panelPerfil_Paint(object sender, PaintEventArgs e)
@@ -45,9 +51,16 @@ namespace structa_front
 
         private void lblPerfil_Click(object sender, EventArgs e)
         {
-            AbrirPagina(new UcPerfil());
+            Painel_Perfil painel_Perfil = new Painel_Perfil(this);
+
+            panelTop.Size = new System.Drawing.Size(1190, 212);
+            panelConteudo.Location = new System.Drawing.Point(247, 211);
+            panelTop.Controls.Clear();
+            panelTop.Controls.Add(new Painel_Perfil(this));
             lblPagina.Text = "Perfil"; // Exibe no label
             lblPaginaMin.Text = "Perfil"; // Exibe no label
+            AbrirPagina(new panel());
+
         }
 
 
@@ -107,9 +120,15 @@ namespace structa_front
         private void pictureBox13_Click(object sender, EventArgs e)
         {
             AbrirPagina(new UcAreaDeTrabalho());
-            AbrirPagina(new UcPaginaInicial());
             lblPagina.Text = "Área de trabalho"; // Exibe no label
             lblPaginaMin.Text = "Área de trabalho"; // Exibe no label
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            AbrirPagina(new UcPlanoDeGestao());
+            lblPagina.Text = "Plano de gestão"; // Exibe no label
+            lblPaginaMin.Text = "Plano de gestão"; // Exibe no 
         }
     }
 }
