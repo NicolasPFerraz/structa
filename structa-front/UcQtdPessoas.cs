@@ -26,7 +26,14 @@ namespace structa_front
         {
           NomeProjeto nomeProjeto = new NomeProjeto();
             nomeProjeto.Show();
-            this.Hide();
+            
+                // Obtém o formulário pai e o fecha
+                var parentForm = this.FindForm(); // Encontra o formulário que contém o UserControl
+                if (parentForm != null)
+                {
+                    parentForm.Close(); // Fecha o formulário
+                }
+            
         }
     }
 }
