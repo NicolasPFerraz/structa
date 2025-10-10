@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,12 +10,8 @@ using System.Windows.Forms;
 
 namespace structa_front
 {
-    public partial class UcPaginaInicial: UserControl
+    public partial class UcAreaDeTrabalho : UserControl
     {
-        public UcPaginaInicial()
-        {
-            InitializeComponent();
-        }
         public void AbrirPagina(UserControl pagina)
         {
             // Limpa o painel de conteúdo
@@ -26,14 +22,16 @@ namespace structa_front
             PainelConteudo.Controls.Add(pagina);
         }
 
-        private void label17_Click(object sender, EventArgs e)
+        public UcAreaDeTrabalho()
         {
-            AbrirPagina(new UcFeed());
+            InitializeComponent();
         }
 
-        private void label19_Click(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
-            AbrirPagina(new UcAreaDeTrabalho());
+            AbrirPagina(new UcPlanoDeGestao());
         }
+
+
     }
 }

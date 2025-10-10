@@ -59,17 +59,20 @@
             this.roundedPanel1.ShadowOffset = 16;
             this.roundedPanel1.Size = new System.Drawing.Size(505, 622);
             this.roundedPanel1.TabIndex = 0;
+            this.roundedPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.roundedPanel1_Paint);
             // 
             // label2
             // 
+            this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(248, 376);
+            this.label2.Location = new System.Drawing.Point(321, 374);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(218, 30);
+            this.label2.Size = new System.Drawing.Size(141, 30);
             this.label2.TabIndex = 34;
             this.label2.Text = "Esqueceu sua senha?";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // checkBox1
             // 
@@ -77,25 +80,28 @@
             this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.checkBox1.Location = new System.Drawing.Point(46, 383);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(123, 24);
+            this.checkBox1.Size = new System.Drawing.Size(104, 21);
             this.checkBox1.TabIndex = 33;
             this.checkBox1.Text = "Lembrar-me";
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(43, 516);
+            this.label1.Location = new System.Drawing.Point(88, 516);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(298, 30);
+            this.label1.Size = new System.Drawing.Size(218, 30);
             this.label1.TabIndex = 32;
             this.label1.Text = "Ainda não possui uma conta?";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.White;
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox2.Image = global::structa_front.Properties.Resources.eye;
             this.pictureBox2.Location = new System.Drawing.Point(419, 324);
             this.pictureBox2.Name = "pictureBox2";
@@ -103,6 +109,7 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox2.TabIndex = 31;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // lblSenha
             // 
@@ -113,6 +120,7 @@
             this.lblSenha.Size = new System.Drawing.Size(400, 25);
             this.lblSenha.TabIndex = 29;
             this.lblSenha.Text = "Senha";
+            this.lblSenha.Click += new System.EventHandler(this.lblSenha_Click);
             // 
             // txtSenha
             // 
@@ -121,14 +129,15 @@
             this.txtSenha.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.txtSenha.Location = new System.Drawing.Point(42, 324);
             this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Size = new System.Drawing.Size(371, 32);
+            this.txtSenha.Size = new System.Drawing.Size(371, 27);
             this.txtSenha.TabIndex = 30;
+            this.txtSenha.TextChanged += new System.EventHandler(this.txtSenha_TextChanged);
             // 
             // lblRegistrar
             // 
             this.lblRegistrar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRegistrar.ForeColor = System.Drawing.Color.Black;
-            this.lblRegistrar.Location = new System.Drawing.Point(335, 516);
+            this.lblRegistrar.Location = new System.Drawing.Point(286, 516);
             this.lblRegistrar.Name = "lblRegistrar";
             this.lblRegistrar.Size = new System.Drawing.Size(127, 30);
             this.lblRegistrar.TabIndex = 26;
@@ -147,6 +156,7 @@
             this.lblBemVindo.Size = new System.Drawing.Size(400, 40);
             this.lblBemVindo.TabIndex = 19;
             this.lblBemVindo.Text = "Bem vindo !";
+            this.lblBemVindo.Click += new System.EventHandler(this.lblBemVindo_Click);
             // 
             // lblLoginTitulo
             // 
@@ -168,6 +178,7 @@
             this.lblEmail.Size = new System.Drawing.Size(400, 25);
             this.lblEmail.TabIndex = 21;
             this.lblEmail.Text = "E-mail/Nome de usuário";
+            this.lblEmail.Click += new System.EventHandler(this.lblEmail_Click);
             // 
             // txtEmail
             // 
@@ -175,13 +186,15 @@
             this.txtEmail.ForeColor = System.Drawing.Color.Gray;
             this.txtEmail.Location = new System.Drawing.Point(39, 229);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(423, 32);
+            this.txtEmail.Size = new System.Drawing.Size(423, 27);
             this.txtEmail.TabIndex = 22;
             this.txtEmail.Text = "Digite seu nome ou e-mail";
+            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
             // btnLogin
             // 
             this.btnLogin.BackColor = System.Drawing.Color.Black;
+            this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
             this.btnLogin.ForeColor = System.Drawing.Color.White;
