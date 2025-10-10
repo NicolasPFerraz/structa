@@ -118,6 +118,7 @@
             this.panelQtdPessoas.Name = "panelQtdPessoas";
             this.panelQtdPessoas.Size = new System.Drawing.Size(794, 650);
             this.panelQtdPessoas.TabIndex = 16;
+            this.panelQtdPessoas.Paint += new System.Windows.Forms.PaintEventHandler(this.panelQtdPessoas_Paint);
             // 
             // pictureBox1
             // 

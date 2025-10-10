@@ -443,6 +443,16 @@ namespace structa_front.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Image_viewer_amico_2 {
+            get {
+                object obj = ResourceManager.GetObject("Image viewer-amico 2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Image_viewer_rafiki__1__1__2_ {
             get {
                 object obj = ResourceManager.GetObject("Image viewer-rafiki (1) 1 (2)", resourceCulture);

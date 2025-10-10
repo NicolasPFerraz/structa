@@ -388,5 +388,8 @@
   <ItemGroup>
     <None Include="Resources\TarefasPlanoDeGestao.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Image viewer-amico 2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

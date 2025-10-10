@@ -1,6 +1,6 @@
 ﻿namespace structa_front
 {
-    partial class NomeProjeto
+    partial class NomeProjeto : BaseForm
     {
         /// <summary>
         /// Required designer variable.
@@ -33,6 +33,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.TXT_NomeProjeto = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.BTN_Avancar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,13 +82,24 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::structa_front.Properties.Resources.Background__2_;
-            this.pictureBox1.Location = new System.Drawing.Point(872, 12);
+            this.pictureBox1.Image = global::structa_front.Properties.Resources.Image_viewer_amico_2;
+            this.pictureBox1.Location = new System.Drawing.Point(852, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(591, 750);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
+            // 
+            // BTN_Avancar
+            // 
+            this.BTN_Avancar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTN_Avancar.Location = new System.Drawing.Point(529, 434);
+            this.BTN_Avancar.Name = "BTN_Avancar";
+            this.BTN_Avancar.Size = new System.Drawing.Size(147, 42);
+            this.BTN_Avancar.TabIndex = 11;
+            this.BTN_Avancar.Text = "Avançar";
+            this.BTN_Avancar.UseVisualStyleBackColor = true;
+            this.BTN_Avancar.Click += new System.EventHandler(this.BTN_Avancar_Click);
             // 
             // NomeProjeto
             // 
@@ -95,6 +107,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1422, 853);
+            this.Controls.Add(this.BTN_Avancar);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.TXT_NomeProjeto);
             this.Controls.Add(this.label1);
@@ -116,5 +129,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox TXT_NomeProjeto;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button BTN_Avancar;
     }
 }

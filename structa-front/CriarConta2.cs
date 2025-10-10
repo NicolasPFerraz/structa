@@ -49,5 +49,10 @@ namespace structa_front
             // Adiciona a página ao painel de conte��do
             panelQtdPessoas.Controls.Add(pagina);
         }
+
+        private void panelQtdPessoas_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

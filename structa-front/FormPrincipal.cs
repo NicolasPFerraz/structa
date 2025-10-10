@@ -123,5 +123,10 @@ namespace structa_front
             lblPagina.Text = "Plano de gestão"; // Exibe no label
             lblPaginaMin.Text = "Plano de gestão"; // Exibe no 
         }
+
+        private void FormPrincipal_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

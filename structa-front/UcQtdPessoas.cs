@@ -24,8 +24,8 @@ namespace structa_front
 
         private void btnAvancar_Click(object sender, EventArgs e)
         {
-            FormPrincipal formPrincipal = new FormPrincipal("Página inicial");
-            formPrincipal.Show();
+          NomeProjeto nomeProjeto = new NomeProjeto();
+            nomeProjeto.Show();
             this.Hide();
         }
     }

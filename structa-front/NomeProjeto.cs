@@ -21,5 +21,12 @@ namespace structa_front
         {
 
         }
+
+        private void BTN_Avancar_Click(object sender, EventArgs e)
+        {
+            Nomear_QD nomear_QD = new Nomear_QD(); 
+            nomear_QD.Show();
+            this.Hide();
+        }
     }
 }
