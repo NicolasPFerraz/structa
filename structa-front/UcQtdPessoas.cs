@@ -33,7 +33,7 @@ namespace structa_front
                 {
                     parentForm.Close(); // Fecha o formulário
                 }
-            
+
         }
     }
 }
