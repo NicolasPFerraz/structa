@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,11 +10,16 @@ using System.Windows.Forms;
 
 namespace structa_front
 {
-    public partial class Perfil : Form
+    public partial class Notificacao : UserControl
     {
-        public Perfil()
+        public Notificacao()
         {
             InitializeComponent();
+        }
+
+        private void Notificacao_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

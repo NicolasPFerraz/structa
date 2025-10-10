@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,9 +10,9 @@ using System.Windows.Forms;
 
 namespace structa_front
 {
-    public partial class Perfil : Form
+    public partial class Senha : UserControl
     {
-        public Perfil()
+        public Senha()
         {
             InitializeComponent();
         }
