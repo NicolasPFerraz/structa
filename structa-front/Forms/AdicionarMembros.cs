@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace structa_front
 {
-    public partial class AdicionarMembros: Form
+    public partial class AdicionarMembros : Form
     {
         public AdicionarMembros()
         {
             InitializeComponent();
+        }
+
+        private void AdicionarMembros_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

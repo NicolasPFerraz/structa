@@ -1,4 +1,6 @@
-﻿namespace structa_front
+﻿using structa_front.Forms;
+
+namespace structa_front
 {
     partial class NomeProjeto : BaseForm
     {

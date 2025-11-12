@@ -1,4 +1,6 @@
-﻿namespace structa_front
+﻿using structa_front.Forms;
+
+namespace structa_front
 {
     partial class Login : BaseForm
     {
@@ -222,7 +224,7 @@
 
         #endregion
 
-        private structa_front.RoundedPanel roundedPanel;
+        private RoundedPanel roundedPanel;
         private System.Windows.Forms.Label lblWelcome;
         private System.Windows.Forms.Label lblLoginTitle;
         private System.Windows.Forms.Label lblLoginDesc;
