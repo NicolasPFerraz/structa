@@ -28,76 +28,81 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtPesquisarNotificacoes = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.btnLogin = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            this.SuspendLayout();
+            txtPesquisarNotificacoes = new TextBox();
+            label1 = new Label();
+            pictureBox6 = new PictureBox();
+            btnLogin = new Button();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
+            SuspendLayout();
             // 
             // txtPesquisarNotificacoes
             // 
-            this.txtPesquisarNotificacoes.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.txtPesquisarNotificacoes.ForeColor = System.Drawing.Color.Gray;
-            this.txtPesquisarNotificacoes.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txtPesquisarNotificacoes.Location = new System.Drawing.Point(24, 89);
-            this.txtPesquisarNotificacoes.Name = "txtPesquisarNotificacoes";
-            this.txtPesquisarNotificacoes.Size = new System.Drawing.Size(337, 27);
-            this.txtPesquisarNotificacoes.TabIndex = 40;
-            this.txtPesquisarNotificacoes.Text = "Nome";
+            txtPesquisarNotificacoes.Font = new Font("Segoe UI", 11F);
+            txtPesquisarNotificacoes.ForeColor = Color.Gray;
+            txtPesquisarNotificacoes.ImeMode = ImeMode.NoControl;
+            txtPesquisarNotificacoes.Location = new Point(28, 103);
+            txtPesquisarNotificacoes.Margin = new Padding(4, 3, 4, 3);
+            txtPesquisarNotificacoes.Name = "txtPesquisarNotificacoes";
+            txtPesquisarNotificacoes.Size = new Size(392, 27);
+            txtPesquisarNotificacoes.TabIndex = 40;
+            txtPesquisarNotificacoes.Text = "Nome";
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(9, 18);
-            this.label1.Margin = new System.Windows.Forms.Padding(0);
-            this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            this.label1.Size = new System.Drawing.Size(353, 31);
-            this.label1.TabIndex = 36;
-            this.label1.Text = "Criar nova área de trabalho";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label1.AutoSize = true;
+            label1.Font = new Font("Microsoft Sans Serif", 20F);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(10, 21);
+            label1.Margin = new Padding(0);
+            label1.Name = "label1";
+            label1.Padding = new Padding(13, 0, 0, 0);
+            label1.Size = new Size(355, 31);
+            label1.TabIndex = 36;
+            label1.Text = "Criar nova área de trabalho";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // pictureBox6
             // 
-            this.pictureBox6.Image = global::structa_front.Properties.Resources.LineSeparator;
-            this.pictureBox6.Location = new System.Drawing.Point(24, 82);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(489, 1);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox6.TabIndex = 37;
-            this.pictureBox6.TabStop = false;
+            pictureBox6.Image = Properties.Resources.LineSeparator;
+            pictureBox6.Location = new Point(28, 95);
+            pictureBox6.Margin = new Padding(4, 3, 4, 3);
+            pictureBox6.Name = "pictureBox6";
+            pictureBox6.Size = new Size(570, 1);
+            pictureBox6.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox6.TabIndex = 37;
+            pictureBox6.TabStop = false;
             // 
             // btnLogin
             // 
-            this.btnLogin.BackColor = System.Drawing.Color.Black;
-            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(367, 89);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(146, 27);
-            this.btnLogin.TabIndex = 41;
-            this.btnLogin.Text = "Criar";
-            this.btnLogin.UseVisualStyleBackColor = false;
+            btnLogin.BackColor = Color.Black;
+            btnLogin.FlatStyle = FlatStyle.Flat;
+            btnLogin.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnLogin.ForeColor = Color.White;
+            btnLogin.Location = new Point(428, 103);
+            btnLogin.Margin = new Padding(4, 3, 4, 3);
+            btnLogin.Name = "btnLogin";
+            btnLogin.Size = new Size(170, 31);
+            btnLogin.TabIndex = 41;
+            btnLogin.Text = "Criar";
+            btnLogin.UseVisualStyleBackColor = false;
+            btnLogin.Click += btnLogin_Click;
             // 
             // NovaAreaDeTrabalho
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(20)))), ((int)(((byte)(47)))));
-            this.ClientSize = new System.Drawing.Size(553, 450);
-            this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.txtPesquisarNotificacoes);
-            this.Controls.Add(this.pictureBox6);
-            this.Controls.Add(this.label1);
-            this.Name = "NovaAreaDeTrabalho";
-            this.Text = "NovaAreaDeTrabalho";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(12, 20, 47);
+            ClientSize = new Size(645, 519);
+            Controls.Add(btnLogin);
+            Controls.Add(txtPesquisarNotificacoes);
+            Controls.Add(pictureBox6);
+            Controls.Add(label1);
+            Margin = new Padding(4, 3, 4, 3);
+            Name = "NovaAreaDeTrabalho";
+            Text = "NovaAreaDeTrabalho";
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 
