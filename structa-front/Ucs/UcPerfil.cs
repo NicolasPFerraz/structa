@@ -1,4 +1,6 @@
-﻿using System;
+﻿using structa_front.Models;
+using structa_front.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -102,6 +104,15 @@ namespace structa_front
         {
             Cronograma cronograma = new Cronograma();
             cronograma.Show();
+        }
+
+        private async void lblNome_Click(object sender, EventArgs e)
+        {
+            var usuariosService = new UsuariosService();
+
+            var usuario = await usuariosService.BuscarUsuarioPorIdAsync(Sessao.UsuarioId | 1);
+
+            lblNome.Text = usuario?.Nome ?? "Usuário não encontrado";
         }
     }
 }

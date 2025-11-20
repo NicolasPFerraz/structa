@@ -29,505 +29,500 @@ namespace structa_front
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(panel));
-            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
-            this.LBL_InformacaoCard = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox23 = new System.Windows.Forms.PictureBox();
-            this.pictureBox22 = new System.Windows.Forms.PictureBox();
-            this.pictureBox21 = new System.Windows.Forms.PictureBox();
-            this.pictureBox20 = new System.Windows.Forms.PictureBox();
-            this.pictureBox19 = new System.Windows.Forms.PictureBox();
-            this.pictureBox18 = new System.Windows.Forms.PictureBox();
-            this.pictureBox17 = new System.Windows.Forms.PictureBox();
-            this.pictureBox16 = new System.Windows.Forms.PictureBox();
-            this.pictureBox13 = new System.Windows.Forms.PictureBox();
-            this.pictureBox12 = new System.Windows.Forms.PictureBox();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox27 = new System.Windows.Forms.PictureBox();
-            this.pictureBox26 = new System.Windows.Forms.PictureBox();
-            this.pictureBox25 = new System.Windows.Forms.PictureBox();
-            this.pictureBox24 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).BeginInit();
-            this.SuspendLayout();
+            helpProvider1 = new HelpProvider();
+            LBL_InformacaoCard = new Label();
+            textBox1 = new TextBox();
+            contextMenuStrip1 = new ContextMenuStrip(components);
+            dateTimePicker1 = new DateTimePicker();
+            label3 = new Label();
+            label4 = new Label();
+            radioButton1 = new RadioButton();
+            radioButton2 = new RadioButton();
+            label5 = new Label();
+            label6 = new Label();
+            label7 = new Label();
+            label8 = new Label();
+            label9 = new Label();
+            label10 = new Label();
+            label11 = new Label();
+            label12 = new Label();
+            label13 = new Label();
+            label15 = new Label();
+            label16 = new Label();
+            label17 = new Label();
+            label18 = new Label();
+            label14 = new Label();
+            label19 = new Label();
+            label1 = new Label();
+            pictureBox23 = new PictureBox();
+            pictureBox22 = new PictureBox();
+            pictureBox21 = new PictureBox();
+            pictureBox20 = new PictureBox();
+            pictureBox19 = new PictureBox();
+            pictureBox18 = new PictureBox();
+            pictureBox17 = new PictureBox();
+            pictureBox16 = new PictureBox();
+            pictureBox13 = new PictureBox();
+            pictureBox12 = new PictureBox();
+            pictureBox11 = new PictureBox();
+            pictureBox9 = new PictureBox();
+            pictureBox8 = new PictureBox();
+            pictureBox7 = new PictureBox();
+            pictureBox6 = new PictureBox();
+            pictureBox27 = new PictureBox();
+            pictureBox26 = new PictureBox();
+            pictureBox25 = new PictureBox();
+            pictureBox24 = new PictureBox();
+            lblNome = new Label();
+            ((System.ComponentModel.ISupportInitialize)pictureBox23).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox22).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox21).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox20).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox19).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox18).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox17).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox16).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox13).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox12).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox11).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox27).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox26).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox25).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox24).BeginInit();
+            SuspendLayout();
             // 
             // LBL_InformacaoCard
             // 
-            resources.ApplyResources(this.LBL_InformacaoCard, "LBL_InformacaoCard");
-            this.LBL_InformacaoCard.BackColor = System.Drawing.Color.Transparent;
-            this.LBL_InformacaoCard.ForeColor = System.Drawing.Color.White;
-            this.LBL_InformacaoCard.Name = "LBL_InformacaoCard";
-            this.helpProvider1.SetShowHelp(this.LBL_InformacaoCard, ((bool)(resources.GetObject("LBL_InformacaoCard.ShowHelp"))));
+            resources.ApplyResources(LBL_InformacaoCard, "LBL_InformacaoCard");
+            LBL_InformacaoCard.BackColor = Color.Transparent;
+            LBL_InformacaoCard.ForeColor = Color.White;
+            LBL_InformacaoCard.Name = "LBL_InformacaoCard";
+            helpProvider1.SetShowHelp(LBL_InformacaoCard, (bool)resources.GetObject("LBL_InformacaoCard.ShowHelp"));
             // 
             // textBox1
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(30)))), ((int)(((byte)(76)))));
-            this.textBox1.ForeColor = System.Drawing.Color.White;
-            resources.ApplyResources(this.textBox1, "textBox1");
-            this.textBox1.Name = "textBox1";
-            this.helpProvider1.SetShowHelp(this.textBox1, ((bool)(resources.GetObject("textBox1.ShowHelp"))));
+            textBox1.BackColor = Color.FromArgb(17, 30, 76);
+            textBox1.ForeColor = Color.White;
+            resources.ApplyResources(textBox1, "textBox1");
+            textBox1.Name = "textBox1";
+            helpProvider1.SetShowHelp(textBox1, (bool)resources.GetObject("textBox1.ShowHelp"));
             // 
             // contextMenuStrip1
             // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.helpProvider1.SetShowHelp(this.contextMenuStrip1, ((bool)(resources.GetObject("contextMenuStrip1.ShowHelp"))));
-            resources.ApplyResources(this.contextMenuStrip1, "contextMenuStrip1");
+            contextMenuStrip1.ImageScalingSize = new Size(20, 20);
+            contextMenuStrip1.Name = "contextMenuStrip1";
+            helpProvider1.SetShowHelp(contextMenuStrip1, (bool)resources.GetObject("contextMenuStrip1.ShowHelp"));
+            resources.ApplyResources(contextMenuStrip1, "contextMenuStrip1");
             // 
             // dateTimePicker1
             // 
-            resources.ApplyResources(this.dateTimePicker1, "dateTimePicker1");
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.helpProvider1.SetShowHelp(this.dateTimePicker1, ((bool)(resources.GetObject("dateTimePicker1.ShowHelp"))));
+            resources.ApplyResources(dateTimePicker1, "dateTimePicker1");
+            dateTimePicker1.Name = "dateTimePicker1";
+            helpProvider1.SetShowHelp(dateTimePicker1, (bool)resources.GetObject("dateTimePicker1.ShowHelp"));
             // 
             // label3
             // 
-            resources.ApplyResources(this.label3, "label3");
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Name = "label3";
-            this.helpProvider1.SetShowHelp(this.label3, ((bool)(resources.GetObject("label3.ShowHelp"))));
+            resources.ApplyResources(label3, "label3");
+            label3.ForeColor = Color.White;
+            label3.Name = "label3";
+            helpProvider1.SetShowHelp(label3, (bool)resources.GetObject("label3.ShowHelp"));
             // 
             // label4
             // 
-            resources.ApplyResources(this.label4, "label4");
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Name = "label4";
-            this.helpProvider1.SetShowHelp(this.label4, ((bool)(resources.GetObject("label4.ShowHelp"))));
+            resources.ApplyResources(label4, "label4");
+            label4.ForeColor = Color.White;
+            label4.Name = "label4";
+            helpProvider1.SetShowHelp(label4, (bool)resources.GetObject("label4.ShowHelp"));
             // 
             // radioButton1
             // 
-            resources.ApplyResources(this.radioButton1, "radioButton1");
-            this.radioButton1.BackColor = System.Drawing.Color.Transparent;
-            this.radioButton1.ForeColor = System.Drawing.Color.White;
-            this.radioButton1.Name = "radioButton1";
-            this.helpProvider1.SetShowHelp(this.radioButton1, ((bool)(resources.GetObject("radioButton1.ShowHelp"))));
-            this.radioButton1.TabStop = true;
-            this.radioButton1.UseVisualStyleBackColor = false;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            resources.ApplyResources(radioButton1, "radioButton1");
+            radioButton1.BackColor = Color.Transparent;
+            radioButton1.ForeColor = Color.White;
+            radioButton1.Name = "radioButton1";
+            helpProvider1.SetShowHelp(radioButton1, (bool)resources.GetObject("radioButton1.ShowHelp"));
+            radioButton1.TabStop = true;
+            radioButton1.UseVisualStyleBackColor = false;
+            radioButton1.CheckedChanged += radioButton1_CheckedChanged;
             // 
             // radioButton2
             // 
-            resources.ApplyResources(this.radioButton2, "radioButton2");
-            this.radioButton2.BackColor = System.Drawing.Color.Transparent;
-            this.radioButton2.ForeColor = System.Drawing.Color.White;
-            this.radioButton2.Name = "radioButton2";
-            this.helpProvider1.SetShowHelp(this.radioButton2, ((bool)(resources.GetObject("radioButton2.ShowHelp"))));
-            this.radioButton2.TabStop = true;
-            this.radioButton2.UseVisualStyleBackColor = false;
+            resources.ApplyResources(radioButton2, "radioButton2");
+            radioButton2.BackColor = Color.Transparent;
+            radioButton2.ForeColor = Color.White;
+            radioButton2.Name = "radioButton2";
+            helpProvider1.SetShowHelp(radioButton2, (bool)resources.GetObject("radioButton2.ShowHelp"));
+            radioButton2.TabStop = true;
+            radioButton2.UseVisualStyleBackColor = false;
             // 
             // label5
             // 
-            resources.ApplyResources(this.label5, "label5");
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Name = "label5";
-            this.helpProvider1.SetShowHelp(this.label5, ((bool)(resources.GetObject("label5.ShowHelp"))));
+            resources.ApplyResources(label5, "label5");
+            label5.BackColor = Color.Transparent;
+            label5.ForeColor = Color.White;
+            label5.Name = "label5";
+            helpProvider1.SetShowHelp(label5, (bool)resources.GetObject("label5.ShowHelp"));
             // 
             // label6
             // 
-            resources.ApplyResources(this.label6, "label6");
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.label6.Name = "label6";
-            this.helpProvider1.SetShowHelp(this.label6, ((bool)(resources.GetObject("label6.ShowHelp"))));
+            resources.ApplyResources(label6, "label6");
+            label6.BackColor = Color.Transparent;
+            label6.ForeColor = Color.FromArgb(128, 128, 255);
+            label6.Name = "label6";
+            helpProvider1.SetShowHelp(label6, (bool)resources.GetObject("label6.ShowHelp"));
             // 
             // label7
             // 
-            resources.ApplyResources(this.label7, "label7");
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.label7.Name = "label7";
-            this.helpProvider1.SetShowHelp(this.label7, ((bool)(resources.GetObject("label7.ShowHelp"))));
+            resources.ApplyResources(label7, "label7");
+            label7.BackColor = Color.Transparent;
+            label7.ForeColor = Color.FromArgb(128, 128, 255);
+            label7.Name = "label7";
+            helpProvider1.SetShowHelp(label7, (bool)resources.GetObject("label7.ShowHelp"));
             // 
             // label8
             // 
-            resources.ApplyResources(this.label8, "label8");
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.label8.Name = "label8";
-            this.helpProvider1.SetShowHelp(this.label8, ((bool)(resources.GetObject("label8.ShowHelp"))));
+            resources.ApplyResources(label8, "label8");
+            label8.BackColor = Color.Transparent;
+            label8.ForeColor = Color.FromArgb(128, 128, 255);
+            label8.Name = "label8";
+            helpProvider1.SetShowHelp(label8, (bool)resources.GetObject("label8.ShowHelp"));
             // 
             // label9
             // 
-            resources.ApplyResources(this.label9, "label9");
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.label9.Name = "label9";
-            this.helpProvider1.SetShowHelp(this.label9, ((bool)(resources.GetObject("label9.ShowHelp"))));
+            resources.ApplyResources(label9, "label9");
+            label9.BackColor = Color.Transparent;
+            label9.ForeColor = Color.FromArgb(128, 128, 255);
+            label9.Name = "label9";
+            helpProvider1.SetShowHelp(label9, (bool)resources.GetObject("label9.ShowHelp"));
             // 
             // label10
             // 
-            resources.ApplyResources(this.label10, "label10");
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.label10.Name = "label10";
-            this.helpProvider1.SetShowHelp(this.label10, ((bool)(resources.GetObject("label10.ShowHelp"))));
+            resources.ApplyResources(label10, "label10");
+            label10.BackColor = Color.Transparent;
+            label10.ForeColor = Color.FromArgb(128, 128, 255);
+            label10.Name = "label10";
+            helpProvider1.SetShowHelp(label10, (bool)resources.GetObject("label10.ShowHelp"));
             // 
             // label11
             // 
-            resources.ApplyResources(this.label11, "label11");
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.label11.Name = "label11";
-            this.helpProvider1.SetShowHelp(this.label11, ((bool)(resources.GetObject("label11.ShowHelp"))));
+            resources.ApplyResources(label11, "label11");
+            label11.BackColor = Color.Transparent;
+            label11.ForeColor = Color.FromArgb(128, 128, 255);
+            label11.Name = "label11";
+            helpProvider1.SetShowHelp(label11, (bool)resources.GetObject("label11.ShowHelp"));
             // 
             // label12
             // 
-            resources.ApplyResources(this.label12, "label12");
-            this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.label12.Name = "label12";
-            this.helpProvider1.SetShowHelp(this.label12, ((bool)(resources.GetObject("label12.ShowHelp"))));
+            resources.ApplyResources(label12, "label12");
+            label12.BackColor = Color.Transparent;
+            label12.ForeColor = Color.FromArgb(128, 128, 255);
+            label12.Name = "label12";
+            helpProvider1.SetShowHelp(label12, (bool)resources.GetObject("label12.ShowHelp"));
             // 
             // label13
             // 
-            resources.ApplyResources(this.label13, "label13");
-            this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Name = "label13";
-            this.helpProvider1.SetShowHelp(this.label13, ((bool)(resources.GetObject("label13.ShowHelp"))));
-            this.label13.Click += new System.EventHandler(this.label13_Click);
+            resources.ApplyResources(label13, "label13");
+            label13.BackColor = Color.Transparent;
+            label13.ForeColor = Color.White;
+            label13.Name = "label13";
+            helpProvider1.SetShowHelp(label13, (bool)resources.GetObject("label13.ShowHelp"));
+            label13.Click += label13_Click;
             // 
             // label15
             // 
-            resources.ApplyResources(this.label15, "label15");
-            this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Name = "label15";
-            this.helpProvider1.SetShowHelp(this.label15, ((bool)(resources.GetObject("label15.ShowHelp"))));
+            resources.ApplyResources(label15, "label15");
+            label15.BackColor = Color.Transparent;
+            label15.ForeColor = Color.White;
+            label15.Name = "label15";
+            helpProvider1.SetShowHelp(label15, (bool)resources.GetObject("label15.ShowHelp"));
             // 
             // label16
             // 
-            resources.ApplyResources(this.label16, "label16");
-            this.label16.BackColor = System.Drawing.Color.Transparent;
-            this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Name = "label16";
-            this.helpProvider1.SetShowHelp(this.label16, ((bool)(resources.GetObject("label16.ShowHelp"))));
+            resources.ApplyResources(label16, "label16");
+            label16.BackColor = Color.Transparent;
+            label16.ForeColor = Color.White;
+            label16.Name = "label16";
+            helpProvider1.SetShowHelp(label16, (bool)resources.GetObject("label16.ShowHelp"));
             // 
             // label17
             // 
-            resources.ApplyResources(this.label17, "label17");
-            this.label17.BackColor = System.Drawing.Color.Transparent;
-            this.label17.ForeColor = System.Drawing.Color.White;
-            this.label17.Name = "label17";
-            this.helpProvider1.SetShowHelp(this.label17, ((bool)(resources.GetObject("label17.ShowHelp"))));
+            resources.ApplyResources(label17, "label17");
+            label17.BackColor = Color.Transparent;
+            label17.ForeColor = Color.White;
+            label17.Name = "label17";
+            helpProvider1.SetShowHelp(label17, (bool)resources.GetObject("label17.ShowHelp"));
             // 
             // label18
             // 
-            resources.ApplyResources(this.label18, "label18");
-            this.label18.BackColor = System.Drawing.Color.Transparent;
-            this.label18.ForeColor = System.Drawing.Color.White;
-            this.label18.Name = "label18";
-            this.helpProvider1.SetShowHelp(this.label18, ((bool)(resources.GetObject("label18.ShowHelp"))));
+            resources.ApplyResources(label18, "label18");
+            label18.BackColor = Color.Transparent;
+            label18.ForeColor = Color.White;
+            label18.Name = "label18";
+            helpProvider1.SetShowHelp(label18, (bool)resources.GetObject("label18.ShowHelp"));
             // 
             // label14
             // 
-            resources.ApplyResources(this.label14, "label14");
-            this.label14.BackColor = System.Drawing.Color.Transparent;
-            this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Name = "label14";
-            this.helpProvider1.SetShowHelp(this.label14, ((bool)(resources.GetObject("label14.ShowHelp"))));
+            resources.ApplyResources(label14, "label14");
+            label14.BackColor = Color.Transparent;
+            label14.ForeColor = Color.White;
+            label14.Name = "label14";
+            helpProvider1.SetShowHelp(label14, (bool)resources.GetObject("label14.ShowHelp"));
             // 
             // label19
             // 
-            resources.ApplyResources(this.label19, "label19");
-            this.label19.BackColor = System.Drawing.Color.Transparent;
-            this.label19.ForeColor = System.Drawing.Color.White;
-            this.label19.Name = "label19";
-            this.helpProvider1.SetShowHelp(this.label19, ((bool)(resources.GetObject("label19.ShowHelp"))));
+            resources.ApplyResources(label19, "label19");
+            label19.BackColor = Color.Transparent;
+            label19.ForeColor = Color.White;
+            label19.Name = "label19";
+            helpProvider1.SetShowHelp(label19, (bool)resources.GetObject("label19.ShowHelp"));
             // 
             // label1
             // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Name = "label1";
-            this.helpProvider1.SetShowHelp(this.label1, ((bool)(resources.GetObject("label1.ShowHelp"))));
+            resources.ApplyResources(label1, "label1");
+            label1.BackColor = Color.Transparent;
+            label1.ForeColor = Color.White;
+            label1.Name = "label1";
+            helpProvider1.SetShowHelp(label1, (bool)resources.GetObject("label1.ShowHelp"));
             // 
             // pictureBox23
             // 
-            this.pictureBox23.Image = global::structa_front.Properties.Resources.Edit;
-            resources.ApplyResources(this.pictureBox23, "pictureBox23");
-            this.pictureBox23.Name = "pictureBox23";
-            this.helpProvider1.SetShowHelp(this.pictureBox23, ((bool)(resources.GetObject("pictureBox23.ShowHelp"))));
-            this.pictureBox23.TabStop = false;
-            this.pictureBox23.Click += new System.EventHandler(this.pictureBox23_Click);
+            pictureBox23.Image = Properties.Resources.Edit;
+            resources.ApplyResources(pictureBox23, "pictureBox23");
+            pictureBox23.Name = "pictureBox23";
+            helpProvider1.SetShowHelp(pictureBox23, (bool)resources.GetObject("pictureBox23.ShowHelp"));
+            pictureBox23.TabStop = false;
+            pictureBox23.Click += pictureBox23_Click;
             // 
             // pictureBox22
             // 
-            this.pictureBox22.Image = global::structa_front.Properties.Resources.Frame_185;
-            resources.ApplyResources(this.pictureBox22, "pictureBox22");
-            this.pictureBox22.Name = "pictureBox22";
-            this.helpProvider1.SetShowHelp(this.pictureBox22, ((bool)(resources.GetObject("pictureBox22.ShowHelp"))));
-            this.pictureBox22.TabStop = false;
+            pictureBox22.Image = Properties.Resources.Frame_185;
+            resources.ApplyResources(pictureBox22, "pictureBox22");
+            pictureBox22.Name = "pictureBox22";
+            helpProvider1.SetShowHelp(pictureBox22, (bool)resources.GetObject("pictureBox22.ShowHelp"));
+            pictureBox22.TabStop = false;
             // 
             // pictureBox21
             // 
-            this.pictureBox21.Image = global::structa_front.Properties.Resources.Vector;
-            resources.ApplyResources(this.pictureBox21, "pictureBox21");
-            this.pictureBox21.Name = "pictureBox21";
-            this.helpProvider1.SetShowHelp(this.pictureBox21, ((bool)(resources.GetObject("pictureBox21.ShowHelp"))));
-            this.pictureBox21.TabStop = false;
+            pictureBox21.Image = Properties.Resources.Vector;
+            resources.ApplyResources(pictureBox21, "pictureBox21");
+            pictureBox21.Name = "pictureBox21";
+            helpProvider1.SetShowHelp(pictureBox21, (bool)resources.GetObject("pictureBox21.ShowHelp"));
+            pictureBox21.TabStop = false;
             // 
             // pictureBox20
             // 
-            this.pictureBox20.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox20.Image = global::structa_front.Properties.Resources.Frame_186;
-            resources.ApplyResources(this.pictureBox20, "pictureBox20");
-            this.pictureBox20.Name = "pictureBox20";
-            this.helpProvider1.SetShowHelp(this.pictureBox20, ((bool)(resources.GetObject("pictureBox20.ShowHelp"))));
-            this.pictureBox20.TabStop = false;
+            pictureBox20.BackColor = Color.Transparent;
+            pictureBox20.Image = Properties.Resources.Frame_186;
+            resources.ApplyResources(pictureBox20, "pictureBox20");
+            pictureBox20.Name = "pictureBox20";
+            helpProvider1.SetShowHelp(pictureBox20, (bool)resources.GetObject("pictureBox20.ShowHelp"));
+            pictureBox20.TabStop = false;
             // 
             // pictureBox19
             // 
-            this.pictureBox19.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox19.Image = global::structa_front.Properties.Resources.Clock;
-            resources.ApplyResources(this.pictureBox19, "pictureBox19");
-            this.pictureBox19.Name = "pictureBox19";
-            this.helpProvider1.SetShowHelp(this.pictureBox19, ((bool)(resources.GetObject("pictureBox19.ShowHelp"))));
-            this.pictureBox19.TabStop = false;
+            pictureBox19.BackColor = Color.Transparent;
+            pictureBox19.Image = Properties.Resources.Clock;
+            resources.ApplyResources(pictureBox19, "pictureBox19");
+            pictureBox19.Name = "pictureBox19";
+            helpProvider1.SetShowHelp(pictureBox19, (bool)resources.GetObject("pictureBox19.ShowHelp"));
+            pictureBox19.TabStop = false;
             // 
             // pictureBox18
             // 
-            this.pictureBox18.Image = global::structa_front.Properties.Resources.Background__3_;
-            resources.ApplyResources(this.pictureBox18, "pictureBox18");
-            this.pictureBox18.Name = "pictureBox18";
-            this.helpProvider1.SetShowHelp(this.pictureBox18, ((bool)(resources.GetObject("pictureBox18.ShowHelp"))));
-            this.pictureBox18.TabStop = false;
+            pictureBox18.Image = Properties.Resources.Background__3_;
+            resources.ApplyResources(pictureBox18, "pictureBox18");
+            pictureBox18.Name = "pictureBox18";
+            helpProvider1.SetShowHelp(pictureBox18, (bool)resources.GetObject("pictureBox18.ShowHelp"));
+            pictureBox18.TabStop = false;
             // 
             // pictureBox17
             // 
-            this.pictureBox17.Image = global::structa_front.Properties.Resources.Frame_234;
-            resources.ApplyResources(this.pictureBox17, "pictureBox17");
-            this.pictureBox17.Name = "pictureBox17";
-            this.helpProvider1.SetShowHelp(this.pictureBox17, ((bool)(resources.GetObject("pictureBox17.ShowHelp"))));
-            this.pictureBox17.TabStop = false;
+            pictureBox17.Image = Properties.Resources.Frame_234;
+            resources.ApplyResources(pictureBox17, "pictureBox17");
+            pictureBox17.Name = "pictureBox17";
+            helpProvider1.SetShowHelp(pictureBox17, (bool)resources.GetObject("pictureBox17.ShowHelp"));
+            pictureBox17.TabStop = false;
             // 
             // pictureBox16
             // 
-            this.pictureBox16.Image = global::structa_front.Properties.Resources.Frame_233;
-            resources.ApplyResources(this.pictureBox16, "pictureBox16");
-            this.pictureBox16.Name = "pictureBox16";
-            this.helpProvider1.SetShowHelp(this.pictureBox16, ((bool)(resources.GetObject("pictureBox16.ShowHelp"))));
-            this.pictureBox16.TabStop = false;
-            this.pictureBox16.Click += new System.EventHandler(this.pictureBox16_Click);
+            pictureBox16.Image = Properties.Resources.Frame_233;
+            resources.ApplyResources(pictureBox16, "pictureBox16");
+            pictureBox16.Name = "pictureBox16";
+            helpProvider1.SetShowHelp(pictureBox16, (bool)resources.GetObject("pictureBox16.ShowHelp"));
+            pictureBox16.TabStop = false;
+            pictureBox16.Click += pictureBox16_Click;
             // 
             // pictureBox13
             // 
-            this.pictureBox13.Image = global::structa_front.Properties.Resources.Profile_Information;
-            resources.ApplyResources(this.pictureBox13, "pictureBox13");
-            this.pictureBox13.Name = "pictureBox13";
-            this.helpProvider1.SetShowHelp(this.pictureBox13, ((bool)(resources.GetObject("pictureBox13.ShowHelp"))));
-            this.pictureBox13.TabStop = false;
+            pictureBox13.Image = Properties.Resources.Profile_Information;
+            resources.ApplyResources(pictureBox13, "pictureBox13");
+            pictureBox13.Name = "pictureBox13";
+            helpProvider1.SetShowHelp(pictureBox13, (bool)resources.GetObject("pictureBox13.ShowHelp"));
+            pictureBox13.TabStop = false;
             // 
             // pictureBox12
             // 
-            this.pictureBox12.Image = global::structa_front.Properties.Resources.present;
-            resources.ApplyResources(this.pictureBox12, "pictureBox12");
-            this.pictureBox12.Name = "pictureBox12";
-            this.helpProvider1.SetShowHelp(this.pictureBox12, ((bool)(resources.GetObject("pictureBox12.ShowHelp"))));
-            this.pictureBox12.TabStop = false;
+            pictureBox12.Image = Properties.Resources.present;
+            resources.ApplyResources(pictureBox12, "pictureBox12");
+            pictureBox12.Name = "pictureBox12";
+            helpProvider1.SetShowHelp(pictureBox12, (bool)resources.GetObject("pictureBox12.ShowHelp"));
+            pictureBox12.TabStop = false;
             // 
             // pictureBox11
             // 
-            this.pictureBox11.Image = global::structa_front.Properties.Resources.Frame_176;
-            resources.ApplyResources(this.pictureBox11, "pictureBox11");
-            this.pictureBox11.Name = "pictureBox11";
-            this.helpProvider1.SetShowHelp(this.pictureBox11, ((bool)(resources.GetObject("pictureBox11.ShowHelp"))));
-            this.pictureBox11.TabStop = false;
-            // 
-            // pictureBox10
-            // 
-            this.pictureBox10.Image = global::structa_front.Properties.Resources.Details;
-            resources.ApplyResources(this.pictureBox10, "pictureBox10");
-            this.pictureBox10.Name = "pictureBox10";
-            this.helpProvider1.SetShowHelp(this.pictureBox10, ((bool)(resources.GetObject("pictureBox10.ShowHelp"))));
-            this.pictureBox10.TabStop = false;
-            this.pictureBox10.Click += new System.EventHandler(this.pictureBox10_Click);
+            pictureBox11.Image = Properties.Resources.Frame_176;
+            resources.ApplyResources(pictureBox11, "pictureBox11");
+            pictureBox11.Name = "pictureBox11";
+            helpProvider1.SetShowHelp(pictureBox11, (bool)resources.GetObject("pictureBox11.ShowHelp"));
+            pictureBox11.TabStop = false;
             // 
             // pictureBox9
             // 
-            this.pictureBox9.Image = global::structa_front.Properties.Resources.Edit;
-            resources.ApplyResources(this.pictureBox9, "pictureBox9");
-            this.pictureBox9.Name = "pictureBox9";
-            this.helpProvider1.SetShowHelp(this.pictureBox9, ((bool)(resources.GetObject("pictureBox9.ShowHelp"))));
-            this.pictureBox9.TabStop = false;
+            pictureBox9.Image = Properties.Resources.Edit;
+            resources.ApplyResources(pictureBox9, "pictureBox9");
+            pictureBox9.Name = "pictureBox9";
+            helpProvider1.SetShowHelp(pictureBox9, (bool)resources.GetObject("pictureBox9.ShowHelp"));
+            pictureBox9.TabStop = false;
             // 
             // pictureBox8
             // 
-            this.pictureBox8.Image = global::structa_front.Properties.Resources.Vector_6;
-            resources.ApplyResources(this.pictureBox8, "pictureBox8");
-            this.pictureBox8.Name = "pictureBox8";
-            this.helpProvider1.SetShowHelp(this.pictureBox8, ((bool)(resources.GetObject("pictureBox8.ShowHelp"))));
-            this.pictureBox8.TabStop = false;
+            pictureBox8.Image = Properties.Resources.Vector_6;
+            resources.ApplyResources(pictureBox8, "pictureBox8");
+            pictureBox8.Name = "pictureBox8";
+            helpProvider1.SetShowHelp(pictureBox8, (bool)resources.GetObject("pictureBox8.ShowHelp"));
+            pictureBox8.TabStop = false;
             // 
             // pictureBox7
             // 
-            this.pictureBox7.Image = global::structa_front.Properties.Resources.Background__2_;
-            resources.ApplyResources(this.pictureBox7, "pictureBox7");
-            this.pictureBox7.Name = "pictureBox7";
-            this.helpProvider1.SetShowHelp(this.pictureBox7, ((bool)(resources.GetObject("pictureBox7.ShowHelp"))));
-            this.pictureBox7.TabStop = false;
-            this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
+            pictureBox7.Image = Properties.Resources.Background__2_;
+            resources.ApplyResources(pictureBox7, "pictureBox7");
+            pictureBox7.Name = "pictureBox7";
+            helpProvider1.SetShowHelp(pictureBox7, (bool)resources.GetObject("pictureBox7.ShowHelp"));
+            pictureBox7.TabStop = false;
+            pictureBox7.Click += pictureBox7_Click;
             // 
             // pictureBox6
             // 
-            this.pictureBox6.Image = global::structa_front.Properties.Resources.Card;
-            resources.ApplyResources(this.pictureBox6, "pictureBox6");
-            this.pictureBox6.Name = "pictureBox6";
-            this.helpProvider1.SetShowHelp(this.pictureBox6, ((bool)(resources.GetObject("pictureBox6.ShowHelp"))));
-            this.pictureBox6.TabStop = false;
-            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
+            pictureBox6.Image = Properties.Resources.Card;
+            resources.ApplyResources(pictureBox6, "pictureBox6");
+            pictureBox6.Name = "pictureBox6";
+            helpProvider1.SetShowHelp(pictureBox6, (bool)resources.GetObject("pictureBox6.ShowHelp"));
+            pictureBox6.TabStop = false;
+            pictureBox6.Click += pictureBox6_Click;
             // 
             // pictureBox27
             // 
-            this.pictureBox27.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox27.Image = global::structa_front.Properties.Resources.Frame_178;
-            resources.ApplyResources(this.pictureBox27, "pictureBox27");
-            this.pictureBox27.Name = "pictureBox27";
-            this.helpProvider1.SetShowHelp(this.pictureBox27, ((bool)(resources.GetObject("pictureBox27.ShowHelp"))));
-            this.pictureBox27.TabStop = false;
+            pictureBox27.BackColor = Color.Transparent;
+            pictureBox27.Image = Properties.Resources.Frame_178;
+            resources.ApplyResources(pictureBox27, "pictureBox27");
+            pictureBox27.Name = "pictureBox27";
+            helpProvider1.SetShowHelp(pictureBox27, (bool)resources.GetObject("pictureBox27.ShowHelp"));
+            pictureBox27.TabStop = false;
             // 
             // pictureBox26
             // 
-            this.pictureBox26.Image = global::structa_front.Properties.Resources.Frame_179;
-            resources.ApplyResources(this.pictureBox26, "pictureBox26");
-            this.pictureBox26.Name = "pictureBox26";
-            this.helpProvider1.SetShowHelp(this.pictureBox26, ((bool)(resources.GetObject("pictureBox26.ShowHelp"))));
-            this.pictureBox26.TabStop = false;
+            pictureBox26.Image = Properties.Resources.Frame_179;
+            resources.ApplyResources(pictureBox26, "pictureBox26");
+            pictureBox26.Name = "pictureBox26";
+            helpProvider1.SetShowHelp(pictureBox26, (bool)resources.GetObject("pictureBox26.ShowHelp"));
+            pictureBox26.TabStop = false;
             // 
             // pictureBox25
             // 
-            this.pictureBox25.Image = global::structa_front.Properties.Resources.Frame_180;
-            resources.ApplyResources(this.pictureBox25, "pictureBox25");
-            this.pictureBox25.Name = "pictureBox25";
-            this.helpProvider1.SetShowHelp(this.pictureBox25, ((bool)(resources.GetObject("pictureBox25.ShowHelp"))));
-            this.pictureBox25.TabStop = false;
+            pictureBox25.Image = Properties.Resources.Frame_180;
+            resources.ApplyResources(pictureBox25, "pictureBox25");
+            pictureBox25.Name = "pictureBox25";
+            helpProvider1.SetShowHelp(pictureBox25, (bool)resources.GetObject("pictureBox25.ShowHelp"));
+            pictureBox25.TabStop = false;
             // 
             // pictureBox24
             // 
-            this.pictureBox24.Image = global::structa_front.Properties.Resources.Frame_177__1_;
-            resources.ApplyResources(this.pictureBox24, "pictureBox24");
-            this.pictureBox24.Name = "pictureBox24";
-            this.helpProvider1.SetShowHelp(this.pictureBox24, ((bool)(resources.GetObject("pictureBox24.ShowHelp"))));
-            this.pictureBox24.TabStop = false;
+            pictureBox24.Image = Properties.Resources.Frame_177__1_;
+            resources.ApplyResources(pictureBox24, "pictureBox24");
+            pictureBox24.Name = "pictureBox24";
+            helpProvider1.SetShowHelp(pictureBox24, (bool)resources.GetObject("pictureBox24.ShowHelp"));
+            pictureBox24.TabStop = false;
+            // 
+            // lblNome
+            // 
+            resources.ApplyResources(lblNome, "lblNome");
+            lblNome.Name = "lblNome";
+            lblNome.Click += lblNome_Click;
             // 
             // panel
             // 
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(20)))), ((int)(((byte)(47)))));
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label19);
-            this.Controls.Add(this.pictureBox23);
-            this.Controls.Add(this.pictureBox22);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.pictureBox21);
-            this.Controls.Add(this.label18);
-            this.Controls.Add(this.label17);
-            this.Controls.Add(this.label16);
-            this.Controls.Add(this.label15);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.pictureBox20);
-            this.Controls.Add(this.pictureBox19);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.pictureBox18);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.pictureBox17);
-            this.Controls.Add(this.pictureBox16);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.pictureBox13);
-            this.Controls.Add(this.pictureBox12);
-            this.Controls.Add(this.pictureBox11);
-            this.Controls.Add(this.pictureBox10);
-            this.Controls.Add(this.pictureBox9);
-            this.Controls.Add(this.pictureBox8);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.LBL_InformacaoCard);
-            this.Controls.Add(this.pictureBox7);
-            this.Controls.Add(this.pictureBox6);
-            this.Name = "panel";
-            this.helpProvider1.SetShowHelp(this, ((bool)(resources.GetObject("$this.ShowHelp"))));
-            this.Load += new System.EventHandler(this.UcPerfil_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(12, 20, 47);
+            Controls.Add(lblNome);
+            Controls.Add(label1);
+            Controls.Add(label19);
+            Controls.Add(pictureBox23);
+            Controls.Add(pictureBox22);
+            Controls.Add(label14);
+            Controls.Add(pictureBox21);
+            Controls.Add(label18);
+            Controls.Add(label17);
+            Controls.Add(label16);
+            Controls.Add(label15);
+            Controls.Add(label13);
+            Controls.Add(label12);
+            Controls.Add(label11);
+            Controls.Add(label10);
+            Controls.Add(label9);
+            Controls.Add(label8);
+            Controls.Add(label7);
+            Controls.Add(label6);
+            Controls.Add(pictureBox20);
+            Controls.Add(pictureBox19);
+            Controls.Add(label5);
+            Controls.Add(pictureBox18);
+            Controls.Add(radioButton2);
+            Controls.Add(radioButton1);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(pictureBox17);
+            Controls.Add(pictureBox16);
+            Controls.Add(dateTimePicker1);
+            Controls.Add(pictureBox13);
+            Controls.Add(pictureBox12);
+            Controls.Add(pictureBox11);
+            Controls.Add(pictureBox9);
+            Controls.Add(pictureBox8);
+            Controls.Add(textBox1);
+            Controls.Add(LBL_InformacaoCard);
+            Controls.Add(pictureBox7);
+            Controls.Add(pictureBox6);
+            Name = "panel";
+            helpProvider1.SetShowHelp(this, (bool)resources.GetObject("$this.ShowHelp"));
+            Load += UcPerfil_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBox23).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox22).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox21).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox20).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox19).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox18).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox17).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox16).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox13).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox12).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox11).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox27).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox26).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox25).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox24).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 
@@ -540,7 +535,6 @@ namespace structa_front
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.PictureBox pictureBox9;
-        private System.Windows.Forms.PictureBox pictureBox10;
         private System.Windows.Forms.PictureBox pictureBox11;
         private System.Windows.Forms.PictureBox pictureBox12;
         private System.Windows.Forms.PictureBox pictureBox13;
@@ -577,5 +571,6 @@ namespace structa_front
         private System.Windows.Forms.PictureBox pictureBox26;
         private System.Windows.Forms.PictureBox pictureBox27;
         private System.Windows.Forms.Label label1;
+        private Label lblNome;
     }
 }
