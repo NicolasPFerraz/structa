@@ -41,5 +41,17 @@ namespace structa_front.Services
 
             return response;
         }
+
+        public async Task<Usuario> CriarUsuarioAsync(Usuario novoUsuario)
+        {
+            if (!_db.IsReady)
+                throw new InvalidOperationException("Supabase não inicializado");
+
+            var response = await _db.Client
+                .From<Usuario>()
+                .Insert(novoUsuario);
+
+            return response.Models.FirstOrDefault();
+        }
     }
 }

@@ -32,6 +32,9 @@ namespace structa_front
             AbrirPagina(new UcPlanoDeGestao());
         }
 
+        private void PainelConteudo_Paint(object sender, PaintEventArgs e)
+        {
 
+        }
     }
 }

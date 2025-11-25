@@ -1,4 +1,5 @@
 ﻿using structa_front.Forms;
+using structa_front.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -45,11 +46,30 @@ namespace structa_front
             this.Hide();
         }
 
-        private void btnRegistrar_Click(object sender, EventArgs e)
+        private async void btnRegistrar_Click(object sender, EventArgs e)
         {
-            CriarConta2 criarConta2 = new CriarConta2(); 
+            var usuario = new Models.Usuario
+            {
+                Nome = txtNomeUsuario.Text,
+                Email = txtEmail.Text,
+                Senha = txtSenha.Text,
+            };
+
+            var usuarioService = new Services.UsuariosService();
+            try
+            {
+                var result = await usuarioService.CriarUsuarioAsync(usuario);
+                MessageBox.Show("Usuário criado com sucesso! ID: " + result.Id);
+                // Redirecione ou limpe o formulário conforme necessário
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao criar usuário: " + ex.Message);
+            }
+
+
+            CriarConta2 criarConta2 = new CriarConta2();
             criarConta2.Show();
-            this.Hide();
         }
 
         private void lblLogin_MouseEnter(object sender, EventArgs e)
