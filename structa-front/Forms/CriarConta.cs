@@ -59,17 +59,18 @@ namespace structa_front
             try
             {
                 var result = await usuarioService.CriarUsuarioAsync(usuario);
-                MessageBox.Show("Usuário criado com sucesso! ID: " + result.Id);
+
+                CriarConta2 criarConta2 = new CriarConta2();
+                criarConta2.Show(); 
+                this.Hide();
+
+                Sessao.UsuarioId = result.Id;
                 // Redirecione ou limpe o formulário conforme necessário
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro ao criar usuário: " + ex.Message);
             }
-
-
-            CriarConta2 criarConta2 = new CriarConta2();
-            criarConta2.Show();
         }
 
         private void lblLogin_MouseEnter(object sender, EventArgs e)
