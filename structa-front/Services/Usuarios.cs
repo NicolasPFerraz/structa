@@ -64,5 +64,23 @@ namespace structa_front.Services
 
             return newUserResponse.Models.FirstOrDefault();
         }
+
+        public async Task<Usuario> LogarUsuarioAsync(Usuario usuario)
+        {
+            if (!_db.IsReady)
+                throw new InvalidOperationException("Supabase não inicializado");
+
+            var response = await _db.Client
+                .From<Usuario>()
+                .Select("*")
+                .Where(u => u.Email == usuario.Email && u.Senha == usuario.Senha)
+                .Single();
+
+            if (response == null)
+            {
+                throw new InvalidOperationException("Credenciais inválidas");
+            }
+            return response;
+        }
     }
 }

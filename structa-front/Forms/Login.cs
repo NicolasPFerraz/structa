@@ -1,4 +1,6 @@
 ﻿using structa_front.Forms;
+using structa_front.Models;
+using structa_front.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -80,11 +82,29 @@ namespace structa_front
 
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        private async void btnLogin_Click(object sender, EventArgs e)
         {
-            FormPrincipal formPrincipal = new FormPrincipal("Página");
-            formPrincipal.Show();
-            this.Hide();
+            var usuario = new Models.Usuario
+            {
+                Email = txtEmail.Text,
+                Senha = txtSenha.Text
+            };
+
+            var usuarioService = new Services.UsuariosService();
+
+            try
+            {
+                var result = await usuarioService.LogarUsuarioAsync(usuario);
+
+                FormPrincipal formPrincipal = new FormPrincipal("Página");
+                formPrincipal.Show();
+                this.Hide();
+
+                Sessao.UsuarioId = result.Id;
+            } catch (Exception ex) {
+                MessageBox.Show("Erro ao fazer login: " + ex.Message);
+                return;
+            }
         }
 
         private void label2_Click(object sender, EventArgs e)
