@@ -55,6 +55,12 @@ namespace structa_front
                 Senha = txtSenha.Text,
             };
 
+            if (usuario.Senha != txtSenhaConfirmada.Text)
+            {
+                MessageBox.Show("As senhas não coincidem. Por favor, tente novamente.");
+                return;
+            }
+
             var usuarioService = new Services.UsuariosService();
             try
             {
