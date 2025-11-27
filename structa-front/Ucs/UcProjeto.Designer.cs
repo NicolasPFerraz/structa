@@ -1,7 +1,4 @@
-﻿// ==========================================================
-// COLE ISTO EM: UcProjeto.Designer.cs
-// ==========================================================
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,7 +10,7 @@ using System.Windows.Forms;
 
 namespace structa_front
 {
-    partial class UcPlanoDeGestao // O nome da classe continua o mesmo
+    partial class UcPlanoDeGestao
     {
         /// <summary> 
         /// Variável de designer necessária.
@@ -52,7 +49,7 @@ namespace structa_front
             btnFiltro = new Button();
             btnOrdenar = new Button();
             btnOcultar = new Button();
-            btnAgrupar = new Button();
+            // O btnAgrupar foi removido daqui
             btnVisualizacoes = new Button();
             panelHeaderEsteMes = new Panel();
             lblEsteMes = new Label();
@@ -90,12 +87,12 @@ namespace structa_front
             panelToolbar.Controls.Add(btnFiltro);
             panelToolbar.Controls.Add(btnOrdenar);
             panelToolbar.Controls.Add(btnOcultar);
-            panelToolbar.Controls.Add(btnAgrupar);
+            // O btnAgrupar foi removido daqui
             panelToolbar.Location = new Point(17, 55);
             panelToolbar.Name = "panelToolbar";
             panelToolbar.Size = new Size(1122, 40);
             panelToolbar.TabIndex = 1;
-            panelToolbar.Paint += panelToolbar_Paint; // A linha de "subscription" fica aqui
+            panelToolbar.Paint += panelToolbar_Paint;
             // 
             // btnCriarElemento
             // 
@@ -137,7 +134,6 @@ namespace structa_front
             btnFiltro.TabIndex = 2;
             btnFiltro.Text = "Filtro";
             btnFiltro.UseVisualStyleBackColor = false;
-            // NOTA: O Click do btnFiltro será adicionado no outro arquivo
             // 
             // btnOrdenar
             // 
@@ -160,23 +156,12 @@ namespace structa_front
             btnOcultar.ForeColor = Color.White;
             btnOcultar.Location = new Point(372, 3);
             btnOcultar.Name = "btnOcultar";
-            btnOcultar.Size = new Size(75, 30);
+            btnOcultar.Size = new Size(130, 30); // Aumentei o tamanho para o novo texto
             btnOcultar.TabIndex = 4;
-            btnOcultar.Text = "Ocultar";
+            btnOcultar.Text = "Ocultar Concluídas"; // Texto inicial
             btnOcultar.UseVisualStyleBackColor = false;
             // 
-            // btnAgrupar
-            // 
-            btnAgrupar.BackColor = Color.FromArgb(45, 47, 90);
-            btnAgrupar.FlatAppearance.BorderSize = 0;
-            btnAgrupar.FlatStyle = FlatStyle.Flat;
-            btnAgrupar.ForeColor = Color.White;
-            btnAgrupar.Location = new Point(453, 3);
-            btnAgrupar.Name = "btnAgrupar";
-            btnAgrupar.Size = new Size(85, 30);
-            btnAgrupar.TabIndex = 5;
-            btnAgrupar.Text = "Agrupar por";
-            btnAgrupar.UseVisualStyleBackColor = false;
+            // O bloco do btnAgrupar foi removido daqui
             // 
             // btnVisualizacoes
             // 
@@ -333,7 +318,7 @@ namespace structa_front
             Controls.Add(panelToolbar);
             Controls.Add(lblTitulo);
             Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            Name = "UcPlanoDeGestao"; // O nome do componente ainda é esse
+            Name = "UcPlanoDeGestao";
             Size = new Size(1255, 496);
             Load += UcPlanoDeGestao_Load;
             panelToolbar.ResumeLayout(false);
@@ -356,7 +341,7 @@ namespace structa_front
         private System.Windows.Forms.Button btnFiltro;
         private System.Windows.Forms.Button btnOrdenar;
         private System.Windows.Forms.Button btnOcultar;
-        private System.Windows.Forms.Button btnAgrupar;
+        // O btnAgrupar foi removido daqui
         private System.Windows.Forms.Button btnVisualizacoes;
         private System.Windows.Forms.Panel panelHeaderEsteMes;
         private System.Windows.Forms.Label lblEsteMes;
@@ -368,7 +353,5 @@ namespace structa_front
         private System.Windows.Forms.ToolStripMenuItem gráficoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem calendárioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem kanbanToolStripMenuItem;
-
-        // <<< O MÉTODO 'panelToolbar_Paint' FOI REMOVIDO DAQUI >>>
     }
 }
