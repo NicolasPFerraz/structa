@@ -87,6 +87,7 @@ namespace structa_front
             dgvTarefas.Rows.Add(false, "4", "[Exemplo] Deploy", "Ana", "Novo", "27/11");
             dgvTarefas.Rows.Add(true, "5", "[Exemplo] Rever Docs", "Bruno", "Concluído", "22/11"); // Mais um concluído
 
+            // Reintroduz placeholder: última linha com campos readonly e texto cinza
             int rowIndex = dgvTarefas.Rows.Add(false, "", "+ Adicionar tarefa", "", "", "");
             DataGridViewRow placeholderRow = dgvTarefas.Rows[rowIndex];
             placeholderRow.DefaultCellStyle.ForeColor = Color.Gray;
@@ -116,33 +117,13 @@ namespace structa_front
 
         private void dgvTarefas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && dgvTarefas.Rows[e.RowIndex].Cells["colTarefa"].Value.ToString() == "+ Adicionar tarefa")
-            {
-                DataGridViewRow linhaAtual = dgvTarefas.Rows[e.RowIndex];
-                linhaAtual.Cells["colTarefa"].Value = "";
-                linhaAtual.DefaultCellStyle.ForeColor = Color.White;
-                linhaAtual.Cells["colID"].ReadOnly = false;
-                linhaAtual.Cells["colResp"].ReadOnly = false;
-                linhaAtual.Cells["colStatus"].ReadOnly = false;
-                linhaAtual.Cells["colData"].ReadOnly = false;
-                linhaAtual.Cells["colID"].Value = (dgvTarefas.Rows.Count - 1).ToString();
-                dgvTarefas.CurrentCell = linhaAtual.Cells["colTarefa"];
-                dgvTarefas.BeginEdit(true);
-
-                int newRowIndex = dgvTarefas.Rows.Add(false, "", "+ Adicionar tarefa", "", "", "");
-                DataGridViewRow placeholderRow = dgvTarefas.Rows[newRowIndex];
-                placeholderRow.DefaultCellStyle.ForeColor = Color.Gray;
-                placeholderRow.Cells["colID"].ReadOnly = true;
-                placeholderRow.Cells["colResp"].ReadOnly = true;
-                placeholderRow.Cells["colStatus"].ReadOnly = true;
-                placeholderRow.Cells["colData"].ReadOnly = true;
-            }
+            // Sem comportamento especial aqui; usamos CellContentClick para detectar o clique no placeholder
         }
 
         private void tabelaToolStripMenuItem_Click(object sender, EventArgs e) { MessageBox.Show("Visualização: Tabela selecionada."); }
-        private void gráficoToolStripMenuItem_Click(object sender, EventArgs e) { MessageBox.Show("Visualização: Gráfico selecionado."); }
-        private void calendárioToolStripMenuItem_Click(object sender, EventArgs e) { MessageBox.Show("Visualização: Calendário selecionado."); }
-        private void kanbanToolStripMenuItem_Click(object sender, EventArgs e) { MessageBox.Show("Visualização: Kanban selecionado."); }
+        private void gráficoToolStripMenuItem_Click(object sender, EventArgs e) { MessageBox.Show("Visualização: Gráfico selecionada."); }
+        private void calendárioToolStripMenuItem_Click(object sender, EventArgs e) { MessageBox.Show("Visualização: Calendário selecionada."); }
+        private void kanbanToolStripMenuItem_Click(object sender, EventArgs e) { MessageBox.Show("Visualização: Kanban selecionada."); }
         private void btnCriarElemento_Click(object sender, EventArgs e) { MessageBox.Show("Botão 'Criar Elemento' clicado."); }
         private void btnAdicionarGrupo_Click(object sender, EventArgs e) { MessageBox.Show("Botão 'Adicionar novo grupo' clicado."); }
 
@@ -159,32 +140,9 @@ namespace structa_front
 
         private void AplicarOrdenacao()
         {
-            DataGridViewRow placeholderRow = null;
-
-            // 1. Encontra e remove a linha "+ Adicionar tarefa"
-            foreach (DataGridViewRow row in dgvTarefas.Rows)
-            {
-                if (row.Cells["colTarefa"].Value != null && row.Cells["colTarefa"].Value.ToString() == "+ Adicionar tarefa")
-                {
-                    placeholderRow = row;
-                    dgvTarefas.Rows.Remove(row);
-                    break;
-                }
-            }
-
-            // 2. Define a direção da ordenação
+            // Ordena o DataGridView pela coluna "colTarefa"
             ListSortDirection direction = isSortAscending ? ListSortDirection.Ascending : ListSortDirection.Descending;
-
-            // 3. Ordena o DataGridView pela coluna "colTarefa"
             dgvTarefas.Sort(dgvTarefas.Columns["colTarefa"], direction);
-
-            // 4. Adiciona a linha placeholder de volta ao final
-            if (placeholderRow != null)
-            {
-                dgvTarefas.Rows.Add(placeholderRow);
-             
-            
-            }
         }
 
 
@@ -207,7 +165,7 @@ namespace structa_front
                 btnOcultar.Text = "Ocultar Concluídas";
             }
 
-            // Aplica a lógica de visibilidade (que agora inclui o filtro)
+            // Aplica a lógica de visibilidade
             AtualizarVisibilidadeLinhas();
         }
 
@@ -262,12 +220,11 @@ namespace structa_front
             // Itera por todas as linhas do DataGridView
             foreach (DataGridViewRow row in dgvTarefas.Rows)
             {
-                // 1. Verifica se é a linha "+ Adicionar tarefa"
-                // Esta linha deve SEMPRE estar visível.
+                // Garante que a linha placeholder "+ Adicionar tarefa" fique sempre visível
                 if (row.Cells["colTarefa"].Value != null && row.Cells["colTarefa"].Value.ToString() == "+ Adicionar tarefa")
                 {
                     row.Visible = true;
-                    continue; // Pula para a próxima linha
+                    continue;
                 }
 
                 bool isVisible = true; // Começa assumindo que a linha é visível
@@ -303,6 +260,62 @@ namespace structa_front
         private void panelToolbar_Paint(object sender, PaintEventArgs e)
         {
             // Pode deixar em branco
+        }
+
+        private void dgvTarefas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Proteções básicas
+            if (e.RowIndex < 0 || e.ColumnIndex < 0) return;
+
+            var qtdLinhas = dgvTarefas.Rows.Count;
+
+            // Só procede se clicou na última linha do grid
+            if (e.RowIndex != qtdLinhas - 1) return;
+
+            var cellValue = dgvTarefas.Rows[e.RowIndex].Cells["colTarefa"].Value;
+            if (cellValue == null) return;
+
+            if (cellValue.ToString() == "+ Adicionar tarefa")
+            {
+                // Transforma a linha placeholder em linha editável
+                DataGridViewRow linhaAtual = dgvTarefas.Rows[e.RowIndex];
+                linhaAtual.Cells["colTarefa"].Value = "";
+                linhaAtual.DefaultCellStyle.ForeColor = Color.White;
+                linhaAtual.Cells["colID"].ReadOnly = false;
+                linhaAtual.Cells["colResp"].ReadOnly = false;
+                linhaAtual.Cells["colStatus"].ReadOnly = false;
+                linhaAtual.Cells["colData"].ReadOnly = false;
+                linhaAtual.Cells["colID"].Value = (dgvTarefas.Rows.Count - 1).ToString();
+                dgvTarefas.CurrentCell = linhaAtual.Cells["colTarefa"];
+                dgvTarefas.BeginEdit(true);
+
+                // Adiciona um novo placeholder ao final (se não existir já)
+
+                MessageBox.Show("asidhjasgdh");
+                bool hasPlaceholder = false;
+                if (dgvTarefas.Rows.Count > 0)
+                {
+                    var lastRow = dgvTarefas.Rows[dgvTarefas.Rows.Count - 1];
+                    var lastVal = lastRow.Cells["colTarefa"].Value?.ToString() ?? string.Empty;
+                    hasPlaceholder = lastVal == "+ Adicionar tarefa";
+                }
+
+                if (!hasPlaceholder)
+                {
+                    int newRowIndex = dgvTarefas.Rows.Add(false, "", "+ Adicionar tarefa", "", "", "");
+                    DataGridViewRow placeholderRow = dgvTarefas.Rows[newRowIndex];
+                    placeholderRow.DefaultCellStyle.ForeColor = Color.Gray;
+                    placeholderRow.Cells["colID"].ReadOnly = true;
+                    placeholderRow.Cells["colResp"].ReadOnly = true;
+                    placeholderRow.Cells["colStatus"].ReadOnly = true;
+                    placeholderRow.Cells["colData"].ReadOnly = true;
+                }
+            }
+        }
+
+        private void panelHeaderEsteMes_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

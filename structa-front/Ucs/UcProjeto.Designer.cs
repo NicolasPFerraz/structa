@@ -49,7 +49,6 @@ namespace structa_front
             btnFiltro = new Button();
             btnOrdenar = new Button();
             btnOcultar = new Button();
-            // O btnAgrupar foi removido daqui
             btnVisualizacoes = new Button();
             panelHeaderEsteMes = new Panel();
             lblEsteMes = new Label();
@@ -75,7 +74,7 @@ namespace structa_front
             lblTitulo.ForeColor = Color.White;
             lblTitulo.Location = new Point(14, 10);
             lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(242, 41);
+            lblTitulo.Size = new Size(197, 32);
             lblTitulo.TabIndex = 0;
             lblTitulo.Text = "Plano de gestão";
             // 
@@ -87,7 +86,6 @@ namespace structa_front
             panelToolbar.Controls.Add(btnFiltro);
             panelToolbar.Controls.Add(btnOrdenar);
             panelToolbar.Controls.Add(btnOcultar);
-            // O btnAgrupar foi removido daqui
             panelToolbar.Location = new Point(17, 55);
             panelToolbar.Name = "panelToolbar";
             panelToolbar.Size = new Size(1122, 40);
@@ -156,12 +154,10 @@ namespace structa_front
             btnOcultar.ForeColor = Color.White;
             btnOcultar.Location = new Point(372, 3);
             btnOcultar.Name = "btnOcultar";
-            btnOcultar.Size = new Size(130, 30); // Aumentei o tamanho para o novo texto
+            btnOcultar.Size = new Size(130, 30);
             btnOcultar.TabIndex = 4;
-            btnOcultar.Text = "Ocultar Concluídas"; // Texto inicial
+            btnOcultar.Text = "Ocultar Concluídas";
             btnOcultar.UseVisualStyleBackColor = false;
-            // 
-            // O bloco do btnAgrupar foi removido daqui
             // 
             // btnVisualizacoes
             // 
@@ -186,6 +182,7 @@ namespace structa_front
             panelHeaderEsteMes.Name = "panelHeaderEsteMes";
             panelHeaderEsteMes.Size = new Size(200, 28);
             panelHeaderEsteMes.TabIndex = 2;
+            panelHeaderEsteMes.Paint += panelHeaderEsteMes_Paint;
             // 
             // lblEsteMes
             // 
@@ -194,7 +191,7 @@ namespace structa_front
             lblEsteMes.ForeColor = Color.White;
             lblEsteMes.Location = new Point(3, 3);
             lblEsteMes.Name = "lblEsteMes";
-            lblEsteMes.Size = new Size(119, 28);
+            lblEsteMes.Size = new Size(95, 21);
             lblEsteMes.TabIndex = 0;
             lblEsteMes.Text = "▾ Este mês";
             lblEsteMes.Click += HeaderEsteMes_Click;
@@ -249,6 +246,7 @@ namespace structa_front
             dgvTarefas.Size = new Size(1219, 304);
             dgvTarefas.TabIndex = 0;
             dgvTarefas.CellClick += dgvTarefas_CellClick;
+            dgvTarefas.CellContentClick += dgvTarefas_CellContentClick;
             // 
             // btnAdicionarGrupo
             // 
@@ -272,13 +270,13 @@ namespace structa_front
             contextMenuStripVisualizacoes.ImageScalingSize = new Size(20, 20);
             contextMenuStripVisualizacoes.Items.AddRange(new ToolStripItem[] { tabelaToolStripMenuItem, gráficoToolStripMenuItem, calendárioToolStripMenuItem, kanbanToolStripMenuItem });
             contextMenuStripVisualizacoes.Name = "contextMenuStripVisualizacoes";
-            contextMenuStripVisualizacoes.Size = new Size(177, 124);
+            contextMenuStripVisualizacoes.Size = new Size(151, 100);
             // 
             // tabelaToolStripMenuItem
             // 
             tabelaToolStripMenuItem.ForeColor = Color.White;
             tabelaToolStripMenuItem.Name = "tabelaToolStripMenuItem";
-            tabelaToolStripMenuItem.Size = new Size(176, 30);
+            tabelaToolStripMenuItem.Size = new Size(150, 24);
             tabelaToolStripMenuItem.Text = "Tabela";
             tabelaToolStripMenuItem.Click += tabelaToolStripMenuItem_Click;
             // 
@@ -286,7 +284,7 @@ namespace structa_front
             // 
             gráficoToolStripMenuItem.ForeColor = Color.White;
             gráficoToolStripMenuItem.Name = "gráficoToolStripMenuItem";
-            gráficoToolStripMenuItem.Size = new Size(176, 30);
+            gráficoToolStripMenuItem.Size = new Size(150, 24);
             gráficoToolStripMenuItem.Text = "Gráfico";
             gráficoToolStripMenuItem.Click += gráficoToolStripMenuItem_Click;
             // 
@@ -294,7 +292,7 @@ namespace structa_front
             // 
             calendárioToolStripMenuItem.ForeColor = Color.White;
             calendárioToolStripMenuItem.Name = "calendárioToolStripMenuItem";
-            calendárioToolStripMenuItem.Size = new Size(176, 30);
+            calendárioToolStripMenuItem.Size = new Size(150, 24);
             calendárioToolStripMenuItem.Text = "Calendário";
             calendárioToolStripMenuItem.Click += calendárioToolStripMenuItem_Click;
             // 
@@ -302,13 +300,13 @@ namespace structa_front
             // 
             kanbanToolStripMenuItem.ForeColor = Color.White;
             kanbanToolStripMenuItem.Name = "kanbanToolStripMenuItem";
-            kanbanToolStripMenuItem.Size = new Size(176, 30);
+            kanbanToolStripMenuItem.Size = new Size(150, 24);
             kanbanToolStripMenuItem.Text = "Kanban";
             kanbanToolStripMenuItem.Click += kanbanToolStripMenuItem_Click;
             // 
             // UcPlanoDeGestao
             // 
-            AutoScaleDimensions = new SizeF(8F, 19F);
+            AutoScaleDimensions = new SizeF(6F, 13F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(26, 28, 58);
             Controls.Add(btnAdicionarGrupo);
