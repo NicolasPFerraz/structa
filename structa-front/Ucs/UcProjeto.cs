@@ -1,373 +1,327 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿// ==========================================================
+// COLE ISTO EM: UcProjeto.cs
+// ==========================================================
+using System;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace structa_front
 {
-    partial class UcPlanoDeGestao
+    // A classe "partial" junta este arquivo com o Designer
+    public partial class UcPlanoDeGestao : UserControl
     {
-        /// <summary> 
-        /// Variável de designer necessária.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        // Flag para controlar o estado de visibilidade do painel de tarefas
+        private bool isPainelTarefasVisivel = true;
 
-        /// <summary> 
-        /// Limpar os recursos que estão sendo usados.
-        /// </summary>
-        /// <param name="disposing">true se for necessário descartar os recursos gerenciados; caso contrário, false.</param>
-        protected override void Dispose(bool disposing)
+        // Declara o ContextMenuStrip para o filtro
+        private ContextMenuStrip contextMenuFiltroStatus;
+
+
+        public UcPlanoDeGestao()
         {
-            if (disposing && (components != null))
+            InitializeComponent();
+        }
+
+        private void UcPlanoDeGestao_Load(object sender, EventArgs e)
+        {
+            // Define as colunas do DataGridView
+            ConfigurarColunasDataGridView();
+
+            // Carrega dados de exemplo para visualização
+            CarregarDadosDeExemplo();
+
+            // 1. Cria o menu de filtro dinamicamente
+            CriarMenuDeFiltro();
+
+            // 2. Adiciona o evento de clique ao botão Filtro
+            // (Fazemos isso aqui em vez de no Designer)
+            this.btnFiltro.Click += new System.EventHandler(this.btnFiltro_Click);
+        }
+
+        /// <summary>
+        /// ALTERAÇÃO: Adiciona Coluna ID e ajusta tamanho da Coluna Tarefa
+        /// </summary>
+        private void ConfigurarColunasDataGridView()
+        {
+            // Limpa colunas existentes, se houver
+            dgvTarefas.Columns.Clear();
+
+            // Coluna CheckBox
+            DataGridViewCheckBoxColumn checkColumn = new DataGridViewCheckBoxColumn
             {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
+                Name = "colCheck",
+                HeaderText = "",
+                Width = 30
+            };
+            dgvTarefas.Columns.Add(checkColumn);
+
+            // Coluna ID (Texto)  <<< NOVA COLUNA ADICIONADA AQUI
+            DataGridViewTextBoxColumn idColumn = new DataGridViewTextBoxColumn
+            {
+                Name = "colID",
+                HeaderText = "ID",
+                Width = 50
+            };
+            dgvTarefas.Columns.Add(idColumn);
+
+            // Coluna Tarefa (Texto)
+            DataGridViewTextBoxColumn tarefaColumn = new DataGridViewTextBoxColumn
+            {
+                Name = "colTarefa",
+                HeaderText = "Tarefa",
+                // AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill // Removido
+                Width = 300 // <<< TAMANHO DA TAREFA AJUSTADO
+            };
+            dgvTarefas.Columns.Add(tarefaColumn);
+
+            // Coluna Responsável (Texto)
+            DataGridViewTextBoxColumn respColumn = new DataGridViewTextBoxColumn
+            {
+                Name = "colResp",
+                HeaderText = "Resp.",
+                Width = 100
+            };
+            dgvTarefas.Columns.Add(respColumn);
+
+            // Coluna Status (ComboBox)
+            DataGridViewComboBoxColumn statusColumn = new DataGridViewComboBoxColumn
+            {
+                Name = "colStatus",
+                HeaderText = "Status",
+                Width = 100,
+                FlatStyle = FlatStyle.Flat
+            };
+            statusColumn.Items.Add("Parado");
+            statusColumn.Items.Add("Concluído");
+            statusColumn.Items.Add("Em Andamento");
+            statusColumn.Items.Add("Novo");
+            dgvTarefas.Columns.Add(statusColumn);
+
+            // Coluna Data (Texto)
+            DataGridViewTextBoxColumn dataColumn = new DataGridViewTextBoxColumn
+            {
+                Name = "colData",
+                HeaderText = "Data",
+                Width = 100
+            };
+            dgvTarefas.Columns.Add(dataColumn);
         }
 
-        #region Código gerado pelo Designer de Componentes
-
-        /// <summary> 
-        /// Método necessário para suporte ao Designer - não modifique 
-        /// o conteúdo deste método com o editor de código.
+        /// <summary>
+        /// ALTERAÇÃO: Adiciona dados para a nova coluna ID
         /// </summary>
-        private void InitializeComponent()
+        private void CarregarDadosDeExemplo()
         {
-            components = new Container();
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            lblTitulo = new Label();
-            panelToolbar = new FlowLayoutPanel();
-            btnCriarElemento = new Button();
-            btnPessoas = new Button();
-            btnFiltro = new Button();
-            btnOrdenar = new Button();
-            btnOcultar = new Button();
-            btnAgrupar = new Button();
-            btnVisualizacoes = new Button();
-            panelHeaderEsteMes = new Panel();
-            lblEsteMes = new Label();
-            panelTarefasGrid = new Panel();
-            dgvTarefas = new DataGridView();
-            btnAdicionarGrupo = new Button();
-            contextMenuStripVisualizacoes = new ContextMenuStrip(components);
-            tabelaToolStripMenuItem = new ToolStripMenuItem();
-            gráficoToolStripMenuItem = new ToolStripMenuItem();
-            calendárioToolStripMenuItem = new ToolStripMenuItem();
-            kanbanToolStripMenuItem = new ToolStripMenuItem();
-            panelToolbar.SuspendLayout();
-            panelHeaderEsteMes.SuspendLayout();
-            panelTarefasGrid.SuspendLayout();
-            ((ISupportInitialize)dgvTarefas).BeginInit();
-            contextMenuStripVisualizacoes.SuspendLayout();
-            SuspendLayout();
-            // 
-            // lblTitulo
-            // 
-            lblTitulo.AutoSize = true;
-            lblTitulo.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTitulo.ForeColor = Color.White;
-            lblTitulo.Location = new Point(14, 10);
-            lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(242, 41);
-            lblTitulo.TabIndex = 0;
-            lblTitulo.Text = "Plano de gestão";
-            // 
-            // panelToolbar
-            // 
-            panelToolbar.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            panelToolbar.Controls.Add(btnCriarElemento);
-            panelToolbar.Controls.Add(btnPessoas);
-            panelToolbar.Controls.Add(btnFiltro);
-            panelToolbar.Controls.Add(btnOrdenar);
-            panelToolbar.Controls.Add(btnOcultar);
-            panelToolbar.Controls.Add(btnAgrupar);
-            panelToolbar.Location = new Point(17, 55);
-            panelToolbar.Name = "panelToolbar";
-            panelToolbar.Size = new Size(1122, 40);
-            panelToolbar.TabIndex = 1;
-            panelToolbar.Paint += panelToolbar_Paint;
-            // 
-            // btnCriarElemento
-            // 
-            btnCriarElemento.BackColor = Color.FromArgb(29, 78, 216);
-            btnCriarElemento.FlatAppearance.BorderSize = 0;
-            btnCriarElemento.FlatStyle = FlatStyle.Flat;
-            btnCriarElemento.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnCriarElemento.ForeColor = Color.White;
-            btnCriarElemento.Location = new Point(3, 3);
-            btnCriarElemento.Name = "btnCriarElemento";
-            btnCriarElemento.Size = new Size(120, 30);
-            btnCriarElemento.TabIndex = 0;
-            btnCriarElemento.Text = "Criar Elemento ▾";
-            btnCriarElemento.UseVisualStyleBackColor = false;
-            btnCriarElemento.Click += btnCriarElemento_Click;
-            // 
-            // btnPessoas
-            // 
-            btnPessoas.BackColor = Color.FromArgb(45, 47, 90);
-            btnPessoas.FlatAppearance.BorderSize = 0;
-            btnPessoas.FlatStyle = FlatStyle.Flat;
-            btnPessoas.ForeColor = Color.White;
-            btnPessoas.Location = new Point(129, 3);
-            btnPessoas.Name = "btnPessoas";
-            btnPessoas.Size = new Size(75, 30);
-            btnPessoas.TabIndex = 1;
-            btnPessoas.Text = "Pessoas";
-            btnPessoas.UseVisualStyleBackColor = false;
-            // 
-            // btnFiltro
-            // 
-            btnFiltro.BackColor = Color.FromArgb(45, 47, 90);
-            btnFiltro.FlatAppearance.BorderSize = 0;
-            btnFiltro.FlatStyle = FlatStyle.Flat;
-            btnFiltro.ForeColor = Color.White;
-            btnFiltro.Location = new Point(210, 3);
-            btnFiltro.Name = "btnFiltro";
-            btnFiltro.Size = new Size(75, 30);
-            btnFiltro.TabIndex = 2;
-            btnFiltro.Text = "Filtro";
-            btnFiltro.UseVisualStyleBackColor = false;
-            // 
-            // btnOrdenar
-            // 
-            btnOrdenar.BackColor = Color.FromArgb(45, 47, 90);
-            btnOrdenar.FlatAppearance.BorderSize = 0;
-            btnOrdenar.FlatStyle = FlatStyle.Flat;
-            btnOrdenar.ForeColor = Color.White;
-            btnOrdenar.Location = new Point(291, 3);
-            btnOrdenar.Name = "btnOrdenar";
-            btnOrdenar.Size = new Size(75, 30);
-            btnOrdenar.TabIndex = 3;
-            btnOrdenar.Text = "Ordenar";
-            btnOrdenar.UseVisualStyleBackColor = false;
-            // 
-            // btnOcultar
-            // 
-            btnOcultar.BackColor = Color.FromArgb(45, 47, 90);
-            btnOcultar.FlatAppearance.BorderSize = 0;
-            btnOcultar.FlatStyle = FlatStyle.Flat;
-            btnOcultar.ForeColor = Color.White;
-            btnOcultar.Location = new Point(372, 3);
-            btnOcultar.Name = "btnOcultar";
-            btnOcultar.Size = new Size(75, 30);
-            btnOcultar.TabIndex = 4;
-            btnOcultar.Text = "Ocultar";
-            btnOcultar.UseVisualStyleBackColor = false;
-            // 
-            // btnAgrupar
-            // 
-            btnAgrupar.BackColor = Color.FromArgb(45, 47, 90);
-            btnAgrupar.FlatAppearance.BorderSize = 0;
-            btnAgrupar.FlatStyle = FlatStyle.Flat;
-            btnAgrupar.ForeColor = Color.White;
-            btnAgrupar.Location = new Point(453, 3);
-            btnAgrupar.Name = "btnAgrupar";
-            btnAgrupar.Size = new Size(85, 30);
-            btnAgrupar.TabIndex = 5;
-            btnAgrupar.Text = "Agrupar por";
-            btnAgrupar.UseVisualStyleBackColor = false;
-            // 
-            // btnVisualizacoes
-            // 
-            btnVisualizacoes.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnVisualizacoes.BackColor = Color.FromArgb(45, 47, 90);
-            btnVisualizacoes.FlatAppearance.BorderSize = 0;
-            btnVisualizacoes.FlatStyle = FlatStyle.Flat;
-            btnVisualizacoes.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnVisualizacoes.ForeColor = Color.White;
-            btnVisualizacoes.Location = new Point(1145, 15);
-            btnVisualizacoes.Name = "btnVisualizacoes";
-            btnVisualizacoes.Size = new Size(91, 30);
-            btnVisualizacoes.TabIndex = 6;
-            btnVisualizacoes.Text = "Padrão ▾";
-            btnVisualizacoes.UseVisualStyleBackColor = false;
-            btnVisualizacoes.Click += btnVisualizacoes_Click;
-            // 
-            // panelHeaderEsteMes
-            // 
-            panelHeaderEsteMes.Controls.Add(lblEsteMes);
-            panelHeaderEsteMes.Location = new Point(17, 101);
-            panelHeaderEsteMes.Name = "panelHeaderEsteMes";
-            panelHeaderEsteMes.Size = new Size(200, 28);
-            panelHeaderEsteMes.TabIndex = 2;
-            // 
-            // lblEsteMes
-            // 
-            lblEsteMes.AutoSize = true;
-            lblEsteMes.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblEsteMes.ForeColor = Color.White;
-            lblEsteMes.Location = new Point(3, 3);
-            lblEsteMes.Name = "lblEsteMes";
-            lblEsteMes.Size = new Size(119, 28);
-            lblEsteMes.TabIndex = 0;
-            lblEsteMes.Text = "▾ Este mês";
-            lblEsteMes.Click += HeaderEsteMes_Click;
-            // 
-            // panelTarefasGrid
-            // 
-            panelTarefasGrid.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panelTarefasGrid.Controls.Add(dgvTarefas);
-            panelTarefasGrid.Location = new Point(17, 135);
-            panelTarefasGrid.Name = "panelTarefasGrid";
-            panelTarefasGrid.Size = new Size(1219, 304);
-            panelTarefasGrid.TabIndex = 3;
-            // 
-            // dgvTarefas
-            // 
-            dgvTarefas.AllowUserToAddRows = false;
-            dgvTarefas.AllowUserToDeleteRows = false;
-            dgvTarefas.AllowUserToResizeRows = false;
-            dgvTarefas.BackgroundColor = Color.FromArgb(45, 47, 90);
-            dgvTarefas.BorderStyle = BorderStyle.None;
-            dgvTarefas.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dgvTarefas.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(45, 47, 90);
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = Color.FromArgb(224, 224, 224);
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvTarefas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dgvTarefas.ColumnHeadersHeight = 40;
-            dgvTarefas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(45, 47, 90);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(75, 78, 130);
-            dataGridViewCellStyle2.SelectionForeColor = Color.White;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvTarefas.DefaultCellStyle = dataGridViewCellStyle2;
-            dgvTarefas.Dock = DockStyle.Fill;
-            dgvTarefas.EnableHeadersVisualStyles = false;
-            dgvTarefas.GridColor = Color.FromArgb(75, 78, 130);
-            dgvTarefas.Location = new Point(0, 0);
-            dgvTarefas.Name = "dgvTarefas";
-            dgvTarefas.RowHeadersVisible = false;
-            dgvTarefas.RowHeadersWidth = 51;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(45, 47, 90);
-            dgvTarefas.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            dgvTarefas.RowTemplate.Height = 30;
-            dgvTarefas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvTarefas.Size = new Size(1219, 304);
-            dgvTarefas.TabIndex = 0;
-            dgvTarefas.CellClick += dgvTarefas_CellClick;
-            // 
-            // btnAdicionarGrupo
-            // 
-            btnAdicionarGrupo.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            btnAdicionarGrupo.BackColor = Color.FromArgb(45, 47, 90);
-            btnAdicionarGrupo.FlatAppearance.BorderSize = 0;
-            btnAdicionarGrupo.FlatStyle = FlatStyle.Flat;
-            btnAdicionarGrupo.ForeColor = Color.White;
-            btnAdicionarGrupo.Location = new Point(17, 445);
-            btnAdicionarGrupo.Name = "btnAdicionarGrupo";
-            btnAdicionarGrupo.Size = new Size(140, 30);
-            btnAdicionarGrupo.TabIndex = 4;
-            btnAdicionarGrupo.Text = "+ Adicionar novo grupo";
-            btnAdicionarGrupo.UseVisualStyleBackColor = false;
-            btnAdicionarGrupo.Click += btnAdicionarGrupo_Click;
-            // 
-            // contextMenuStripVisualizacoes
-            // 
-            contextMenuStripVisualizacoes.BackColor = Color.FromArgb(30, 33, 66);
-            contextMenuStripVisualizacoes.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            contextMenuStripVisualizacoes.ImageScalingSize = new Size(20, 20);
-            contextMenuStripVisualizacoes.Items.AddRange(new ToolStripItem[] { tabelaToolStripMenuItem, gráficoToolStripMenuItem, calendárioToolStripMenuItem, kanbanToolStripMenuItem });
-            contextMenuStripVisualizacoes.Name = "contextMenuStripVisualizacoes";
-            contextMenuStripVisualizacoes.Size = new Size(177, 124);
-            // 
-            // tabelaToolStripMenuItem
-            // 
-            tabelaToolStripMenuItem.ForeColor = Color.White;
-            tabelaToolStripMenuItem.Name = "tabelaToolStripMenuItem";
-            tabelaToolStripMenuItem.Size = new Size(176, 30);
-            tabelaToolStripMenuItem.Text = "Tabela";
-            tabelaToolStripMenuItem.Click += tabelaToolStripMenuItem_Click;
-            // 
-            // gráficoToolStripMenuItem
-            // 
-            gráficoToolStripMenuItem.ForeColor = Color.White;
-            gráficoToolStripMenuItem.Name = "gráficoToolStripMenuItem";
-            gráficoToolStripMenuItem.Size = new Size(176, 30);
-            gráficoToolStripMenuItem.Text = "Gráfico";
-            gráficoToolStripMenuItem.Click += gráficoToolStripMenuItem_Click;
-            // 
-            // calendárioToolStripMenuItem
-            // 
-            calendárioToolStripMenuItem.ForeColor = Color.White;
-            calendárioToolStripMenuItem.Name = "calendárioToolStripMenuItem";
-            calendárioToolStripMenuItem.Size = new Size(176, 30);
-            calendárioToolStripMenuItem.Text = "Calendário";
-            calendárioToolStripMenuItem.Click += calendárioToolStripMenuItem_Click;
-            // 
-            // kanbanToolStripMenuItem
-            // 
-            kanbanToolStripMenuItem.ForeColor = Color.White;
-            kanbanToolStripMenuItem.Name = "kanbanToolStripMenuItem";
-            kanbanToolStripMenuItem.Size = new Size(176, 30);
-            kanbanToolStripMenuItem.Text = "Kanban";
-            kanbanToolStripMenuItem.Click += kanbanToolStripMenuItem_Click;
-            // 
-            // UcPlanoDeGestao
-            // 
-            AutoScaleDimensions = new SizeF(8F, 19F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(26, 28, 58);
-            Controls.Add(btnAdicionarGrupo);
-            Controls.Add(panelTarefasGrid);
-            Controls.Add(panelHeaderEsteMes);
-            Controls.Add(btnVisualizacoes);
-            Controls.Add(panelToolbar);
-            Controls.Add(lblTitulo);
-            Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            Name = "UcPlanoDeGestao";
-            Size = new Size(1255, 496);
-            Load += UcPlanoDeGestao_Load;
-            panelToolbar.ResumeLayout(false);
-            panelHeaderEsteMes.ResumeLayout(false);
-            panelHeaderEsteMes.PerformLayout();
-            panelTarefasGrid.ResumeLayout(false);
-            ((ISupportInitialize)dgvTarefas).EndInit();
-            contextMenuStripVisualizacoes.ResumeLayout(false);
-            ResumeLayout(false);
-            PerformLayout();
+            // Adiciona linhas de exemplo
+            // Formato: (check, ID, tarefa, resp, status, data)
+            dgvTarefas.Rows.Add(false, "1", "[Exemplo] Reunião Mensal", "Ana", "Parado", "25/11");
+            dgvTarefas.Rows.Add(true, "2", "[Exemplo] Relatório Semanal", "Bruno", "Concluído", "24/11");
+            dgvTarefas.Rows.Add(false, "3", "[Exemplo] Teste de UI", "Carla", "Em Andamento", "26/11");
+            dgvTarefas.Rows.Add(false, "4", "[Exemplo] Deploy", "Ana", "Novo", "27/11");
 
+            // Linha para "Adicionar tarefa"
+            // Formato: (check, ID, tarefa, resp, status, data)
+            int rowIndex = dgvTarefas.Rows.Add(false, "", "+ Adicionar tarefa", "", "", "");
+            DataGridViewRow placeholderRow = dgvTarefas.Rows[rowIndex];
+            placeholderRow.DefaultCellStyle.ForeColor = Color.Gray;
+
+            // Trava as células vazias da linha "Adicionar"
+            placeholderRow.Cells["colID"].ReadOnly = true;
+            placeholderRow.Cells["colResp"].ReadOnly = true;
+            placeholderRow.Cells["colStatus"].ReadOnly = true;
+            placeholderRow.Cells["colData"].ReadOnly = true;
         }
 
-        #endregion
+        // Evento de clique para o cabeçalho "Este mês"
+        private void HeaderEsteMes_Click(object sender, EventArgs e)
+        {
+            isPainelTarefasVisivel = !isPainelTarefasVisivel;
+            panelTarefasGrid.Visible = isPainelTarefasVisivel;
+        }
 
-        private System.Windows.Forms.Label lblTitulo;
-        private System.Windows.Forms.FlowLayoutPanel panelToolbar;
-        private System.Windows.Forms.Button btnCriarElemento;
-        private System.Windows.Forms.Button btnPessoas;
-        private System.Windows.Forms.Button btnFiltro;
-        private System.Windows.Forms.Button btnOrdenar;
-        private System.Windows.Forms.Button btnOcultar;
-        private System.Windows.Forms.Button btnAgrupar;
-        private System.Windows.Forms.Button btnVisualizacoes;
-        private System.Windows.Forms.Panel panelHeaderEsteMes;
-        private System.Windows.Forms.Label lblEsteMes;
-        private System.Windows.Forms.Panel panelTarefasGrid;
-        private System.Windows.Forms.DataGridView dgvTarefas;
-        private System.Windows.Forms.Button btnAdicionarGrupo;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStripVisualizacoes;
-        private System.Windows.Forms.ToolStripMenuItem tabelaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem gráficoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem calendárioToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem kanbanToolStripMenuItem;
+        // Evento de clique para o botão "Visualizações"
+        private void btnVisualizacoes_Click(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            if (btn != null)
+            {
+                contextMenuStripVisualizacoes.Show(btn, 0, btn.Height);
+            }
+        }
 
+        /// <summary>
+        /// ALTERAÇÃO: Atualiza lógica de clique para 6 colunas
+        /// </summary>
+        private void dgvTarefas_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Verifica se o clique foi na linha "+ Adicionar tarefa"
+            if (e.RowIndex >= 0 && dgvTarefas.Rows[e.RowIndex].Cells["colTarefa"].Value.ToString() == "+ Adicionar tarefa")
+            {
+                DataGridViewRow linhaAtual = dgvTarefas.Rows[e.RowIndex];
+
+                // Limpa o texto da célula
+                linhaAtual.Cells["colTarefa"].Value = "";
+                linhaAtual.DefaultCellStyle.ForeColor = Color.White;
+
+                // Destrava as outras células para edição
+                linhaAtual.Cells["colID"].ReadOnly = false;
+                linhaAtual.Cells["colResp"].ReadOnly = false;
+                linhaAtual.Cells["colStatus"].ReadOnly = false;
+                linhaAtual.Cells["colData"].ReadOnly = false;
+
+                // Adiciona um ID temporário
+                linhaAtual.Cells["colID"].Value = (dgvTarefas.Rows.Count - 1).ToString();
+
+                // Move o foco para a célula para edição
+                dgvTarefas.CurrentCell = linhaAtual.Cells["colTarefa"];
+                dgvTarefas.BeginEdit(true);
+
+                // Adiciona uma nova linha "+ Adicionar tarefa" no final
+                int newRowIndex = dgvTarefas.Rows.Add(false, "", "+ Adicionar tarefa", "", "", "");
+                DataGridViewRow placeholderRow = dgvTarefas.Rows[newRowIndex];
+                placeholderRow.DefaultCellStyle.ForeColor = Color.Gray;
+
+                // Trava as células da nova linha placeholder
+                placeholderRow.Cells["colID"].ReadOnly = true;
+                placeholderRow.Cells["colResp"].ReadOnly = true;
+                placeholderRow.Cells["colStatus"].ReadOnly = true;
+                placeholderRow.Cells["colData"].ReadOnly = true;
+            }
+        }
+
+        // Eventos de clique para os itens do menu de visualização (exemplo)
+        private void tabelaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Visualização: Tabela selecionada.");
+        }
+
+        private void gráficoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Visualização: Gráfico selecionado.");
+        }
+
+        private void calendárioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Visualização: Calendário selecionado.");
+        }
+
+        private void kanbanToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Visualização: Kanban selecionado.");
+        }
+
+        private void btnCriarElemento_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Botão 'Criar Elemento' clicado.");
+        }
+
+        private void btnAdicionarGrupo_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Botão 'Adicionar novo grupo' clicado.");
+        }
+
+        // ==========================================================
+        // VVV SEÇÃO DE CÓDIGO TOTALMENTE NOVA PARA O FILTRO VVV
+        // ==========================================================
+
+        /// <summary>
+        /// Cria o menu de contexto (botão direito) para o filtro de status.
+        /// </summary>
+        private void CriarMenuDeFiltro()
+        {
+            contextMenuFiltroStatus = new ContextMenuStrip();
+
+            // Adiciona as opções de filtro
+            var opcoes = new[] { "Mostrar Todos", "Parado", "Concluído", "Em Andamento", "Novo" };
+
+            foreach (string opcao in opcoes)
+            {
+                ToolStripMenuItem item = new ToolStripMenuItem(opcao);
+                // Adiciona o mesmo evento de clique para todos os itens
+                item.Click += FiltroStatus_Click;
+                contextMenuFiltroStatus.Items.Add(item);
+            }
+        }
+
+        /// <summary>
+        /// Evento de clique do botão "Filtro".
+        /// </summary>
+        private void btnFiltro_Click(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            if (btn != null)
+            {
+                // Mostra o menu de filtro logo abaixo do botão
+                contextMenuFiltroStatus.Show(btn, 0, btn.Height);
+            }
+        }
+
+        /// <summary>
+        /// Evento de clique para CADA item do menu de filtro.
+        /// </summary>
+        private void FiltroStatus_Click(object sender, EventArgs e)
+        {
+            ToolStripMenuItem itemClicado = sender as ToolStripMenuItem;
+            if (itemClicado != null)
+            {
+                string statusFiltro = itemClicado.Text;
+
+                if (statusFiltro == "Mostrar Todos")
+                {
+                    AplicarFiltroStatus("Todos");
+                }
+                else
+                {
+                    AplicarFiltroStatus(statusFiltro);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Lógica principal que esconde/mostra as linhas do DataGridView.
+        /// </summary>
+        private void AplicarFiltroStatus(string statusFiltro)
+        {
+            // Itera por todas as linhas do DataGridView
+            foreach (DataGridViewRow row in dgvTarefas.Rows)
+            {
+                // 1. Verifica se é a linha "+ Adicionar tarefa"
+                // Esta linha deve SEMPRE estar visível.
+                if (row.Cells["colTarefa"].Value != null && row.Cells["colTarefa"].Value.ToString() == "+ Adicionar tarefa")
+                {
+                    row.Visible = true;
+                    continue; // Pula para a próxima linha
+                }
+
+                // 2. Verifica se o filtro é "Mostrar Todos"
+                if (statusFiltro == "Todos")
+                {
+                    row.Visible = true;
+                }
+                else
+                {
+                    // 3. Aplica o filtro
+                    var statusDaLinha = row.Cells["colStatus"].Value;
+
+                    // Compara o status da linha com o filtro selecionado
+                    if (statusDaLinha != null && statusDaLinha.ToString().Equals(statusFiltro, StringComparison.OrdinalIgnoreCase))
+                    {
+                        row.Visible = true;
+                    }
+                    else
+                    {
+                        row.Visible = false;
+                    }
+                }
+            }
+        }
+
+        // <<< O MÉTODO 'panelToolbar_Paint' AGORA SÓ EXISTE AQUI >>>
         private void panelToolbar_Paint(object sender, PaintEventArgs e)
         {
-
+            // Este método é referenciado pelo Designer.
+            // Pode deixar em branco se não precisar de nenhuma lógica de pintura.
         }
     }
 }
