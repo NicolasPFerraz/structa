@@ -92,6 +92,7 @@ namespace structa_front
             panelToolbar.Name = "panelToolbar";
             panelToolbar.Size = new Size(1122, 40);
             panelToolbar.TabIndex = 1;
+            panelToolbar.Paint += panelToolbar_Paint;
             // 
             // btnCriarElemento
             // 
@@ -363,5 +364,10 @@ namespace structa_front
         private System.Windows.Forms.ToolStripMenuItem gráficoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem calendárioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem kanbanToolStripMenuItem;
+
+        private void panelToolbar_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

@@ -38,7 +38,7 @@
             pictureBox1.Location = new Point(0, 0);
             pictureBox1.Margin = new Padding(4, 5, 4, 5);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(1243, 291);
+            pictureBox1.Size = new Size(1243, 282);
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
