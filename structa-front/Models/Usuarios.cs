@@ -18,6 +18,8 @@ namespace structa_front.Models
 
         [Column("senha")]
         public string Senha { get; set; } = string.Empty;
+        [Column("descricao")]
+        public string Descricao { get; set; } = string.Empty;
 
         [Column("data_nascimento")]
         public DateTime? DataNascimento { get; set; }
