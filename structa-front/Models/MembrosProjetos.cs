@@ -9,8 +9,8 @@ namespace structa_front.Models
         [PrimaryKey("id")]
         public int Id { get; set; }
 
-        [Column("id_projetos")]
-        public int idProjetos { get; set; }
+        [Column("id_projeto")]
+        public int idProjeto { get; set; }
 
         [Column("id_usuario")]
         public int IdUsuario { get; set; }

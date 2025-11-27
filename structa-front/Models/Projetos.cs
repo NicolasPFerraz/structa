@@ -9,9 +9,6 @@ namespace structa_front.Models
         [PrimaryKey("id")]
         public int Id { get; set; }
 
-        [Column("id_espaco_de_trabalho")]
-        public int IdEspacoDeTrabalho { get; set; }
-
         [Column("nome")]
         public string Nome { get; set; } = string.Empty;
 
