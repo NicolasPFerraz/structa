@@ -50,7 +50,7 @@ namespace structa_front
             Painel_Perfil painel_Perfil = new Painel_Perfil(this);
 
             panelTop.Size = new System.Drawing.Size(1190, 212);
-            panelConteudo.Location = new System.Drawing.Point(247, 211);
+            panelConteudo.Location = new System.Drawing.Point(287, 211);
             panelTop.Controls.Clear();
             panelTop.Controls.Add(new Painel_Perfil(this));
             lblPagina.Text = "Perfil"; // Exibe no label

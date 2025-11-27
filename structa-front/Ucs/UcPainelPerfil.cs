@@ -68,5 +68,10 @@ namespace structa_front
         {
             _formPrincipal.AbrirPagina(new UcPaginaInicial());
         }
+
+        private void pictureBox14_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
