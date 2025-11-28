@@ -11,6 +11,8 @@ namespace structa_front.Models
 
         [Column("id_projeto")]
         public int IdProjeto { get; set; }
+        [Column("id_usuario")]
+        public int IdUsuario{ get; set; }
 
         [Column("titulo")]
         public string Titulo { get; set; } = string.Empty;

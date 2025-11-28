@@ -1,4 +1,6 @@
-﻿using System;
+﻿using structa_front.Models;
+using structa_front.Services;
+using System;
 using System.ComponentModel; // Adicionado para ListSortDirection
 using System.Data;
 using System.Drawing;
@@ -25,23 +27,60 @@ namespace structa_front
             InitializeComponent();
         }
 
-        private void UcPlanoDeGestao_Load(object sender, EventArgs e)
+        private async void retornarTarefas()
         {
-            // Define as colunas do DataGridView
-            ConfigurarColunasDataGridView();
+            var TarefasService = new Services.TarefasService();
 
-            // Carrega dados de exemplo para visualização
-            CarregarDadosDeExemplo();
+            try
+            {
+                var listaTarefas = await TarefasService.ObterTarefasAsync(Sessao.UsuarioId, 1);
 
-            // 1. Cria o menu de filtro dinamicamente
-            CriarMenuDeFiltro();
+                // Update grid on UI thread
+                if (InvokeRequired)
+                {
+                    Invoke(new Action(() => PreencherGridComTarefas(listaTarefas)));
+                }
+                else
+                {
+                    PreencherGridComTarefas(listaTarefas);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao obter tarefas: " + ex.Message);
+            }
+        }
 
-            // VVV ALTERAÇÃO AQUI VVV
-            // 2. Adiciona os eventos de clique aos botões da barra de ferramentas
-            this.btnFiltro.Click += new System.EventHandler(this.btnFiltro_Click);
-            this.btnOrdenar.Click += new System.EventHandler(this.btnOrdenar_Click);
-            this.btnOcultar.Click += new System.EventHandler(this.btnOcultar_Click);
-            // ^^^ ALTERAÇÃO AQUI ^^^
+        // Helper: remove existing placeholder(s), add tarefas, then append a single placeholder row
+        private void PreencherGridComTarefas(System.Collections.Generic.List<Tarefa> listaTarefas)
+        {
+            // Remove any existing placeholder rows (colTarefa == "+ Adicionar tarefa")
+            for (int i = dgvTarefas.Rows.Count - 1; i >= 0; i--)
+            {
+                var val = dgvTarefas.Rows[i].Cells["colTarefa"].Value;
+                if (val != null && val.ToString() == "+ Adicionar tarefa")
+                {
+                    dgvTarefas.Rows.RemoveAt(i);
+                }
+            }
+
+            // Now append fetched tarefas
+            if (listaTarefas != null)
+            {
+                foreach (var tarefa in listaTarefas)
+                {
+                    dgvTarefas.Rows.Add(false, tarefa.Id, tarefa.Titulo, tarefa.Responsavel, tarefa.Status, tarefa.PrazoFinalEntrega);
+                }
+            }
+
+            // Finally, add a single placeholder row at the end
+            int rowIndex = dgvTarefas.Rows.Add(false, "", "+ Adicionar tarefa", "", "", "");
+            DataGridViewRow placeholderRow = dgvTarefas.Rows[rowIndex];
+            placeholderRow.DefaultCellStyle.ForeColor = Color.Gray;
+            placeholderRow.Cells["colID"].ReadOnly = true;
+            placeholderRow.Cells["colResp"].ReadOnly = true;
+            placeholderRow.Cells["colStatus"].ReadOnly = true;
+            placeholderRow.Cells["colData"].ReadOnly = true;
         }
 
         // Este método está correto (com ID e tamanho da Tarefa)
@@ -81,12 +120,6 @@ namespace structa_front
         // Este método está correto (com dados de exemplo para ID)
         private void CarregarDadosDeExemplo()
         {
-            dgvTarefas.Rows.Add(false, "1", "[Exemplo] Reunião Mensal", "Ana", "Parado", "25/11");
-            dgvTarefas.Rows.Add(true, "2", "[Exemplo] Relatório Semanal", "Bruno", "Concluído", "24/11");
-            dgvTarefas.Rows.Add(false, "3", "[Exemplo] Teste de UI", "Carla", "Em Andamento", "26/11");
-            dgvTarefas.Rows.Add(false, "4", "[Exemplo] Deploy", "Ana", "Novo", "27/11");
-            dgvTarefas.Rows.Add(true, "5", "[Exemplo] Rever Docs", "Bruno", "Concluído", "22/11"); // Mais um concluído
-
             // Reintroduz placeholder: última linha com campos readonly e texto cinza
             int rowIndex = dgvTarefas.Rows.Add(false, "", "+ Adicionar tarefa", "", "", "");
             DataGridViewRow placeholderRow = dgvTarefas.Rows[rowIndex];
@@ -125,10 +158,7 @@ namespace structa_front
         private void calendárioToolStripMenuItem_Click(object sender, EventArgs e) { MessageBox.Show("Visualização: Calendário selecionada."); }
         private void kanbanToolStripMenuItem_Click(object sender, EventArgs e) { MessageBox.Show("Visualização: Kanban selecionada."); }
         private void btnCriarElemento_Click(object sender, EventArgs e) { MessageBox.Show("Botão 'Criar Elemento' clicado."); }
-        private void btnAdicionarGrupo_Click(object sender, EventArgs e) 
-        {
-            RegistrarTarefa_Click(sender, e);
-        }
+
 
         // ==========================================================
         // VVV NOVA SEÇÃO: ORDENAR TAREFAS VVV
@@ -264,6 +294,25 @@ namespace structa_front
         {
             // Pode deixar em branco
         }
+        private void UcPlanoDeGestao_Load(object sender, EventArgs e)
+        {
+            // Define as colunas do DataGridView
+            ConfigurarColunasDataGridView();
+
+            // Carrega dados de exemplo para visualização
+            CarregarDadosDeExemplo();
+
+            // 1. Cria o menu de filtro dinamicamente
+            CriarMenuDeFiltro();
+            retornarTarefas();
+
+            // VVV ALTERAÇÃO AQUI VVV
+            // 2. Adiciona os eventos de clique aos botões da barra de ferramentas
+            this.btnFiltro.Click += new System.EventHandler(this.btnFiltro_Click);
+            this.btnOrdenar.Click += new System.EventHandler(this.btnOrdenar_Click);
+            this.btnOcultar.Click += new System.EventHandler(this.btnOcultar_Click);
+            // ^^^ ALTERAÇÃO AQUI ^^^
+        }
 
         private void dgvTarefas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -288,13 +337,14 @@ namespace structa_front
                 linhaAtual.Cells["colResp"].ReadOnly = false;
                 linhaAtual.Cells["colStatus"].ReadOnly = false;
                 linhaAtual.Cells["colData"].ReadOnly = false;
-                linhaAtual.Cells["colID"].Value = (dgvTarefas.Rows.Count - 1).ToString();
+                // Remove setting of colID here so new task keeps empty ID and will be created
+                // linhaAtual.Cells["colID"].Value = (dgvTarefas.Rows.Count - 1).ToString();
                 dgvTarefas.CurrentCell = linhaAtual.Cells["colTarefa"];
                 dgvTarefas.BeginEdit(true);
 
                 // Adiciona um novo placeholder ao final (se não existir já)
 
-                MessageBox.Show("asidhjasgdh");
+                //MessageBox.Show("asidhjasgdh");
                 bool hasPlaceholder = false;
                 if (dgvTarefas.Rows.Count > 0)
                 {
@@ -320,28 +370,81 @@ namespace structa_front
         {
 
         }
-        private async void RegistrarTarefa_Click(object sender, EventArgs e)
+        private async void DataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             var qtdLinhas = dgvTarefas.Rows.Count;
+
+            // Get the row that was edited (the one before the placeholder)
+            int targetRowIndex = Math.Max(0, qtdLinhas - 2);
+            var row = dgvTarefas.Rows[targetRowIndex];
+
+            // Ignore if this is the placeholder row
+            var tarefaTitulo = Convert.ToString(row.Cells["colTarefa"].Value) ?? string.Empty;
+            if (string.IsNullOrWhiteSpace(tarefaTitulo) || tarefaTitulo == "+ Adicionar tarefa")
+            {
+                return;
+            }
+
+            // Try to read existing ID from grid (if user was editing an existing task)
+            int existingId = 0;
+            var idCellVal = row.Cells["colID"].Value;
+            if (idCellVal != null)
+            {
+                int.TryParse(Convert.ToString(idCellVal), out existingId);
+            }
+
             var tarefa = new Models.Tarefa
             {
-                IdProjeto = (int) 1,
-                Titulo = (string)dgvTarefas.Rows[qtdLinhas -2].Cells["colTarefa"].Value,
-                Responsavel = (string)dgvTarefas.Rows[qtdLinhas - 2].Cells["colResp"].Value,
-                Status = (string)dgvTarefas.Rows[qtdLinhas - 2].Cells["colStatus"].Value,
-                PrazoFinalEntrega = (string)dgvTarefas.Rows[qtdLinhas - 2].Cells["colData"].Value,
+                Id = existingId,
+                IdProjeto = 1, // TODO: replace with selected project id
+                IdUsuario = Sessao.UsuarioId, // use current session user
+                Titulo = tarefaTitulo,
+                Responsavel = Convert.ToString(row.Cells["colResp"].Value) ?? string.Empty,
+                Status = Convert.ToString(row.Cells["colStatus"].Value) ?? string.Empty,
+                PrazoFinalEntrega = Convert.ToString(row.Cells["colData"].Value) ?? string.Empty,
             };
 
-            var TarefasService = new Services.TarefasService();
+            var tarefasService = new Services.TarefasService();
+
             try
             {
-                var result = await TarefasService.CriarTarefaAsync(tarefa);
-                MessageBox.Show("afhyasjbfkjs");
-                // Redirecione ou limpe o formulário conforme necessário
+                // Validate user exists to avoid FK violation
+                var usuariosService = new Services.UsuariosService();
+                var usuario = await usuariosService.BuscarUsuarioPorIdAsync(tarefa.IdUsuario);
+                if (usuario == null)
+                {
+                    MessageBox.Show("Usuário não encontrado. Verifique se você está logado ou se o usuário existe antes de criar a tarefa.");
+                    return;
+                }
+
+                // Optionally validate project exists (if IdProjeto comes from UI)
+                var projetosService = new Services.ProjetosService();
+                var projeto = await projetosService.BuscarProjetoPorIdAsync(tarefa.IdProjeto);
+                if (projeto == null)
+                {
+                    MessageBox.Show("Projeto não encontrado. Verifique o ID do projeto antes de criar a tarefa.");
+                    return;
+                }
+
+                if (tarefa.Id > 0)
+                {
+                    // update existing task
+                    await tarefasService.AtualizarTarefas(tarefa);
+                }
+                else
+                {
+                    // criar tarefa
+                    var criada = await tarefasService.CriarTarefaAsync(tarefa);
+                    if (criada != null)
+                    {
+                        // update grid row id with created id
+                        row.Cells["colID"].Value = criada.Id.ToString();
+                    }
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro ao criar usuário: " + ex.Message);
+                MessageBox.Show("Erro ao salvar tarefa: " + ex.Message);
             }
         }
     }

@@ -247,6 +247,7 @@ namespace structa_front
             dgvTarefas.TabIndex = 0;
             dgvTarefas.CellClick += dgvTarefas_CellClick;
             dgvTarefas.CellContentClick += dgvTarefas_CellContentClick;
+            dgvTarefas.CellEndEdit += DataGridView1_CellEndEdit;
             // 
             // btnAdicionarGrupo
             // 
@@ -261,7 +262,6 @@ namespace structa_front
             btnAdicionarGrupo.TabIndex = 4;
             btnAdicionarGrupo.Text = "+ Adicionar novo grupo";
             btnAdicionarGrupo.UseVisualStyleBackColor = false;
-            btnAdicionarGrupo.Click += btnAdicionarGrupo_Click;
             // 
             // contextMenuStripVisualizacoes
             // 
