@@ -1,4 +1,14 @@
-﻿namespace structa_front
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace structa_front
 {
     partial class UcPlanoDeGestao
     {
@@ -28,170 +38,318 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label16 = new System.Windows.Forms.Label();
-            this.uctarefas = new structa_front.RoundedPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            this.SuspendLayout();
+            components = new Container();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            lblTitulo = new Label();
+            panelToolbar = new FlowLayoutPanel();
+            btnCriarElemento = new Button();
+            btnPessoas = new Button();
+            btnFiltro = new Button();
+            btnOrdenar = new Button();
+            btnOcultar = new Button();
+            btnVisualizacoes = new Button();
+            panelHeaderEsteMes = new Panel();
+            lblEsteMes = new Label();
+            panelTarefasGrid = new Panel();
+            dgvTarefas = new DataGridView();
+            btnAdicionarGrupo = new Button();
+            contextMenuStripVisualizacoes = new ContextMenuStrip(components);
+            tabelaToolStripMenuItem = new ToolStripMenuItem();
+            gráficoToolStripMenuItem = new ToolStripMenuItem();
+            calendárioToolStripMenuItem = new ToolStripMenuItem();
+            kanbanToolStripMenuItem = new ToolStripMenuItem();
+            panelToolbar.SuspendLayout();
+            panelHeaderEsteMes.SuspendLayout();
+            panelTarefasGrid.SuspendLayout();
+            ((ISupportInitialize)dgvTarefas).BeginInit();
+            contextMenuStripVisualizacoes.SuspendLayout();
+            SuspendLayout();
             // 
-            // label16
+            // lblTitulo
             // 
-            this.label16.AutoSize = true;
-            this.label16.BackColor = System.Drawing.Color.Transparent;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(26, 16);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(324, 46);
-            this.label16.TabIndex = 24;
-            this.label16.Text = "Plano de gestão";
+            lblTitulo.AutoSize = true;
+            lblTitulo.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTitulo.ForeColor = Color.White;
+            lblTitulo.Location = new Point(14, 10);
+            lblTitulo.Name = "lblTitulo";
+            lblTitulo.Size = new Size(197, 32);
+            lblTitulo.TabIndex = 0;
+            lblTitulo.Text = "Plano de gestão";
             // 
-            // uctarefas
+            // panelToolbar
             // 
-            this.uctarefas.CornerRadius = 2;
-            this.uctarefas.Location = new System.Drawing.Point(34, 247);
-            this.uctarefas.Name = "uctarefas";
-            this.uctarefas.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.uctarefas.ShadowOffset = 16;
-            this.uctarefas.Size = new System.Drawing.Size(993, 232);
-            this.uctarefas.TabIndex = 26;
+            panelToolbar.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            panelToolbar.Controls.Add(btnCriarElemento);
+            panelToolbar.Controls.Add(btnPessoas);
+            panelToolbar.Controls.Add(btnFiltro);
+            panelToolbar.Controls.Add(btnOrdenar);
+            panelToolbar.Controls.Add(btnOcultar);
+            panelToolbar.Location = new Point(17, 55);
+            panelToolbar.Name = "panelToolbar";
+            panelToolbar.Size = new Size(1122, 40);
+            panelToolbar.TabIndex = 1;
+            panelToolbar.Paint += panelToolbar_Paint;
             // 
-            // label1
+            // btnCriarElemento
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(184)))), ((int)(((byte)(255)))));
-            this.label1.Location = new System.Drawing.Point(82, 219);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 25);
-            this.label1.TabIndex = 27;
-            this.label1.Text = "Este mês";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            btnCriarElemento.BackColor = Color.FromArgb(29, 78, 216);
+            btnCriarElemento.FlatAppearance.BorderSize = 0;
+            btnCriarElemento.FlatStyle = FlatStyle.Flat;
+            btnCriarElemento.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnCriarElemento.ForeColor = Color.White;
+            btnCriarElemento.Location = new Point(3, 3);
+            btnCriarElemento.Name = "btnCriarElemento";
+            btnCriarElemento.Size = new Size(120, 30);
+            btnCriarElemento.TabIndex = 0;
+            btnCriarElemento.Text = "Criar Elemento ▾";
+            btnCriarElemento.UseVisualStyleBackColor = false;
+            btnCriarElemento.Click += btnCriarElemento_Click;
             // 
-            // pictureBox6
+            // btnPessoas
             // 
-            this.pictureBox6.Image = global::structa_front.Properties.Resources.AdicionarNovoGrupo;
-            this.pictureBox6.Location = new System.Drawing.Point(56, 520);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(200, 36);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox6.TabIndex = 32;
-            this.pictureBox6.TabStop = false;
+            btnPessoas.BackColor = Color.FromArgb(45, 47, 90);
+            btnPessoas.FlatAppearance.BorderSize = 0;
+            btnPessoas.FlatStyle = FlatStyle.Flat;
+            btnPessoas.ForeColor = Color.White;
+            btnPessoas.Location = new Point(129, 3);
+            btnPessoas.Name = "btnPessoas";
+            btnPessoas.Size = new Size(75, 30);
+            btnPessoas.TabIndex = 1;
+            btnPessoas.Text = "Pessoas";
+            btnPessoas.UseVisualStyleBackColor = false;
             // 
-            // pictureBox5
+            // btnFiltro
             // 
-            this.pictureBox5.Image = global::structa_front.Properties.Resources.OptionsPlanoDeGestao;
-            this.pictureBox5.Location = new System.Drawing.Point(34, 133);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(702, 67);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 31;
-            this.pictureBox5.TabStop = false;
+            btnFiltro.BackColor = Color.FromArgb(45, 47, 90);
+            btnFiltro.FlatAppearance.BorderSize = 0;
+            btnFiltro.FlatStyle = FlatStyle.Flat;
+            btnFiltro.ForeColor = Color.White;
+            btnFiltro.Location = new Point(210, 3);
+            btnFiltro.Name = "btnFiltro";
+            btnFiltro.Size = new Size(75, 30);
+            btnFiltro.TabIndex = 2;
+            btnFiltro.Text = "Filtro";
+            btnFiltro.UseVisualStyleBackColor = false;
             // 
-            // pictureBox3
+            // btnOrdenar
             // 
-            this.pictureBox3.Image = global::structa_front.Properties.Resources.PadraoPlanoDeGestao;
-            this.pictureBox3.Location = new System.Drawing.Point(34, 99);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(86, 30);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 29;
-            this.pictureBox3.TabStop = false;
+            btnOrdenar.BackColor = Color.FromArgb(45, 47, 90);
+            btnOrdenar.FlatAppearance.BorderSize = 0;
+            btnOrdenar.FlatStyle = FlatStyle.Flat;
+            btnOrdenar.ForeColor = Color.White;
+            btnOrdenar.Location = new Point(291, 3);
+            btnOrdenar.Name = "btnOrdenar";
+            btnOrdenar.Size = new Size(75, 30);
+            btnOrdenar.TabIndex = 3;
+            btnOrdenar.Text = "Ordenar";
+            btnOrdenar.UseVisualStyleBackColor = false;
             // 
-            // pictureBox4
+            // btnOcultar
             // 
-            this.pictureBox4.Image = global::structa_front.Properties.Resources.LineSeparator;
-            this.pictureBox4.Location = new System.Drawing.Point(40, 126);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(900, 1);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 30;
-            this.pictureBox4.TabStop = false;
+            btnOcultar.BackColor = Color.FromArgb(45, 47, 90);
+            btnOcultar.FlatAppearance.BorderSize = 0;
+            btnOcultar.FlatStyle = FlatStyle.Flat;
+            btnOcultar.ForeColor = Color.White;
+            btnOcultar.Location = new Point(372, 3);
+            btnOcultar.Name = "btnOcultar";
+            btnOcultar.Size = new Size(130, 30);
+            btnOcultar.TabIndex = 4;
+            btnOcultar.Text = "Ocultar Concluídas";
+            btnOcultar.UseVisualStyleBackColor = false;
             // 
-            // pictureBox1
+            // btnVisualizacoes
             // 
-            this.pictureBox1.Image = global::structa_front.Properties.Resources.SetaParaBaixoAzul;
-            this.pictureBox1.Location = new System.Drawing.Point(56, 226);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(22, 14);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 28;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            btnVisualizacoes.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnVisualizacoes.BackColor = Color.FromArgb(45, 47, 90);
+            btnVisualizacoes.FlatAppearance.BorderSize = 0;
+            btnVisualizacoes.FlatStyle = FlatStyle.Flat;
+            btnVisualizacoes.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnVisualizacoes.ForeColor = Color.White;
+            btnVisualizacoes.Location = new Point(1145, 15);
+            btnVisualizacoes.Name = "btnVisualizacoes";
+            btnVisualizacoes.Size = new Size(91, 30);
+            btnVisualizacoes.TabIndex = 6;
+            btnVisualizacoes.Text = "Padrão ▾";
+            btnVisualizacoes.UseVisualStyleBackColor = false;
+            btnVisualizacoes.Click += btnVisualizacoes_Click;
             // 
-            // pictureBox2
+            // panelHeaderEsteMes
             // 
-            this.pictureBox2.Image = global::structa_front.Properties.Resources.IconeSetaPraBaixo__2_;
-            this.pictureBox2.Location = new System.Drawing.Point(346, 16);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 25;
-            this.pictureBox2.TabStop = false;
+            panelHeaderEsteMes.Controls.Add(lblEsteMes);
+            panelHeaderEsteMes.Location = new Point(17, 101);
+            panelHeaderEsteMes.Name = "panelHeaderEsteMes";
+            panelHeaderEsteMes.Size = new Size(200, 28);
+            panelHeaderEsteMes.TabIndex = 2;
+            panelHeaderEsteMes.Paint += panelHeaderEsteMes_Paint;
             // 
-            // pictureBox7
+            // lblEsteMes
             // 
-            this.pictureBox7.Location = new System.Drawing.Point(364, 520);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(8, 8);
-            this.pictureBox7.TabIndex = 33;
-            this.pictureBox7.TabStop = false;
+            lblEsteMes.AutoSize = true;
+            lblEsteMes.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblEsteMes.ForeColor = Color.White;
+            lblEsteMes.Location = new Point(3, 3);
+            lblEsteMes.Name = "lblEsteMes";
+            lblEsteMes.Size = new Size(95, 21);
+            lblEsteMes.TabIndex = 0;
+            lblEsteMes.Text = "▾ Este mês";
+            lblEsteMes.Click += HeaderEsteMes_Click;
+            // 
+            // panelTarefasGrid
+            // 
+            panelTarefasGrid.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panelTarefasGrid.Controls.Add(dgvTarefas);
+            panelTarefasGrid.Location = new Point(17, 135);
+            panelTarefasGrid.Name = "panelTarefasGrid";
+            panelTarefasGrid.Size = new Size(1219, 304);
+            panelTarefasGrid.TabIndex = 3;
+            // 
+            // dgvTarefas
+            // 
+            dgvTarefas.AllowUserToAddRows = false;
+            dgvTarefas.AllowUserToDeleteRows = false;
+            dgvTarefas.AllowUserToResizeRows = false;
+            dgvTarefas.BackgroundColor = Color.FromArgb(45, 47, 90);
+            dgvTarefas.BorderStyle = BorderStyle.None;
+            dgvTarefas.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvTarefas.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(45, 47, 90);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.FromArgb(224, 224, 224);
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvTarefas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dgvTarefas.ColumnHeadersHeight = 40;
+            dgvTarefas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(45, 47, 90);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(75, 78, 130);
+            dataGridViewCellStyle2.SelectionForeColor = Color.White;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvTarefas.DefaultCellStyle = dataGridViewCellStyle2;
+            dgvTarefas.Dock = DockStyle.Fill;
+            dgvTarefas.EnableHeadersVisualStyles = false;
+            dgvTarefas.GridColor = Color.FromArgb(75, 78, 130);
+            dgvTarefas.Location = new Point(0, 0);
+            dgvTarefas.Name = "dgvTarefas";
+            dgvTarefas.RowHeadersVisible = false;
+            dgvTarefas.RowHeadersWidth = 51;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(45, 47, 90);
+            dgvTarefas.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dgvTarefas.RowTemplate.Height = 30;
+            dgvTarefas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvTarefas.Size = new Size(1219, 304);
+            dgvTarefas.TabIndex = 0;
+            dgvTarefas.CellClick += dgvTarefas_CellClick;
+            dgvTarefas.CellContentClick += dgvTarefas_CellContentClick;
+            // 
+            // btnAdicionarGrupo
+            // 
+            btnAdicionarGrupo.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btnAdicionarGrupo.BackColor = Color.FromArgb(45, 47, 90);
+            btnAdicionarGrupo.FlatAppearance.BorderSize = 0;
+            btnAdicionarGrupo.FlatStyle = FlatStyle.Flat;
+            btnAdicionarGrupo.ForeColor = Color.White;
+            btnAdicionarGrupo.Location = new Point(17, 445);
+            btnAdicionarGrupo.Name = "btnAdicionarGrupo";
+            btnAdicionarGrupo.Size = new Size(140, 30);
+            btnAdicionarGrupo.TabIndex = 4;
+            btnAdicionarGrupo.Text = "+ Adicionar novo grupo";
+            btnAdicionarGrupo.UseVisualStyleBackColor = false;
+            btnAdicionarGrupo.Click += btnAdicionarGrupo_Click;
+            // 
+            // contextMenuStripVisualizacoes
+            // 
+            contextMenuStripVisualizacoes.BackColor = Color.FromArgb(30, 33, 66);
+            contextMenuStripVisualizacoes.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            contextMenuStripVisualizacoes.ImageScalingSize = new Size(20, 20);
+            contextMenuStripVisualizacoes.Items.AddRange(new ToolStripItem[] { tabelaToolStripMenuItem, gráficoToolStripMenuItem, calendárioToolStripMenuItem, kanbanToolStripMenuItem });
+            contextMenuStripVisualizacoes.Name = "contextMenuStripVisualizacoes";
+            contextMenuStripVisualizacoes.Size = new Size(151, 100);
+            // 
+            // tabelaToolStripMenuItem
+            // 
+            tabelaToolStripMenuItem.ForeColor = Color.White;
+            tabelaToolStripMenuItem.Name = "tabelaToolStripMenuItem";
+            tabelaToolStripMenuItem.Size = new Size(150, 24);
+            tabelaToolStripMenuItem.Text = "Tabela";
+            tabelaToolStripMenuItem.Click += tabelaToolStripMenuItem_Click;
+            // 
+            // gráficoToolStripMenuItem
+            // 
+            gráficoToolStripMenuItem.ForeColor = Color.White;
+            gráficoToolStripMenuItem.Name = "gráficoToolStripMenuItem";
+            gráficoToolStripMenuItem.Size = new Size(150, 24);
+            gráficoToolStripMenuItem.Text = "Gráfico";
+            gráficoToolStripMenuItem.Click += gráficoToolStripMenuItem_Click;
+            // 
+            // calendárioToolStripMenuItem
+            // 
+            calendárioToolStripMenuItem.ForeColor = Color.White;
+            calendárioToolStripMenuItem.Name = "calendárioToolStripMenuItem";
+            calendárioToolStripMenuItem.Size = new Size(150, 24);
+            calendárioToolStripMenuItem.Text = "Calendário";
+            calendárioToolStripMenuItem.Click += calendárioToolStripMenuItem_Click;
+            // 
+            // kanbanToolStripMenuItem
+            // 
+            kanbanToolStripMenuItem.ForeColor = Color.White;
+            kanbanToolStripMenuItem.Name = "kanbanToolStripMenuItem";
+            kanbanToolStripMenuItem.Size = new Size(150, 24);
+            kanbanToolStripMenuItem.Text = "Kanban";
+            kanbanToolStripMenuItem.Click += kanbanToolStripMenuItem_Click;
             // 
             // UcPlanoDeGestao
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(20)))), ((int)(((byte)(47)))));
-            this.Controls.Add(this.pictureBox7);
-            this.Controls.Add(this.pictureBox6);
-            this.Controls.Add(this.pictureBox5);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.uctarefas);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.label16);
-            this.Name = "UcPlanoDeGestao";
-            this.Size = new System.Drawing.Size(1050, 600);
-            this.Load += new System.EventHandler(this.UcPlanoDeGestao_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new SizeF(6F, 13F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(26, 28, 58);
+            Controls.Add(btnAdicionarGrupo);
+            Controls.Add(panelTarefasGrid);
+            Controls.Add(panelHeaderEsteMes);
+            Controls.Add(btnVisualizacoes);
+            Controls.Add(panelToolbar);
+            Controls.Add(lblTitulo);
+            Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Name = "UcPlanoDeGestao";
+            Size = new Size(1255, 496);
+            Load += UcPlanoDeGestao_Load;
+            panelToolbar.ResumeLayout(false);
+            panelHeaderEsteMes.ResumeLayout(false);
+            panelHeaderEsteMes.PerformLayout();
+            panelTarefasGrid.ResumeLayout(false);
+            ((ISupportInitialize)dgvTarefas).EndInit();
+            contextMenuStripVisualizacoes.ResumeLayout(false);
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private RoundedPanel uctarefas;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.FlowLayoutPanel panelToolbar;
+        private System.Windows.Forms.Button btnCriarElemento;
+        private System.Windows.Forms.Button btnPessoas;
+        private System.Windows.Forms.Button btnFiltro;
+        private System.Windows.Forms.Button btnOrdenar;
+        private System.Windows.Forms.Button btnOcultar;
+        // O btnAgrupar foi removido daqui
+        private System.Windows.Forms.Button btnVisualizacoes;
+        private System.Windows.Forms.Panel panelHeaderEsteMes;
+        private System.Windows.Forms.Label lblEsteMes;
+        private System.Windows.Forms.Panel panelTarefasGrid;
+        private System.Windows.Forms.DataGridView dgvTarefas;
+        private System.Windows.Forms.Button btnAdicionarGrupo;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStripVisualizacoes;
+        private System.Windows.Forms.ToolStripMenuItem tabelaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gráficoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem calendárioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem kanbanToolStripMenuItem;
     }
 }

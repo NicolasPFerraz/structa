@@ -274,11 +274,11 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoScroll = true;
             BackColor = Color.FromArgb(4, 12, 40);
-            ClientSize = new Size(1661, 993);
+            ClientSize = new Size(1370, 749);
             Controls.Add(roundedPanel);
             Margin = new Padding(4, 3, 4, 3);
-            MinimumSize = new Size(1677, 1030);
             Name = "CriarConta";
             Text = "CriarConta";
             Load += CriarConta_Load;

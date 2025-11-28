@@ -15,14 +15,14 @@ namespace structa_front.Models
         [Column("titulo")]
         public string Titulo { get; set; } = string.Empty;
 
-        [Column("descricao")]
-        public string Descricao { get; set; } = string.Empty;
+        [Column("responsavel")]
+        public string Responsavel { get; set; } = string.Empty;
 
         [Column("status")]
         public string Status { get; set; } = string.Empty;
 
         [Column("prazo_final_entrega")]
-        public DateTime? PrazoFinalEntrega { get; set; }
+        public string PrazoFinalEntrega { get; set; }
 
         [Column("datahora_criacao")]
         public DateTime DataCriacao { get; set; }
