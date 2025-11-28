@@ -85,5 +85,18 @@ namespace structa_front.Services
             }
             return response;
         }
+        public async Task<Usuario?> BuscarUsuarioPorEmailAsync(string email)
+        {
+            if (!_db.IsReady)
+                throw new InvalidOperationException("Supabase não inicializado");
+
+            var response = await _db.Client
+                .From<Usuario>()
+                .Select("*")
+                .Filter("email", Operator.Equals, email)
+                .Single();
+
+            return response;
+        }
     }
 }
