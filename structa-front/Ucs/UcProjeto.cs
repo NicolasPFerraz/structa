@@ -1,8 +1,8 @@
 ﻿using System;
+using System.ComponentModel; // Adicionado para ListSortDirection
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
-using System.ComponentModel; // Adicionado para ListSortDirection
 
 namespace structa_front
 {
@@ -125,7 +125,10 @@ namespace structa_front
         private void calendárioToolStripMenuItem_Click(object sender, EventArgs e) { MessageBox.Show("Visualização: Calendário selecionada."); }
         private void kanbanToolStripMenuItem_Click(object sender, EventArgs e) { MessageBox.Show("Visualização: Kanban selecionada."); }
         private void btnCriarElemento_Click(object sender, EventArgs e) { MessageBox.Show("Botão 'Criar Elemento' clicado."); }
-        private void btnAdicionarGrupo_Click(object sender, EventArgs e) { MessageBox.Show("Botão 'Adicionar novo grupo' clicado."); }
+        private void btnAdicionarGrupo_Click(object sender, EventArgs e) 
+        {
+            RegistrarTarefa_Click(sender, e);
+        }
 
         // ==========================================================
         // VVV NOVA SEÇÃO: ORDENAR TAREFAS VVV
@@ -316,6 +319,30 @@ namespace structa_front
         private void panelHeaderEsteMes_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+        private async void RegistrarTarefa_Click(object sender, EventArgs e)
+        {
+            var qtdLinhas = dgvTarefas.Rows.Count;
+            var tarefa = new Models.Tarefa
+            {
+                IdProjeto = (int) 1,
+                Titulo = (string)dgvTarefas.Rows[qtdLinhas -2].Cells["colTarefa"].Value,
+                Responsavel = (string)dgvTarefas.Rows[qtdLinhas - 2].Cells["colResp"].Value,
+                Status = (string)dgvTarefas.Rows[qtdLinhas - 2].Cells["colStatus"].Value,
+                PrazoFinalEntrega = (string)dgvTarefas.Rows[qtdLinhas - 2].Cells["colData"].Value,
+            };
+
+            var TarefasService = new Services.TarefasService();
+            try
+            {
+                var result = await TarefasService.CriarTarefaAsync(tarefa);
+                MessageBox.Show("afhyasjbfkjs");
+                // Redirecione ou limpe o formulário conforme necessário
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao criar usuário: " + ex.Message);
+            }
         }
     }
 }
