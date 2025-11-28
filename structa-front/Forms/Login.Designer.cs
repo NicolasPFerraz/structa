@@ -210,8 +210,9 @@ namespace structa_front
             // 
             // Login
             // 
+            AutoScroll = true;
             BackColor = Color.FromArgb(4, 12, 40);
-            ClientSize = new Size(1424, 861);
+            ClientSize = new Size(1370, 749);
             Controls.Add(roundedPanel1);
             Name = "Login";
             Load += Login_Load;
