@@ -1,4 +1,5 @@
-﻿using structa_front.Services;
+﻿using structa_front.Models;
+using structa_front.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,8 +30,14 @@ namespace structa_front
                 comboFuncao.SelectedIndex = 0;
 
                 // Carregar lista de projetos
+                // Carregar lista de projetos
                 var projetosService = new ProjetosService();
-                var projetos = await projetosService.BuscarProjetosAsync();
+
+                // PEGAR O USUÁRIO LOGADO
+                int usuarioId = Sessao.UsuarioId;
+
+                // BUSCAR APENAS OS PROJETOS DO USUÁRIO
+                var projetos = await projetosService.BuscarProjetosAsync(usuarioId);
 
                 comboProjetos.DataSource = projetos;
                 comboProjetos.DisplayMember = "Nome";

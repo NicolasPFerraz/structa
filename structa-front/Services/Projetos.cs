@@ -49,45 +49,50 @@ namespace structa_front.Services
             var response = await _db.Client
                 .From<Projeto>()
                 .Select("*")
+
                 .Get();
 
             return response.Models;
         }
 
         // Buscar projetos de um usuário específico
+        // Buscar projetos de um usuário específico (CORRIGIDO E OTIMIZADO)
         public async Task<List<Projeto>> BuscarProjetosAsync(int usuarioId)
         {
             if (!_db.IsReady)
                 throw new InvalidOperationException("Supabase não inicializado");
 
-            // Buscar primeiro os membros_projetos que pertencem ao usuário
+            // 1. buscar ids de projetos do usuário
             var membrosResponse = await _db.Client
                 .From<MembroProjetos>()
-                .Select("*")
-                .Filter("id_usuario", Operator.Equals, usuarioId)
+                .Select("id_projeto")
+                .Where(p => p.IdUsuario == usuarioId)
                 .Get();
 
-            var idsProjetosDoUsuario = membrosResponse.Models.Select(m => m.idProjeto).ToList();
+            var idsProjetos = membrosResponse.Models
+                .Select(m => m.idProjeto)
+                .Distinct()
+                .ToList();
 
-            if (idsProjetosDoUsuario.Count == 0)
+            if (!idsProjetos.Any())
                 return new List<Projeto>();
 
-            // Buscar projetos pelos IDs
-            var projetos = new List<Projeto>();
-            foreach (var idProjeto in idsProjetosDoUsuario)
-            {
-                var projeto = await _db.Client
-                    .From<Projeto>()
-                    .Select("*")
-                    .Filter("id", Operator.Equals, idProjeto)
-                    .Single();
+            // 2. buscar todos (ou buscar por paginação/condição) e filtrar localmente
+            var allProjectsResponse = await _db.Client
+                .From<Projeto>()
+                .Select("*")
+                .Get();
 
-                if (projeto != null)
-                    projetos.Add(projeto);
-            }
+            var allProjects = allProjectsResponse.Models;
 
-            return projetos;
+            // 3. filtrar localmente
+            var projetosDoUsuario = allProjects
+                .Where(p => idsProjetos.Contains(p.Id))
+                .ToList();
+
+            return projetosDoUsuario;
         }
+
 
         // Buscar projeto por ID
         public async Task<Projeto?> BuscarProjetoPorIdAsync(int id)
