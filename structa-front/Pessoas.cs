@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+using structa_front.Models;
+using structa_front.Services;
 
 namespace structa_front
 {
@@ -12,12 +15,8 @@ namespace structa_front
         private bool isDragging = false;
         private Point dragStartPoint = new Point(0, 0);
 
-        // Lista de pessoas (exemplo)
-        private List<string> todasAsPessoas = new List<string>
-        {
-            "Alan", "Amanda", "Anna", "Fernando", "Gregory", "Jessy",
-            "Raphael", "Jeronimo", "Elisa", "Bruno", "Carla"
-        };
+        // Lista de pessoas preenchida a partir do banco
+        private List<string> todasAsPessoas = new List<string>();
 
         // Guarda quem está selecionado
         private string pessoaSelecionada = null;
@@ -27,7 +26,7 @@ namespace structa_front
             InitializeComponent();
         }
 
-        private void FrmPessoasCadastradas_Load(object sender, EventArgs e)
+        private async void FrmPessoasCadastradas_Load(object sender, EventArgs e)
         {
             // --- Eventos ---
             lblClose.Click += (s, ev) => this.Close();
@@ -36,9 +35,56 @@ namespace structa_front
             // Placeholder "Pesquisar"
             AdicionarPlaceholder();
 
-            
-            // Carrega a lista de pessoas
-            CarregarPessoas();
+            // Carrega a lista de pessoas do banco de dados
+            await CarregarPessoasDoProjetoAsync();
+        }
+
+        /// <summary>
+        /// Busca no banco os nomes dos membros que pertencem ao(s) mesmo(s) projeto(s)
+        /// do usuário logado e atualiza a lista visual.
+        /// Lógica:
+        ///  - Busca projetos do usuário logado (pelo Sessao.UsuarioId)
+        ///  - Usa o primeiro projeto encontrado (se houver) para buscar membros
+        ///  - Para cada membro obtém os dados do usuário e adiciona o nome à lista
+        /// </summary>
+        private async Task CarregarPessoasDoProjetoAsync()
+        {
+            todasAsPessoas.Clear();
+            try
+            {
+                // Recupera projetos do usuário logado
+                var projetosService = new ProjetosService();
+                var projetosDoUsuario = await projetosService.BuscarProjetosAsync(Sessao.UsuarioId);
+
+                if (projetosDoUsuario == null || projetosDoUsuario.Count == 0)
+                {
+                    // Sem projetos: lista vazia (poderia mostrar mensagem, se desejar)
+                    CarregarPessoas();
+                    return;
+                }
+
+                // Aqui escolhemos o primeiro projeto do usuário. Se desejar suportar múltiplos
+                // projetos, iterar por todos os projetosDoUsuario.
+                var idProjeto = projetosDoUsuario.First().Id;
+
+                var membrosService = new MembrosProjetoService();
+                var membrosComDados = await membrosService.BuscarMembrosComDadosAsync(idProjeto);
+
+                foreach (var (membro, usuario) in membrosComDados)
+                {
+                    if (usuario != null && !string.IsNullOrWhiteSpace(usuario.Nome))
+                    {
+                        todasAsPessoas.Add(usuario.Nome);
+                    }
+                }
+
+                // Atualiza a UI
+                CarregarPessoas();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao carregar membros: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         /// <summary>
