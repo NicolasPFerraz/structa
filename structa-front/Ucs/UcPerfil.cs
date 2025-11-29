@@ -14,9 +14,14 @@ namespace structa_front
 {
     public partial class panel : UserControl
     {
+        private readonly UsuariosService _usuariosService = new UsuariosService();
+
         public panel()
         {
             InitializeComponent();
+
+            // Associa o evento do botão Salvar
+            btnSalvarAlteracoes.Click += BtnSalvarAlteracoes_Click;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -24,9 +29,87 @@ namespace structa_front
 
         }
 
-        private void UcPerfil_Load(object sender, EventArgs e)
+        private async void UcPerfil_Load(object sender, EventArgs e)
         {
+            await CarregarUsuarioAsync();
+        }
 
+        private async Task CarregarUsuarioAsync()
+        {
+            try
+            {
+                if (Sessao.UsuarioId <= 0)
+                {
+                    // Não há sessão ativa
+                    return;
+                }
+
+                var usuario = await _usuariosService.BuscarUsuarioPorIdAsync(Sessao.UsuarioId);
+                if (usuario == null)
+                {
+                    MessageBox.Show("Usuário não encontrado.");
+                    return;
+                }
+
+                // Preenche os controles com os dados do usuário
+                txtNome.Text = usuario.Nome ?? string.Empty;
+                txtEmail.Text = usuario.Email ?? string.Empty;
+                txtTelefone.Text = usuario.Telefone ?? string.Empty;
+                txtLocal.Text = usuario.Localizacao ?? string.Empty;
+                txtDescricao.Text = usuario.Descricao ?? string.Empty;
+
+                if (usuario.DataNascimento.HasValue)
+                {
+                    dtNascimento.Value = usuario.DataNascimento.Value;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao carregar dados do perfil: " + ex.Message);
+            }
+        }
+
+        private async void BtnSalvarAlteracoes_Click(object? sender, EventArgs e)
+        {
+            try
+            {
+                if (Sessao.UsuarioId <= 0)
+                {
+                    MessageBox.Show("Nenhum usuário logado.");
+                    return;
+                }
+
+                // Busca o usuário atual para manter campos que não estão no formulário (ex: senha)
+                var usuarioExistente = await _usuariosService.BuscarUsuarioPorIdAsync(Sessao.UsuarioId);
+                if (usuarioExistente == null)
+                {
+                    MessageBox.Show("Usuário não encontrado.");
+                    return;
+                }
+
+                // Atualiza somente os campos editáveis pela UI
+                usuarioExistente.Nome = txtNome.Text.Trim();
+                usuarioExistente.Email = txtEmail.Text.Trim();
+                usuarioExistente.Telefone = txtTelefone.Text.Trim();
+                usuarioExistente.Localizacao = txtLocal.Text.Trim();
+                usuarioExistente.Descricao = txtDescricao.Text.Trim();
+                usuarioExistente.DataNascimento = dtNascimento.Value;
+
+                var atualizado = await _usuariosService.AtualizarUsuarioAsync(usuarioExistente);
+
+                if (atualizado != null)
+                {
+                    MessageBox.Show("Perfil atualizado com sucesso.");
+                }
+                else
+                {
+                    MessageBox.Show("Não foi possível atualizar o perfil.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao salvar alterações: " + ex.Message);
+            }
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -106,13 +189,24 @@ namespace structa_front
             cronograma.Show();
         }
 
-        private async void lblNome_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            var usuariosService = new UsuariosService();
 
-            var usuario = await usuariosService.BuscarUsuarioPorIdAsync(Sessao.UsuarioId | 1);
+        }
 
-            lblNome.Text = usuario?.Nome ?? "Usuário não encontrado";
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label23_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

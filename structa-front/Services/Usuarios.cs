@@ -1,5 +1,9 @@
 ﻿using structa_front.Models;
 using static Supabase.Postgrest.Constants;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace structa_front.Services
 {
@@ -24,7 +28,7 @@ namespace structa_front.Services
                 .From<Usuario>()
                 .Select("*")
                 .Get();
-                
+
             return response.Models;
         }
 
@@ -85,15 +89,36 @@ namespace structa_front.Services
             }
             return response;
         }
-        public async Task<Usuario?> BuscarUsuarioPorEmailAsync(string email)
+
+        // Método para atualizar usuário existente
+        public async Task<Usuario?> AtualizarUsuarioAsync(Usuario usuario)
         {
+            if (usuario == null)
+                throw new ArgumentNullException(nameof(usuario));
+
+            if (!_db.IsReady)
+                throw new InvalidOperationException("Supabase não inicializado");
+
+            var response = await _db.Client
+                .From<Usuario>()
+                .Where(u => u.Id == usuario.Id)
+                .Update(usuario);
+
+            return response.Models?.FirstOrDefault();
+        }
+
+        public async Task<Usuario?> VerificarSenhaAsync(int idUsuario, string senha)
+        {
+            if (idUsuario == null)
+                throw new ArgumentNullException(nameof(idUsuario));
+
             if (!_db.IsReady)
                 throw new InvalidOperationException("Supabase não inicializado");
 
             var response = await _db.Client
                 .From<Usuario>()
                 .Select("*")
-                .Filter("email", Operator.Equals, email)
+                .Where(u => u.Id == idUsuario && u.Senha == senha)
                 .Single();
 
             return response;
