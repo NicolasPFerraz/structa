@@ -1,4 +1,5 @@
 ﻿using structa_front.Forms;
+using structa_front.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -39,6 +40,52 @@ namespace structa_front
 
             // Ativa rolagem
             panelConteudo.AutoScroll = true;
+        }
+        private void SelecionarProjeto(int projetoId, string nome)
+        {
+            MessageBox.Show("Projeto selecionado: " + nome);
+            Sessao.ProjetoId = projetoId;
+
+            flpProjetos.Visible = false;
+        }
+
+        private async Task CarregarProjetosAsync()
+        {
+            try
+            {
+                flpProjetos.Controls.Clear();
+
+                var service = new Services.ProjetosService();
+                var projetos = await service.BuscarProjetosAsync(Sessao.UsuarioId);
+
+                foreach (var proj in projetos)
+                {
+                    var btnProjeto = new Button
+                    {
+                        Text = proj.Nome,
+                        Width = flpProjetos.Width - 10,
+                        Height = 35,
+                        BackColor = Color.FromArgb(60, 60, 60),
+                        ForeColor = Color.White,
+                        FlatStyle = FlatStyle.Flat,
+                        TextAlign = ContentAlignment.MiddleLeft,
+                        Tag = proj.Id
+                    };
+
+                    btnProjeto.FlatAppearance.BorderSize = 0;
+
+                    btnProjeto.Click += (s, e) =>
+                    {
+                        SelecionarProjeto(proj.Id, proj.Nome);
+                    };
+
+                    flpProjetos.Controls.Add(btnProjeto);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao carregar projetos: " + ex.Message);
+            }
         }
 
         private void panelPerfil_Paint(object sender, PaintEventArgs e)
@@ -100,8 +147,8 @@ namespace structa_front
 
         private void pictureBox12_Click(object sender, EventArgs e)
         {
-            NovaAreaDeTrabalho novaArea = new NovaAreaDeTrabalho();
-            novaArea.Show();
+            Form NovoProjeto = new Forms.NovoProjeto();
+            NovoProjeto.Show();
         }
 
         private void label5_Click(object sender, EventArgs e)
@@ -132,8 +179,28 @@ namespace structa_front
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form NovoProjeto = new Forms.NovoProjeto();
-            NovoProjeto.Show();
+
+        }
+
+        private void pictureBox16_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private async void btnSeta_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private async void btnSeta_Click_1(object sender, EventArgs e)
+        {
+            // Alternar visibilidade do dropdown
+            flpProjetos.Visible = !flpProjetos.Visible;
+
+            if (flpProjetos.Visible)
+            {
+                await CarregarProjetosAsync();
+            }
         }
     }
 }
