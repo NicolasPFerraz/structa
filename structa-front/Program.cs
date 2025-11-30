@@ -1,4 +1,4 @@
-namespace structa_front;
+    namespace structa_front;
 
 static class Program
 {
