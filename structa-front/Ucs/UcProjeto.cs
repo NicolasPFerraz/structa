@@ -1,4 +1,5 @@
 ﻿using structa_front.Models;
+using structa_front;
 using structa_front.Services;
 using System;
 using System.ComponentModel; // Adicionado para ListSortDirection
@@ -139,14 +140,7 @@ namespace structa_front
             panelTarefasGrid.Visible = isPainelTarefasVisivel;
         }
 
-        private void btnVisualizacoes_Click(object sender, EventArgs e)
-        {
-            Button btn = sender as Button;
-            if (btn != null)
-            {
-                contextMenuStripVisualizacoes.Show(btn, 0, btn.Height);
-            }
-        }
+      
 
         private void dgvTarefas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -446,6 +440,17 @@ namespace structa_front
             {
                 MessageBox.Show("Erro ao salvar tarefa: " + ex.Message);
             }
+        }
+
+        private void btnFiltro_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPessoas_Click(object sender, EventArgs e)
+        {
+            FrmPessoasCadastradas formPessoas = new FrmPessoasCadastradas();
+            formPessoas.Show();
         }
     }
 }
