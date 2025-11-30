@@ -31,7 +31,7 @@
             panelMenu = new Panel();
             menuItems = new Panel();
             flpProjetos = new FlowLayoutPanel();
-            pnlProjetosDropdown = new FlowLayoutPanel();
+
             label6 = new Label();
             pictureBox16 = new PictureBox();
             pictureBox12 = new PictureBox();
