@@ -31,6 +31,7 @@ namespace structa_front
         private async void retornarTarefas()
         {
             var TarefasService = new Services.TarefasService();
+            dgvTarefas.Rows.Clear();
 
             try
             {
@@ -116,6 +117,15 @@ namespace structa_front
             DataGridViewTextBoxColumn dataColumn = new DataGridViewTextBoxColumn
             { Name = "colData", HeaderText = "Data", Width = 100 };
             dgvTarefas.Columns.Add(dataColumn);
+
+            // Coluna Excluir
+            DataGridViewButtonColumn excluirColumn = new DataGridViewButtonColumn();
+            excluirColumn.Name = "colExcluir";
+            excluirColumn.HeaderText = "";
+            excluirColumn.Text = "Excluir";
+            excluirColumn.UseColumnTextForButtonValue = true;
+            excluirColumn.Width = 80;
+            dgvTarefas.Columns.Add(excluirColumn);
         }
 
         // Este método está correto (com dados de exemplo para ID)
@@ -292,6 +302,7 @@ namespace structa_front
         {
             // Define as colunas do DataGridView
             ConfigurarColunasDataGridView();
+            this.dgvTarefas.CellPainting += dgvTarefas_CellPainting;
 
             // Carrega dados de exemplo para visualização
             CarregarDadosDeExemplo();
@@ -310,6 +321,39 @@ namespace structa_front
 
         private void dgvTarefas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            // Detecta clique no botão Excluir
+            if (e.ColumnIndex >= 0 && dgvTarefas.Columns[e.ColumnIndex].Name == "colExcluir")
+            {
+                var row = dgvTarefas.Rows[e.RowIndex];
+
+                // Impede excluir o placeholder
+                var titulo = Convert.ToString(row.Cells["colTarefa"].Value);
+                if (titulo == "+ Adicionar tarefa") return;
+
+                // Obtém ID da tarefa
+                if (int.TryParse(Convert.ToString(row.Cells["colID"].Value), out int idTarefa) && idTarefa > 0)
+                {
+                    var confirmar = MessageBox.Show(
+                        "Deseja realmente excluir esta tarefa?",
+                        "Confirmar exclusão",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Warning
+                    );
+
+                    if (confirmar == DialogResult.Yes)
+                    {
+                        ExcluirTarefa(idTarefa);
+                    }
+                }
+                else
+                {
+                    // Se não tiver ID (ex: linha nova mal preenchida), apenas remove localmente
+                    dgvTarefas.Rows.RemoveAt(e.RowIndex);
+                }
+
+                return; // Impede cair na lógica do "+ Adicionar tarefa"
+            }
+
             // Proteções básicas
             if (e.RowIndex < 0 || e.ColumnIndex < 0) return;
 
@@ -358,6 +402,29 @@ namespace structa_front
                     placeholderRow.Cells["colData"].ReadOnly = true;
                 }
             }
+        }
+        private void dgvTarefas_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.RowIndex < 0)
+                return;
+
+            // Se não é a coluna do botão Excluir, sai
+            if (dgvTarefas.Columns[e.ColumnIndex].Name != "colExcluir")
+                return;
+
+            var titulo = Convert.ToString(dgvTarefas.Rows[e.RowIndex].Cells["colTarefa"].Value);
+
+            // Se for a linha "+ Adicionar tarefa", impede o desenho do botão
+            if (titulo == "+ Adicionar tarefa")
+            {
+                e.PaintBackground(e.CellBounds, true); // só pinta o fundo
+                e.Handled = true; // cancela o botão
+                return;
+            }
+
+            // Caso contrário, desenha normalmente
+            e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+            e.Handled = true;
         }
 
         private void panelHeaderEsteMes_Paint(object sender, PaintEventArgs e)
@@ -439,6 +506,21 @@ namespace structa_front
             catch (Exception ex)
             {
                 MessageBox.Show("Erro ao salvar tarefa: " + ex.Message);
+            }
+        }
+        private async void ExcluirTarefa(int idTarefa)
+        {
+            try
+            {
+                var tarefasService = new Services.TarefasService();
+                await tarefasService.DeletarTarefaAsync(idTarefa);
+
+                // Atualiza o grid automaticamente
+                retornarTarefas();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao excluir tarefa: " + ex.Message);
             }
         }
 
