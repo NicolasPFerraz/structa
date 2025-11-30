@@ -129,5 +129,11 @@ namespace structa_front
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form NovoProjeto = new Forms.NovoProjeto();
+            NovoProjeto.Show();
+        }
     }
 }

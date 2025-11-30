@@ -20,25 +20,28 @@ namespace structa_front.Services
             }
         }
 
-        public async Task<Projeto> CriarProjetoAsync(int id)
+        public async Task<Projeto> CriarProjetoAsync(string nomeProjeto, string nomeResponsavel)
         {
             if (!_db.IsReady)
                 throw new InvalidOperationException("Supabase não inicializado");
 
-            var newProjectResponse = await _db.Client
-                .From<Projeto>()
-                .Insert(new Projeto
-                {
-                    Nome = "Meu novo projeto",
-                    DescricaoProjeto = "Descrição do novo projeto",
-                });
+            var novoProjeto = new Projeto
+            {
+                Nome = nomeProjeto,
+                DescricaoProjeto = "",
+                DataCriacao = DateTime.UtcNow,
+                DataUltimaAtualizacao = DateTime.UtcNow,
+                Responsavel = nomeResponsavel
+            };
 
-            var projectMembersService = new MembrosProjetoService();
-            var newProjectMember = await 
-                projectMembersService.CriarMembroProjeto(id, "Administrador", newProjectResponse.Models.FirstOrDefault().Id);
-             
-            return newProjectResponse.Models.FirstOrDefault();
+            var response = await _db.Client
+                .From<Projeto>()
+                .Insert(novoProjeto);
+
+            return response.Models.FirstOrDefault();
         }
+
+
 
         // Buscar todos os projetos
         public async Task<List<Projeto>> BuscarProjetosAsync()

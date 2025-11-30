@@ -24,7 +24,7 @@ namespace structa_front.Services
                 .From<Usuario>()
                 .Select("*")
                 .Get();
-                
+
             return response.Models;
         }
 
@@ -62,10 +62,14 @@ namespace structa_front.Services
                 .From<Usuario>()
                 .Insert(novoUsuario);
 
-            var projetosService = new ProjetosService();
-            var newProjectResponse = await projetosService.CriarProjetoAsync(newUserResponse.Models.FirstOrDefault().Id);
+            var usuarioCriado = newUserResponse.Models.FirstOrDefault();
 
-            return newUserResponse.Models.FirstOrDefault();
+            //  CORREÇÃO: chamada ajustada 
+            var projetosService = new ProjetosService();
+            var newProjectResponse = await projetosService
+                .CriarProjetoAsync("Projeto Inicial", usuarioCriado.Nome);
+
+            return usuarioCriado;
         }
 
         public async Task<Usuario> LogarUsuarioAsync(Usuario usuario)
@@ -83,6 +87,7 @@ namespace structa_front.Services
             {
                 throw new InvalidOperationException("Credenciais inválidas");
             }
+
             return response;
         }
     }

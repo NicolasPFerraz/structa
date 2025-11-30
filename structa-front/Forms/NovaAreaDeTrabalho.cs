@@ -21,5 +21,10 @@ namespace structa_front
         {
 
         }
+
+        private void NovaAreaDeTrabalho_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

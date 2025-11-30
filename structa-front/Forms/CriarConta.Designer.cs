@@ -77,7 +77,6 @@
             roundedPanel.ShadowOffset = 16;
             roundedPanel.Size = new Size(589, 804);
             roundedPanel.TabIndex = 1;
-            roundedPanel.Paint += roundedPanel_Paint;
             // 
             // pictureBox2
             // 
