@@ -27,10 +27,10 @@ namespace structa_front.Forms
 
         private async void button1_Click(object sender, EventArgs e)
         {
-            string nome = txt_nomeprojeto.Text.Trim();
+            string nomeProjeto = txt_nomeprojeto.Text.Trim();
             string descricao = txt_descricao.Text.Trim();
 
-            if (string.IsNullOrEmpty(nome))
+            if (string.IsNullOrEmpty(nomeProjeto))
             {
                 MessageBox.Show("Digite um nome para o projeto.");
                 return;
@@ -47,23 +47,18 @@ namespace structa_front.Forms
 
             try
             {
-                var projeto = new Projeto
+                var projetoService = new Services.ProjetosService();
+                var projeto = await projetoService.CriarProjetoAsync(nomeProjeto, Sessao.Nome, Sessao.UsuarioId);
+
+                if (projeto != null)
                 {
-                    Nome = nome,
-                    DescricaoProjeto = descricao,
-                    DataCriacao = DateTime.Now,
-                    DataUltimaAtualizacao = DateTime.Now,
-                    Responsavel = Session.UsuarioLogado?.Nome
-                };
-
-                // Salva no Supabase
-                var response = await SupabaseConfig.Client
-                    .From<Projeto>()
-                    .Insert(projeto);
-
-                MessageBox.Show("Projeto criado com sucesso!");
-
-                this.Close(); // <-- fecha o formulário atual
+                    MessageBox.Show("Projeto criado com sucesso!");
+                    this.Close(); // <-- fecha o formulário atual
+                }
+                else
+                {
+                    MessageBox.Show("Erro ao criar projeto.");
+                }
             }
             catch (Exception ex)
             {
@@ -74,7 +69,6 @@ namespace structa_front.Forms
                 btn_criar.Enabled = true;
                 Cursor = Cursors.Default;
             }
-            this.Close();
         }
         private void NovoProjeto_Load(object sender, EventArgs e)
         {

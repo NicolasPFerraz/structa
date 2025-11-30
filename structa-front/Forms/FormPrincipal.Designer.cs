@@ -30,26 +30,23 @@
         {
             panelMenu = new Panel();
             menuItems = new Panel();
+            pictureBox5 = new PictureBox();
             flpProjetos = new FlowLayoutPanel();
-
-            label6 = new Label();
-            pictureBox16 = new PictureBox();
+            panelPgInicial = new Panel();
+            label1 = new Label();
+            pictureBox3 = new PictureBox();
+            panelPerfil = new Panel();
+            lblPerfil = new Label();
+            picPerfil = new PictureBox();
+            panelMeuTrabalho = new Panel();
+            label2 = new Label();
+            pictureBox4 = new PictureBox();
             pictureBox12 = new PictureBox();
             panel5 = new Panel();
             btnSeta = new PictureBox();
             label5 = new Label();
             pictureBox13 = new PictureBox();
-            panelMeuTrabalho = new Panel();
-            label2 = new Label();
-            pictureBox4 = new PictureBox();
-            panelPgInicial = new Panel();
-            label1 = new Label();
-            pictureBox3 = new PictureBox();
             pictureBox1 = new PictureBox();
-            panelPerfil = new Panel();
-            lblPerfil = new Label();
-            picPerfil = new PictureBox();
-            pictureBox2 = new PictureBox();
             panelConteudo = new Panel();
             panelTop = new Panel();
             roundedPanel1 = new RoundedPanel();
@@ -59,28 +56,27 @@
             lblPagina = new Label();
             lblPaginaMin = new Label();
             label7 = new Label();
-            pictureBox5 = new PictureBox();
+            pictureBox6 = new PictureBox();
             panelMenu.SuspendLayout();
             menuItems.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox16).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
+            panelPgInicial.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            panelPerfil.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)picPerfil).BeginInit();
+            panelMeuTrabalho.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox12).BeginInit();
             panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnSeta).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox13).BeginInit();
-            panelMeuTrabalho.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
-            panelPgInicial.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            panelPerfil.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)picPerfil).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panelTop.SuspendLayout();
             roundedPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnAdicionarMembros).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnAreaDeTrabalho).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnNotificacoes).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             SuspendLayout();
             // 
             // panelMenu
@@ -98,163 +94,41 @@
             // menuItems
             // 
             menuItems.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            menuItems.Controls.Add(pictureBox6);
             menuItems.Controls.Add(pictureBox5);
             menuItems.Controls.Add(flpProjetos);
             menuItems.Controls.Add(panelPgInicial);
             menuItems.Controls.Add(panelPerfil);
             menuItems.Controls.Add(panelMeuTrabalho);
-            menuItems.Controls.Add(label6);
-            menuItems.Controls.Add(pictureBox16);
             menuItems.Controls.Add(pictureBox12);
             menuItems.Controls.Add(panel5);
             menuItems.Controls.Add(pictureBox1);
-            menuItems.Controls.Add(pictureBox2);
             menuItems.Location = new Point(10, 23);
             menuItems.Margin = new Padding(0);
             menuItems.Name = "menuItems";
             menuItems.Size = new Size(279, 839);
             menuItems.TabIndex = 5;
             // 
+            // pictureBox5
+            // 
+            pictureBox5.Image = Properties.Resources.LineSeparator;
+            pictureBox5.Location = new Point(2, 271);
+            pictureBox5.Margin = new Padding(4);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(273, 2);
+            pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox5.TabIndex = 20;
+            pictureBox5.TabStop = false;
+            // 
             // flpProjetos
             // 
             flpProjetos.AutoSize = true;
             flpProjetos.FlowDirection = FlowDirection.TopDown;
-            flpProjetos.Location = new Point(6, 390);
+            flpProjetos.Location = new Point(6, 350);
             flpProjetos.Name = "flpProjetos";
             flpProjetos.Size = new Size(267, 100);
             flpProjetos.TabIndex = 0;
             flpProjetos.Visible = false;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Cursor = Cursors.Hand;
-            label6.Font = new Font("Corbel", 13F);
-            label6.ForeColor = Color.White;
-            label6.Location = new Point(38, 347);
-            label6.Margin = new Padding(0);
-            label6.Name = "label6";
-            label6.Size = new Size(131, 22);
-            label6.TabIndex = 4;
-            label6.Text = "Plano de gestão";
-            label6.TextAlign = ContentAlignment.MiddleLeft;
-            label6.Click += label6_Click;
-            // 
-            // pictureBox16
-            // 
-            pictureBox16.Cursor = Cursors.Hand;
-            pictureBox16.Image = Properties.Resources.IconePlanoDeGestao;
-            pictureBox16.Location = new Point(11, 347);
-            pictureBox16.Margin = new Padding(0);
-            pictureBox16.Name = "pictureBox16";
-            pictureBox16.Size = new Size(24, 23);
-            pictureBox16.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox16.TabIndex = 3;
-            pictureBox16.TabStop = false;
-            // 
-            // pictureBox12
-            // 
-            pictureBox12.Cursor = Cursors.Hand;
-            pictureBox12.Image = Properties.Resources.IconeMais__2_;
-            pictureBox12.Location = new Point(228, 297);
-            pictureBox12.Margin = new Padding(0);
-            pictureBox12.Name = "pictureBox12";
-            pictureBox12.Size = new Size(46, 46);
-            pictureBox12.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox12.TabIndex = 6;
-            pictureBox12.TabStop = false;
-            pictureBox12.Click += pictureBox12_Click;
-            // 
-            // panel5
-            // 
-            panel5.BorderStyle = BorderStyle.FixedSingle;
-            panel5.Controls.Add(btnSeta);
-            panel5.Controls.Add(label5);
-            panel5.Controls.Add(pictureBox13);
-            panel5.Location = new Point(4, 297);
-            panel5.Margin = new Padding(4);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(220, 46);
-            panel5.TabIndex = 9;
-            // 
-            // btnSeta
-            // 
-            btnSeta.Image = Properties.Resources.IconeSetaPraBaixo__2_;
-            btnSeta.Location = new Point(190, 10);
-            btnSeta.Margin = new Padding(0);
-            btnSeta.Name = "btnSeta";
-            btnSeta.Size = new Size(29, 29);
-            btnSeta.SizeMode = PictureBoxSizeMode.StretchImage;
-            btnSeta.TabIndex = 5;
-            btnSeta.TabStop = false;
-            btnSeta.Click += btnSeta_Click_1;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Cursor = Cursors.Hand;
-            label5.Font = new Font("Microsoft Sans Serif", 15F);
-            label5.ForeColor = Color.White;
-            label5.Location = new Point(34, 10);
-            label5.Margin = new Padding(0);
-            label5.Name = "label5";
-            label5.Size = new Size(156, 25);
-            label5.TabIndex = 4;
-            label5.Text = "Área de trabalho";
-            label5.TextAlign = ContentAlignment.MiddleLeft;
-            label5.Click += label5_Click;
-            // 
-            // pictureBox13
-            // 
-            pictureBox13.Cursor = Cursors.Hand;
-            pictureBox13.Image = Properties.Resources.IconeAreaDeTrabalho__3_;
-            pictureBox13.Location = new Point(1, 10);
-            pictureBox13.Margin = new Padding(0);
-            pictureBox13.Name = "pictureBox13";
-            pictureBox13.Padding = new Padding(4, 0, 0, 0);
-            pictureBox13.Size = new Size(29, 25);
-            pictureBox13.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox13.TabIndex = 3;
-            pictureBox13.TabStop = false;
-            pictureBox13.Click += pictureBox13_Click;
-            // 
-            // panelMeuTrabalho
-            // 
-            panelMeuTrabalho.Controls.Add(label2);
-            panelMeuTrabalho.Controls.Add(pictureBox4);
-            panelMeuTrabalho.Location = new Point(0, 152);
-            panelMeuTrabalho.Margin = new Padding(0);
-            panelMeuTrabalho.Name = "panelMeuTrabalho";
-            panelMeuTrabalho.Size = new Size(279, 54);
-            panelMeuTrabalho.TabIndex = 6;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Cursor = Cursors.Hand;
-            label2.Font = new Font("Microsoft Sans Serif", 15F);
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(30, 10);
-            label2.Margin = new Padding(0);
-            label2.Name = "label2";
-            label2.Padding = new Padding(13, 0, 0, 0);
-            label2.Size = new Size(139, 25);
-            label2.TabIndex = 4;
-            label2.Text = "Meu trabalho";
-            label2.TextAlign = ContentAlignment.MiddleCenter;
-            label2.Click += label2_Click;
-            // 
-            // pictureBox4
-            // 
-            pictureBox4.Cursor = Cursors.Hand;
-            pictureBox4.Image = Properties.Resources.IconeMeuTrabalho;
-            pictureBox4.Location = new Point(4, 10);
-            pictureBox4.Margin = new Padding(0);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(26, 27);
-            pictureBox4.SizeMode = PictureBoxSizeMode.AutoSize;
-            pictureBox4.TabIndex = 3;
-            pictureBox4.TabStop = false;
             // 
             // panelPgInicial
             // 
@@ -293,17 +167,6 @@
             pictureBox3.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox3.TabIndex = 3;
             pictureBox3.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = Properties.Resources.Structa;
-            pictureBox1.Location = new Point(0, 0);
-            pictureBox1.Margin = new Padding(4);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(253, 46);
-            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
             // 
             // panelPerfil
             // 
@@ -345,16 +208,121 @@
             picPerfil.TabStop = false;
             picPerfil.Click += lblPerfil_Click;
             // 
-            // pictureBox2
+            // panelMeuTrabalho
             // 
-            pictureBox2.Image = Properties.Resources.LineSeparator;
-            pictureBox2.Location = new Point(0, 64);
-            pictureBox2.Margin = new Padding(4);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(279, 1);
-            pictureBox2.SizeMode = PictureBoxSizeMode.CenterImage;
-            pictureBox2.TabIndex = 1;
-            pictureBox2.TabStop = false;
+            panelMeuTrabalho.Controls.Add(label2);
+            panelMeuTrabalho.Controls.Add(pictureBox4);
+            panelMeuTrabalho.Location = new Point(0, 152);
+            panelMeuTrabalho.Margin = new Padding(0);
+            panelMeuTrabalho.Name = "panelMeuTrabalho";
+            panelMeuTrabalho.Size = new Size(279, 54);
+            panelMeuTrabalho.TabIndex = 6;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Cursor = Cursors.Hand;
+            label2.Font = new Font("Microsoft Sans Serif", 15F);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(30, 10);
+            label2.Margin = new Padding(0);
+            label2.Name = "label2";
+            label2.Padding = new Padding(13, 0, 0, 0);
+            label2.Size = new Size(139, 25);
+            label2.TabIndex = 4;
+            label2.Text = "Meu trabalho";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
+            label2.Click += label2_Click;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.Cursor = Cursors.Hand;
+            pictureBox4.Image = Properties.Resources.IconeMeuTrabalho;
+            pictureBox4.Location = new Point(4, 10);
+            pictureBox4.Margin = new Padding(0);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(26, 27);
+            pictureBox4.SizeMode = PictureBoxSizeMode.AutoSize;
+            pictureBox4.TabIndex = 3;
+            pictureBox4.TabStop = false;
+            // 
+            // pictureBox12
+            // 
+            pictureBox12.Cursor = Cursors.Hand;
+            pictureBox12.Image = Properties.Resources.IconeMais__2_;
+            pictureBox12.Location = new Point(228, 297);
+            pictureBox12.Margin = new Padding(0);
+            pictureBox12.Name = "pictureBox12";
+            pictureBox12.Size = new Size(46, 46);
+            pictureBox12.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox12.TabIndex = 6;
+            pictureBox12.TabStop = false;
+            pictureBox12.Click += pictureBox12_Click;
+            // 
+            // panel5
+            // 
+            panel5.BorderStyle = BorderStyle.FixedSingle;
+            panel5.Controls.Add(btnSeta);
+            panel5.Controls.Add(label5);
+            panel5.Controls.Add(pictureBox13);
+            panel5.Location = new Point(4, 297);
+            panel5.Margin = new Padding(4);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(220, 46);
+            panel5.TabIndex = 9;
+            // 
+            // btnSeta
+            // 
+            btnSeta.Cursor = Cursors.Hand;
+            btnSeta.Image = Properties.Resources.IconeSetaPraBaixo__2_;
+            btnSeta.Location = new Point(190, 10);
+            btnSeta.Margin = new Padding(0);
+            btnSeta.Name = "btnSeta";
+            btnSeta.Size = new Size(29, 29);
+            btnSeta.SizeMode = PictureBoxSizeMode.StretchImage;
+            btnSeta.TabIndex = 5;
+            btnSeta.TabStop = false;
+            btnSeta.Click += btnSeta_Click_1;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Cursor = Cursors.Hand;
+            label5.Font = new Font("Microsoft Sans Serif", 15F);
+            label5.ForeColor = Color.White;
+            label5.Location = new Point(34, 10);
+            label5.Margin = new Padding(0);
+            label5.Name = "label5";
+            label5.Size = new Size(156, 25);
+            label5.TabIndex = 4;
+            label5.Text = "Área de trabalho";
+            label5.TextAlign = ContentAlignment.MiddleLeft;
+            label5.Click += label5_Click;
+            // 
+            // pictureBox13
+            // 
+            pictureBox13.Cursor = Cursors.Hand;
+            pictureBox13.Image = Properties.Resources.IconeAreaDeTrabalho__3_;
+            pictureBox13.Location = new Point(1, 10);
+            pictureBox13.Margin = new Padding(0);
+            pictureBox13.Name = "pictureBox13";
+            pictureBox13.Padding = new Padding(4, 0, 0, 0);
+            pictureBox13.Size = new Size(29, 25);
+            pictureBox13.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox13.TabIndex = 3;
+            pictureBox13.TabStop = false;
+            pictureBox13.Click += pictureBox13_Click;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.Structa;
+            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Margin = new Padding(4);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(253, 46);
+            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
             // 
             // panelConteudo
             // 
@@ -468,16 +436,16 @@
             label7.TabIndex = 0;
             label7.Text = "Páginas  /";
             // 
-            // pictureBox5
+            // pictureBox6
             // 
-            pictureBox5.Image = Properties.Resources.LineSeparator;
-            pictureBox5.Location = new Point(4, 271);
-            pictureBox5.Margin = new Padding(4);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(279, 1);
-            pictureBox5.SizeMode = PictureBoxSizeMode.CenterImage;
-            pictureBox5.TabIndex = 20;
-            pictureBox5.TabStop = false;
+            pictureBox6.Image = Properties.Resources.LineSeparator;
+            pictureBox6.Location = new Point(4, 63);
+            pictureBox6.Margin = new Padding(4);
+            pictureBox6.Name = "pictureBox6";
+            pictureBox6.Size = new Size(273, 2);
+            pictureBox6.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox6.TabIndex = 21;
+            pictureBox6.TabStop = false;
             // 
             // FormPrincipal
             // 
@@ -495,30 +463,29 @@
             panelMenu.ResumeLayout(false);
             menuItems.ResumeLayout(false);
             menuItems.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox16).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
+            panelPgInicial.ResumeLayout(false);
+            panelPgInicial.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            panelPerfil.ResumeLayout(false);
+            panelPerfil.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)picPerfil).EndInit();
+            panelMeuTrabalho.ResumeLayout(false);
+            panelMeuTrabalho.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox12).EndInit();
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)btnSeta).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox13).EndInit();
-            panelMeuTrabalho.ResumeLayout(false);
-            panelMeuTrabalho.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
-            panelPgInicial.ResumeLayout(false);
-            panelPgInicial.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            panelPerfil.ResumeLayout(false);
-            panelPerfil.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)picPerfil).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panelTop.ResumeLayout(false);
             panelTop.PerformLayout();
             roundedPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)btnAdicionarMembros).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnAreaDeTrabalho).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnNotificacoes).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             ResumeLayout(false);
             PerformLayout();
 
@@ -528,7 +495,6 @@
 
         private System.Windows.Forms.Panel panelMenu;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox picPerfil;
         private System.Windows.Forms.Panel panelPerfil;
         private System.Windows.Forms.Label lblPerfil;
@@ -544,8 +510,6 @@
         private System.Windows.Forms.PictureBox pictureBox13;
         private System.Windows.Forms.PictureBox btnSeta;
         private System.Windows.Forms.PictureBox pictureBox12;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.PictureBox pictureBox16;
         private System.Windows.Forms.Panel panelConteudo;
         private System.Windows.Forms.Panel panelTop;
         private System.Windows.Forms.Label lblPaginaMin;
@@ -557,5 +521,6 @@
         private System.Windows.Forms.PictureBox btnAdicionarMembros;
         private FlowLayoutPanel flpProjetos;
         private PictureBox pictureBox5;
+        private PictureBox pictureBox6;
     }
 }

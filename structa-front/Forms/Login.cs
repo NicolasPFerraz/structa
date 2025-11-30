@@ -101,6 +101,7 @@ namespace structa_front
                 this.Hide();
 
                 Sessao.UsuarioId = result.Id;
+                Sessao.Nome = result.Nome;
             } catch (Exception ex) {
                 MessageBox.Show("Erro ao fazer login: " + ex.Message);
                 return;

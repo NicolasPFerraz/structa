@@ -71,7 +71,7 @@ namespace structa_front.Services
             //  CORREÇÃO: chamada ajustada 
             var projetosService = new ProjetosService();
             var newProjectResponse = await projetosService
-                .CriarProjetoAsync("Projeto Inicial", usuarioCriado.Nome);
+                .CriarProjetoAsync("Projeto Inicial", usuarioCriado.Nome, usuarioCriado.Id);
 
             return usuarioCriado;
         }

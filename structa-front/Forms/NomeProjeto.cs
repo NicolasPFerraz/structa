@@ -45,7 +45,8 @@ namespace structa_front
                 // 4 — Criar o projeto no Supabase
                 await projetosService.CriarProjetoAsync(
                     TXT_NomeProjeto.Text,   // Nome do projeto digitado
-                    usuario.Nome            // Nome do responsável
+                    "TESTE",
+                    Sessao.UsuarioId // Nome do responsável
                 );
 
                 // 5 — Avançar para próxima tela

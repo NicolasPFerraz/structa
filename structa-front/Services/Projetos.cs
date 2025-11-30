@@ -20,7 +20,7 @@ namespace structa_front.Services
             }
         }
 
-        public async Task<Projeto> CriarProjetoAsync(string nomeProjeto, string nomeResponsavel)
+        public async Task<Projeto> CriarProjetoAsync(string nomeProjeto, string nomeResponsavel, int idUsuario)
         {
             if (!_db.IsReady)
                 throw new InvalidOperationException("Supabase não inicializado");
@@ -38,7 +38,15 @@ namespace structa_front.Services
                 .From<Projeto>()
                 .Insert(novoProjeto);
 
-            return response.Models.FirstOrDefault();
+            var projetoCriado = response.Models.FirstOrDefault();
+
+            if (projetoCriado != null)
+            {
+                var membrosProjetoService = new MembrosProjetoService();
+                await membrosProjetoService.CriarMembroProjeto(idUsuario, "Administrador", projetoCriado.Id);
+            }
+
+            return projetoCriado;
         }
 
 

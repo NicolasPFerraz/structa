@@ -3,6 +3,7 @@
     public static class Sessao
     {
         public static int UsuarioId { get; set; }
+        public static string Nome { get; set; }
         public static int ProjetoId { get; set; }
     }
 }
