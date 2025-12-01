@@ -1,0 +1,18 @@
+namespace structa_front;
+
+static class Program
+{
+    /// <summary>
+    ///  The main entry point for the application.
+    /// </summary>
+    [STAThread]
+    static void Main()
+    {
+        // To customize application configuration such as set high DPI settings or default font,
+        // see https://aka.ms/applicationconfiguration.
+        ApplicationConfiguration.Initialize();
+        // Aguarda a inicialização assíncrona de forma síncrona para garantir STA na thread principal
+        ServiceProvider.InitializeServices().GetAwaiter().GetResult();
+        Application.Run(new CriarConta());
+    }    
+}

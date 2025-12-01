@@ -1,17 +1,18 @@
-    namespace structa_front;
-
-static class Program
+namespace structa_front
 {
-    /// <summary>
-    ///  The main entry point for the application.
-    /// </summary>
-    [STAThread]
-    static async Task Main()
+    internal static class Program
     {
-        // To customize application configuration such as set high DPI settings or default font,
-        // see https://aka.ms/applicationconfiguration.
-        ApplicationConfiguration.Initialize();
-        await ServiceProvider.InitializeServices();
-        Application.Run(new CriarConta());
-    }    
+        [STAThread]
+        static void Main()
+        {
+            ApplicationConfiguration.Initialize();
+
+            // Executa async antes de abrir a UI
+            ServiceProvider.InitializeServices()
+                           .GetAwaiter()
+                           .GetResult();
+
+            Application.Run(new CriarConta());
+        }
+    }
 }

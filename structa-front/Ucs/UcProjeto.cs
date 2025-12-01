@@ -317,6 +317,9 @@ namespace structa_front
             this.btnOrdenar.Click += new System.EventHandler(this.btnOrdenar_Click);
             this.btnOcultar.Click += new System.EventHandler(this.btnOcultar_Click);
             // ^^^ ALTERAÇÃO AQUI ^^^
+
+            // Add handler to disable ComboBox AutoComplete when editing in the DataGridView
+            this.dgvTarefas.EditingControlShowing += new DataGridViewEditingControlShowingEventHandler(this.dgvTarefas_EditingControlShowing);
         }
 
         private void dgvTarefas_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -533,6 +536,24 @@ namespace structa_front
         {
             FrmPessoasCadastradas formPessoas = new FrmPessoasCadastradas();
             formPessoas.Show();
+        }
+
+        // Disable AutoComplete on ComboBox editing control to avoid OLE/STA ThreadStateException
+        private void dgvTarefas_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            if (e.Control is ComboBox combo)
+            {
+                try
+                {
+                    combo.AutoCompleteMode = AutoCompleteMode.None;
+                    combo.AutoCompleteSource = AutoCompleteSource.None;
+                    combo.DropDownStyle = ComboBoxStyle.DropDownList;
+                }
+                catch
+                {
+                    // Ignore any controls that don't support these properties
+                }
+            }
         }
     }
 }
