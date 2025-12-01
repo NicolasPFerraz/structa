@@ -49,7 +49,7 @@ namespace structa_front
 
             // Position under the separator/panels declared in designer
             int left = 120; // aligns with pictureBox5 in designer
-            int top = 520;  // slightly below pictureBox5
+            int top = 420;  // slightly below pictureBox5
 
             // Compute a sensible width based on PainelConteudo so it stays aligned
             int width = Math.Max(600, PainelConteudo.Width - left - 120); // leave right margin
