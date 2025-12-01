@@ -38,6 +38,9 @@
             comboProjetos = new ComboBox();
             listMembros = new ListBox();
             lblListMembros = new Label();
+            comboRemoverMembro = new ComboBox();
+            lblRemover = new Label();
+            btnRemover = new Button();
             SuspendLayout();
             // 
             // txtEmail
@@ -96,7 +99,7 @@
             // 
             btnAdicionar.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAdicionar.ForeColor = Color.Black;
-            btnAdicionar.Location = new Point(28, 327);
+            btnAdicionar.Location = new Point(28, 264);
             btnAdicionar.Margin = new Padding(2);
             btnAdicionar.Name = "btnAdicionar";
             btnAdicionar.Size = new Size(140, 32);
@@ -159,12 +162,49 @@
             lblListMembros.TabIndex = 47;
             lblListMembros.Text = "Membros já no projeto:";
             // 
+            // comboRemoverMembro
+            // 
+            comboRemoverMembro.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboRemoverMembro.FormattingEnabled = true;
+            comboRemoverMembro.Location = new Point(323, 264);
+            comboRemoverMembro.Name = "comboRemoverMembro";
+            comboRemoverMembro.Size = new Size(293, 23);
+            comboRemoverMembro.TabIndex = 48;
+            // 
+            // lblRemover
+            // 
+            lblRemover.AutoSize = true;
+            lblRemover.Cursor = Cursors.Hand;
+            lblRemover.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblRemover.ForeColor = Color.White;
+            lblRemover.Location = new Point(323, 248);
+            lblRemover.Margin = new Padding(4, 0, 4, 0);
+            lblRemover.Name = "lblRemover";
+            lblRemover.Size = new Size(199, 13);
+            lblRemover.TabIndex = 49;
+            lblRemover.Text = "Selecionar membro para remoção:";
+            // 
+            // btnRemover
+            // 
+            btnRemover.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnRemover.ForeColor = Color.Black;
+            btnRemover.Location = new Point(323, 307);
+            btnRemover.Name = "btnRemover";
+            btnRemover.Size = new Size(131, 33);
+            btnRemover.TabIndex = 50;
+            btnRemover.Text = "Remover membro";
+            btnRemover.UseVisualStyleBackColor = true;
+            btnRemover.Click += btnRemover_Click;
+            // 
             // AdicionarMembros
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(12, 20, 47);
             ClientSize = new Size(836, 370);
+            Controls.Add(btnRemover);
+            Controls.Add(lblRemover);
+            Controls.Add(comboRemoverMembro);
             Controls.Add(lblListMembros);
             Controls.Add(listMembros);
             Controls.Add(comboProjetos);
@@ -197,5 +237,8 @@
         private ComboBox comboProjetos;
         private ListBox listMembros;
         private Label lblListMembros;
+        private ComboBox comboRemoverMembro;
+        private Label lblRemover;
+        private Button btnRemover;
     }
 }

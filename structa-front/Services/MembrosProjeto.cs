@@ -11,13 +11,13 @@ namespace structa_front.Services
     internal class MembrosProjetoService
     {
         private readonly DatabaseService? _db = ServiceProvider.Database;
+
         public MembrosProjetoService()
         {
             if (_db == null)
-            {
                 throw new InvalidOperationException("DatabaseService not initialized");
-            }
         }
+
         public async Task<MembroProjetos> CriarMembroProjeto(int id, string funcao, int idProjeto)
         {
             if (!_db.IsReady)
@@ -35,7 +35,6 @@ namespace structa_front.Services
             return newProjectMember.Models.FirstOrDefault();
         }
 
-        // Buscar membros de um projeto
         public async Task<List<MembroProjetos>> BuscarMembrosAsync(int idProjeto)
         {
             if (!_db.IsReady)
@@ -43,14 +42,12 @@ namespace structa_front.Services
 
             var response = await _db.Client
                 .From<MembroProjetos>()
-                .Select("*")
                 .Filter("id_projeto", Operator.Equals, idProjeto)
                 .Get();
 
             return response.Models;
         }
 
-        // Buscar membros com dados do usuário (nome, email, etc)
         public async Task<List<(MembroProjetos, Usuario)>> BuscarMembrosComDadosAsync(int idProjeto)
         {
             if (!_db.IsReady)
@@ -68,6 +65,27 @@ namespace structa_front.Services
             }
 
             return resultado;
+        }
+
+        // Remover membro
+        public async Task<bool> RemoverMembroAsync(int idMembroProjeto)
+        {
+            if (!_db.IsReady)
+                throw new InvalidOperationException("Supabase não inicializado");
+
+            // Deleta o membro
+            await _db.Client
+                .From<MembroProjetos>()
+                .Filter("id", Operator.Equals, idMembroProjeto)
+                .Delete();
+
+            // Verifica se o membro ainda existe
+            var membro = await _db.Client
+                .From<MembroProjetos>()
+                .Filter("id", Operator.Equals, idMembroProjeto)
+                .Get();
+
+            return membro.Models.Count == 0; // true se foi removido
         }
     }
 }
