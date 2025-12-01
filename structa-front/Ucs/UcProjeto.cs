@@ -331,6 +331,13 @@ namespace structa_front
 
             // 1. Cria o menu de filtro dinamicamente
             CriarMenuDeFiltro();
+
+            // Assegura que, se o controle foi criado sem id, use a sessão como fallback
+            if (projetoIdSelecionado == 0 && Sessao.ProjetoId != 0)
+            {
+                projetoIdSelecionado = Sessao.ProjetoId;
+            }
+
             retornarTarefas();
 
             // VVV ALTERAÇÃO AQUI VVV
@@ -479,7 +486,8 @@ namespace structa_front
             var tarefa = new Models.Tarefa
             {
                 Id = existingId,
-                IdProjeto = 1, // TODO: replace with selected project id
+                // Use selected project id when available, otherwise fallback to session
+                IdProjeto = projetoIdSelecionado != 0 ? projetoIdSelecionado : Sessao.ProjetoId,
                 IdUsuario = Sessao.UsuarioId, // use current session user
                 Titulo = tarefaTitulo,
                 Responsavel = Convert.ToString(row.Cells["colResp"].Value) ?? string.Empty,

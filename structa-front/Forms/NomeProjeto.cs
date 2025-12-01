@@ -43,11 +43,17 @@ namespace structa_front
                 }
 
                 // 4 — Criar o projeto no Supabase
-                await projetosService.CriarProjetoAsync(
+                var projetoCriado = await projetosService.CriarProjetoAsync(
                     TXT_NomeProjeto.Text,   // Nome do projeto digitado
                     "TESTE",
                     Sessao.UsuarioId // Nome do responsável
                 );
+
+                if (projetoCriado != null)
+                {
+                    // Define projeto atual na sessão para que outros controles usem o id
+                    Sessao.ProjetoId = projetoCriado.Id;
+                }
 
                 // 5 — Avançar para próxima tela
                 Nomear_QD nomear_QD = new Nomear_QD();
