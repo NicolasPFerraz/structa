@@ -44,22 +44,22 @@
             // 
             label16.AutoSize = true;
             label16.BackColor = Color.Transparent;
-            label16.Font = new Font("Microsoft Sans Serif", 25F, FontStyle.Bold);
+            label16.Font = new Font("Microsoft Sans Serif", 21F, FontStyle.Bold);
             label16.ForeColor = Color.White;
-            label16.Location = new Point(370, 227);
-            label16.Margin = new Padding(5, 0, 5, 0);
+            label16.Location = new Point(331, 204);
+            label16.Margin = new Padding(4, 0, 4, 0);
             label16.Name = "label16";
-            label16.Size = new Size(343, 48);
+            label16.Size = new Size(240, 32);
             label16.TabIndex = 23;
             label16.Text = "Área de trabalho";
             // 
             // pictureBox3
             // 
             pictureBox3.Image = Properties.Resources.LineSeparator;
-            pictureBox3.Location = new Point(123, 519);
-            pictureBox3.Margin = new Padding(5, 4, 5, 4);
+            pictureBox3.Location = new Point(108, 389);
+            pictureBox3.Margin = new Padding(4, 3, 4, 3);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(1133, 1);
+            pictureBox3.Size = new Size(991, 1);
             pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox3.TabIndex = 25;
             pictureBox3.TabStop = false;
@@ -67,10 +67,10 @@
             // pictureBox2
             // 
             pictureBox2.Image = Properties.Resources.ImgAreadeTabalhoIcon;
-            pictureBox2.Location = new Point(165, 157);
-            pictureBox2.Margin = new Padding(5, 4, 5, 4);
+            pictureBox2.Location = new Point(176, 152);
+            pictureBox2.Margin = new Padding(4, 3, 4, 3);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(204, 186);
+            pictureBox2.Size = new Size(147, 140);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 1;
             pictureBox2.TabStop = false;
@@ -78,10 +78,10 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.ImagemAreadeTrabalho;
-            pictureBox1.Location = new Point(0, -4);
-            pictureBox1.Margin = new Padding(5, 4, 5, 4);
+            pictureBox1.Location = new Point(0, -87);
+            pictureBox1.Margin = new Padding(4, 3, 4, 3);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(1400, 221);
+            pictureBox1.Size = new Size(1506, 277);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -94,10 +94,10 @@
             PainelConteudo.Controls.Add(pictureBox1);
             PainelConteudo.Controls.Add(label16);
             PainelConteudo.Controls.Add(pictureBox3);
-            PainelConteudo.Location = new Point(0, 4);
-            PainelConteudo.Margin = new Padding(5, 4, 5, 4);
+            PainelConteudo.Location = new Point(0, 0);
+            PainelConteudo.Margin = new Padding(4, 3, 4, 3);
             PainelConteudo.Name = "PainelConteudo";
-            PainelConteudo.Size = new Size(1400, 923);
+            PainelConteudo.Size = new Size(1373, 692);
             PainelConteudo.TabIndex = 31;
             PainelConteudo.Paint += PainelConteudo_Paint;
             // 
@@ -106,21 +106,21 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 13F);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(123, 485);
+            label1.Location = new Point(108, 364);
             label1.Name = "label1";
-            label1.Size = new Size(152, 30);
+            label1.Size = new Size(126, 25);
             label1.TabIndex = 26;
             label1.Text = "Meus projetos";
             // 
             // UcAreaDeTrabalho
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(12, 20, 47);
             Controls.Add(PainelConteudo);
-            Margin = new Padding(5, 4, 5, 4);
+            Margin = new Padding(4, 3, 4, 3);
             Name = "UcAreaDeTrabalho";
-            Size = new Size(1400, 923);
+            Size = new Size(1373, 692);
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

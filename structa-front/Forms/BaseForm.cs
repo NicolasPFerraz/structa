@@ -19,7 +19,7 @@ namespace structa_front.Forms
             // 
             // BaseForm
             // 
-            ClientSize = new Size(1422, 853);
+            ClientSize = new Size(1422, 761);
             Name = "BaseForm";
             ResumeLayout(false);
 
