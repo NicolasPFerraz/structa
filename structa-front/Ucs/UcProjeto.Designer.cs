@@ -86,7 +86,6 @@ namespace structa_front
             panelToolbar.Name = "panelToolbar";
             panelToolbar.Size = new Size(1122, 40);
             panelToolbar.TabIndex = 1;
-            panelToolbar.Paint += panelToolbar_Paint;
             // 
             // btnCriarElemento
             // 
@@ -101,7 +100,6 @@ namespace structa_front
             btnCriarElemento.TabIndex = 0;
             btnCriarElemento.Text = "Criar Elemento ▾";
             btnCriarElemento.UseVisualStyleBackColor = false;
-            btnCriarElemento.Click += btnCriarElemento_Click;
             // 
             // btnPessoas
             // 
@@ -129,7 +127,6 @@ namespace structa_front
             btnFiltro.TabIndex = 2;
             btnFiltro.Text = "Filtro";
             btnFiltro.UseVisualStyleBackColor = false;
-            btnFiltro.Click += btnFiltro_Click_1;
             // 
             // btnOrdenar
             // 
@@ -168,7 +165,6 @@ namespace structa_front
             panelHeaderEsteMes.Name = "panelHeaderEsteMes";
             panelHeaderEsteMes.Size = new Size(200, 28);
             panelHeaderEsteMes.TabIndex = 2;
-            panelHeaderEsteMes.Paint += panelHeaderEsteMes_Paint;
             // 
             // lblEsteMes
             // 
@@ -231,8 +227,6 @@ namespace structa_front
             dgvTarefas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvTarefas.Size = new Size(1219, 304);
             dgvTarefas.TabIndex = 0;
-            dgvTarefas.CellClick += dgvTarefas_CellClick;
-            dgvTarefas.CellContentClick += dgvTarefas_CellContentClick;
             dgvTarefas.CellEndEdit += DataGridView1_CellEndEdit;
             // 
             // btnAdicionarGrupo

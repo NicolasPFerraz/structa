@@ -27,8 +27,6 @@ namespace structa_front
             RD_LicençaMedica.CheckedChanged += Radio_CheckedChanged;
             RD_TrabalhoExterno.CheckedChanged += Radio_CheckedChanged;
             RD_Ferias.CheckedChanged += Radio_CheckedChanged;
-
-            checkBox1.CheckedChanged += CheckBox1_CheckedChanged;
         }
 
         private async void StatusTrabalho_Load(object? sender, EventArgs e)
@@ -87,7 +85,6 @@ namespace structa_front
                 }
 
                 // Treat Offline specially for checkbox
-                checkBox1.Checked = norm == "offline";
 
                 _suppressEvents = false;
             }
@@ -142,15 +139,6 @@ namespace structa_front
 
                 var usuario = await _usuariosService.BuscarUsuarioPorIdAsync(Sessao.UsuarioId);
                 if (usuario == null) return;
-
-                if (checkBox1.Checked)
-                {
-                    usuario.Status = "Offline";
-                }
-                else
-                {
-                    if (NormalizeText(usuario.Status ?? string.Empty) == "offline") usuario.Status = string.Empty;
-                }
 
                 await _usuariosService.AtualizarUsuarioAsync(usuario);
             }

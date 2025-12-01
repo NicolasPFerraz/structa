@@ -1,4 +1,4 @@
-    namespace structa_front;
+namespace structa_front;
 
 static class Program
 {
@@ -6,12 +6,15 @@ static class Program
     ///  The main entry point for the application.
     /// </summary>
     [STAThread]
-    static async Task Main()
+    static void Main()
     {
         // To customize application configuration such as set high DPI settings or default font,
         // see https://aka.ms/applicationconfiguration.
         ApplicationConfiguration.Initialize();
-        await ServiceProvider.InitializeServices();
+
+        // Initialize async services synchronously to preserve STA thread for WinForms
+        ServiceProvider.InitializeServices().GetAwaiter().GetResult();
+
         Application.Run(new CriarConta());
-    }    
+    }
 }

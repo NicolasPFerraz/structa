@@ -33,14 +33,12 @@
             LBL_Perfil = new Label();
             LBL_nav = new Label();
             PG_StatusTrabalho = new PictureBox();
-            PG_Notificacao = new PictureBox();
             PG_Senha = new PictureBox();
             PG_Pessoal = new PictureBox();
             pictureBox15 = new PictureBox();
             pictureBox14 = new PictureBox();
             pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)PG_StatusTrabalho).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)PG_Notificacao).BeginInit();
             ((System.ComponentModel.ISupportInitialize)PG_Senha).BeginInit();
             ((System.ComponentModel.ISupportInitialize)PG_Pessoal).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox15).BeginInit();
@@ -108,24 +106,11 @@
             PG_StatusTrabalho.TabStop = false;
             PG_StatusTrabalho.Click += PG_StatusTrabalho_Click;
             // 
-            // PG_Notificacao
-            // 
-            PG_Notificacao.Cursor = Cursors.Hand;
-            PG_Notificacao.Image = Properties.Resources.Frame_179;
-            PG_Notificacao.Location = new Point(307, 173);
-            PG_Notificacao.Margin = new Padding(2);
-            PG_Notificacao.Name = "PG_Notificacao";
-            PG_Notificacao.Size = new Size(135, 34);
-            PG_Notificacao.SizeMode = PictureBoxSizeMode.AutoSize;
-            PG_Notificacao.TabIndex = 63;
-            PG_Notificacao.TabStop = false;
-            PG_Notificacao.Click += PG_Notificacao_Click;
-            // 
             // PG_Senha
             // 
             PG_Senha.Cursor = Cursors.Hand;
             PG_Senha.Image = Properties.Resources.Frame_180;
-            PG_Senha.Location = new Point(450, 173);
+            PG_Senha.Location = new Point(296, 173);
             PG_Senha.Margin = new Padding(2);
             PG_Senha.Name = "PG_Senha";
             PG_Senha.Size = new Size(135, 34);
@@ -189,7 +174,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(17, 30, 76);
             Controls.Add(PG_StatusTrabalho);
-            Controls.Add(PG_Notificacao);
             Controls.Add(PG_Senha);
             Controls.Add(PG_Pessoal);
             Controls.Add(label2);
@@ -204,7 +188,6 @@
             Size = new Size(1388, 245);
             Load += Painel_Perfil_Load;
             ((System.ComponentModel.ISupportInitialize)PG_StatusTrabalho).EndInit();
-            ((System.ComponentModel.ISupportInitialize)PG_Notificacao).EndInit();
             ((System.ComponentModel.ISupportInitialize)PG_Senha).EndInit();
             ((System.ComponentModel.ISupportInitialize)PG_Pessoal).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox15).EndInit();
@@ -228,7 +211,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label LBL_nav;
         private System.Windows.Forms.PictureBox PG_StatusTrabalho;
-        private System.Windows.Forms.PictureBox PG_Notificacao;
         private System.Windows.Forms.PictureBox PG_Senha;
         private System.Windows.Forms.PictureBox PG_Pessoal;
     }

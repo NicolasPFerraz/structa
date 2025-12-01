@@ -15,73 +15,95 @@ namespace structa_front
     public partial class UcPaginaInicial : UserControl
     {
         private readonly DatabaseService? _db = ServiceProvider.Database;
+        private List<Projeto> cachedProjetos = new List<Projeto>();
 
         public UcPaginaInicial()
         {
             InitializeComponent();
-            // Ensure flow panel is on top and resizes with parent
+
+            AplicarDoubleBuffer();
+
             flpProjetos.BringToFront();
             flpProjetos.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom;
             flpProjetos.AutoScroll = true;
 
-            // Carrega dados de exemplo ao inicializar (after layout adjustments)
-            CarregarProjetosExemplo();
-        }
-
-        // Carrega projetos com dados de exemplo
-        public void CarregarProjetosExemplo()
-        {
-            try
+            ProjectEvents.ProjectsUpdated += async () =>
             {
-                flpProjetos.Controls.Clear();
-
-                // Dados de exemplo
-                var projetosExemplo = new List<(string Nome, string[] Membros)>
+                await PreloadProjetosAsync();
+                if (IsHandleCreated)
                 {
-                    ("Plano de gestão - Website Redesign", new[] { "Nicolas", "Mariana", "João" }),
-                    ("Plano de gestão - Mobile App", new[] { "Ana", "Carlos", "Pedro" }),
-                    ("Plano de gestão - Backend API", new[] { "Rafael", "Lucas", "Marta" }),
-                    ("Plano de gestão - Database Optimization", new[] { "Sofia", "Diego" }),
-                    ("Plano de gestão - DevOps Infrastructure", new[] { "Bruno", "Fernanda", "Gustavo", "Isabela" })
-                };
-
-                foreach (var projeto in projetosExemplo)
-                {
-                    AddProjetoRow(projeto.Nome, projeto.Membros);
+                    BeginInvoke(new Action(async () => await CarregarProjetosAsync()));
                 }
-            }
-            catch (Exception ex)
+            };
+
+            _ = PreloadProjetosAsync();
+
+            this.Load += async (s, e) => await CarregarProjetosAsync();
+            CarregarNomeUsuario();
+        }
+
+        private void AplicarDoubleBuffer()
+        {
+            this.DoubleBuffered = true;
+            flpProjetos.GetType().GetProperty("DoubleBuffered", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)
+                ?.SetValue(flpProjetos, true, null);
+        }
+        private async Task CarregarNomeUsuario()
+        {
+            if (Sessao.UsuarioId != null)
             {
-                MessageBox.Show($"Erro ao carregar projetos: {ex.Message}");
+                var usuarioService = new UsuariosService();
+                var result = await usuarioService.BuscarUsuarioPorIdAsync(Sessao.UsuarioId);
+                lblNome.Text = $"Olá, {result.Nome}!";
             }
         }
 
-        // Carrega projetos do banco de dados (método original)
         public async Task CarregarProjetosAsync()
         {
             try
             {
                 var projetosService = new ProjetosService();
-                // Buscar projetos do usuário logado
-                var projetos = await projetosService.BuscarProjetosAsync(Sessao.UsuarioId);
+                var membrosService = new MembrosProjetoService();
 
+                List<Projeto> projetos =
+                    (cachedProjetos != null && cachedProjetos.Count > 0)
+                    ? cachedProjetos
+                    : await projetosService.BuscarProjetosAsync(Sessao.UsuarioId);
+
+                flpProjetos.SuspendLayout();
                 flpProjetos.Controls.Clear();
 
-                if (projetos.Count == 0)
+                var controles = new List<Control>();
+
+                if (projetos == null || projetos.Count == 0)
                 {
-                    AddProjetoRow("Nenhum projeto encontrado", new[] { "Comece criando um novo projeto" });
+                    controles.Add(
+                        CriarProjetoRow(
+                            "Nenhum projeto encontrado",
+                            new[] { "Comece criando um novo projeto" },
+                            null
+                        )
+                    );
+
+                    flpProjetos.Controls.AddRange(controles.ToArray());
+                    flpProjetos.ResumeLayout();
                     return;
                 }
 
-                foreach (var projeto in projetos)
+                var tarefas = projetos.Select(async proj =>
                 {
-                    // Buscar membros do projeto com dados do usuário
-                    var membrosService = new MembrosProjetoService();
-                    var membrosComDados = await membrosService.BuscarMembrosComDadosAsync(projeto.Id);
-                    var nomeMembros = membrosComDados.Select(m => m.Item2.Nome).ToArray();
+                    var membros = await membrosService.BuscarMembrosComDadosAsync(proj.Id);
+                    string[] nomes = membros.Select(m => m.Item2.Nome).ToArray();
 
-                    AddProjetoRow(projeto.Nome, nomeMembros);
-                }
+                    return CriarProjetoRow(proj.Nome, nomes, proj.Id);
+                });
+
+                var rows = await Task.WhenAll(tarefas);
+
+                controles.AddRange(rows);
+
+                flpProjetos.Controls.AddRange(controles.ToArray());
+                flpProjetos.ResumeLayout();
             }
             catch (Exception ex)
             {
@@ -89,62 +111,19 @@ namespace structa_front
             }
         }
 
-        // Alternativa: Carregar apenas usuários com dados de exemplo
-        public void CarregarUsuariosExemplo()
+        private async Task PreloadProjetosAsync()
         {
             try
             {
-                flpProjetos.Controls.Clear();
-
-                // Dados de exemplo de usuários
-                var usuariosExemplo = new[]
-                {
-                    ("Nicolas Ferraz", "nicolas@example.com"),
-                    ("Mariana Silva", "mariana@example.com"),
-                    ("João Santos", "joao@example.com"),
-                    ("Ana Costa", "ana@example.com"),
-                    ("Carlos Oliveira", "carlos@example.com")
-                };
-
-                foreach (var usuario in usuariosExemplo)
-                {
-                    AddProjetoRow(usuario.Item1, new[] { usuario.Item2 });
-                }
+                var service = new ProjetosService();
+                cachedProjetos = await service.BuscarProjetosAsync(Sessao.UsuarioId);
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show($"Erro ao carregar usuários: {ex.Message}");
+                cachedProjetos = new List<Projeto>();
             }
         }
 
-        // Alternativa original: Carregar apenas usuários do banco
-        public async Task CarregarUsuariosAsync()
-        {
-            try
-            {
-                var usuariosService = new UsuariosService();
-                var usuarios = await usuariosService.BuscarUsuariosAsync();
-
-                flpProjetos.Controls.Clear();
-
-                foreach (var usuario in usuarios)
-                {
-                    AddProjetoRow(usuario.Nome, new[] { usuario.Email });
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Erro ao carregar usuários: {ex.Message}");
-            }
-        }
-
-        // Método para adicionar uma linha com dados específicos
-        public void AdicionarProjetoRow(string planoGestao, string[] membros)
-        {
-            AddProjetoRow(planoGestao, membros);
-        }
-
-        // Limpar todos os projetos
         public void LimparProjetos()
         {
             flpProjetos.Controls.Clear();
@@ -152,50 +131,39 @@ namespace structa_front
 
         public void AbrirPagina(UserControl pagina)
         {
-            // Limpa o painel de conteúdo
             PainelConteudo.Controls.Clear();
-            // Configura a página para preencher o painel
-            pagina.Dock = DockStyle.Bottom;
-            // Adiciona a página ao painel de conteúdo
+            pagina.Dock = DockStyle.Fill;
             PainelConteudo.Controls.Add(pagina);
         }
 
-        private void label17_Click(object sender, EventArgs e)
+        private void SelecionarProjeto(int projetoId, string nome)
         {
-            AbrirPagina(new UcFeed());
+            Sessao.ProjetoId = projetoId;
+
+            var parentForm = this.FindForm() as FormPrincipal;
+
+            if (parentForm != null)
+                parentForm.AbrirPagina(new UcPlanoDeGestao(projetoId, nome));
+            else
+                AbrirPagina(new UcPlanoDeGestao(projetoId, nome));
         }
 
-        private void label19_Click(object sender, EventArgs e)
+        private Control CriarProjetoRow(string planoGestao, IEnumerable<string> membros, int? projetoId)
         {
-            AbrirPagina(new UcAreaDeTrabalho());
-        }
-
-        private void label13_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        // Adds a single project row to the flow panel
-        private void AddProjetoRow(string planoGestao, IEnumerable<string> membros)
-        {
-            // Calculate a safe width: if flpProjetos not yet measured, use a reasonable fallback
-            int safeWidth = flpProjetos.ClientSize.Width;
-            if (safeWidth <= 0)
-            {
-                safeWidth = flpProjetos.Width;
-            }
-            if (safeWidth <= 0)
-            {
-                safeWidth = 1000; // fallback
-            }
+            int width = flpProjetos.ClientSize.Width;
+            if (width <= 0) width = 1000;
 
             var row = new Panel
             {
-                Width = Math.Max(600, safeWidth - SystemInformation.VerticalScrollBarWidth),
+                Width = width - SystemInformation.VerticalScrollBarWidth,
                 Height = 48,
-                BackColor = Color.FromArgb(15, 30, 50), // subtle background so we can see rows
-                Margin = new Padding(0, 0, 0, 6)
+                BackColor = Color.FromArgb(15, 30, 50),
+                Margin = new Padding(0, 0, 0, 6),
+                Cursor = projetoId.HasValue ? Cursors.Hand : Cursors.Default
             };
+
+            row.GetType().GetProperty("DoubleBuffered", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)
+                ?.SetValue(row, true, null);
 
             int leftWidth = (int)(row.Width * 0.45);
             int rightWidth = row.Width - leftWidth - 12;
@@ -220,13 +188,40 @@ namespace structa_front
                 AutoEllipsis = true
             };
 
+            if (projetoId.HasValue)
+            {
+                void Open(object s, EventArgs e)
+                {
+                    SelecionarProjeto(projetoId.Value, planoGestao);
+                }
+
+                row.Click += Open;
+                lblPlano.Click += Open;
+                lblMembros.Click += Open;
+            }
+
             row.Controls.Add(lblPlano);
             row.Controls.Add(lblMembros);
 
-            flpProjetos.Controls.Add(row);
+            return row;
+        }
+
+        private void label17_Click(object sender, EventArgs e)
+        {
+            AbrirPagina(new UcFeed());
+        }
+
+        private void label19_Click(object sender, EventArgs e)
+        {
+            AbrirPagina(new UcAreaDeTrabalho());
         }
 
         private void flpProjetos_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblNome_Click(object sender, EventArgs e)
         {
 
         }
