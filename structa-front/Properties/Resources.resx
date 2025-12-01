@@ -136,6 +136,9 @@
   <data name="InformaçõesPessoais_Content" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\InformaçõesPessoais_Content.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Frame 232" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Frame 232.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Profile Information" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Profile Information.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -301,7 +304,14 @@
   <data name="IconePesquisar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IconePesquisar1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+<<<<<<< HEAD
   <data name="m20bkz6mmzda1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\m20bkz6mmzda1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+=======
+  <data name="Platform Settings" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Platform Settings.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="TarefasPlanoDeGestao" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TarefasPlanoDeGestao.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+>>>>>>> dudu
   </data>
 </root>

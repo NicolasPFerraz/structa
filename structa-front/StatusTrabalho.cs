@@ -10,20 +10,16 @@ using System.Windows.Forms;
 
 namespace structa_front
 {
-    public partial class Cronograma : Form
+    public partial class StatusTrabalho : UserControl
     {
-        public Cronograma()
+        public StatusTrabalho()
         {
             InitializeComponent();
         }
 
-        private void label10_Click(object sender, EventArgs e)
+        private void StatusTrabalho_Load(object sender, EventArgs e)
         {
 
         }
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> estavel_muito_estavel
