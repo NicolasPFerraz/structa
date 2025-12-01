@@ -70,14 +70,13 @@
             roundedPanel.Controls.Add(btnRegistrar);
             roundedPanel.Controls.Add(lblRegister);
             roundedPanel.CornerRadius = 10;
-            roundedPanel.Location = new Point(538, 98);
+            roundedPanel.Location = new Point(425, 45);
             roundedPanel.Margin = new Padding(4, 3, 4, 3);
             roundedPanel.Name = "roundedPanel";
             roundedPanel.ShadowColor = Color.White;
             roundedPanel.ShadowOffset = 16;
             roundedPanel.Size = new Size(589, 804);
             roundedPanel.TabIndex = 1;
-            roundedPanel.Paint += roundedPanel_Paint;
             // 
             // pictureBox2
             // 
@@ -276,7 +275,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             BackColor = Color.FromArgb(4, 12, 40);
-            ClientSize = new Size(1370, 749);
+            ClientSize = new Size(1424, 861);
             Controls.Add(roundedPanel);
             Margin = new Padding(4, 3, 4, 3);
             Name = "CriarConta";

@@ -76,5 +76,17 @@ namespace structa_front.Services
 
             return new List<Tarefa>();
         }
+        public async Task<bool> DeletarTarefaAsync(int idTarefa)
+        {
+            if (!_db.IsReady)
+                throw new InvalidOperationException("Supabase não inicializado");
+
+            await _db.Client
+                .From<Tarefa>()
+                .Where(t => t.Id == idTarefa)
+                .Delete();
+
+            return true;
+        }
     }
 }

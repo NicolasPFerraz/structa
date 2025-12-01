@@ -96,11 +96,13 @@ namespace structa_front
             {
                 var result = await usuarioService.LogarUsuarioAsync(usuario);
 
+                // Set session BEFORE creating FormPrincipal so preload uses correct user id
+                Sessao.UsuarioId = result.Id;
+                Sessao.Nome = result.Nome;
+
                 FormPrincipal formPrincipal = new FormPrincipal("Página");
                 formPrincipal.Show();
                 this.Hide();
-
-                Sessao.UsuarioId = result.Id;
             } catch (Exception ex) {
                 MessageBox.Show("Erro ao fazer login: " + ex.Message);
                 return;

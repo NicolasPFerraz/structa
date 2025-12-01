@@ -40,10 +40,10 @@
             txtPesquisarNotificacoes.Font = new Font("Segoe UI", 11F);
             txtPesquisarNotificacoes.ForeColor = Color.Gray;
             txtPesquisarNotificacoes.ImeMode = ImeMode.NoControl;
-            txtPesquisarNotificacoes.Location = new Point(28, 103);
-            txtPesquisarNotificacoes.Margin = new Padding(4, 3, 4, 3);
+            txtPesquisarNotificacoes.Location = new Point(32, 137);
+            txtPesquisarNotificacoes.Margin = new Padding(5, 4, 5, 4);
             txtPesquisarNotificacoes.Name = "txtPesquisarNotificacoes";
-            txtPesquisarNotificacoes.Size = new Size(392, 27);
+            txtPesquisarNotificacoes.Size = new Size(447, 32);
             txtPesquisarNotificacoes.TabIndex = 40;
             txtPesquisarNotificacoes.Text = "Nome";
             // 
@@ -52,11 +52,11 @@
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft Sans Serif", 20F);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(10, 21);
+            label1.Location = new Point(11, 28);
             label1.Margin = new Padding(0);
             label1.Name = "label1";
-            label1.Padding = new Padding(13, 0, 0, 0);
-            label1.Size = new Size(355, 31);
+            label1.Padding = new Padding(15, 0, 0, 0);
+            label1.Size = new Size(445, 39);
             label1.TabIndex = 36;
             label1.Text = "Criar nova área de trabalho";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -64,10 +64,10 @@
             // pictureBox6
             // 
             pictureBox6.Image = Properties.Resources.LineSeparator;
-            pictureBox6.Location = new Point(28, 95);
-            pictureBox6.Margin = new Padding(4, 3, 4, 3);
+            pictureBox6.Location = new Point(32, 127);
+            pictureBox6.Margin = new Padding(5, 4, 5, 4);
             pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(570, 1);
+            pictureBox6.Size = new Size(651, 1);
             pictureBox6.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox6.TabIndex = 37;
             pictureBox6.TabStop = false;
@@ -78,10 +78,10 @@
             btnLogin.FlatStyle = FlatStyle.Flat;
             btnLogin.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnLogin.ForeColor = Color.White;
-            btnLogin.Location = new Point(428, 103);
-            btnLogin.Margin = new Padding(4, 3, 4, 3);
+            btnLogin.Location = new Point(489, 137);
+            btnLogin.Margin = new Padding(5, 4, 5, 4);
             btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(170, 31);
+            btnLogin.Size = new Size(194, 41);
             btnLogin.TabIndex = 41;
             btnLogin.Text = "Criar";
             btnLogin.UseVisualStyleBackColor = false;
@@ -89,17 +89,18 @@
             // 
             // NovaAreaDeTrabalho
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(12, 20, 47);
-            ClientSize = new Size(645, 519);
+            ClientSize = new Size(737, 692);
             Controls.Add(btnLogin);
             Controls.Add(txtPesquisarNotificacoes);
             Controls.Add(pictureBox6);
             Controls.Add(label1);
-            Margin = new Padding(4, 3, 4, 3);
+            Margin = new Padding(5, 4, 5, 4);
             Name = "NovaAreaDeTrabalho";
             Text = "NovaAreaDeTrabalho";
+            Load += NovaAreaDeTrabalho_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             ResumeLayout(false);
             PerformLayout();

@@ -1,14 +1,6 @@
 ﻿using structa_front.Forms;
 using structa_front.Models;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using structa_front.Services;
 
 namespace structa_front
 {
@@ -19,25 +11,10 @@ namespace structa_front
             InitializeComponent();
         }
 
-        private void lblUser_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblWelcome_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void CriarConta_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtUser_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        private void lblUser_Click(object sender, EventArgs e) { }
+        private void lblWelcome_Click(object sender, EventArgs e) { }
+        private void CriarConta_Load(object sender, EventArgs e) { }
+        private void txtUser_TextChanged(object sender, EventArgs e) { }
 
         private void lblLogin_Click(object sender, EventArgs e)
         {
@@ -48,30 +25,45 @@ namespace structa_front
 
         private async void btnRegistrar_Click(object sender, EventArgs e)
         {
-            var usuario = new Models.Usuario
+            // 1. Monta o usuário
+            var usuario = new Usuario
             {
                 Nome = txtNomeUsuario.Text,
                 Email = txtEmail.Text,
                 Senha = txtSenha.Text,
+                Descricao = "",
+                DataNascimento = null,
+                Localizacao = "",
+                Telefone = "",
+                LinkRedeSocial = "",
+                FusoHorario = "",
+                CapacidadeHorasSemanal = null,
+                Status = "Ativo",
+                DataCriacao = DateTime.UtcNow,
+                DataUltimaAlteracao = DateTime.UtcNow
             };
 
+            // 2. Verifica senhas
             if (usuario.Senha != txtSenhaConfirmada.Text)
             {
-                MessageBox.Show("As senhas não coincidem. Por favor, tente novamente.");
+                MessageBox.Show("As senhas não coincidem!");
                 return;
             }
 
-            var usuarioService = new Services.UsuariosService();
             try
             {
-                var result = await usuarioService.CriarUsuarioAsync(usuario);
+                var usuarioService = new UsuariosService();
 
+                // 3. Cadastra no Supabase
+                var usuarioCriado = await usuarioService.CriarUsuarioAsync(usuario);
+
+                // 4. Salva no Session
+                Session.UsuarioLogado = usuarioCriado;
+
+                // 5. Redireciona para a próxima tela
                 CriarConta2 criarConta2 = new CriarConta2();
-                criarConta2.Show(); 
+                criarConta2.Show();
                 this.Hide();
-
-                Sessao.UsuarioId = result.Id;
-                // Redirecione ou limpe o formulário conforme necessário
             }
             catch (Exception ex)
             {
@@ -83,14 +75,10 @@ namespace structa_front
         {
             this.Cursor = Cursors.Hand;
         }
+
         private void lblLogin_MouseLeave(object sender, EventArgs e)
         {
             this.Cursor = Cursors.Default;
-        }
-
-        private void roundedPanel_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

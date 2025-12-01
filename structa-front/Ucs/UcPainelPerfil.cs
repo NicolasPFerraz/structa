@@ -23,7 +23,6 @@ namespace structa_front
             PG_Pessoal.BorderStyle = BorderStyle.FixedSingle;
             PG_StatusTrabalho.BorderStyle = BorderStyle.None;
             PG_Senha.BorderStyle = BorderStyle.None;
-            PG_Notificacao.BorderStyle = BorderStyle.None;
         }
 
         private void PG_StatusTrabalho_Click(object sender, EventArgs e)
@@ -32,7 +31,6 @@ namespace structa_front
             PG_Pessoal.BorderStyle = BorderStyle.None;
             PG_StatusTrabalho.BorderStyle = BorderStyle.FixedSingle;
             PG_Senha.BorderStyle = BorderStyle.None;
-            PG_Notificacao.BorderStyle = BorderStyle.None;
 
         }
 
@@ -42,7 +40,6 @@ namespace structa_front
             PG_Pessoal.BorderStyle = BorderStyle.None;
             PG_StatusTrabalho.BorderStyle = BorderStyle.None;
             PG_Senha.BorderStyle = BorderStyle.None;
-            PG_Notificacao.BorderStyle = BorderStyle.FixedSingle;
         }
 
         private void PG_Senha_Click(object sender, EventArgs e)
@@ -51,7 +48,6 @@ namespace structa_front
             PG_Pessoal.BorderStyle = BorderStyle.None;
             PG_StatusTrabalho.BorderStyle = BorderStyle.None;
             PG_Senha.BorderStyle = BorderStyle.FixedSingle;
-            PG_Notificacao.BorderStyle = BorderStyle.None;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

@@ -36,29 +36,22 @@
             pictureBox8 = new PictureBox();
             pictureBox6 = new PictureBox();
             roundedPanel1 = new RoundedPanel();
-            lblNomeProjeto = new Label();
-            pictureBox4 = new PictureBox();
-            pictureBox3 = new PictureBox();
             pictureBox2 = new PictureBox();
             label10 = new Label();
             label9 = new Label();
             label6 = new Label();
+            flpProjetos = new FlowLayoutPanel();
             label5 = new Label();
             label3 = new Label();
             label2 = new Label();
             lblNome = new Label();
             pictureBox1 = new PictureBox();
-            lblMembrosProjeto = new Label();
-            // New flow panel to host dynamic project rows
-            flpProjetos = new FlowLayoutPanel();
             PainelConteudo.SuspendLayout();
             roundedPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             roundedPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -118,7 +111,6 @@
             label19.Size = new Size(189, 20);
             label19.TabIndex = 11;
             label19.Text = "Área de trabalho principal";
-            label19.Click += label19_Click;
             // 
             // label21
             // 
@@ -158,15 +150,10 @@
             // roundedPanel1
             // 
             roundedPanel1.BackColor = Color.FromArgb(8, 13, 41);
-            roundedPanel1.Controls.Add(lblMembrosProjeto);
-            roundedPanel1.Controls.Add(lblNomeProjeto);
-            roundedPanel1.Controls.Add(pictureBox4);
-            roundedPanel1.Controls.Add(pictureBox3);
             roundedPanel1.Controls.Add(pictureBox2);
             roundedPanel1.Controls.Add(label10);
             roundedPanel1.Controls.Add(label9);
             roundedPanel1.Controls.Add(label6);
-            // add flow panel after other controls so it's visible on top
             roundedPanel1.Controls.Add(flpProjetos);
             roundedPanel1.CornerRadius = 20;
             roundedPanel1.Location = new Point(4, 414);
@@ -176,42 +163,6 @@
             roundedPanel1.ShadowOffset = 16;
             roundedPanel1.Size = new Size(1150, 251);
             roundedPanel1.TabIndex = 6;
-            // 
-            // lblNomeProjeto
-            // 
-            lblNomeProjeto.AutoSize = true;
-            lblNomeProjeto.BackColor = Color.Transparent;
-            lblNomeProjeto.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblNomeProjeto.ForeColor = Color.White;
-            lblNomeProjeto.Location = new Point(123, 148);
-            lblNomeProjeto.Margin = new Padding(4, 0, 4, 0);
-            lblNomeProjeto.Name = "lblNomeProjeto";
-            lblNomeProjeto.Size = new Size(111, 17);
-            lblNomeProjeto.TabIndex = 16;
-            lblNomeProjeto.Text = "Plano de gestão";
-            lblNomeProjeto.Click += label13_Click;
-            // 
-            // pictureBox4
-            // 
-            pictureBox4.Image = Properties.Resources.IconePlanoDeGestao;
-            pictureBox4.Location = new Point(84, 135);
-            pictureBox4.Margin = new Padding(4, 3, 4, 3);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(31, 47);
-            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox4.TabIndex = 15;
-            pictureBox4.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            pictureBox3.Image = Properties.Resources.LineSeparator;
-            pictureBox3.Location = new Point(68, 197);
-            pictureBox3.Margin = new Padding(4, 3, 4, 3);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(1050, 1);
-            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox3.TabIndex = 14;
-            pictureBox3.TabStop = false;
             // 
             // pictureBox2
             // 
@@ -229,7 +180,7 @@
             label10.AutoSize = true;
             label10.BackColor = Color.Transparent;
             label10.ForeColor = Color.Gray;
-            label10.Location = new Point(505, 103);
+            label10.Location = new Point(541, 103);
             label10.Margin = new Padding(4, 0, 4, 0);
             label10.Name = "label10";
             label10.Size = new Size(64, 15);
@@ -261,6 +212,18 @@
             label6.TabIndex = 7;
             label6.Text = "Projetos";
             // 
+            // flpProjetos
+            // 
+            flpProjetos.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            flpProjetos.AutoScroll = true;
+            flpProjetos.BackColor = Color.Transparent;
+            flpProjetos.FlowDirection = FlowDirection.TopDown;
+            flpProjetos.Location = new Point(68, 125);
+            flpProjetos.Name = "flpProjetos";
+            flpProjetos.Size = new Size(1050, 100);
+            flpProjetos.TabIndex = 18;
+            flpProjetos.WrapContents = false;
+            // 
             // label5
             // 
             label5.AutoSize = true;
@@ -270,9 +233,9 @@
             label5.Location = new Point(14, 386);
             label5.Margin = new Padding(4, 0, 4, 0);
             label5.Name = "label5";
-            label5.Size = new Size(667, 25);
+            label5.Size = new Size(308, 25);
             label5.TabIndex = 5;
-            label5.Text = "Acesse seus quadros recentes,caixa de entrada e áreas de trabalho";
+            label5.Text = "Acesse seus projetos recentes";
             // 
             // label3
             // 
@@ -310,6 +273,7 @@
             lblNome.Size = new Size(283, 46);
             lblNome.TabIndex = 1;
             lblNome.Text = "Mark Johnson";
+            lblNome.Click += lblNome_Click;
             // 
             // pictureBox1
             // 
@@ -322,32 +286,6 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
-            // lblMembrosProjeto
-            // 
-            lblMembrosProjeto.AutoSize = true;
-            lblMembrosProjeto.BackColor = Color.Transparent;
-            lblMembrosProjeto.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblMembrosProjeto.ForeColor = Color.White;
-            lblMembrosProjeto.Location = new Point(505, 148);
-            lblMembrosProjeto.Margin = new Padding(4, 0, 4, 0);
-            lblMembrosProjeto.Name = "lblMembrosProjeto";
-            lblMembrosProjeto.Size = new Size(66, 17);
-            lblMembrosProjeto.TabIndex = 17;
-            lblMembrosProjeto.Text = "Nicolas...";
-            // 
-            // flpProjetos
-            // 
-            flpProjetos.Location = new Point(68, 125);
-            flpProjetos.Name = "flpProjetos";
-            flpProjetos.Size = new Size(1050, 100);
-            flpProjetos.FlowDirection = FlowDirection.TopDown;
-            flpProjetos.WrapContents = false;
-            flpProjetos.AutoScroll = true;
-            flpProjetos.BackColor = Color.Transparent;
-            flpProjetos.TabIndex = 18;
-            flpProjetos.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom;
-            flpProjetos.BringToFront();
-            // 
             // UcPaginaInicial
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -358,7 +296,7 @@
             Controls.Add(PainelConteudo);
             Margin = new Padding(4, 3, 4, 3);
             Name = "UcPaginaInicial";
-            Size = new Size(1179, 805);
+            Size = new Size(1220, 772);
             PainelConteudo.ResumeLayout(false);
             PainelConteudo.PerformLayout();
             roundedPanel3.ResumeLayout(false);
@@ -368,8 +306,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             roundedPanel1.ResumeLayout(false);
             roundedPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
@@ -386,19 +322,15 @@
         private System.Windows.Forms.Label label3;
         private RoundedPanel roundedPanel1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label lblNomeProjeto;
         private System.Windows.Forms.PictureBox pictureBox6;
         private RoundedPanel roundedPanel3;
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.PictureBox pictureBox8;
-        private Label lblMembrosProjeto;
         private System.Windows.Forms.FlowLayoutPanel flpProjetos; // dynamic container for project rows
     }
 }

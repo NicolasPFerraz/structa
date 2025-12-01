@@ -49,22 +49,18 @@ namespace structa_front
             btnFiltro = new Button();
             btnOrdenar = new Button();
             btnOcultar = new Button();
-            btnVisualizacoes = new Button();
+            // btnVisualizacoes REMOVIDO
             panelHeaderEsteMes = new Panel();
             lblEsteMes = new Label();
             panelTarefasGrid = new Panel();
             dgvTarefas = new DataGridView();
             btnAdicionarGrupo = new Button();
-            contextMenuStripVisualizacoes = new ContextMenuStrip(components);
-            tabelaToolStripMenuItem = new ToolStripMenuItem();
-            gráficoToolStripMenuItem = new ToolStripMenuItem();
-            calendárioToolStripMenuItem = new ToolStripMenuItem();
-            kanbanToolStripMenuItem = new ToolStripMenuItem();
+            // contextMenuStripVisualizacoes e seus items REMOVIDOS
             panelToolbar.SuspendLayout();
             panelHeaderEsteMes.SuspendLayout();
             panelTarefasGrid.SuspendLayout();
             ((ISupportInitialize)dgvTarefas).BeginInit();
-            contextMenuStripVisualizacoes.SuspendLayout();
+            // contextMenuStripVisualizacoes.SuspendLayout() REMOVIDO
             SuspendLayout();
             // 
             // lblTitulo
@@ -74,7 +70,7 @@ namespace structa_front
             lblTitulo.ForeColor = Color.White;
             lblTitulo.Location = new Point(14, 10);
             lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(197, 32);
+            lblTitulo.Size = new Size(242, 41);
             lblTitulo.TabIndex = 0;
             lblTitulo.Text = "Plano de gestão";
             // 
@@ -90,7 +86,6 @@ namespace structa_front
             panelToolbar.Name = "panelToolbar";
             panelToolbar.Size = new Size(1122, 40);
             panelToolbar.TabIndex = 1;
-            panelToolbar.Paint += panelToolbar_Paint;
             // 
             // btnCriarElemento
             // 
@@ -105,7 +100,6 @@ namespace structa_front
             btnCriarElemento.TabIndex = 0;
             btnCriarElemento.Text = "Criar Elemento ▾";
             btnCriarElemento.UseVisualStyleBackColor = false;
-            btnCriarElemento.Click += btnCriarElemento_Click;
             // 
             // btnPessoas
             // 
@@ -119,6 +113,7 @@ namespace structa_front
             btnPessoas.TabIndex = 1;
             btnPessoas.Text = "Pessoas";
             btnPessoas.UseVisualStyleBackColor = false;
+            btnPessoas.Click += btnPessoas_Click;
             // 
             // btnFiltro
             // 
@@ -161,19 +156,7 @@ namespace structa_front
             // 
             // btnVisualizacoes
             // 
-            btnVisualizacoes.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnVisualizacoes.BackColor = Color.FromArgb(45, 47, 90);
-            btnVisualizacoes.FlatAppearance.BorderSize = 0;
-            btnVisualizacoes.FlatStyle = FlatStyle.Flat;
-            btnVisualizacoes.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnVisualizacoes.ForeColor = Color.White;
-            btnVisualizacoes.Location = new Point(1145, 15);
-            btnVisualizacoes.Name = "btnVisualizacoes";
-            btnVisualizacoes.Size = new Size(91, 30);
-            btnVisualizacoes.TabIndex = 6;
-            btnVisualizacoes.Text = "Padrão ▾";
-            btnVisualizacoes.UseVisualStyleBackColor = false;
-            btnVisualizacoes.Click += btnVisualizacoes_Click;
+            // Bloco btnVisualizacoes REMOVIDO
             // 
             // panelHeaderEsteMes
             // 
@@ -182,7 +165,6 @@ namespace structa_front
             panelHeaderEsteMes.Name = "panelHeaderEsteMes";
             panelHeaderEsteMes.Size = new Size(200, 28);
             panelHeaderEsteMes.TabIndex = 2;
-            panelHeaderEsteMes.Paint += panelHeaderEsteMes_Paint;
             // 
             // lblEsteMes
             // 
@@ -191,7 +173,7 @@ namespace structa_front
             lblEsteMes.ForeColor = Color.White;
             lblEsteMes.Location = new Point(3, 3);
             lblEsteMes.Name = "lblEsteMes";
-            lblEsteMes.Size = new Size(95, 21);
+            lblEsteMes.Size = new Size(119, 28);
             lblEsteMes.TabIndex = 0;
             lblEsteMes.Text = "▾ Este mês";
             lblEsteMes.Click += HeaderEsteMes_Click;
@@ -245,8 +227,6 @@ namespace structa_front
             dgvTarefas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvTarefas.Size = new Size(1219, 304);
             dgvTarefas.TabIndex = 0;
-            dgvTarefas.CellClick += dgvTarefas_CellClick;
-            dgvTarefas.CellContentClick += dgvTarefas_CellContentClick;
             dgvTarefas.CellEndEdit += DataGridView1_CellEndEdit;
             // 
             // btnAdicionarGrupo
@@ -265,54 +245,33 @@ namespace structa_front
             // 
             // contextMenuStripVisualizacoes
             // 
-            contextMenuStripVisualizacoes.BackColor = Color.FromArgb(30, 33, 66);
-            contextMenuStripVisualizacoes.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            contextMenuStripVisualizacoes.ImageScalingSize = new Size(20, 20);
-            contextMenuStripVisualizacoes.Items.AddRange(new ToolStripItem[] { tabelaToolStripMenuItem, gráficoToolStripMenuItem, calendárioToolStripMenuItem, kanbanToolStripMenuItem });
-            contextMenuStripVisualizacoes.Name = "contextMenuStripVisualizacoes";
-            contextMenuStripVisualizacoes.Size = new Size(151, 100);
+            // Bloco contextMenuStripVisualizacoes REMOVIDO
             // 
             // tabelaToolStripMenuItem
             // 
-            tabelaToolStripMenuItem.ForeColor = Color.White;
-            tabelaToolStripMenuItem.Name = "tabelaToolStripMenuItem";
-            tabelaToolStripMenuItem.Size = new Size(150, 24);
-            tabelaToolStripMenuItem.Text = "Tabela";
-            tabelaToolStripMenuItem.Click += tabelaToolStripMenuItem_Click;
+            // Bloco tabelaToolStripMenuItem REMOVIDO
             // 
             // gráficoToolStripMenuItem
             // 
-            gráficoToolStripMenuItem.ForeColor = Color.White;
-            gráficoToolStripMenuItem.Name = "gráficoToolStripMenuItem";
-            gráficoToolStripMenuItem.Size = new Size(150, 24);
-            gráficoToolStripMenuItem.Text = "Gráfico";
-            gráficoToolStripMenuItem.Click += gráficoToolStripMenuItem_Click;
+            // Bloco gráficoToolStripMenuItem REMOVIDO
             // 
             // calendárioToolStripMenuItem
             // 
-            calendárioToolStripMenuItem.ForeColor = Color.White;
-            calendárioToolStripMenuItem.Name = "calendárioToolStripMenuItem";
-            calendárioToolStripMenuItem.Size = new Size(150, 24);
-            calendárioToolStripMenuItem.Text = "Calendário";
-            calendárioToolStripMenuItem.Click += calendárioToolStripMenuItem_Click;
+            // Bloco calendárioToolStripMenuItem REMOVIDO
             // 
             // kanbanToolStripMenuItem
             // 
-            kanbanToolStripMenuItem.ForeColor = Color.White;
-            kanbanToolStripMenuItem.Name = "kanbanToolStripMenuItem";
-            kanbanToolStripMenuItem.Size = new Size(150, 24);
-            kanbanToolStripMenuItem.Text = "Kanban";
-            kanbanToolStripMenuItem.Click += kanbanToolStripMenuItem_Click;
+            // Bloco kanbanToolStripMenuItem REMOVIDO
             // 
             // UcPlanoDeGestao
             // 
-            AutoScaleDimensions = new SizeF(6F, 13F);
+            AutoScaleDimensions = new SizeF(8F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(26, 28, 58);
             Controls.Add(btnAdicionarGrupo);
             Controls.Add(panelTarefasGrid);
             Controls.Add(panelHeaderEsteMes);
-            Controls.Add(btnVisualizacoes);
+            // Controls.Add(btnVisualizacoes) REMOVIDO
             Controls.Add(panelToolbar);
             Controls.Add(lblTitulo);
             Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -324,7 +283,7 @@ namespace structa_front
             panelHeaderEsteMes.PerformLayout();
             panelTarefasGrid.ResumeLayout(false);
             ((ISupportInitialize)dgvTarefas).EndInit();
-            contextMenuStripVisualizacoes.ResumeLayout(false);
+            // contextMenuStripVisualizacoes.ResumeLayout(false) REMOVIDO
             ResumeLayout(false);
             PerformLayout();
 
@@ -339,17 +298,12 @@ namespace structa_front
         private System.Windows.Forms.Button btnFiltro;
         private System.Windows.Forms.Button btnOrdenar;
         private System.Windows.Forms.Button btnOcultar;
-        // O btnAgrupar foi removido daqui
-        private System.Windows.Forms.Button btnVisualizacoes;
+        // btnVisualizacoes REMOVIDO
         private System.Windows.Forms.Panel panelHeaderEsteMes;
         private System.Windows.Forms.Label lblEsteMes;
         private System.Windows.Forms.Panel panelTarefasGrid;
         private System.Windows.Forms.DataGridView dgvTarefas;
         private System.Windows.Forms.Button btnAdicionarGrupo;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStripVisualizacoes;
-        private System.Windows.Forms.ToolStripMenuItem tabelaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem gráficoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem calendárioToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem kanbanToolStripMenuItem;
+        // contextMenuStripVisualizacoes e seus items REMOVIDOS
     }
 }
