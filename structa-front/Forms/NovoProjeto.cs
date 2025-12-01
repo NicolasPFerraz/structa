@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using structa_front.Services;
 
 namespace structa_front.Forms
 {
@@ -53,6 +54,10 @@ namespace structa_front.Forms
                 if (projeto != null)
                 {
                     MessageBox.Show("Projeto criado com sucesso!");
+
+                    // Notifica interessados que a lista de projetos foi atualizada
+                    ProjectEvents.RaiseProjectsUpdated();
+
                     this.Close(); // <-- fecha o formulário atual
                 }
                 else

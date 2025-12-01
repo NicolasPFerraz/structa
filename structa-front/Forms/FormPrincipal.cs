@@ -9,12 +9,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using structa_front.Services;
 
 namespace structa_front
 {
     public partial class FormPrincipal : BaseForm
     {
         private string textoPagina; // <-- campo para armazenar o valor recebido
+        private List<Projeto> cachedProjetos = new List<Projeto>();
 
         // Construtor que recebe o valor
         public FormPrincipal(string pagina)
@@ -24,6 +26,12 @@ namespace structa_front
             textoPagina = pagina;
             lblPagina.Text = textoPagina; // Exibe no label
             lblPaginaMin.Text = textoPagina; // Exibe no label
+
+            // Subscrição para atualizar lista quando projetos mudarem
+            ProjectEvents.ProjectsUpdated += async () => await PreloadProjetosAsync();
+
+            // Preload projects in background (fire-and-forget)
+            _ = PreloadProjetosAsync();
         }
 
         public void AbrirPagina(UserControl pagina)
@@ -58,14 +66,28 @@ namespace structa_front
             flpProjetos.Visible = false;
         }
 
+        private async Task PreloadProjetosAsync()
+        {
+            try
+            {
+                var service = new Services.ProjetosService();
+                cachedProjetos = await service.BuscarProjetosAsync(Sessao.UsuarioId);
+            }
+            catch
+            {
+                // swallow: preload is optional
+                cachedProjetos = new List<Projeto>();
+            }
+        }
+
         private async Task CarregarProjetosAsync()
         {
             try
             {
                 flpProjetos.Controls.Clear();
 
-                var service = new Services.ProjetosService();
-                var projetos = await service.BuscarProjetosAsync(Sessao.UsuarioId);
+                // Use cached list if available, otherwise fetch
+                var projetos = (cachedProjetos != null && cachedProjetos.Count > 0) ? cachedProjetos : await new Services.ProjetosService().BuscarProjetosAsync(Sessao.UsuarioId);
 
                 foreach (var proj in projetos)
                 {

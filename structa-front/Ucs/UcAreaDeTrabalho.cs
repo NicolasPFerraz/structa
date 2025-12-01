@@ -15,6 +15,7 @@ namespace structa_front
     public partial class UcAreaDeTrabalho : UserControl
     {
         private FlowLayoutPanel flpProjetos;
+        private List<Projeto> cachedProjetos = new List<Projeto>();
 
         public void AbrirPagina(UserControl pagina)
         {
@@ -35,6 +36,10 @@ namespace structa_front
 
             // Carrega projetos quando o controle for exibido
             this.Load += async (s, e) => await CarregarProjetosAsync();
+
+            // Subscribe to global project updates and preload cached projects
+            ProjectEvents.ProjectsUpdated += async () => await PreloadProjetosAsync();
+            _ = PreloadProjetosAsync();
         }
 
         private void InitializeProjectsFlowPanel()
@@ -86,7 +91,11 @@ namespace structa_front
                 flpProjetos.Controls.Clear();
 
                 var projetosService = new ProjetosService();
-                var projetos = await projetosService.BuscarProjetosAsync(Sessao.UsuarioId);
+
+                // Use cached list if available, otherwise fetch
+                var projetos = (cachedProjetos != null && cachedProjetos.Count > 0)
+                    ? cachedProjetos
+                    : await projetosService.BuscarProjetosAsync(Sessao.UsuarioId);
 
                 if (projetos == null || projetos.Count == 0)
                 {
@@ -148,6 +157,20 @@ namespace structa_front
             }
         }
 
+        private async Task PreloadProjetosAsync()
+        {
+            try
+            {
+                var service = new Services.ProjetosService();
+                cachedProjetos = await service.BuscarProjetosAsync(Sessao.UsuarioId);
+            }
+            catch
+            {
+                // preload is optional
+                cachedProjetos = new List<Projeto>();
+            }
+        }
+
         private void label1_Click(object sender, EventArgs e)
         {
             // Ao clicar no título, recarrega a lista de projetos
@@ -155,6 +178,11 @@ namespace structa_front
         }
 
         private void PainelConteudo_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }
