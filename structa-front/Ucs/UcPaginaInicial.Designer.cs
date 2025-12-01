@@ -233,9 +233,9 @@
             label5.Location = new Point(14, 386);
             label5.Margin = new Padding(4, 0, 4, 0);
             label5.Name = "label5";
-            label5.Size = new Size(667, 25);
+            label5.Size = new Size(308, 25);
             label5.TabIndex = 5;
-            label5.Text = "Acesse seus quadros recentes,caixa de entrada e áreas de trabalho";
+            label5.Text = "Acesse seus projetos recentes";
             // 
             // label3
             // 
@@ -273,6 +273,7 @@
             lblNome.Size = new Size(283, 46);
             lblNome.TabIndex = 1;
             lblNome.Text = "Mark Johnson";
+            lblNome.Click += lblNome_Click;
             // 
             // pictureBox1
             // 
@@ -295,7 +296,7 @@
             Controls.Add(PainelConteudo);
             Margin = new Padding(4, 3, 4, 3);
             Name = "UcPaginaInicial";
-            Size = new Size(1143, 772);
+            Size = new Size(1220, 772);
             PainelConteudo.ResumeLayout(false);
             PainelConteudo.PerformLayout();
             roundedPanel3.ResumeLayout(false);

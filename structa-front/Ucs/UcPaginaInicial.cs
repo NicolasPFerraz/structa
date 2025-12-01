@@ -39,6 +39,7 @@ namespace structa_front
             _ = PreloadProjetosAsync();
 
             this.Load += async (s, e) => await CarregarProjetosAsync();
+            CarregarNomeUsuario();
         }
 
         private void AplicarDoubleBuffer()
@@ -46,6 +47,15 @@ namespace structa_front
             this.DoubleBuffered = true;
             flpProjetos.GetType().GetProperty("DoubleBuffered", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)
                 ?.SetValue(flpProjetos, true, null);
+        }
+        private async Task CarregarNomeUsuario()
+        {
+            if (Sessao.UsuarioId != null)
+            {
+                var usuarioService = new UsuariosService();
+                var result = await usuarioService.BuscarUsuarioPorIdAsync(Sessao.UsuarioId);
+                lblNome.Text = $"Olá, {result.Nome}!";
+            }
         }
 
         public async Task CarregarProjetosAsync()
@@ -207,6 +217,11 @@ namespace structa_front
         }
 
         private void flpProjetos_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblNome_Click(object sender, EventArgs e)
         {
 
         }
