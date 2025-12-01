@@ -11,6 +11,10 @@ namespace structa_front
 {
     public partial class UcPlanoDeGestao : UserControl
     {
+        // Novo: propriedades para guardar projeto selecionado
+        private int projetoIdSelecionado = 0;
+        private string projetoNomeSelecionado = string.Empty;
+
         // Flag para controlar o estado de visibilidade do painel de tarefas
         private bool isPainelTarefasVisivel = true;
 
@@ -28,6 +32,23 @@ namespace structa_front
             InitializeComponent();
         }
 
+        // Novo construtor que aceita id e nome do projeto
+        public UcPlanoDeGestao(int projetoId, string nome) : this()
+        {
+            projetoIdSelecionado = projetoId;
+            projetoNomeSelecionado = nome;
+
+            // Atualiza título se o controle já foi inicializado
+            try
+            {
+                if (lblTitulo != null && !string.IsNullOrWhiteSpace(projetoNomeSelecionado))
+                {
+                    lblTitulo.Text = projetoNomeSelecionado;
+                }
+            }
+            catch { }
+        }
+
         private async void retornarTarefas()
         {
             var TarefasService = new Services.TarefasService();
@@ -35,7 +56,8 @@ namespace structa_front
 
             try
             {
-                var listaTarefas = await TarefasService.ObterTarefasAsync(Sessao.UsuarioId, 1);
+                // Utiliza o projeto selecionado em vez de valor fixo
+                var listaTarefas = await TarefasService.ObterTarefasAsync(Sessao.UsuarioId, projetoIdSelecionado);
 
                 // Update grid on UI thread
                 if (InvokeRequired)
@@ -53,7 +75,7 @@ namespace structa_front
             }
         }
 
-        // Helper: remove existing placeholder(s), add tarefas, then append a single placeholder row
+        // Helper: remove existing placeholder(s), add tarefas, então append uma única linha placeholder
         private void PreencherGridComTarefas(System.Collections.Generic.List<Tarefa> listaTarefas)
         {
             // Remove any existing placeholder rows (colTarefa == "+ Adicionar tarefa")

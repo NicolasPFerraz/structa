@@ -43,9 +43,18 @@ namespace structa_front
         }
         private void SelecionarProjeto(int projetoId, string nome)
         {
-            MessageBox.Show("Projeto selecionado: " + nome);
+            // Define projeto na sessão
             Sessao.ProjetoId = projetoId;
 
+            // Abre o UserControl do projeto passando id e nome
+            var ucProjeto = new UcPlanoDeGestao(projetoId, nome);
+            AbrirPagina(ucProjeto);
+
+            // Atualiza texto da página
+            lblPagina.Text = nome;
+            lblPaginaMin.Text = nome;
+
+            // Esconde dropdown de projetos
             flpProjetos.Visible = false;
         }
 
