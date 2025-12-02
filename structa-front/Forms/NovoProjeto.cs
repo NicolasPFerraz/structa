@@ -49,7 +49,7 @@ namespace structa_front.Forms
             try
             {
                 var projetoService = new Services.ProjetosService();
-                var projeto = await projetoService.CriarProjetoAsync(nomeProjeto, Sessao.Nome, Sessao.UsuarioId);
+                var projeto = await projetoService.CriarProjetoAsync(nomeProjeto, Sessao.UsuarioId);
 
                 if (projeto != null)
                 {

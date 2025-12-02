@@ -42,7 +42,7 @@
             // 
             // BTN_Estudante
             // 
-            BTN_Estudante.Location = new Point(494, 275);
+            BTN_Estudante.Location = new Point(416, 199);
             BTN_Estudante.Margin = new Padding(3, 2, 3, 2);
             BTN_Estudante.Name = "BTN_Estudante";
             BTN_Estudante.Size = new Size(116, 32);
@@ -53,7 +53,7 @@
             // 
             // BTN_Pessoal
             // 
-            BTN_Pessoal.Location = new Point(309, 275);
+            BTN_Pessoal.Location = new Point(231, 199);
             BTN_Pessoal.Margin = new Padding(3, 2, 3, 2);
             BTN_Pessoal.Name = "BTN_Pessoal";
             BTN_Pessoal.Size = new Size(116, 32);
@@ -64,7 +64,7 @@
             // 
             // BTN_Profissional
             // 
-            BTN_Profissional.Location = new Point(121, 275);
+            BTN_Profissional.Location = new Point(43, 199);
             BTN_Profissional.Margin = new Padding(3, 2, 3, 2);
             BTN_Profissional.Name = "BTN_Profissional";
             BTN_Profissional.Size = new Size(116, 32);
@@ -78,7 +78,7 @@
             LBL_textAjuda.AutoSize = true;
             LBL_textAjuda.Font = new Font("Segoe UI", 22F);
             LBL_textAjuda.ForeColor = Color.White;
-            LBL_textAjuda.Location = new Point(113, 209);
+            LBL_textAjuda.Location = new Point(35, 133);
             LBL_textAjuda.Name = "LBL_textAjuda";
             LBL_textAjuda.Size = new Size(364, 41);
             LBL_textAjuda.TabIndex = 6;
@@ -87,11 +87,11 @@
             // LBL_Logo
             // 
             LBL_Logo.AutoSize = true;
-            LBL_Logo.Font = new Font("Segoe UI", 25F, FontStyle.Bold);
+            LBL_Logo.Font = new Font("Segoe UI", 40.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             LBL_Logo.ForeColor = Color.White;
-            LBL_Logo.Location = new Point(112, 104);
+            LBL_Logo.Location = new Point(26, 33);
             LBL_Logo.Name = "LBL_Logo";
-            LBL_Logo.Size = new Size(133, 46);
+            LBL_Logo.Size = new Size(210, 72);
             LBL_Logo.TabIndex = 5;
             LBL_Logo.Text = "Structa";
             // 
@@ -110,10 +110,11 @@
             panelComoAjudar.ShadowOffset = 16;
             panelComoAjudar.Size = new Size(648, 372);
             panelComoAjudar.TabIndex = 15;
+            panelComoAjudar.Paint += panelComoAjudar_Paint;
             // 
             // panelQtdPessoas
             // 
-            panelQtdPessoas.Location = new Point(0, 380);
+            panelQtdPessoas.Location = new Point(12, 237);
             panelQtdPessoas.Margin = new Padding(4);
             panelQtdPessoas.Name = "panelQtdPessoas";
             panelQtdPessoas.Size = new Size(695, 609);
@@ -135,7 +136,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(4, 12, 40);
-            ClientSize = new Size(1246, 807);
+            ClientSize = new Size(1424, 807);
             Controls.Add(pictureBox1);
             Controls.Add(panelQtdPessoas);
             Controls.Add(panelComoAjudar);

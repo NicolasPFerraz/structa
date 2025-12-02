@@ -20,8 +20,5 @@ namespace structa_front.Models
 
         [Column("datahora_ultima_atualizacao")]
         public DateTime DataUltimaAtualizacao { get; set; }
-
-        [Column("responsavel")]
-        public string Responsavel { get; set; } = string.Empty;  
     }
 }

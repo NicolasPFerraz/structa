@@ -26,12 +26,17 @@ namespace structa_front
 
         private void BTN_Avancar_Click(object sender, EventArgs e)
         {
-         FormPrincipal formPrincipal = new FormPrincipal("");
+            FormPrincipal formPrincipal = new FormPrincipal("");
             formPrincipal.Show();
             this.Hide();
         }
 
         private void Nomear_QD_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BTN_add_Membro_Click(object sender, EventArgs e)
         {
 
         }

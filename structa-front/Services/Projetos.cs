@@ -20,7 +20,7 @@ namespace structa_front.Services
             }
         }
 
-        public async Task<Projeto> CriarProjetoAsync(string nomeProjeto, string nomeResponsavel, int idUsuario)
+        public async Task<Projeto> CriarProjetoAsync(string nomeProjeto, int idUsuario)
         {
             if (!_db.IsReady)
                 throw new InvalidOperationException("Supabase não inicializado");
@@ -31,7 +31,6 @@ namespace structa_front.Services
                 DescricaoProjeto = "",
                 DataCriacao = DateTime.UtcNow,
                 DataUltimaAtualizacao = DateTime.UtcNow,
-                Responsavel = nomeResponsavel
             };
 
             var response = await _db.Client

@@ -55,5 +55,10 @@ namespace structa_front
         {
 
         }
+
+        private void panelComoAjudar_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

@@ -33,10 +33,8 @@ namespace structa_front
                 var projetosService = new ProjetosService();
 
                 // 3 — Buscar usuário logado
-                var usuarioService = new UsuariosService();
-                var usuario = await usuarioService.BuscarUsuarioPorIdAsync(Sessao.UsuarioId);
-
-                if (usuario == null)
+               
+                if (Sessao.UsuarioId == null)
                 {
                     MessageBox.Show("Erro: usuário não encontrado.");
                     return;
@@ -44,8 +42,7 @@ namespace structa_front
 
                 // 4 — Criar o projeto no Supabase
                 var projetoCriado = await projetosService.CriarProjetoAsync(
-                    TXT_NomeProjeto.Text,   // Nome do projeto digitado
-                    "TESTE",
+                    TXT_NomeProjeto.Text,   // Nome do projeto 
                     Sessao.UsuarioId // Nome do responsável
                 );
 
@@ -56,8 +53,8 @@ namespace structa_front
                 }
 
                 // 5 — Avançar para próxima tela
-                Nomear_QD nomear_QD = new Nomear_QD();
-                nomear_QD.Show();
+                FormPrincipal formPrincipal = new FormPrincipal("Página Inicial");
+                formPrincipal.Show();
                 this.Hide();
             }
             catch (Exception ex)
