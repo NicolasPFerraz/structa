@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label2 = new Label();
-            label1 = new Label();
+            lblEmail = new Label();
+            lblNome = new Label();
             LBL_Perfil = new Label();
             LBL_nav = new Label();
             PG_StatusTrabalho = new PictureBox();
@@ -46,29 +46,29 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
-            // label2
+            // lblEmail
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(127, 134);
-            label2.Margin = new Padding(2, 0, 2, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(110, 13);
-            label2.TabIndex = 33;
-            label2.Text = "Mark@simmmple.com";
+            lblEmail.AutoSize = true;
+            lblEmail.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            lblEmail.ForeColor = Color.White;
+            lblEmail.Location = new Point(127, 134);
+            lblEmail.Margin = new Padding(2, 0, 2, 0);
+            lblEmail.Name = "lblEmail";
+            lblEmail.Size = new Size(110, 13);
+            lblEmail.TabIndex = 33;
+            lblEmail.Text = "Mark@simmmple.com";
             // 
-            // label1
+            // lblNome
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(122, 98);
-            label1.Margin = new Padding(2, 0, 2, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(121, 20);
-            label1.TabIndex = 32;
-            label1.Text = "Mark Johnson";
+            lblNome.AutoSize = true;
+            lblNome.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblNome.ForeColor = Color.White;
+            lblNome.Location = new Point(122, 98);
+            lblNome.Margin = new Padding(2, 0, 2, 0);
+            lblNome.Name = "lblNome";
+            lblNome.Size = new Size(121, 20);
+            lblNome.TabIndex = 32;
+            lblNome.Text = "Mark Johnson";
             // 
             // LBL_Perfil
             // 
@@ -176,8 +176,8 @@
             Controls.Add(PG_StatusTrabalho);
             Controls.Add(PG_Senha);
             Controls.Add(PG_Pessoal);
-            Controls.Add(label2);
-            Controls.Add(label1);
+            Controls.Add(lblEmail);
+            Controls.Add(lblNome);
             Controls.Add(pictureBox15);
             Controls.Add(pictureBox14);
             Controls.Add(LBL_Perfil);
@@ -200,8 +200,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.PictureBox pictureBox15;
         private System.Windows.Forms.PictureBox pictureBox14;
         private System.Windows.Forms.PictureBox pictureBox4;

@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
+using structa_front.Services;
+using structa_front.Models;
+using System.Threading.Tasks;
 
 namespace structa_front
 {
@@ -55,9 +58,32 @@ namespace structa_front
             // Implementar ação
         }
 
-        private void Painel_Perfil_Load(object sender, EventArgs e)
+        private async void Painel_Perfil_Load(object sender, EventArgs e)
         {
-            // Código que deve rodar ao carregar o UserControl
+            // Carrega nome e e-mail do usuário logado
+            await CarregarDadosPerfilAsync();
+        }
+
+        private async Task CarregarDadosPerfilAsync()
+        {
+            try
+            {
+                if (Sessao.UsuarioId <= 0)
+                    return;
+
+                var usuariosService = new UsuariosService();
+                var usuario = await usuariosService.BuscarUsuarioPorIdAsync(Sessao.UsuarioId);
+
+                if (usuario != null)
+                {
+                    lblNome.Text = usuario.Nome ?? string.Empty;
+                    lblEmail.Text = usuario.Email ?? string.Empty;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao carregar dados do perfil: " + ex.Message);
+            }
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
