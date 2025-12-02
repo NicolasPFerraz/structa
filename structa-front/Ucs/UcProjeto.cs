@@ -140,6 +140,9 @@ namespace structa_front
                         statusCell.DataSource = statuses;
                         statusCell.Value = tarefa.Status;
                     }
+
+                    // garante que a coluna de data seja editável para tarefas existentes
+                    dgvTarefas.Rows[rowIndex].Cells["colData"].ReadOnly = false;
                 }
             }
 
@@ -147,10 +150,11 @@ namespace structa_front
             var placeholder = dgvTarefas.Rows[r];
             placeholder.DefaultCellStyle.ForeColor = Color.Gray;
 
+            // Apenas ID deve ser readonly no placeholder; permitir definir responsável, status e data antes de salvar
             placeholder.Cells["colID"].ReadOnly = true;
-            placeholder.Cells["colResp"].ReadOnly = true;
-            placeholder.Cells["colStatus"].ReadOnly = true;
-            placeholder.Cells["colData"].ReadOnly = true;
+            placeholder.Cells["colResp"].ReadOnly = false;
+            placeholder.Cells["colStatus"].ReadOnly = false;
+            placeholder.Cells["colData"].ReadOnly = false;
 
             // garante que placeholder mostre os responsáveis (se houver)
             var placeholderCombo = placeholder.Cells["colResp"] as DataGridViewComboBoxCell;
@@ -218,9 +222,9 @@ namespace structa_front
             placeholder.DefaultCellStyle.ForeColor = Color.Gray;
 
             placeholder.Cells["colID"].ReadOnly = true;
-            placeholder.Cells["colResp"].ReadOnly = true;
-            placeholder.Cells["colStatus"].ReadOnly = true;
-            placeholder.Cells["colData"].ReadOnly = true;
+            placeholder.Cells["colResp"].ReadOnly = false;
+            placeholder.Cells["colStatus"].ReadOnly = false;
+            placeholder.Cells["colData"].ReadOnly = false;
         }
 
         private void HeaderEsteMes_Click(object sender, EventArgs e)
@@ -312,8 +316,15 @@ namespace structa_front
             ConfigurarColunasDataGridView();
 
             // lidar graciosamente com erros de binding (valores que não existem na lista do combobox)
+            // remove handlers anteriores para evitar múltiplas inscrições se o Load for chamado mais de uma vez
+            dgvTarefas.DataError -= DgvTarefas_DataError;
             dgvTarefas.DataError += DgvTarefas_DataError;
 
+            // tratar clique no botão Excluir (remove antes de adicionar para evitar duplicatas)
+            dgvTarefas.CellContentClick -= dgvTarefas_CellContentClick;
+            dgvTarefas.CellContentClick += dgvTarefas_CellContentClick;
+
+            this.dgvTarefas.CellPainting -= dgvTarefas_CellPainting;
             this.dgvTarefas.CellPainting += dgvTarefas_CellPainting;
 
             CarregarDadosDeExemplo();
@@ -336,6 +347,28 @@ namespace structa_front
         {
             // Ignora erros de binding quando o valor atual não está presente na lista do ComboBox.
             e.ThrowException = false;
+        }
+
+        private void dgvTarefas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+            if (dgvTarefas.Columns[e.ColumnIndex].Name != "colExcluir") return;
+
+            // tenta obter o ID da tarefa
+            var idCell = dgvTarefas.Rows[e.RowIndex].Cells["colID"].Value;
+            if (idCell != null && int.TryParse(idCell.ToString(), out int id) && id > 0)
+            {
+                var res = MessageBox.Show("Confirma exclusão da tarefa?", "Excluir", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (res == DialogResult.Yes)
+                {
+                    ExcluirTarefa(id);
+                }
+            }
+            else
+            {
+                // linha sem ID ainda (placeholder não salva) -> remove localmente
+                dgvTarefas.Rows.RemoveAt(e.RowIndex);
+            }
         }
 
         private void dgvTarefas_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
@@ -425,6 +458,9 @@ namespace structa_front
                                 statusCell.Value = cellStatusVal;
                         }
 
+                        // garantir que a data seja editável
+                        row.Cells["colData"].ReadOnly = false;
+
                         // Se a criação veio da linha placeholder (última linha), adiciona um novo placeholder imediatamente
                         if (e.RowIndex == dgvTarefas.Rows.Count - 1)
                         {
@@ -432,11 +468,11 @@ namespace structa_front
                             var placeholder = dgvTarefas.Rows[r];
                             placeholder.DefaultCellStyle.ForeColor = Color.Gray;
 
-                            // Define colunas de somente leitura na nova linha placeholder
+                            // Apenas ID readonly
                             placeholder.Cells["colID"].ReadOnly = true;
-                            placeholder.Cells["colResp"].ReadOnly = true;
-                            placeholder.Cells["colStatus"].ReadOnly = true;
-                            placeholder.Cells["colData"].ReadOnly = true;
+                            placeholder.Cells["colResp"].ReadOnly = false;
+                            placeholder.Cells["colStatus"].ReadOnly = false;
+                            placeholder.Cells["colData"].ReadOnly = false;
 
                             // Ajusta o DataSource do combobox de responsáveis na nova linha
                             var placeholderCombo = placeholder.Cells["colResp"] as DataGridViewComboBoxCell;

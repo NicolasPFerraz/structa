@@ -38,29 +38,23 @@ namespace structa_front
         /// </summary>
         private void InitializeComponent()
         {
-            components = new Container();
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             lblTitulo = new Label();
             panelToolbar = new FlowLayoutPanel();
-            btnCriarElemento = new Button();
             btnPessoas = new Button();
             btnFiltro = new Button();
             btnOrdenar = new Button();
             btnOcultar = new Button();
-            // btnVisualizacoes REMOVIDO
             panelHeaderEsteMes = new Panel();
             lblEsteMes = new Label();
             panelTarefasGrid = new Panel();
             dgvTarefas = new DataGridView();
-            btnAdicionarGrupo = new Button();
-            // contextMenuStripVisualizacoes e seus items REMOVIDOS
             panelToolbar.SuspendLayout();
             panelHeaderEsteMes.SuspendLayout();
             panelTarefasGrid.SuspendLayout();
             ((ISupportInitialize)dgvTarefas).BeginInit();
-            // contextMenuStripVisualizacoes.SuspendLayout() REMOVIDO
             SuspendLayout();
             // 
             // lblTitulo
@@ -70,14 +64,13 @@ namespace structa_front
             lblTitulo.ForeColor = Color.White;
             lblTitulo.Location = new Point(14, 10);
             lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(242, 41);
+            lblTitulo.Size = new Size(197, 32);
             lblTitulo.TabIndex = 0;
             lblTitulo.Text = "Plano de gestão";
             // 
             // panelToolbar
             // 
             panelToolbar.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            panelToolbar.Controls.Add(btnCriarElemento);
             panelToolbar.Controls.Add(btnPessoas);
             panelToolbar.Controls.Add(btnFiltro);
             panelToolbar.Controls.Add(btnOrdenar);
@@ -87,27 +80,13 @@ namespace structa_front
             panelToolbar.Size = new Size(1122, 40);
             panelToolbar.TabIndex = 1;
             // 
-            // btnCriarElemento
-            // 
-            btnCriarElemento.BackColor = Color.FromArgb(29, 78, 216);
-            btnCriarElemento.FlatAppearance.BorderSize = 0;
-            btnCriarElemento.FlatStyle = FlatStyle.Flat;
-            btnCriarElemento.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnCriarElemento.ForeColor = Color.White;
-            btnCriarElemento.Location = new Point(3, 3);
-            btnCriarElemento.Name = "btnCriarElemento";
-            btnCriarElemento.Size = new Size(120, 30);
-            btnCriarElemento.TabIndex = 0;
-            btnCriarElemento.Text = "Criar Elemento ▾";
-            btnCriarElemento.UseVisualStyleBackColor = false;
-            // 
             // btnPessoas
             // 
             btnPessoas.BackColor = Color.FromArgb(45, 47, 90);
             btnPessoas.FlatAppearance.BorderSize = 0;
             btnPessoas.FlatStyle = FlatStyle.Flat;
             btnPessoas.ForeColor = Color.White;
-            btnPessoas.Location = new Point(129, 3);
+            btnPessoas.Location = new Point(3, 3);
             btnPessoas.Name = "btnPessoas";
             btnPessoas.Size = new Size(75, 30);
             btnPessoas.TabIndex = 1;
@@ -121,7 +100,7 @@ namespace structa_front
             btnFiltro.FlatAppearance.BorderSize = 0;
             btnFiltro.FlatStyle = FlatStyle.Flat;
             btnFiltro.ForeColor = Color.White;
-            btnFiltro.Location = new Point(210, 3);
+            btnFiltro.Location = new Point(84, 3);
             btnFiltro.Name = "btnFiltro";
             btnFiltro.Size = new Size(75, 30);
             btnFiltro.TabIndex = 2;
@@ -134,7 +113,7 @@ namespace structa_front
             btnOrdenar.FlatAppearance.BorderSize = 0;
             btnOrdenar.FlatStyle = FlatStyle.Flat;
             btnOrdenar.ForeColor = Color.White;
-            btnOrdenar.Location = new Point(291, 3);
+            btnOrdenar.Location = new Point(165, 3);
             btnOrdenar.Name = "btnOrdenar";
             btnOrdenar.Size = new Size(75, 30);
             btnOrdenar.TabIndex = 3;
@@ -147,16 +126,12 @@ namespace structa_front
             btnOcultar.FlatAppearance.BorderSize = 0;
             btnOcultar.FlatStyle = FlatStyle.Flat;
             btnOcultar.ForeColor = Color.White;
-            btnOcultar.Location = new Point(372, 3);
+            btnOcultar.Location = new Point(246, 3);
             btnOcultar.Name = "btnOcultar";
             btnOcultar.Size = new Size(130, 30);
             btnOcultar.TabIndex = 4;
             btnOcultar.Text = "Ocultar Concluídas";
             btnOcultar.UseVisualStyleBackColor = false;
-            // 
-            // btnVisualizacoes
-            // 
-            // Bloco btnVisualizacoes REMOVIDO
             // 
             // panelHeaderEsteMes
             // 
@@ -173,7 +148,7 @@ namespace structa_front
             lblEsteMes.ForeColor = Color.White;
             lblEsteMes.Location = new Point(3, 3);
             lblEsteMes.Name = "lblEsteMes";
-            lblEsteMes.Size = new Size(119, 28);
+            lblEsteMes.Size = new Size(95, 21);
             lblEsteMes.TabIndex = 0;
             lblEsteMes.Text = "▾ Este mês";
             lblEsteMes.Click += HeaderEsteMes_Click;
@@ -196,24 +171,24 @@ namespace structa_front
             dgvTarefas.BorderStyle = BorderStyle.None;
             dgvTarefas.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dgvTarefas.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(45, 47, 90);
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = Color.FromArgb(224, 224, 224);
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvTarefas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(45, 47, 90);
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle4.ForeColor = Color.FromArgb(224, 224, 224);
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dgvTarefas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dgvTarefas.ColumnHeadersHeight = 40;
             dgvTarefas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(45, 47, 90);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(75, 78, 130);
-            dataGridViewCellStyle2.SelectionForeColor = Color.White;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvTarefas.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(45, 47, 90);
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle5.ForeColor = Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(75, 78, 130);
+            dataGridViewCellStyle5.SelectionForeColor = Color.White;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
+            dgvTarefas.DefaultCellStyle = dataGridViewCellStyle5;
             dgvTarefas.Dock = DockStyle.Fill;
             dgvTarefas.EnableHeadersVisualStyles = false;
             dgvTarefas.GridColor = Color.FromArgb(75, 78, 130);
@@ -221,57 +196,22 @@ namespace structa_front
             dgvTarefas.Name = "dgvTarefas";
             dgvTarefas.RowHeadersVisible = false;
             dgvTarefas.RowHeadersWidth = 51;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(45, 47, 90);
-            dgvTarefas.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.BackColor = Color.FromArgb(45, 47, 90);
+            dgvTarefas.RowsDefaultCellStyle = dataGridViewCellStyle6;
             dgvTarefas.RowTemplate.Height = 30;
             dgvTarefas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvTarefas.Size = new Size(1219, 304);
             dgvTarefas.TabIndex = 0;
+            dgvTarefas.CellContentClick += dgvTarefas_CellContentClick;
             dgvTarefas.CellEndEdit += DataGridView1_CellEndEdit;
-            // 
-            // btnAdicionarGrupo
-            // 
-            btnAdicionarGrupo.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            btnAdicionarGrupo.BackColor = Color.FromArgb(45, 47, 90);
-            btnAdicionarGrupo.FlatAppearance.BorderSize = 0;
-            btnAdicionarGrupo.FlatStyle = FlatStyle.Flat;
-            btnAdicionarGrupo.ForeColor = Color.White;
-            btnAdicionarGrupo.Location = new Point(17, 445);
-            btnAdicionarGrupo.Name = "btnAdicionarGrupo";
-            btnAdicionarGrupo.Size = new Size(140, 30);
-            btnAdicionarGrupo.TabIndex = 4;
-            btnAdicionarGrupo.Text = "+ Adicionar novo grupo";
-            btnAdicionarGrupo.UseVisualStyleBackColor = false;
-            // 
-            // contextMenuStripVisualizacoes
-            // 
-            // Bloco contextMenuStripVisualizacoes REMOVIDO
-            // 
-            // tabelaToolStripMenuItem
-            // 
-            // Bloco tabelaToolStripMenuItem REMOVIDO
-            // 
-            // gráficoToolStripMenuItem
-            // 
-            // Bloco gráficoToolStripMenuItem REMOVIDO
-            // 
-            // calendárioToolStripMenuItem
-            // 
-            // Bloco calendárioToolStripMenuItem REMOVIDO
-            // 
-            // kanbanToolStripMenuItem
-            // 
-            // Bloco kanbanToolStripMenuItem REMOVIDO
             // 
             // UcPlanoDeGestao
             // 
-            AutoScaleDimensions = new SizeF(8F, 19F);
+            AutoScaleDimensions = new SizeF(6F, 13F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(26, 28, 58);
-            Controls.Add(btnAdicionarGrupo);
             Controls.Add(panelTarefasGrid);
             Controls.Add(panelHeaderEsteMes);
-            // Controls.Add(btnVisualizacoes) REMOVIDO
             Controls.Add(panelToolbar);
             Controls.Add(lblTitulo);
             Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -283,7 +223,6 @@ namespace structa_front
             panelHeaderEsteMes.PerformLayout();
             panelTarefasGrid.ResumeLayout(false);
             ((ISupportInitialize)dgvTarefas).EndInit();
-            // contextMenuStripVisualizacoes.ResumeLayout(false) REMOVIDO
             ResumeLayout(false);
             PerformLayout();
 
@@ -293,7 +232,6 @@ namespace structa_front
 
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.FlowLayoutPanel panelToolbar;
-        private System.Windows.Forms.Button btnCriarElemento;
         private System.Windows.Forms.Button btnPessoas;
         private System.Windows.Forms.Button btnFiltro;
         private System.Windows.Forms.Button btnOrdenar;
@@ -303,7 +241,6 @@ namespace structa_front
         private System.Windows.Forms.Label lblEsteMes;
         private System.Windows.Forms.Panel panelTarefasGrid;
         private System.Windows.Forms.DataGridView dgvTarefas;
-        private System.Windows.Forms.Button btnAdicionarGrupo;
         // contextMenuStripVisualizacoes e seus items REMOVIDOS
     }
 }
