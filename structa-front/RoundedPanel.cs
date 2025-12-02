@@ -32,7 +32,7 @@ namespace structa_front
                 }
 
                 // fundo do painel
-                using (var brush = new SolidBrush(this.BackColor))
+                using (var brush = new SolidBrush(BackColor))
                     g.FillPath(brush, path);
 
                 // borda
@@ -40,7 +40,7 @@ namespace structa_front
                     g.DrawPath(pen, path);
 
                 // define a região para recorte/click
-                this.Region = new Region(path);
+                Region = new Region(path);
             }
         }
 

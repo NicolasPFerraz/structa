@@ -121,20 +121,14 @@
   <data name="Vector" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Vector.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Frame 233" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Frame 233.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ImagemTelaInicial2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ImagemTelaInicial2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ImgMaoFeed" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ImgMaoFeed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="IconePlanoDeGestao" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IconePlanoDeGestao.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="AdicionarNovoGrupo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\AdicionarNovoGrupo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="eye" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\eye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="IconeMeuTrabalho" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IconeMeuTrabalho.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -151,14 +145,14 @@
   <data name="Frame 185" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Frame 185.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="IconeAreasDeTrabalho" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IconeAreasDeTrabalho.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Background (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ImagemTelaInicial2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ImagemTelaInicial2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="AdicionarNovoGrupo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AdicionarNovoGrupo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="present" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\present.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="IconePerfil" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IconePerfil.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="RecentesAreadeTrabalho" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\RecentesAreadeTrabalho.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -175,11 +169,11 @@
   <data name="ImgAreadeTabalhoIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ImgAreadeTabalhoIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Frame 178" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Frame 178.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="IconeSetaPraBaixo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IconeSetaPraBaixo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Image viewer-rafiki (1) 1 (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Image viewer-rafiki (1) 1 (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="IconeNotificacoes" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IconeNotificacoes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -187,26 +181,26 @@
   <data name="Image" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Background (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Background (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Edit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Frame 177 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Frame 177 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Background (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Background (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Frame 233" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Frame 233.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Structa" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Structa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="IconeAreasDeTrabalho" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IconeAreasDeTrabalho.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Frame 180" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Frame 180.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="IconeSetaPraBaixo (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IconeSetaPraBaixo (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Card" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Card.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PadraoPlanoDeGestao" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PadraoPlanoDeGestao.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="IconeAreaDeTrabalho (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IconeAreaDeTrabalho (3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -238,6 +232,9 @@
   <data name="MembrosTelaInicial" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MembrosTelaInicial.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Structa" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Structa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Details" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Details.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -247,14 +244,14 @@
   <data name="OptionsPlanoDeGestao" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\OptionsPlanoDeGestao.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="eye" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\eye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Frame 179" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Frame 179.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="IconePerfil" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IconePerfil.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Frame 234" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Frame 234.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Frame 180" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Frame 180.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Overview" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Overview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -265,14 +262,17 @@
   <data name="Vector 6" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Vector 6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PadraoPlanoDeGestao" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PadraoPlanoDeGestao.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Frame 178" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Frame 178.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Clock" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Clock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Informações do Perfil" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Informações do Perfil.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IconePesquisar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IconePesquisar1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="IconeAdicionarMembros" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IconeAdicionarMembros.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -286,12 +286,13 @@
   <data name="IconeTresPontos" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IconeTresPontos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="IconeSetaPraBaixo (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IconeSetaPraBaixo (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Background (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Teams" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Teams.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+<<<<<<< HEAD
   <data name="Image viewer-rafiki (1) 1 (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Image viewer-rafiki (1) 1 (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -300,7 +301,18 @@
   </data>
   <data name="Platform Settings" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Platform Settings.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+=======
+>>>>>>> DuduT
   <data name="TarefasPlanoDeGestao" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TarefasPlanoDeGestao.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Frame 234" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Frame 234.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="present" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\present.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Image viewer-amico 2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Image viewer-amico 2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
