@@ -81,7 +81,7 @@
             panelMenu.Location = new Point(0, 0);
             panelMenu.Margin = new Padding(0);
             panelMenu.Name = "panelMenu";
-            panelMenu.Size = new Size(289, 861);
+            panelMenu.Size = new Size(289, 845);
             panelMenu.TabIndex = 0;
             // 
             // menuItems
@@ -281,7 +281,7 @@
             // 
             // panelConteudo
             // 
-            panelConteudo.Location = new Point(288, 86);
+            panelConteudo.Location = new Point(289, 86);
             panelConteudo.Margin = new Padding(4);
             panelConteudo.Name = "panelConteudo";
             panelConteudo.Size = new Size(1373, 776);
@@ -298,7 +298,7 @@
             panelTop.Location = new Point(289, 0);
             panelTop.Margin = new Padding(4);
             panelTop.Name = "panelTop";
-            panelTop.Size = new Size(1373, 88);
+            panelTop.Size = new Size(1251, 88);
             panelTop.TabIndex = 0;
             // 
             // roundedPanel1
@@ -310,7 +310,7 @@
             roundedPanel1.Controls.Add(btnAreaDeTrabalho);
             roundedPanel1.Controls.Add(btnNotificacoes);
             roundedPanel1.CornerRadius = 4;
-            roundedPanel1.Location = new Point(1138, 0);
+            roundedPanel1.Location = new Point(1016, 0);
             roundedPanel1.Margin = new Padding(4);
             roundedPanel1.Name = "roundedPanel1";
             roundedPanel1.ShadowColor = Color.White;
@@ -395,7 +395,8 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1662, 861);
+            BackColor = Color.FromArgb(17, 30, 76);
+            ClientSize = new Size(1540, 845);
             Controls.Add(panelTop);
             Controls.Add(panelConteudo);
             Controls.Add(panelMenu);

@@ -134,7 +134,7 @@ namespace structa_front
             Painel_Perfil painel = new Painel_Perfil(this);
 
             panelTop.Size = new Size(1190, 212);
-            panelConteudo.Location = new Point(287, 211);
+            panelConteudo.Location = new Point(327, 212);
 
             panelTop.Controls.Clear();
             panelTop.Controls.Add(painel);
