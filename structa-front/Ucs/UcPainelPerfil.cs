@@ -16,7 +16,7 @@ namespace structa_front
             _formPrincipal = formPrincipal;
         }
 
-        // No seu UserControl atual
+        // No seu UserControl
         private FormPrincipal _formPrincipal;
 
         // Eventos de clique dos botões
