@@ -81,7 +81,7 @@
             panelMenu.Location = new Point(0, 0);
             panelMenu.Margin = new Padding(0);
             panelMenu.Name = "panelMenu";
-            panelMenu.Size = new Size(289, 861);
+            panelMenu.Size = new Size(289, 775);
             panelMenu.TabIndex = 0;
             // 
             // menuItems
@@ -99,7 +99,7 @@
             menuItems.Location = new Point(10, 23);
             menuItems.Margin = new Padding(0);
             menuItems.Name = "menuItems";
-            menuItems.Size = new Size(279, 839);
+            menuItems.Size = new Size(279, 826);
             menuItems.TabIndex = 5;
             // 
             // lblPerfil
@@ -298,7 +298,7 @@
             panelTop.Location = new Point(289, 0);
             panelTop.Margin = new Padding(4);
             panelTop.Name = "panelTop";
-            panelTop.Size = new Size(1373, 88);
+            panelTop.Size = new Size(1251, 88);
             panelTop.TabIndex = 0;
             // 
             // roundedPanel1
@@ -310,7 +310,7 @@
             roundedPanel1.Controls.Add(btnAreaDeTrabalho);
             roundedPanel1.Controls.Add(btnNotificacoes);
             roundedPanel1.CornerRadius = 4;
-            roundedPanel1.Location = new Point(1138, 0);
+            roundedPanel1.Location = new Point(1016, 0);
             roundedPanel1.Margin = new Padding(4);
             roundedPanel1.Name = "roundedPanel1";
             roundedPanel1.ShadowColor = Color.White;
@@ -395,7 +395,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1662, 861);
+            ClientSize = new Size(1540, 775);
             Controls.Add(panelTop);
             Controls.Add(panelConteudo);
             Controls.Add(panelMenu);
@@ -403,6 +403,7 @@
             MinimumSize = new Size(1195, 673);
             Name = "FormPrincipal";
             Text = "FormPrincipal";
+            Load += FormPrincipal_Load;
             panelMenu.ResumeLayout(false);
             menuItems.ResumeLayout(false);
             menuItems.PerformLayout();

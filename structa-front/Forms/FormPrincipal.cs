@@ -221,5 +221,10 @@ namespace structa_front
                 await CarregarProjetosAsync();
             }
         }
+
+        private void FormPrincipal_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

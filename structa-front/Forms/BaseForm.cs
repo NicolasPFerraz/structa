@@ -9,8 +9,8 @@ namespace structa_front.Forms
         {
             // Define tamanho padrão e opções comuns para todos os formulários
             StartPosition = FormStartPosition.CenterScreen;
-            Size = new Size(1440, 900);
-            MinimumSize = new Size(1440, 900);
+            Size = new Size(1440, 800);
+            MinimumSize = new Size(1040, 800);
         }
 
         private void InitializeComponent()
@@ -19,7 +19,7 @@ namespace structa_front.Forms
             // 
             // BaseForm
             // 
-            ClientSize = new Size(1422, 761);
+            ClientSize = new Size(1322, 661);
             Name = "BaseForm";
             ResumeLayout(false);
 

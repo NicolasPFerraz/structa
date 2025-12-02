@@ -58,7 +58,7 @@ namespace structa_front
                 var usuarioCriado = await usuarioService.CriarUsuarioAsync(usuario);
 
                 // 4. Salva no Session
-                Session.UsuarioLogado = usuarioCriado;
+                Sessao.UsuarioId = usuario.Id;
 
                 // 5. Redireciona para a próxima tela
                 CriarConta2 criarConta2 = new CriarConta2();

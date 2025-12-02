@@ -22,8 +22,8 @@ namespace structa_front
         private bool areCompletedTasksHidden = false;
         private string filtroStatusAtual = "Todos";
 
-        // LISTA DE RESPONSÁVEIS DO PROJETO (NOVO)
-        private List<string> listaResponsaveis = new List<string>();
+        // Use BindingList so changes propagate to DataGridViewComboBoxColumn
+        private BindingList<string> listaResponsaveis = new BindingList<string>();
 
         public UcPlanoDeGestao()
         {
@@ -54,20 +54,52 @@ namespace structa_front
                 // BUSCA TODAS AS PESSOAS DO PROJETO
                 var lista = await membrosProjetoService.BuscarMembrosComDadosAsync(projetoIdSelecionado);
 
+                // Update the binding list rather than replacing it
                 listaResponsaveis.Clear();
 
                 foreach (var u in lista)
                 {
-                    listaResponsaveis.Add(u.Item2.Nome);
+                    if (!string.IsNullOrWhiteSpace(u.Item2?.Nome))
+                        listaResponsaveis.Add(u.Item2.Nome);
                 }
 
                 if (listaResponsaveis.Count == 0)
                     listaResponsaveis.Add("Sem responsáveis");
+
+                // If grid already has combo column/cells, update their DataSource
+                AtualizarFonteComboResponsaveis();
             }
             catch
             {
                 listaResponsaveis.Clear();
                 listaResponsaveis.Add("Erro ao carregar");
+                AtualizarFonteComboResponsaveis();
+            }
+        }
+
+        private void AtualizarFonteComboResponsaveis()
+        {
+            if (dgvTarefas == null) return;
+
+            if (dgvTarefas.Columns.Contains("colResp"))
+            {
+                var col = dgvTarefas.Columns["colResp"] as DataGridViewComboBoxColumn;
+                if (col != null)
+                {
+                    col.DataSource = listaResponsaveis;
+                    col.ValueType = typeof(string);
+                }
+
+                // Também defina cada célula existente para usar a lista de vinculação para que o controle de edição veja os itens
+                foreach (DataGridViewRow row in dgvTarefas.Rows)
+                {
+                    if (row.IsNewRow) continue;
+                    var cell = row.Cells["colResp"] as DataGridViewComboBoxCell;
+                    if (cell != null)
+                    {
+                        cell.DataSource = listaResponsaveis;
+                    }
+                }
             }
         }
 
@@ -97,6 +129,7 @@ namespace structa_front
 
         private void PreencherGridComTarefas(List<Tarefa> listaTarefas)
         {
+            // Remove placeholder(s) antes de preencher
             for (int i = dgvTarefas.Rows.Count - 1; i >= 0; i--)
             {
                 var val = dgvTarefas.Rows[i].Cells["colTarefa"].Value;
@@ -112,12 +145,14 @@ namespace structa_front
                 {
                     var rowIndex = dgvTarefas.Rows.Add(false, tarefa.Id, tarefa.Titulo, tarefa.Responsavel, tarefa.Status, tarefa.PrazoFinalEntrega);
 
-                    // Preenche automaticamente o combo de responsáveis
+                    // Ensure the combo cell uses the binding list
                     var comboResp = dgvTarefas.Rows[rowIndex].Cells["colResp"] as DataGridViewComboBoxCell;
-                    comboResp.DataSource = listaResponsaveis;
+                    if (comboResp != null)
+                        comboResp.DataSource = listaResponsaveis;
                 }
             }
 
+            // Sempre garanta um placeholder no final
             int r = dgvTarefas.Rows.Add(false, "", "+ Adicionar tarefa", "", "", "");
             var placeholder = dgvTarefas.Rows[r];
             placeholder.DefaultCellStyle.ForeColor = Color.Gray;
@@ -126,6 +161,9 @@ namespace structa_front
             placeholder.Cells["colResp"].ReadOnly = true;
             placeholder.Cells["colStatus"].ReadOnly = true;
             placeholder.Cells["colData"].ReadOnly = true;
+
+            // Ensure combo column/cells know about the current data
+            AtualizarFonteComboResponsaveis();
         }
 
         private void ConfigurarColunasDataGridView()
@@ -141,14 +179,15 @@ namespace structa_front
             dgvTarefas.Columns.Add(new DataGridViewTextBoxColumn
             { Name = "colTarefa", HeaderText = "Tarefa", Width = 300 });
 
-            // NOVO: TRANSFORMAMOS colResp EM COMBOBOX
+            // NOVO: TRANSFORMAMOS colResp EM COMBOBOX (bind to BindingList)
             var respColumn = new DataGridViewComboBoxColumn
             {
                 Name = "colResp",
                 HeaderText = "Resp.",
                 Width = 140,
                 FlatStyle = FlatStyle.Flat,
-                DataSource = listaResponsaveis
+                DataSource = listaResponsaveis,
+                ValueType = typeof(string)
             };
             dgvTarefas.Columns.Add(respColumn);
 
@@ -173,6 +212,9 @@ namespace structa_front
                 UseColumnTextForButtonValue = true,
                 Width = 80
             });
+
+            // Improve edit behavior so combobox opens on click
+            dgvTarefas.EditMode = DataGridViewEditMode.EditOnEnter;
         }
 
         private void CarregarDadosDeExemplo()
@@ -276,6 +318,8 @@ namespace structa_front
             ConfigurarColunasDataGridView();
 
             this.dgvTarefas.CellPainting += dgvTarefas_CellPainting;
+            this.dgvTarefas.CellClick += dgvTarefas_CellClick;
+            this.dgvTarefas.EditingControlShowing += dgvTarefas_EditingControlShowing;
 
             CarregarDadosDeExemplo();
             CriarMenuDeFiltro();
@@ -311,14 +355,94 @@ namespace structa_front
             e.Handled = true;
         }
 
+        private void dgvTarefas_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+
+            try
+            {
+                var row = dgvTarefas.Rows[e.RowIndex];
+                var tituloCell = row.Cells["colTarefa"];
+                if (tituloCell?.Value != null && tituloCell.Value.ToString() == "+ Adicionar tarefa")
+                {
+                    // Prepare row for editing: clear placeholder text and start edit on Tarefa cell
+                    tituloCell.Value = string.Empty;
+                    row.DefaultCellStyle.ForeColor = Color.White;
+
+                    int colIndex = dgvTarefas.Columns["colTarefa"].Index;
+                    dgvTarefas.CurrentCell = row.Cells[colIndex];
+                    dgvTarefas.BeginEdit(true);
+                    return;
+                }
+
+                // If clicked on a combobox column, begin edit and open dropdown
+                var colName = dgvTarefas.Columns[e.ColumnIndex].Name;
+                if (colName == "colResp" || colName == "colStatus")
+                {
+                    dgvTarefas.CurrentCell = dgvTarefas.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                    dgvTarefas.BeginEdit(true);
+
+                    // ensure editing control exists first, then open dropdown
+                    this.BeginInvoke(new Action(() =>
+                    {
+                        var editingControl = dgvTarefas.EditingControl as ComboBox;
+                        if (editingControl != null)
+                        {
+                            try { editingControl.DroppedDown = true; } catch { }
+                        }
+                    }));
+                }
+            }
+            catch
+            {
+                // ignore
+            }
+        }
+
+        private void dgvTarefas_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            if (dgvTarefas.CurrentCell == null) return;
+
+            var colName = dgvTarefas.CurrentCell.OwningColumn.Name;
+            if ((colName == "colResp" || colName == "colStatus") && e.Control is ComboBox cb)
+            {
+                cb.DropDownStyle = ComboBoxStyle.DropDownList;
+
+                // open dropdown reliably after control is ready
+                BeginInvoke(new Action(() =>
+                {
+                    try { cb.DroppedDown = true; } catch { }
+                }));
+            }
+        }
+
         private async void DataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            int qtdLinhas = dgvTarefas.Rows.Count;
-            int target = Math.Max(0, qtdLinhas - 2);
-            var row = dgvTarefas.Rows[target];
+            if (e.RowIndex < 0) return;
 
-            var titulo = Convert.ToString(row.Cells["colTarefa"].Value);
-            if (string.IsNullOrWhiteSpace(titulo) || titulo == "+ Adicionar tarefa")
+            var row = dgvTarefas.Rows[e.RowIndex];
+
+            var tituloObj = row.Cells["colTarefa"].Value;
+            var titulo = Convert.ToString(tituloObj);
+
+            // If user left the cell empty, restore placeholder for rows without ID
+            if (string.IsNullOrWhiteSpace(titulo))
+            {
+                var idVal = Convert.ToString(row.Cells["colID"].Value);
+                if (string.IsNullOrWhiteSpace(idVal))
+                {
+                    row.Cells["colTarefa"].Value = "+ Adicionar tarefa";
+                    row.DefaultCellStyle.ForeColor = Color.Gray;
+
+                    row.Cells["colID"].ReadOnly = true;
+                    row.Cells["colResp"].ReadOnly = true;
+                    row.Cells["colStatus"].ReadOnly = true;
+                    row.Cells["colData"].ReadOnly = true;
+                }
+                return;
+            }
+
+            if (titulo == "+ Adicionar tarefa")
                 return;
 
             int.TryParse(Convert.ToString(row.Cells["colID"].Value), out int existingId);
@@ -348,6 +472,31 @@ namespace structa_front
                     if (criada != null)
                     {
                         row.Cells["colID"].Value = criada.Id.ToString();
+
+                        // ensure combo cell is editable and bound
+                        var comboResp = row.Cells["colResp"] as DataGridViewComboBoxCell;
+                        if (comboResp != null)
+                        {
+                            comboResp.DataSource = listaResponsaveis;
+                            row.Cells["colResp"].ReadOnly = false;
+                        }
+
+                        row.Cells["colStatus"].ReadOnly = false;
+                        row.Cells["colData"].ReadOnly = false;
+                        row.DefaultCellStyle.ForeColor = Color.White;
+
+                        // If this was the placeholder row (last row), add a fresh placeholder at the end
+                        if (e.RowIndex == dgvTarefas.Rows.Count - 1)
+                        {
+                            int r = dgvTarefas.Rows.Add(false, "", "+ Adicionar tarefa", "", "", "");
+                            var placeholder = dgvTarefas.Rows[r];
+                            placeholder.DefaultCellStyle.ForeColor = Color.Gray;
+
+                            placeholder.Cells["colID"].ReadOnly = true;
+                            placeholder.Cells["colResp"].ReadOnly = true;
+                            placeholder.Cells["colStatus"].ReadOnly = true;
+                            placeholder.Cells["colData"].ReadOnly = true;
+                        }
                     }
                 }
             }
