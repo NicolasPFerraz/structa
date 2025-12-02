@@ -23,7 +23,8 @@ namespace structa_front
         private string filtroStatusAtual = "Todos";
 
         // LISTA DE RESPONSÁVEIS DO PROJETO (NOVO)
-        private List<string> listaResponsaveis = new List<string>();
+        // Use BindingList para suportar binding/atualização mais segura
+        private BindingList<string> listaResponsaveis = new BindingList<string>();
 
         public UcPlanoDeGestao()
         {
@@ -114,7 +115,31 @@ namespace structa_front
 
                     // Preenche automaticamente o combo de responsáveis
                     var comboResp = dgvTarefas.Rows[rowIndex].Cells["colResp"] as DataGridViewComboBoxCell;
-                    comboResp.DataSource = listaResponsaveis;
+                    if (comboResp != null)
+                    {
+                        var respItems = new List<string>(listaResponsaveis);
+                        if (!string.IsNullOrWhiteSpace(tarefa.Responsavel) && !respItems.Contains(tarefa.Responsavel))
+                        {
+                            // garante que o valor atual aparece na lista do combobox dessa célula
+                            respItems.Insert(0, tarefa.Responsavel);
+                        }
+                        comboResp.DataSource = respItems;
+                        // garante que o valor seja selecionado
+                        comboResp.Value = tarefa.Responsavel;
+                    }
+
+                    // Ajusta o combobox de status para garantir que o valor atual exista
+                    var statusCell = dgvTarefas.Rows[rowIndex].Cells["colStatus"] as DataGridViewComboBoxCell;
+                    if (statusCell != null)
+                    {
+                        var statuses = new List<string> { "Parado", "Concluído", "Em Andamento", "Novo" };
+                        if (!string.IsNullOrWhiteSpace(tarefa.Status) && !statuses.Contains(tarefa.Status))
+                        {
+                            statuses.Insert(0, tarefa.Status);
+                        }
+                        statusCell.DataSource = statuses;
+                        statusCell.Value = tarefa.Status;
+                    }
                 }
             }
 
@@ -126,6 +151,19 @@ namespace structa_front
             placeholder.Cells["colResp"].ReadOnly = true;
             placeholder.Cells["colStatus"].ReadOnly = true;
             placeholder.Cells["colData"].ReadOnly = true;
+
+            // garante que placeholder mostre os responsáveis (se houver)
+            var placeholderCombo = placeholder.Cells["colResp"] as DataGridViewComboBoxCell;
+            if (placeholderCombo != null)
+            {
+                placeholderCombo.DataSource = new List<string>(listaResponsaveis);
+            }
+
+            var placeholderStatus = placeholder.Cells["colStatus"] as DataGridViewComboBoxCell;
+            if (placeholderStatus != null)
+            {
+                placeholderStatus.DataSource = new List<string> { "Parado", "Concluído", "Em Andamento", "Novo" };
+            }
         }
 
         private void ConfigurarColunasDataGridView()
@@ -155,10 +193,8 @@ namespace structa_front
             var statusColumn = new DataGridViewComboBoxColumn
             { Name = "colStatus", HeaderText = "Status", Width = 120, FlatStyle = FlatStyle.Flat };
 
-            statusColumn.Items.Add("Parado");
-            statusColumn.Items.Add("Concluído");
-            statusColumn.Items.Add("Em Andamento");
-            statusColumn.Items.Add("Novo");
+            // usa lista fixa de status no nível da coluna
+            statusColumn.DataSource = new List<string> { "Parado", "Concluído", "Em Andamento", "Novo" };
 
             dgvTarefas.Columns.Add(statusColumn);
 
@@ -275,6 +311,9 @@ namespace structa_front
             // 2. Criar colunas já com o ComboBox populado
             ConfigurarColunasDataGridView();
 
+            // lidar graciosamente com erros de binding (valores que não existem na lista do combobox)
+            dgvTarefas.DataError += DgvTarefas_DataError;
+
             this.dgvTarefas.CellPainting += dgvTarefas_CellPainting;
 
             CarregarDadosDeExemplo();
@@ -291,6 +330,12 @@ namespace structa_front
             this.btnFiltro.Click += btnFiltro_Click;
             this.btnOrdenar.Click += btnOrdenar_Click;
             this.btnOcultar.Click += btnOcultar_Click;
+        }
+
+        private void DgvTarefas_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            // Ignora erros de binding quando o valor atual não está presente na lista do ComboBox.
+            e.ThrowException = false;
         }
 
         private void dgvTarefas_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
@@ -349,6 +394,37 @@ namespace structa_front
                     {
                         row.Cells["colID"].Value = criada.Id.ToString();
 
+                        // Garantir que o combobox desta linha esteja configurado e editável
+                        var comboResp = row.Cells["colResp"] as DataGridViewComboBoxCell;
+                        if (comboResp != null)
+                        {
+                            var respItems = new List<string>(listaResponsaveis);
+                            var cellRespVal = Convert.ToString(row.Cells["colResp"].Value);
+                            if (!string.IsNullOrWhiteSpace(cellRespVal) && !respItems.Contains(cellRespVal))
+                                respItems.Insert(0, cellRespVal);
+
+                            comboResp.DataSource = respItems;
+                            row.Cells["colResp"].ReadOnly = false;
+
+                            if (!string.IsNullOrWhiteSpace(cellRespVal))
+                                comboResp.Value = cellRespVal;
+                        }
+
+                        var statusCell = row.Cells["colStatus"] as DataGridViewComboBoxCell;
+                        if (statusCell != null)
+                        {
+                            var statuses = new List<string> { "Parado", "Concluído", "Em Andamento", "Novo" };
+                            var cellStatusVal = Convert.ToString(row.Cells["colStatus"].Value);
+                            if (!string.IsNullOrWhiteSpace(cellStatusVal) && !statuses.Contains(cellStatusVal))
+                                statuses.Insert(0, cellStatusVal);
+
+                            statusCell.DataSource = statuses;
+                            row.Cells["colStatus"].ReadOnly = false;
+
+                            if (!string.IsNullOrWhiteSpace(cellStatusVal))
+                                statusCell.Value = cellStatusVal;
+                        }
+
                         // Se a criação veio da linha placeholder (última linha), adiciona um novo placeholder imediatamente
                         if (e.RowIndex == dgvTarefas.Rows.Count - 1)
                         {
@@ -363,10 +439,16 @@ namespace structa_front
                             placeholder.Cells["colData"].ReadOnly = true;
 
                             // Ajusta o DataSource do combobox de responsáveis na nova linha
-                            var comboResp = placeholder.Cells["colResp"] as DataGridViewComboBoxCell;
-                            if (comboResp != null)
+                            var placeholderCombo = placeholder.Cells["colResp"] as DataGridViewComboBoxCell;
+                            if (placeholderCombo != null)
                             {
-                                comboResp.DataSource = listaResponsaveis;
+                                placeholderCombo.DataSource = new List<string>(listaResponsaveis);
+                            }
+
+                            var placeholderStatus = placeholder.Cells["colStatus"] as DataGridViewComboBoxCell;
+                            if (placeholderStatus != null)
+                            {
+                                placeholderStatus.DataSource = new List<string> { "Parado", "Concluído", "Em Andamento", "Novo" };
                             }
                         }
                     }
