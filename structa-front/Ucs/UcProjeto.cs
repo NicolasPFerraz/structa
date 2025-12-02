@@ -313,9 +313,9 @@ namespace structa_front
 
         private async void DataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            int qtdLinhas = dgvTarefas.Rows.Count;
-            int target = Math.Max(0, qtdLinhas - 2);
-            var row = dgvTarefas.Rows[target];
+            if (e.RowIndex < 0) return;
+
+            var row = dgvTarefas.Rows[e.RowIndex];
 
             var titulo = Convert.ToString(row.Cells["colTarefa"].Value);
             if (string.IsNullOrWhiteSpace(titulo) || titulo == "+ Adicionar tarefa")
@@ -348,6 +348,27 @@ namespace structa_front
                     if (criada != null)
                     {
                         row.Cells["colID"].Value = criada.Id.ToString();
+
+                        // Se a criação veio da linha placeholder (última linha), adiciona um novo placeholder imediatamente
+                        if (e.RowIndex == dgvTarefas.Rows.Count - 1)
+                        {
+                            int r = dgvTarefas.Rows.Add(false, "", "+ Adicionar tarefa", "", "", "");
+                            var placeholder = dgvTarefas.Rows[r];
+                            placeholder.DefaultCellStyle.ForeColor = Color.Gray;
+
+                            // Define colunas de somente leitura na nova linha placeholder
+                            placeholder.Cells["colID"].ReadOnly = true;
+                            placeholder.Cells["colResp"].ReadOnly = true;
+                            placeholder.Cells["colStatus"].ReadOnly = true;
+                            placeholder.Cells["colData"].ReadOnly = true;
+
+                            // Ajusta o DataSource do combobox de responsáveis na nova linha
+                            var comboResp = placeholder.Cells["colResp"] as DataGridViewComboBoxCell;
+                            if (comboResp != null)
+                            {
+                                comboResp.DataSource = listaResponsaveis;
+                            }
+                        }
                     }
                 }
             }
